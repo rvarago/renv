@@ -1,0 +1,121 @@
+#!/bin/bash
+
+# A manager of my computing environment.
+
+set -eu
+
+BASE_DIR="${PWD}"
+THIS_SCRIPT=$(basename "${BASH_SOURCE[0]}")
+
+log() {
+  echo "[${THIS_SCRIPT}] " "$@" >&2
+}
+
+usage() {
+  cat <<EOF
+Manage my computing environment
+
+USAGE:
+  ${THIS_SCRIPT} [OPTION] COMMAND
+
+OPTION:
+  -h                      Show this message
+  
+COMMAND:
+  nix|home|rust
+EOF
+}
+
+command=""
+
+parse_args() {
+  while getopts "h" opt; do
+    case "${opt}" in
+      h)
+        usage
+        exit 0
+        ;;
+      *)
+        log "Please, provide a valid option other than '${opt}'"
+        exit 64
+        ;;
+    esac
+  done
+
+  shift $((OPTIND - 1))
+  
+  if [[ $# -ne 1 ]]; then
+    log "Please, provide some command"
+    exit 64
+  fi
+
+  command="$1"
+}
+
+nix() {
+    log "Installing nix & home-manager"
+
+    curl -L https://nixos.org/nix/install | sh
+
+    nix-channel --add https://github.com/nix-community/home-manager/archive/release-20.09.tar.gz home-manager
+    nix-channel --update
+
+    nix-shell '<home-manager>' -A install
+}
+
+home() {
+    local source="${BASE_DIR}/nixpkgs"
+    local target="${HOME}/.config";
+
+    if [[ ! -d "${source}" ]]; then
+        echo "Please, check whether '${source}' actually exists"
+        exit 66
+    fi
+
+    log "Instaling '${source}' to '${target}'"
+
+    mkdir -p "${target}"
+    ln -sf "${source}" "${target}"
+
+    log "Switching home-manager"
+
+    home-manager switch
+}
+
+rust() {
+    log "Installing Rust utilities"
+
+    rustup default stable
+    rustup update
+    rustup component add \
+        rust-src
+}
+
+handle() {
+  local command="$1"
+
+  case "${command}" in
+    "nix")
+        nix
+        ;;
+    "home")
+        home
+        ;;
+    "rust")
+        rust
+        ;;
+    *)
+        log "Please, provide a valid command other than '${command}'"
+        exit 64
+  esac
+}
+
+main() {
+  parse_args "$@"
+
+  handle "${command}"
+
+  log "Done"
+}
+
+main "$@"
