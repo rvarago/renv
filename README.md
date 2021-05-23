@@ -27,5 +27,5 @@ Append this to `/etc/shells`:
 Run:
 
 ```
-chsh -s /home/rvarago/.nix-profile/bin/fis
+chsh -s /home/rvarago/.nix-profile/bin/fish
 ```
