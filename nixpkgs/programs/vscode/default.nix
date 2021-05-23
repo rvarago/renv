@@ -13,6 +13,7 @@
         foxundermoon.shell-format
         golang.Go
         haskell.haskell
+        justusadam.language-haskell
         matklad.rust-analyzer
         ms-python.python
         ms-vscode.cpptools
