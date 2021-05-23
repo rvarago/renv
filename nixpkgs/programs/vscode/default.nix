@@ -34,6 +34,13 @@
         # sha256 = lib.fakeSha256
 
         {
+          name = "bash-ide-vscode";
+          publisher = "mads-hartmann";
+          version = "1.11.0";
+          sha256 = "1hq41fy2v1grjrw77mbs9k6ps6gncwlydm03ipawjnsinxc9rdkp";
+        }
+
+        {
           name = "better-comments";
           publisher = "aaron-bond";
           version = "2.1.0";
