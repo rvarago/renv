@@ -20,6 +20,7 @@
         redhat.java
         redhat.vscode-yaml
         scalameta.metals
+        scala-lang.scala
         serayuzgur.crates
         skyapps.fish-vscode
         streetsidesoftware.code-spell-checker
@@ -94,7 +95,7 @@
       "editor.lineHeight" = 20;
       "editor.fontFamily" = "JetBrains Mono";
       "editor.fontLigatures" = true;
-      "editor.fontSize" = 18;
+      "editor.fontSize" = 16;
       "editor.minimap.enabled" = false;
 
       "terminal.integrated.fontFamily" = "Iosevka";
@@ -104,7 +105,25 @@
       # Extensions
 
       "cmake.configureOnOpen" = true;
+
+      "files.watcherExclude" = {
+        "**/.bloop" = true;
+        "**/.metals" = true;
+        "**/.ammonite" = true;
+      };
     };
 
+    keybindings = [
+      {
+        key = "ctrl+,";
+        command = "workbench.action.focusActiveEditorGroup";
+        when = "terminalFocus";
+      }
+      {
+        key = "ctrl+,";
+        command = "workbench.action.terminal.focus";
+        when = "!terminalFocus";
+      }
+    ];
   };
 }

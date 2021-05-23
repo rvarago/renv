@@ -4,7 +4,10 @@
   # paths it should manage.
   home.username = "rvarago";
   home.homeDirectory = "/home/rvarago";
-  home.sessionVariables = { EDITOR = "nvim"; };
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    JAVA_HOME = "/home/rvarago/.nix-profile/lib/openjdk/";
+  };
 
   xdg.enable = true;
   xdg.mime.enable = true;
@@ -31,8 +34,6 @@
     # Dev tools
     diff-so-fancy
     meld
-    nixfmt
-    shellcheck
 
     # Editors
     neovim
@@ -52,8 +53,12 @@
     haskellPackages.implicit-hie
     haskellPackages.stack
     idris2
+    openjdk
+    maven
+    nixfmt
     rustup
     sbt
+    shellcheck
   ];
 
   home.file.".stack/config.yaml".text =
