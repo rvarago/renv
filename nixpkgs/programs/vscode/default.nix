@@ -26,6 +26,7 @@
         timonwong.shellcheck
         vadimcn.vscode-lldb
         yzhang.markdown-all-in-one
+        xaver.clang-format
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
 
         # sha256 = lib.fakeSha256
