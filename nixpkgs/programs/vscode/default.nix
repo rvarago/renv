@@ -104,6 +104,10 @@
       "terminal.integrated.fontFamily" = "Iosevka";
 
       "workbench.colorTheme" = "One Monokai";
+
+      # Extensions
+
+      "cmake.configureOnOpen" = true;
     };
 
   };
