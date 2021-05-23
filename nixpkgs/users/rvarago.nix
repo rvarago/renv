@@ -19,6 +19,7 @@
     fd
     fzf
     htop
+    jq
     pandoc
     ripgrep
     socat
