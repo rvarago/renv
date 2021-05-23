@@ -35,6 +35,7 @@
     };
 
     aliases = {
+      br = "branch";
       ca = "commit --autosquash";
       ci = "commit";
       cif = "commit --fixup";
