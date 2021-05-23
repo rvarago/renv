@@ -53,6 +53,7 @@
     haskellPackages.stack
     idris2
     rustup
+    sbt
   ];
 
   home.file.".stack/config.yaml".text =
