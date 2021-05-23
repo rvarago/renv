@@ -20,6 +20,7 @@
     htop
     jq
     pandoc
+    procs
     ripgrep
     socat
     tokei
