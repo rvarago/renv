@@ -41,8 +41,10 @@
     jetbrains-mono
     (nerdfonts.override { fonts = [ "Hack" "Iosevka" ]; })
 
-    # Languages
+    # Languages & tooling
     (agda.withPackages (p: [ p.standard-library ]))
+    cmake
+    conan
     haskellPackages.cabal-install
     haskellPackages.hlint
     haskellPackages.hoogle
