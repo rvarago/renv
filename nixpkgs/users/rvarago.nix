@@ -63,6 +63,8 @@
     enable = true;
 
     enableNixDirenvIntegration = true;
+
+    enableBashIntegration = true;
     enableFishIntegration = true;
   };
 
