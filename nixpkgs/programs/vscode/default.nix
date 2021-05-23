@@ -24,6 +24,7 @@
         streetsidesoftware.code-spell-checker
         tamasfe.even-better-toml
         timonwong.shellcheck
+        vadimcn.vscode-lldb
         yzhang.markdown-all-in-one
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
 
@@ -83,13 +84,6 @@
           publisher = "Rubymaniac";
           version = "0.0.2";
           sha256 = "1gml41bc77qlydnvk1rkaiv95rwprzqgj895kxllqy4ps8ly6nsd";
-        }
-
-        {
-          name = "vscode-lldb";
-          publisher = "vadimcn";
-          version = "1.6.3";
-          sha256 = "1w6hbh87sdvk0i5nk9911fw0md25nhx0j6dw6yy81zzp1crwlpp5";
         }
 
       ];
