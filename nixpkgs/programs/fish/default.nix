@@ -19,6 +19,26 @@
       }
 
       {
+        name = "bang-bang";
+        src = pkgs.fetchFromGitHub {
+          owner = "oh-my-fish";
+          repo = "plugin-bang-bang";
+          rev = "f969c618301163273d0a03d002614d9a81952c1e";
+          sha256 = "1r3d4wgdylnc857j08lbdscqbm9lxbm1wqzbkqz1jf8bgq2rvk03";
+        };
+      }
+
+      {
+        name = "cd";
+        src = pkgs.fetchFromGitHub {
+          owner = "oh-my-fish";
+          repo = "plugin-cd";
+          rev = "5d76c4f9589f5d43314aff2fa06499eb6b9078fe";
+          sha256 = "1sppib3gw7jn3c3cc7n0k8mp74y3dni800h58ndw3fm5vdkfqb03";
+        };
+      }
+
+      {
         name = "foreign-env";
         src = pkgs.fetchFromGitHub {
           owner = "oh-my-fish";
