@@ -76,6 +76,13 @@
         }
 
         {
+          name = "nix-env-selector";
+          publisher = "arrterian";
+          version = "1.0.7";
+          sha256 = "0mralimyzhyp4x9q98x3ck64ifbjqdp8cxcami7clvdvkmf8hxhf";
+        }
+
+        {
           name = "rest-client";
           publisher = "humao";
           version = "0.24.5";
