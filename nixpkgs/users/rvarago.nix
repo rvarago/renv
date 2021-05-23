@@ -42,8 +42,19 @@
     (nerdfonts.override { fonts = [ "Hack" "Iosevka" ]; })
 
     # Languages
+    (agda.withPackages (p: [ p.standard-library ]))
+    haskellPackages.cabal-install
+    haskellPackages.hlint
+    haskellPackages.hoogle
+    haskellPackages.hpack
+    haskellPackages.implicit-hie
+    haskellPackages.stack
+    idris2
     rustup
   ];
+
+  home.file.".stack/config.yaml".text =
+    lib.generators.toYAML { } { nix.enable = true; };
 
   programs.direnv = {
     enable = true;
