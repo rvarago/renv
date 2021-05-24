@@ -98,4 +98,8 @@ in {
 
   ];
 
+  home.file.".ghc/ghci.conf".text = ''
+    :set prompt λ>
+  '';
+
 }
