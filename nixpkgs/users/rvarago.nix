@@ -52,6 +52,7 @@ in {
       ripgrep
       socat
       tokei
+      tree
       xclip
       xsv
       wget
