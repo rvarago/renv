@@ -59,6 +59,7 @@ in {
       # Dev tools
       diff-so-fancy
       meld
+      valgrind
 
       # Editors
       neovim
