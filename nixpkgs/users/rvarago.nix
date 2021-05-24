@@ -62,9 +62,6 @@ in {
       meld
       valgrind
 
-      # Editors
-      neovim
-
       # Fonts
       jetbrains-mono
       (nerdfonts.override { fonts = [ "Hack" "Iosevka" ]; })
@@ -100,6 +97,7 @@ in {
 
     ../programs/fish
     ../programs/git
+    ../programs/neovim
     ../programs/vscode
 
   ];
