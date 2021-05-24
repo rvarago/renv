@@ -1,4 +1,28 @@
-{ pkgs, lib, settings, ... }: {
+{ pkgs, lib, settings, ... }:
+
+let
+
+  elm = with pkgs; [
+
+    elmPackages.elm
+    elmPackages.elm-analyse
+    elmPackages.elm-format
+    elmPackages.elm-test
+
+  ];
+
+  haskell = with pkgs; [
+
+    haskellPackages.cabal-install
+    haskellPackages.hlint
+    haskellPackages.hoogle
+    haskellPackages.hpack
+    haskellPackages.implicit-hie
+    haskellPackages.stack
+
+  ];
+
+in {
 
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
@@ -14,52 +38,47 @@
 
   fonts.fontconfig.enable = true;
 
-  home.packages = with pkgs; [
-    # CLI tools
-    bat
-    exa
-    fd
-    fzf
-    htop
-    jq
-    pandoc
-    procs
-    ripgrep
-    socat
-    tokei
-    xclip
-    xsv
-    wget
+  home.packages = with pkgs;
+    [
+      # CLI tools
+      bat
+      exa
+      fd
+      fzf
+      htop
+      jq
+      pandoc
+      procs
+      ripgrep
+      socat
+      tokei
+      xclip
+      xsv
+      wget
 
-    # Dev tools
-    diff-so-fancy
-    meld
+      # Dev tools
+      diff-so-fancy
+      meld
 
-    # Editors
-    neovim
+      # Editors
+      neovim
 
-    # Fonts
-    jetbrains-mono
-    (nerdfonts.override { fonts = [ "Hack" "Iosevka" ]; })
+      # Fonts
+      jetbrains-mono
+      (nerdfonts.override { fonts = [ "Hack" "Iosevka" ]; })
 
-    # Languages & tooling
-    (agda.withPackages (p: [ p.standard-library ]))
-    cmake
-    conan
-    haskellPackages.cabal-install
-    haskellPackages.hlint
-    haskellPackages.hoogle
-    haskellPackages.hpack
-    haskellPackages.implicit-hie
-    haskellPackages.stack
-    idris2
-    openjdk
-    maven
-    nixfmt
-    rustup
-    sbt
-    shellcheck
-  ];
+      # Languages & tooling
+      (agda.withPackages (p: [ p.standard-library ]))
+      cmake
+      conan
+      idris2
+      openjdk
+      maven
+      nixfmt
+      rustup
+      sbt
+      shellcheck
+    ] ++ elm ++ haskell;
 
   home.file.".stack/config.yaml".text =
     lib.generators.toYAML { } { nix.enable = true; };
