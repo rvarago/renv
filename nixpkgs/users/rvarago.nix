@@ -1,27 +1,31 @@
 { pkgs, lib, settings, ... }:
 
 let
+  agda-lang = with pkgs; [ (agda.withPackages (p: [ p.standard-library ])) ];
 
-  elm = with pkgs; [
+  cpp-lang = with pkgs; [ cmake conan ];
 
-    elmPackages.elm
-    elmPackages.elm-analyse
-    elmPackages.elm-format
-    elmPackages.elm-test
+  elm-lang = with pkgs.elmPackages; [ elm elm-analyse elm-format elm-test ];
 
+  haskell-lang = with pkgs.haskellPackages; [
+    cabal-install
+    hlint
+    hoogle
+    hpack
+    implicit-hie
+    stack
   ];
 
-  haskell = with pkgs; [
+  idris-lang = with pkgs; [ idris2 ];
 
-    haskellPackages.cabal-install
-    haskellPackages.hlint
-    haskellPackages.hoogle
-    haskellPackages.hpack
-    haskellPackages.implicit-hie
-    haskellPackages.stack
+  java-lang = with pkgs; [ openjdk maven ];
 
-  ];
+  rust-lang = with pkgs; [ rustup ];
 
+  scala-lang = with pkgs; [ sbt ];
+
+  langs = agda-lang ++ cpp-lang ++ elm-lang ++ haskell-lang ++ idris-lang
+    ++ java-lang ++ rust-lang ++ scala-lang;
 in {
 
   # Home Manager needs a bit of information about you and the
@@ -67,17 +71,9 @@ in {
       (nerdfonts.override { fonts = [ "Hack" "Iosevka" ]; })
 
       # Languages & tooling
-      (agda.withPackages (p: [ p.standard-library ]))
-      cmake
-      conan
-      idris2
-      openjdk
-      maven
       nixfmt
-      rustup
-      sbt
       shellcheck
-    ] ++ elm ++ haskell;
+    ] ++ langs;
 
   home.file.".stack/config.yaml".text =
     lib.generators.toYAML { } { nix.enable = true; };
