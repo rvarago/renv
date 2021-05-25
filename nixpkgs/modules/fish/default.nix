@@ -7,6 +7,8 @@
       set fish_greeting
     '';
 
+    shellAliases = { nr = "nix-shell --run fish"; };
+
     plugins = [
       {
         name = "bass";
