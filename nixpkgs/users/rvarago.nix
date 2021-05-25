@@ -23,6 +23,7 @@
     fzf
     graphviz
     htop
+    imagemagick
     jq
     pandoc
     procs
