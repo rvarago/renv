@@ -4,28 +4,22 @@
 
 My computing environment.
 
-# Post Installation
+# Post-Installation
 
-# Add Desktop Entries
+## Add Desktop Entries
 
 Append this to `.profile`:
 
 ```bash
 if [ -e /home/rvarago/.nix-profile/etc/profile.d/nix.sh ]; then
-    XDG_DATA_DIRS="/home/rvarago/.nix-profile/share:$XDG_DATA_DIRS"
+    XDG_DATA_DIRS="${XDG_DATA_DIRS}:/home/rvarago/.nix-profile/share"
 fi
 ```
 
-# Set Fish as Default Shell
+## Set Fish as Default Shell
 
-Append this to `/etc/shells`:
+Append to shells and then set the shell:
 
-```
-/home/rvarago/.nix-profile/bin/fish
-```
-
-Run:
-
-```
-chsh -s /home/rvarago/.nix-profile/bin/fish
+```bash
+echo /home/rvarago/.nix-profile/bin/fish >> "/etc/shells" && chsh -s /home/rvarago/.nix-profile/bin/fish
 ```
