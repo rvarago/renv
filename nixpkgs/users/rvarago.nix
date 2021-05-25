@@ -1,13 +1,16 @@
 { pkgs, settings, ... }:
 
-{
+let
+  user = settings.user;
+  home = "/home/${user}";
+in {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  home.username = "rvarago";
-  home.homeDirectory = "/home/rvarago";
+  home.username = user;
+  home.homeDirectory = home;
   home.sessionVariables = {
     EDITOR = "nvim";
-    JAVA_HOME = "/home/rvarago/.nix-profile/lib/openjdk/";
+    JAVA_HOME = "${home}/.nix-profile/lib/openjdk/";
   };
 
   xdg.enable = true;
