@@ -21,6 +21,7 @@
     exa
     fd
     fzf
+    graphviz
     htop
     jq
     pandoc
