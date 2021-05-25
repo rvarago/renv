@@ -9,6 +9,10 @@
     ignores = [ ".local" ];
 
     extraConfig = {
+      diff = { tool = "meld"; };
+
+      meld = { tool = "meld"; };
+
       core = {
         editor = "nvim";
         ignorecase = false;
@@ -46,6 +50,7 @@
       ria = "rebase --interactive --autosquash";
       review = "push HEAD:refs/for/master";
       st = "status";
+      vdiff = "difftool --no-prompt";
     };
   };
 
