@@ -91,10 +91,10 @@ in {
 
   imports = [
 
-    ../programs/fish
-    ../programs/git
-    ../programs/neovim
-    ../programs/vscode
+    ../modules/fish
+    ../modules/git
+    ../modules/neovim
+    ../modules/vscode
 
   ];
 
