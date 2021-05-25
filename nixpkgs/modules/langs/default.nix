@@ -25,11 +25,15 @@ let
 
   java = [ pkgs.openjdk pkgs.maven ];
 
+  python = with pkgs; [ python3 python3Packages.pip ];
+
   rust = [ pkgs.rustup ];
 
   scala = [ pkgs.sbt ];
 
-  langs = agda ++ cpp ++ elm ++ haskell ++ idris ++ java ++ rust ++ scala;
+  langs =
+    #
+    agda ++ cpp ++ elm ++ haskell ++ idris ++ java ++ python ++ rust ++ scala;
 in {
   home.packages = langs;
 
