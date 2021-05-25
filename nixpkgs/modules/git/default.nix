@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
 
   programs.git = {
     enable = true;
@@ -48,4 +48,6 @@
       st = "status";
     };
   };
+
+  home.packages = [ pkgs.gitAndTools.gitflow ];
 }
