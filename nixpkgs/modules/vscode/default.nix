@@ -26,7 +26,7 @@
         streetsidesoftware.code-spell-checker
         tamasfe.even-better-toml
         timonwong.shellcheck
-        vadimcn.vscode-lldb
+        # vadimcn.vscode-lldb FIXME: liblldb is null.
         yzhang.markdown-all-in-one
         xaver.clang-format
       ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
@@ -116,15 +116,15 @@
 
       "workbench.colorTheme" = "One Monokai";
 
-      # Extensions
-
-      "cmake.configureOnOpen" = true;
-
       "files.watcherExclude" = {
         "**/.bloop" = true;
         "**/.metals" = true;
         "**/.ammonite" = true;
       };
+
+      # Extensions
+
+      "cmake.configureOnOpen" = true;
     };
 
     keybindings = [
