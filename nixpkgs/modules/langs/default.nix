@@ -33,6 +33,7 @@
     cargo-license
     cargo-tarpaulin
     rustup
+    rust-analyzer
 
     sbt
   ];
