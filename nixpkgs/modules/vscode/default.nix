@@ -125,6 +125,8 @@
       # Extensions
 
       "cmake.configureOnOpen" = true;
+
+      "shellformat.path" = "${pkgs.shfmt}/bin/shfmt";
     };
 
     keybindings = [

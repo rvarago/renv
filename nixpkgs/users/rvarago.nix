@@ -50,6 +50,7 @@ in {
     # Languages & tooling
     nixfmt
     shellcheck
+    shfmt
   ];
 
   programs.direnv = {
