@@ -25,7 +25,10 @@ OPTION:
   -h                      Show this message
   
 COMMAND:
-  nix|home|rust|vscode
+  nix                     Install nix and home-manager
+  home                    Install packages with home-manager
+  rust                    Install Rust toolchains managed by Rustup
+  vscode                  Re-generate VSCode market extensions manifest
 EOF
 }
 
