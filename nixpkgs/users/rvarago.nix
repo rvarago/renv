@@ -42,6 +42,7 @@ in {
     diff-so-fancy
     meld
     valgrind
+    wireshark
 
     # Cloud
     docker-compose

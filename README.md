@@ -30,8 +30,16 @@ Install docker by following the steps:
 
 * https://docs.docker.com/engine/install/
 
-Create the `docker` group and add your user to it.
+Create the `docker` group and add my user to it.
 
 ```
 groupadd docker && usermod -aG docker $USER
+```
+
+## Configure Wireshark
+
+Add my user to the `wireshark` group:
+
+```
+usermod -aG wireshark $USER
 ```
