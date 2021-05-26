@@ -1,0 +1,77 @@
+#!/bin/bash
+
+# An automated way to generate extensions settings for VSCode.
+
+set -eu
+
+BASE_DIR="${PWD}"
+
+VSCODE_DIR="${BASE_DIR}/nixpkgs/modules/vscode"
+INFILE="${VSCODE_DIR}/market_extensions.in"
+OUTFILE="${VSCODE_DIR}/market_extensions.nix"
+
+fetch_latest_version() {
+    local publisher=$1
+    local name=$2
+
+    curl -sS --compressed \
+        'https://marketplace.visualstudio.com/_apis/public/gallery/extensionquery' \
+        -H 'Accept: application/json;api-version=6.1-preview.1;excludeUrls=true' \
+        -H 'Content-Type: application/json' \
+        --data-raw '{"assetTypes":null,"filters":[{"criteria":[{"filterType":7,"value":"'"${publisher}"."${name}"'"}],"direction":2,"pageSize":1,"pageNumber":1,"sortBy":0,"sortOrder":0,"pagingToken":null}],"flags":103}' |
+        jq '.results | .[0].extensions | .[0].versions | .[0].version' -r
+
+}
+
+fetch_hash() {
+    local publisher=$1
+    local name=$2
+    local version=$3
+
+    local url="https://$publisher.gallery.vsassets.io/_apis/public/gallery/publisher/$publisher/extension/$name/$version/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+
+    nix-prefetch-url --type sha256 --name "$publisher-$name.zip" "$url"
+}
+
+generate_section() {
+    local publisher=$1
+    local name=$2
+
+    local version
+    version=$(fetch_latest_version "${publisher}" "${name}")
+
+    local package_hash
+    package_hash=$(fetch_hash "${publisher}" "${name}" "${version}")
+
+    cat <<EOF
+  (extensionFromVscodeMarketplace {
+    publisher = "${publisher}";
+    name = "${name}";
+    version = "${version}";
+    sha256 = "${package_hash}";
+  })
+EOF
+}
+
+open_extensions() {
+    echo "{ extensionFromVscodeMarketplace }: ["
+}
+
+close_extensions() {
+    echo "]"
+}
+
+main() {
+    open_extensions >"${OUTFILE}"
+
+    while read -r line; do
+        IFS="." read -r publisher name <<<"${line}"
+
+        generate_section "${publisher}" "${name}" >>"${OUTFILE}"
+
+    done <"${INFILE}"
+
+    close_extensions >>"${OUTFILE}"
+}
+
+main

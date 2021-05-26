@@ -4,8 +4,11 @@
 
 set -eu
 
-BASE_DIR="${PWD}"
+THIS_DIR="${PWD}"
 THIS_SCRIPT=$(basename "${BASH_SOURCE[0]}")
+
+NIXPKGS="${THIS_DIR}/nixpkgs"
+SCRIPTS="${THIS_DIR}/scripts/include"
 
 log() {
   echo "[${THIS_SCRIPT}] " "$@" >&2
@@ -22,7 +25,7 @@ OPTION:
   -h                      Show this message
   
 COMMAND:
-  nix|home|rust
+  nix|home|rust|vscode
 EOF
 }
 
@@ -64,7 +67,7 @@ nix() {
 }
 
 home() {
-  local source="${BASE_DIR}/nixpkgs"
+  local source="${NIXPKGS}"
   local target="${HOME}/.config"
 
   if [[ ! -d "${source}" ]]; then
@@ -91,6 +94,12 @@ rust() {
     rust-src
 }
 
+vscode() {
+  log "Re-generating VSCode market extensions manifest"
+
+  "${SCRIPTS}/vscode/generate_market_extensions"
+}
+
 handle() {
   local command="$1"
 
@@ -103,6 +112,9 @@ handle() {
     ;;
   "rust")
     rust
+    ;;
+  "vscode")
+    vscode
     ;;
   *)
     log "Please, provide a valid command other than '${command}'"
