@@ -23,3 +23,15 @@ Append to shells and then set the shell:
 ```bash
 echo /home/rvarago/.nix-profile/bin/fish >> "/etc/shells" && chsh -s /home/rvarago/.nix-profile/bin/fish
 ```
+
+## Setup Docker
+
+Install docker by following the steps:
+
+* https://docs.docker.com/engine/install/
+
+Create the `docker` group and add your user to it.
+
+```
+groupadd docker && usermod -aG docker $USER
+```
