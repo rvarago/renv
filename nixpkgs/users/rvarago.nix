@@ -43,6 +43,13 @@ in {
     meld
     valgrind
 
+    # Cloud
+    docker-compose
+    helm
+    kubectl
+    kubectx
+    minikube
+
     # Fonts
     jetbrains-mono
     (nerdfonts.override { fonts = [ "Hack" "Iosevka" ]; })
