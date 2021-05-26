@@ -1,41 +1,37 @@
 { pkgs, lib, ... }:
 
-let
-  agda = [ (pkgs.agda.withPackages (p: [ p.standard-library ])) ];
+{
 
-  cpp = [ pkgs.cmake pkgs.conan ];
+  home.packages = with pkgs; [
+    (agda.withPackages (p: [ p.standard-library ]))
 
-  elm = with pkgs.elmPackages; [
-    pkgs.elmPackages.elm
-    elm-analyse
-    elm-format
-    elm-test
+    cmake
+    conan
+
+    elmPackages.elm
+    elmPackages.elm-analyse
+    elmPackages.elm-format
+    elmPackages.elm-test
+
+    haskellPackages.cabal-install
+    haskellPackages.hlint
+    haskellPackages.hoogle
+    haskellPackages.hpack
+    haskellPackages.implicit-hie
+    haskellPackages.stack
+
+    idris2
+
+    openjdk
+    maven
+
+    python3
+    python3Packages.pip
+
+    rustup
+
+    sbt
   ];
-
-  haskell = with pkgs.haskellPackages; [
-    cabal-install
-    hlint
-    hoogle
-    hpack
-    implicit-hie
-    stack
-  ];
-
-  idris = [ pkgs.idris2 ];
-
-  java = [ pkgs.openjdk pkgs.maven ];
-
-  python = with pkgs; [ python3 python3Packages.pip ];
-
-  rust = [ pkgs.rustup ];
-
-  scala = [ pkgs.sbt ];
-
-  langs =
-    #
-    agda ++ cpp ++ elm ++ haskell ++ idris ++ java ++ python ++ rust ++ scala;
-in {
-  home.packages = langs;
 
   home.file.".ghc/ghci.conf".text = ''
     :set prompt λ>
