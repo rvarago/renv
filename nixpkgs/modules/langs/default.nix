@@ -28,6 +28,9 @@
     python3
     python3Packages.pip
 
+    cargo-audit
+    cargo-license
+    cargo-tarpaulin
     rustup
 
     sbt
