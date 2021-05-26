@@ -10,8 +10,9 @@
 
     extraConfig = {
       diff = { tool = "meld"; };
-
       meld = { tool = "meld"; };
+
+      init = { defaultBranch = "main"; };
 
       core = {
         editor = "nvim";
