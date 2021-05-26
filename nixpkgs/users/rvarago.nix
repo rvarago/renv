@@ -32,6 +32,7 @@ in {
     procs
     ripgrep
     socat
+    texlive.combined.scheme-small
     tokei
     tree
     xclip
