@@ -41,8 +41,8 @@
 
     aliases = {
       br = "branch";
-      ca = "commit --autosquash";
       ci = "commit";
+      cia = "commit --amend";
       cif = "commit --fixup";
       co = "checkout";
       lg =
