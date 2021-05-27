@@ -38,8 +38,8 @@ groupadd docker && usermod -aG docker $USER
 
 ## Configure Wireshark
 
-Add my user to the `wireshark` group:
+Create the `wireshark` group and add my user to it.
 
 ```
-usermod -aG wireshark $USER
+groupadd wireshark && usermod -aG wireshark $USER
 ```
