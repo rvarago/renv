@@ -62,6 +62,10 @@
       "cmake.configureOnOpen" = true;
 
       "shellformat.path" = "${pkgs.shfmt}/bin/shfmt";
+
+      "python.linting.enabled" = true;
+      "python.linting.pylintEnabled" = true;
+      "python.linting.pylintPath" = "${pkgs.python3Packages.pylint}/bin/pylint";
     };
 
     keybindings = [
