@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# An automated way to generate extensions settings for VSCode.
+# A generator for VSCode market extensions expected by nix/home-manager from a sequence of "publisher.name".
 
 set -eu
 
