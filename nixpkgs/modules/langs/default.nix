@@ -30,6 +30,7 @@
     python3Packages.pip
 
     cargo-audit
+    cargo-edit
     cargo-license
     cargo-tarpaulin
     rustup
