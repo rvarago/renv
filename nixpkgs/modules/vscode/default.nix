@@ -5,18 +5,24 @@
 
     extensions = with pkgs.vscode-extensions;
       [
+        baccata.scaladex-search
         bbenoist.Nix
         brettm12345.nixfmt-vscode
+        davidanson.vscode-markdownlint
         dotjoshjohnson.xml
         eamodio.gitlens
         elmtooling.elm-ls-vscode
         foxundermoon.shell-format
         golang.Go
         haskell.haskell
+        james-yu.latex-workshop
         justusadam.language-haskell
         matklad.rust-analyzer
+        ms-azuretools.vscode-docker
+        ms-dotnettools.csharp
         ms-python.python
         ms-vscode.cpptools
+        ocamllabs.ocaml-platform
         redhat.java
         redhat.vscode-yaml
         scalameta.metals
@@ -26,6 +32,7 @@
         streetsidesoftware.code-spell-checker
         tamasfe.even-better-toml
         timonwong.shellcheck
+        tomoki1207.pdf
         # vadimcn.vscode-lldb FIXME: liblldb is null.
         yzhang.markdown-all-in-one
         xaver.clang-format

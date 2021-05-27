@@ -4,7 +4,11 @@ azemoh.one-monokai
 cschlosser.doxdocgen
 formulahendry.terminal
 humao.rest-client
+jroesch.lean
 mads-hartmann.bash-ide-vscode
+ms-kubernetes-tools.vscode-kubernetes-tools
 ms-vscode.cmake-tools
+ms-vscode.makefile-tools
+notskm.clang-tidy
 Rubymaniac.vscode-direnv
 twxs.cmake
