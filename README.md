@@ -8,7 +8,7 @@ My computing environment.
 
 ## Add Desktop Entries
 
-Append this to `.profile`:
+Append this nix share to `XDG_DATA_DIRS` in `.profile`:
 
 ```bash
 if [ -e /home/rvarago/.nix-profile/etc/profile.d/nix.sh ]; then
