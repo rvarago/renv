@@ -51,7 +51,7 @@
       ria = "rebase --interactive --autosquash";
       review = "push HEAD:refs/for/master";
       st = "status";
-      vdiff = "difftool --no-prompt";
+      vdiff = "difftool --dir-diff --no-prompt";
     };
   };
 
