@@ -23,7 +23,7 @@ USAGE:
 
 OPTION:
   -h                      Show this message
-  
+
 COMMAND:
   nix                     Install nix and home-manager
   home                    Install packages with home-manager

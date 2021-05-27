@@ -2,7 +2,28 @@
 
 > Rafael's Environment.
 
-My computing environment.
+My computing environment based on [nix](https://github.com/NixOS/nix)/[home-manager](https://github.com/nix-community/home-manager).
+
+# Usage
+
+The script `renvctl` orchestrates part of the process of installing components with `home-manager` and similar:
+
+```
+λ   ./renvctl -h
+Manage my computing environment
+
+USAGE:
+  renvctl [OPTION] COMMAND
+
+OPTION:
+  -h                      Show this message
+
+COMMAND:
+  nix                     Install nix and home-manager
+  home                    Install packages with home-manager
+  rust                    Install Rust toolchains managed by Rustup
+  vscode                  Re-generate VSCode market extensions manifest
+```
 
 # Post-Installation
 
