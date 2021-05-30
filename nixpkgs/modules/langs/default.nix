@@ -11,6 +11,9 @@
     cmake
     conan
 
+    # Clojure
+    leiningen
+
     # Elm
     elmPackages.elm
     elmPackages.elm-analyse
