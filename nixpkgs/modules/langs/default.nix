@@ -33,6 +33,7 @@
     cargo-edit
     cargo-license
     cargo-tarpaulin
+    cargo-udeps
     rustup
     rust-analyzer
 
