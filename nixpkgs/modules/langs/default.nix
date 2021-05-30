@@ -34,6 +34,7 @@
     cargo-license
     cargo-tarpaulin
     cargo-udeps
+    cargo-watch
     rustup
     rust-analyzer
 
