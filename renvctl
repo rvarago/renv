@@ -95,6 +95,7 @@ rust() {
   rustup update
   rustup component add \
     rust-src
+  rustup toolchain install nightly
 }
 
 vscode() {
