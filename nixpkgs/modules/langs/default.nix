@@ -31,6 +31,7 @@
 
     cargo-audit
     cargo-edit
+    cargo-expand
     cargo-license
     cargo-tarpaulin
     cargo-udeps
