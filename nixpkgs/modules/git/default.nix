@@ -6,7 +6,12 @@
     userEmail = "varago.rafael@gmail.com";
     userName = "Rafael Varago";
 
-    ignores = [ ".local" ];
+    ignores = [
+      # local stuff
+      ".local"
+      # emacs
+      "\\#*#"
+    ];
 
     extraConfig = {
       diff = { tool = "meld"; };
