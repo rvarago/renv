@@ -26,8 +26,8 @@
   (extensionFromVscodeMarketplace {
     publisher = "cschlosser";
     name = "doxdocgen";
-    version = "1.3.1";
-    sha256 = "17cgkf2h1bg61axsgf033a22rncpc68cii4z7381ag9m1ssgi0kz";
+    version = "1.3.2";
+    sha256 = "08dp9bqxsxxqw8pm1sryl14xrvicagqwlxi5cc1vmksjh30dmn1a";
   })
   (extensionFromVscodeMarketplace {
     publisher = "formulahendry";
