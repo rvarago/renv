@@ -27,6 +27,7 @@
     haskellPackages.hpack
     haskellPackages.implicit-hie
     haskellPackages.stack
+    haskellPackages.haskell-language-server
 
     # Idris
     idris2

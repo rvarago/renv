@@ -75,6 +75,7 @@ in {
 
   imports = [
 
+    ../modules/emacs
     ../modules/fish
     ../modules/git
     ../modules/langs
