@@ -84,6 +84,12 @@
     sha256 = "0z44hbrbzlhxbzf1j55xpl5fb7gic9avvcz4dvljrwz4qqdjzq4x";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "ocamllabs";
+    name = "ocaml-platform";
+    version = "1.8.4";
+    sha256 = "0lz9dgldd6q9xsl3f3n27iv752kwrn6ca0nimmxq1gqcwq19hmsg";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "Rubymaniac";
     name = "vscode-direnv";
     version = "0.0.2";

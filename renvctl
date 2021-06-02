@@ -25,9 +25,10 @@ OPTION:
   -h                      Show this message
 
 COMMAND:
-  nix                     Install nix and home-manager
+  nix                     Install nix and home-manager (imperative)
   home                    Install packages with home-manager
-  rust                    Install Rust toolchains managed by Rustup
+  ocaml                   Install OCaml toolchain (imperative)
+  rust                    Install Rust toolchains managed by Rustup (imperative)
   vscode                  Re-generate VSCode market extensions manifest
 EOF
 }
@@ -88,6 +89,13 @@ home() {
   home-manager switch
 }
 
+ocaml() {
+  log "Installing OCaml utilities"
+
+  opam init
+  opam install dune
+}
+
 rust() {
   log "Installing Rust utilities"
 
@@ -113,6 +121,9 @@ handle() {
     ;;
   "home")
     home
+    ;;
+  "ocaml")
+    ocaml
     ;;
   "rust")
     rust

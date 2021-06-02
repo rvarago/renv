@@ -4,11 +4,11 @@
 
 My computing environment based on [nix](https://github.com/NixOS/nix)/[home-manager](https://github.com/nix-community/home-manager).
 
-# Usage
+## Usage
 
 The script `renvctl` orchestrates part of the process of installing components with `home-manager` and similar:
 
-```
+```sh
 λ   ./renvctl -h
 Manage my computing environment
 
@@ -19,15 +19,16 @@ OPTION:
   -h                      Show this message
 
 COMMAND:
-  nix                     Install nix and home-manager
+  nix                     Install nix and home-manager (imperative)
   home                    Install packages with home-manager
-  rust                    Install Rust toolchains managed by Rustup
+  ocaml                   Install OCaml toolchain (imperative)
+  rust                    Install Rust toolchains managed by Rustup (imperative)
   vscode                  Re-generate VSCode market extensions manifest
 ```
 
-# Post-Installation
+## Post-Installation
 
-## Add Desktop Entries
+### Add Desktop Entries
 
 Append this nix share to `XDG_DATA_DIRS` in `.profile`:
 
@@ -37,7 +38,7 @@ if [ -e /home/rvarago/.nix-profile/etc/profile.d/nix.sh ]; then
 fi
 ```
 
-## Set Fish as Default Shell
+### Set Fish as Default Shell
 
 Append to shells and then set the shell:
 
@@ -45,7 +46,7 @@ Append to shells and then set the shell:
 echo /home/rvarago/.nix-profile/bin/fish >> "/etc/shells" && chsh -s /home/rvarago/.nix-profile/bin/fish
 ```
 
-## Setup Docker
+### Setup Docker
 
 Install docker by following the steps:
 
@@ -53,14 +54,14 @@ Install docker by following the steps:
 
 Create the `docker` group and add my user to it.
 
-```
+```sh
 groupadd docker && usermod -aG docker $USER
 ```
 
-## Configure Wireshark
+### Configure Wireshark
 
 Create the `wireshark` group and add my user to it.
 
-```
+```sh
 groupadd wireshark && usermod -aG wireshark $USER
 ```

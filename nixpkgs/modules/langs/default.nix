@@ -40,6 +40,11 @@
     python3
     python3Packages.pip
 
+    # OCaml
+    ocamlformat
+    ocamlPackages.ocaml-lsp
+    opam
+
     # Rust
     cargo-audit
     cargo-edit

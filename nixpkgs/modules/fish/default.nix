@@ -5,6 +5,10 @@
 
     shellInit = ''
       set fish_greeting
+
+      if type -q opam
+        eval (opam env)
+      end
     '';
 
     shellAliases = { nr = "nix-shell --run fish"; };
