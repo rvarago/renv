@@ -90,6 +90,12 @@
     sha256 = "1gml41bc77qlydnvk1rkaiv95rwprzqgj895kxllqy4ps8ly6nsd";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "ryanolsonx";
+    name = "zenburn";
+    version = "1.0.1";
+    sha256 = "1gb159fkvadsnx5gb3l8pps9sa5xjcaqqiym952ar0yfhpfd0ziz";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "twxs";
     name = "cmake";
     version = "0.0.17";

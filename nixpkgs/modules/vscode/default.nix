@@ -49,7 +49,7 @@
 
       "terminal.integrated.fontFamily" = "Iosevka";
 
-      "workbench.colorTheme" = "One Monokai";
+      "workbench.colorTheme" = "Zenburn";
 
       "files.watcherExclude" = {
         "**/.bloop" = true;
