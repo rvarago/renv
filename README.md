@@ -50,7 +50,7 @@ echo /home/rvarago/.nix-profile/bin/fish >> "/etc/shells" && chsh -s /home/rvara
 
 Install docker by following the steps:
 
-* https://docs.docker.com/engine/install/
+* <https://docs.docker.com/engine/install/>
 
 Create the `docker` group and add my user to it.
 
