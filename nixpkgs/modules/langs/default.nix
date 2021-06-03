@@ -43,6 +43,7 @@
     # OCaml
     ocamlformat
     ocamlPackages.ocaml-lsp
+    ocamlPackages.utop
     opam
 
     # Rust
