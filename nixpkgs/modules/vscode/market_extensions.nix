@@ -102,6 +102,12 @@
     sha256 = "1gb159fkvadsnx5gb3l8pps9sa5xjcaqqiym952ar0yfhpfd0ziz";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "sjhuangx";
+    name = "vscode-scheme";
+    version = "0.4.0";
+    sha256 = "07vjfymvfv98s5r5a4b5iqhgfz1wpgq2l8h3wlq1bnhhhvmq5pq4";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "twxs";
     name = "cmake";
     version = "0.0.17";

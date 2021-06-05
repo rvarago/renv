@@ -59,6 +59,10 @@
 
     # Scala
     sbt
+
+    # Scheme
+    racket
+    guile
   ];
 
   home.file.".ghc/ghci.conf".text = ''

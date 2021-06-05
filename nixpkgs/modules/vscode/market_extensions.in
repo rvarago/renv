@@ -15,4 +15,5 @@ notskm.clang-tidy
 ocamllabs.ocaml-platform
 Rubymaniac.vscode-direnv
 ryanolsonx.zenburn
+sjhuangx.vscode-scheme
 twxs.cmake
