@@ -44,8 +44,8 @@
   (extensionFromVscodeMarketplace {
     publisher = "jroesch";
     name = "lean";
-    version = "0.16.34";
-    sha256 = "1pb8fcw2pgj0k8gvf3lklh1yx11wf7h85r56nc94cs639iik8004";
+    version = "0.16.35";
+    sha256 = "13v3wqnpnwcjbdl8jl87iqiczyn4aivi3pnb1ibw134hs49sgsbf";
   })
   (extensionFromVscodeMarketplace {
     publisher = "mads-hartmann";
