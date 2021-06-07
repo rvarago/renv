@@ -42,6 +42,12 @@
     sha256 = "1hj294nsmlzvhbvwv4wyf7mgfw64q4pgkjzzgyjfc26pzyaxb4bn";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "jcanero";
+    name = "hoogle-vscode";
+    version = "0.0.7";
+    sha256 = "0ndapfrv3j82792hws7b3zki76m2s1bfh9dss1xjgcal1aqajka1";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "jroesch";
     name = "lean";
     version = "0.16.35";
