@@ -21,13 +21,14 @@
     elmPackages.elm-test
 
     # Haskell
+    ghc
     haskellPackages.cabal-install
+    haskellPackages.haskell-language-server
     haskellPackages.hlint
     haskellPackages.hoogle
     haskellPackages.hpack
     haskellPackages.implicit-hie
     haskellPackages.stack
-    haskellPackages.haskell-language-server
 
     # Idris
     idris2
