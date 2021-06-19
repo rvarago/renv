@@ -69,6 +69,9 @@
   home.file.".ghc/ghci.conf".text = ''
     :set prompt "λ> "
     :set prompt-cont "λ| "
+
+    :seti -XDataKinds
+    :seti -XTypeApplications
   '';
   home.file.".stack/config.yaml".text =
     lib.generators.toYAML { } { nix.enable = true; };
