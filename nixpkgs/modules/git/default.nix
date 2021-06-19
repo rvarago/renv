@@ -11,6 +11,8 @@
       ".local"
       # emacs
       "\\#*#"
+      # vscode
+      ".vscode"
     ];
 
     extraConfig = {
