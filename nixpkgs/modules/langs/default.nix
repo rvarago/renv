@@ -67,7 +67,7 @@
   ];
 
   home.file.".ghc/ghci.conf".text = ''
-    :set prompt λ>
+    :set prompt "λ> "
   '';
   home.file.".stack/config.yaml".text =
     lib.generators.toYAML { } { nix.enable = true; };
