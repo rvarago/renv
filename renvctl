@@ -26,6 +26,7 @@ OPTION:
 
 COMMAND:
   nix                     Install nix and home-manager (imperative)
+  nix-update              Update nix (imperative)
   home                    Install packages with home-manager
   ocaml                   Install OCaml toolchain (imperative)
   rust                    Install Rust toolchains managed by Rustup (imperative)
@@ -65,9 +66,15 @@ nix() {
   curl -L https://nixos.org/nix/install | sh
 
   nix-channel --add https://github.com/nix-community/home-manager/archive/release-20.09.tar.gz home-manager
-  nix-channel --update
+  nix_update
 
   nix-shell '<home-manager>' -A install
+}
+
+nix_update() {
+  log "Updating nix"
+
+  nix-channel --update
 }
 
 home() {
@@ -119,6 +126,9 @@ handle() {
   case "${command}" in
   "nix")
     nix
+    ;;
+  "nix-update")
+    nix_update
     ;;
   "home")
     home
