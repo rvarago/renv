@@ -52,6 +52,7 @@
     cargo-edit
     cargo-expand
     cargo-license
+    cargo-modules
     cargo-tarpaulin
     cargo-udeps
     cargo-watch
