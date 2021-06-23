@@ -65,7 +65,7 @@ nix() {
 
   curl -L https://nixos.org/nix/install | sh
 
-  nix-channel --add https://github.com/nix-community/home-manager/archive/release-20.09.tar.gz home-manager
+  nix-channel --add https://github.com/nix-community/home-manager/archive/release-21.05.tar.gz home-manager
   nix_update
 
   nix-shell '<home-manager>' -A install

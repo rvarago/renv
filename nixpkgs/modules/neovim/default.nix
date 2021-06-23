@@ -3,8 +3,6 @@
   programs.neovim = {
     enable = true;
 
-    withPython = false;
-
     viAlias = true;
     vimAlias = true;
 
