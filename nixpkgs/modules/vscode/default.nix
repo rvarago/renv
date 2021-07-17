@@ -33,6 +33,7 @@
         tamasfe.even-better-toml
         timonwong.shellcheck
         tomoki1207.pdf
+        usernamehw.errorlens
         # vadimcn.vscode-lldb FIXME: liblldb is null.
         yzhang.markdown-all-in-one
         xaver.clang-format
