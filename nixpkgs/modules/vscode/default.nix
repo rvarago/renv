@@ -81,6 +81,10 @@
         command = "workbench.action.terminal.focus";
         when = "!terminalFocus";
       }
+      {
+        key = "ctrl+l";
+        command = "codelens.showLensesInCurrentLine";
+      }
     ];
   };
 }
