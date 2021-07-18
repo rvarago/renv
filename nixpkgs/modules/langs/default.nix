@@ -20,6 +20,11 @@
     elmPackages.elm-format
     elmPackages.elm-test
 
+    # Go
+    go
+    gopls
+    gotests
+
     # Haskell
     ghc
     haskellPackages.cabal-install
