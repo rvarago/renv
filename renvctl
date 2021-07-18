@@ -25,6 +25,7 @@ OPTION:
   -h                      Show this message
 
 COMMAND:
+  check-deps              Check whether all required pre-conditions (e.g dependencies) hold
   nix                     Install nix and home-manager (imperative)
   nix-update              Update nix (imperative)
   home                    Install packages with home-manager
@@ -70,6 +71,12 @@ command_exists() {
     log "${command}: Not found in PATH"
     return 1
   fi
+}
+
+check_deps() {
+  log "Checking dependencies"
+
+  command_exists "curl" || exit 66
 }
 
 nix() {
@@ -146,6 +153,9 @@ handle() {
   local command="$1"
 
   case "${command}" in
+  "check-deps")
+    check_deps
+    ;;
   "nix")
     nix
     ;;

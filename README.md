@@ -19,6 +19,7 @@ OPTION:
   -h                      Show this message
 
 COMMAND:
+  check-deps              Check whether all required pre-conditions (e.g dependencies) hold
   nix                     Install nix and home-manager (imperative)
   nix-update              Update nix (imperative)
   home                    Install packages with home-manager
