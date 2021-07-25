@@ -73,6 +73,12 @@
     sha256 = "1is81gmik2lc4wkil682lc34p1qcymb6xfwc942ig1msd33qv1g3";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "meraymond";
+    name = "idris-vscode";
+    version = "0.0.10";
+    sha256 = "15sq8g16bxmw6wzacz757nkkpqr03gsxxj4ig3fpr8blzf6v2bd0";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "ms-kubernetes-tools";
     name = "vscode-kubernetes-tools";
     version = "1.3.3";

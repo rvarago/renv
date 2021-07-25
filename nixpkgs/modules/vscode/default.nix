@@ -63,6 +63,9 @@
 
       "cmake.configureOnOpen" = true;
 
+      "idris.idrisPath" = "${pkgs.idris2}/bin/idris2";
+      "idris.idris2Mode" = true;
+
       "shellformat.path" = "${pkgs.shfmt}/bin/shfmt";
 
       "python.linting.enabled" = true;
@@ -84,6 +87,58 @@
       {
         key = "ctrl+l";
         command = "codelens.showLensesInCurrentLine";
+      }
+
+      # Idris
+      {
+        key = "ctrl+alt+a";
+        command = "idris.addClause";
+        when = "editorLangId == idris && editorTextFocus";
+      }
+      {
+        key = "ctrl+alt+b";
+        command = "idris.browseNamespace";
+        when = "editorLangId == idris && editorTextFocus";
+      }
+      {
+        key = "ctrl+alt+c";
+        command = "idris.caseSplit";
+        when = "editorLangId == idris && editorTextFocus";
+      }
+      {
+        key = "ctrl+alt+d";
+        command = "idris.docsForSelection";
+        when = "editorLangId == idris && editorTextFocus";
+      }
+      {
+        key = "ctrl+alt+g";
+        command = "idris.generateDef";
+        when = "editorLangId == idris && editorTextFocus";
+      }
+      {
+        key = "ctrl+alt+i";
+        command = "idris.interpretSelection";
+        when = "editorLangId == idris && editorTextFocus";
+      }
+      {
+        key = "ctrl+alt+m";
+        command = "idris.makeCase";
+        when = "editorLangId == idris && editorTextFocus";
+      }
+      {
+        key = "ctrl+alt+l";
+        command = "idris.makeLemma";
+        when = "editorLangId == idris && editorTextFocus";
+      }
+      {
+        key = "ctrl+alt+w";
+        command = "idris.makeWith";
+        when = "editorLangId == idris && editorTextFocus";
+      }
+      {
+        key = "ctrl+alt+p";
+        command = "idris.proofSearch";
+        when = "editorLangId == idris && editorTextFocus";
       }
     ];
   };
