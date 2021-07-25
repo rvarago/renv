@@ -78,6 +78,7 @@
 
     :seti -XDataKinds
     :seti -XTypeApplications
+    :seti -XTypeOperators
   '';
   home.file.".stack/config.yaml".text =
     lib.generators.toYAML { } { nix.enable = true; };
