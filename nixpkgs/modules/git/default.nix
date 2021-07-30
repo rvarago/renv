@@ -3,7 +3,7 @@
   programs.git = {
     enable = true;
 
-    userEmail = "varago.rafael@gmail.com";
+    userEmail = "rafael.varago@gmail.com";
     userName = "Rafael Varago";
 
     ignores = [
