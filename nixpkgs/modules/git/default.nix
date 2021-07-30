@@ -19,7 +19,7 @@
 
     extraConfig = {
       diff = { tool = "meld"; };
-      meld = { tool = "meld"; };
+      merge = { tool = "meld"; };
 
       init = { defaultBranch = "main"; };
 
