@@ -13,6 +13,8 @@
       "\\#*#"
       # vscode
       ".vscode"
+      # direnv
+      ".direnv"
     ];
 
     extraConfig = {
