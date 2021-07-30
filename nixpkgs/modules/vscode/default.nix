@@ -6,14 +6,14 @@
     extensions = with pkgs.vscode-extensions;
       [
         baccata.scaladex-search
-        bbenoist.Nix
+        bbenoist.nix
         brettm12345.nixfmt-vscode
         davidanson.vscode-markdownlint
         dotjoshjohnson.xml
         eamodio.gitlens
         elmtooling.elm-ls-vscode
         foxundermoon.shell-format
-        golang.Go
+        golang.go
         # haskell.haskell # TODO: Re-enable when updated (https://github.com/NixOS/nixpkgs/pull/127741).
         james-yu.latex-workshop
         justusadam.language-haskell
