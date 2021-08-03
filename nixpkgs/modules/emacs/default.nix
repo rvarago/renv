@@ -15,47 +15,47 @@ in {
     enable = true;
     extraPackages = (epkgs:
       (with epkgs; [
-        doom-modeline
         all-the-icons
-        direnv
-        use-package
-        use-package-chords
-        magit
+        auto-dim-other-buffers
+        command-log-mode
         company
-        flycheck
+        counsel
+        counsel-projectile
+        direnv
+        dockerfile-mode
+        doom-modeline
         elpy
-        rg
-        projectile
-        undo-tree
-        rainbow-delimiters
-        treemacs
-        treemacs-projectile
-        treemacs-all-the-icons
-        treemacs-magit
+        flycheck
+        helm-ag
+        helpful
+        ini-mode
+        ivy
+        ivy-rich
+        lsp-haskell
         lsp-mode
         lsp-treemacs
         lsp-ui
-        lsp-haskell
-        rustic
-        auto-dim-other-buffers
-        zenburn-theme
-        command-log-mode
-        dockerfile-mode
+        magit
         nix-mode
-        ivy
-        ivy-rich
-        counsel
-        counsel-projectile
-        swiper
-        which-key
-        helpful
-        yaml-mode
-        helm-ag
-        ini-mode
+        projectile
         protobuf-mode
-        tide
+        rainbow-delimiters
+        rg
+        rustic
         sqlformat
+        swiper
+        tide
+        treemacs
+        treemacs-all-the-icons
+        treemacs-magit
+        treemacs-projectile
+        undo-tree
+        use-package
+        use-package-chords
+        which-key
+        yaml-mode
         yang-mode
+        zenburn-theme
       ]));
   };
 
