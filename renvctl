@@ -30,6 +30,7 @@ COMMAND:
   nix                     Install nix and home-manager (imperative)
   nix-update              Update nix (imperative)
   ocaml                   Install OCaml toolchain (imperative)
+  prune                   Prune old generations and collect relevant garbage
   rust                    Install Rust toolchains managed by Rustup (imperative)
   vscode                  Re-generate VSCode market extensions manifest
 EOF
@@ -133,6 +134,16 @@ ocaml() {
   opam install dune
 }
 
+prune() {
+  local generations_to_keep=3
+
+  log "Pruning old generations and collecting garbage"
+
+  home-manager generations | tail -n +$(( generations_to_keep + 1 )) | awk '{print $5}' | xargs home-manager remove-generations
+
+  nix-collect-garbage
+}
+
 rust() {
   log "Installing Rust utilities"
 
@@ -167,6 +178,9 @@ handle() {
     ;;
   "ocaml")
     ocaml
+    ;;
+  "prune")
+    prune
     ;;
   "rust")
     rust
