@@ -1,6 +1,6 @@
 ;; ============================ General emacs settings ============================
 
-;; maximize the emacs window on startup
+;; Maximize window on startup
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 (setq inhibit-startup-screen t)
@@ -13,14 +13,14 @@
 (if (fboundp 'scroll-bar-mode)
     (scroll-bar-mode -1))
 
-;; Make *scratch* buffer blank
+;; Make *scratch* buffer blank.
 (setq initial-scratch-message "")
 
-;; Make window title the buffer name
+;; Make window title the buffer name.
 (setq-default frame-title-format '("%b"))
 
-;; Display line number except for certain modes
-(global-display-line-numbers-mode t) ; requires emacs 26
+;; Display line number except for certain modes.
+(global-display-line-numbers-mode t) ; requires emacs 26.
 (dolist (mode '(message-buffer-mode-hook
                 treemacs-mode-hook
                 magit-status-mode-hook
@@ -29,22 +29,22 @@
                 eshell-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
-;; Display column number
+;; Display column number.
 (column-number-mode)
 
-;; highlight the line where the cursor is
+;; Highlight cursor line.
 (global-hl-line-mode +1)
 
-;; Avoid littering the user's filesystem with backups
-(setq backup-by-copying t             ; don't clobber symlinks
+;; Avoid littering the user's filesystem with backups.
+(setq backup-by-copying t             ; Don't clobber symlinks.
       backup-directory-alist
-      '((".*" . "~/.emacs.d/saves/")) ; don't litter my fs tree
+      '((".*" . "~/.emacs.d/saves/")) ; Don't litter fs tree.
       delete-old-versions t
       kept-new-versions 6
       kept-old-versions 2
-      version-control t)       ; use versioned backups
+      version-control t)       ; Use versioned backups.
 
-;; Lockfiles unfortunately cause more pain than benefit
+;; No lockfiles.
 (setq create-lockfiles nil)
 
 ;; =============================== Theme ===============================
@@ -57,7 +57,7 @@
   :ensure t
   :init (doom-modeline-mode 1))
 
-;; colorful parenthesis
+;; Colorful parenthesis.
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode)
   :custom-face
@@ -67,7 +67,6 @@
 (setq show-paren-delay 0)
 
 (use-package all-the-icons)
-
 
 ;; ======================== Treemacs ========================
 (use-package treemacs-all-the-icons)
@@ -94,8 +93,8 @@
   :config
   (setq uniquify-buffer-name-style 'forward)
   (setq uniquify-separator "/")
-  (setq uniquify-after-kill-buffer-p t)     ; rename after killing uniquified
-  (setq uniquify-ignore-buffers-re "^\\*")) ; don't muck with special buffers
+  (setq uniquify-after-kill-buffer-p t)     ; Rename after killing uniquified.
+  (setq uniquify-ignore-buffers-re "^\\*")) ; Don't muck with special buffers.
 
 ;; ======================== Ivy ========================
 (use-package ivy
@@ -103,9 +102,7 @@
   (ivy-mode 1)
   (setq ivy-use-virtual-buffers t)
   (setq enable-recursive-minibuffers t)
-  ;; by default, the regexp used by ivy starts with ^, which is
-  ;; annoying. See:
-  ;; https://emacs.stackexchange.com/a/38842/22105
+  ;; No regex starting with ^.
   (setq ivy-initial-inputs-alist nil))
 
 (use-package ivy-rich

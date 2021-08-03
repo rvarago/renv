@@ -1,3 +1,5 @@
+;; ============================ Customizations ============================
+
 (custom-set-variables
  '(rustic-ansi-faces
    ["black" "red3" "green3" "yellow3" "white" "magenta3" "cyan3" "white"])
