@@ -89,6 +89,9 @@
   :config
   (setq sqlformat-command 'pgformatter))
 
+(use-package company-coq
+  :hook (coq-mode . company-coq-mode))
+
 (use-package yang-mode)
 
 (use-package yaml-mode

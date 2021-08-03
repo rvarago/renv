@@ -19,6 +19,7 @@ in {
         auto-dim-other-buffers
         command-log-mode
         company
+        company-coq
         counsel
         counsel-projectile
         direnv
@@ -38,6 +39,7 @@ in {
         magit
         nix-mode
         projectile
+        proof-general
         protobuf-mode
         rainbow-delimiters
         rg

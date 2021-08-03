@@ -14,6 +14,9 @@
     # Clojure
     leiningen
 
+    # Coq
+    coq
+
     # Elm
     elmPackages.elm
     elmPackages.elm-analyse

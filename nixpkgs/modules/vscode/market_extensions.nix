@@ -67,6 +67,12 @@
     sha256 = "1is81gmik2lc4wkil682lc34p1qcymb6xfwc942ig1msd33qv1g3";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "maximedenes";
+    name = "vscoq";
+    version = "0.3.5";
+    sha256 = "05w4d4cr40xsr0pkry1cg3p5q2ji3dqld0p560grhrjlq27clj4r";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "meraymond";
     name = "idris-vscode";
     version = "0.0.10";
