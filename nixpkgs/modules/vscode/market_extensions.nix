@@ -37,12 +37,6 @@
     sha256 = "0gj71xy7r82n1pic00xsi04dg7zg0dsxx000s03iq6lnz47s84gn";
   })
   (extensionFromVscodeMarketplace {
-    publisher = "haskell";
-    name = "haskell";
-    version = "1.4.0";
-    sha256 = "1jk702fd0b0aqfryixpiy6sc8njzd1brd0lbkdhcifp0qlbdwki0";
-  })
-  (extensionFromVscodeMarketplace {
     publisher = "humao";
     name = "rest-client";
     version = "0.24.5";

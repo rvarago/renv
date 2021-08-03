@@ -14,7 +14,7 @@
         elmtooling.elm-ls-vscode
         foxundermoon.shell-format
         golang.go
-        # haskell.haskell # TODO: Re-enable when updated (https://github.com/NixOS/nixpkgs/pull/127741).
+        haskell.haskell
         james-yu.latex-workshop
         justusadam.language-haskell
         matklad.rust-analyzer
