@@ -20,9 +20,9 @@ OPTION:
 
 COMMAND:
   check-deps              Check whether all required pre-conditions (e.g dependencies) hold
+  home                    Install packages with home-manager
   nix                     Install nix and home-manager (imperative)
   nix-update              Update nix (imperative)
-  home                    Install packages with home-manager
   ocaml                   Install OCaml toolchain (imperative)
   rust                    Install Rust toolchains managed by Rustup (imperative)
   vscode                  Re-generate VSCode market extensions manifest

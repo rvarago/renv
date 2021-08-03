@@ -26,9 +26,9 @@ OPTION:
 
 COMMAND:
   check-deps              Check whether all required pre-conditions (e.g dependencies) hold
+  home                    Install packages with home-manager
   nix                     Install nix and home-manager (imperative)
   nix-update              Update nix (imperative)
-  home                    Install packages with home-manager
   ocaml                   Install OCaml toolchain (imperative)
   rust                    Install Rust toolchains managed by Rustup (imperative)
   vscode                  Re-generate VSCode market extensions manifest
@@ -79,6 +79,25 @@ check_deps() {
   command_exists "curl" || exit 66
 }
 
+home() {
+  local source="${NIXPKGS}"
+  local target="${HOME}/.config"
+
+  if [[ ! -d "${source}" ]]; then
+    echo "Please, check whether '${source}' actually exists"
+    exit 66
+  fi
+
+  log "Instaling '${source}' to '${target}'"
+
+  mkdir -p "${target}"
+  ln -sf "${source}" "${target}"
+
+  log "Switching home-manager"
+
+  home-manager switch
+}
+
 nix() {
   if ! command_exists "nix"; then
     log "Installing nix"
@@ -104,25 +123,6 @@ nix_update() {
   log "Updating nix"
 
   nix-channel --update
-}
-
-home() {
-  local source="${NIXPKGS}"
-  local target="${HOME}/.config"
-
-  if [[ ! -d "${source}" ]]; then
-    echo "Please, check whether '${source}' actually exists"
-    exit 66
-  fi
-
-  log "Instaling '${source}' to '${target}'"
-
-  mkdir -p "${target}"
-  ln -sf "${source}" "${target}"
-
-  log "Switching home-manager"
-
-  home-manager switch
 }
 
 ocaml() {
@@ -156,14 +156,14 @@ handle() {
   "check-deps")
     check_deps
     ;;
+  "home")
+    home
+    ;;
   "nix")
     nix
     ;;
   "nix-update")
     nix_update
-    ;;
-  "home")
-    home
     ;;
   "ocaml")
     ocaml
