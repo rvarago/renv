@@ -68,21 +68,17 @@
 (use-package elpy
   :commands elpy-enable
   ;; Only call `elpy-enable` when needed.
-  ;; See: https://emacs.stackexchange.com/q/10065/22105
   :init (with-eval-after-load 'python (elpy-enable))
   :config
   (setq elpy-rpc-virtualenv-path 'current)
   ;; Forces flycheck instead of flymake.
-  ;; See:
-  ;;     - https://github.com/jorgenschaefer/elpy/wiki/Customizations#use-flycheck-instead-of-flymake
-  ;;     - https://github.com/jorgenschaefer/elpy/issues/137
   (when (require 'flycheck nil t)
     (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
     (add-hook 'elpy-mode-hook 'flycheck-mode)))
 
 (use-package sql
   :config
-  ;; With mariadb, the default regexp used to match the prompt is a bit off. This fixes it.
+  ;; Fixes default regexp with mariadb.
   (sql-set-product-feature 'mysql :prompt-regexp "^\\(MariaDB\\|MySQL\\) \\[[_a-zA-Z]*\\]> "))
 
 (use-package sqlformat
