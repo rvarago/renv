@@ -47,6 +47,15 @@
 ;; No lockfiles.
 (setq create-lockfiles nil)
 
+;; A small horizontal split.
+(defun create-terminal ()
+  "Create a small terminal-like window."
+  (interactive)
+  (split-window-below)
+  (setq current-prefix-arg '(10))
+  (call-interactively 'enlarge-window))
+
+(global-set-key (kbd "C-x t c") 'create-terminal)
 ;; =============================== Theme ===============================
 (use-package zenburn-theme
   :ensure t
