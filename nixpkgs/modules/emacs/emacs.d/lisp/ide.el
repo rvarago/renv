@@ -42,7 +42,7 @@
   (lsp-enable-which-key-integration t))
 
 (use-package lsp-ui
-2  :commands lsp-ui-mode
+  :commands lsp-ui-mode
   :config
   (setq lsp-ui-doc-show-with-cursor nil))
 
