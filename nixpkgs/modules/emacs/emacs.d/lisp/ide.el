@@ -42,7 +42,9 @@
   (lsp-enable-which-key-integration t))
 
 (use-package lsp-ui
-  :commands lsp-ui-mode)
+2  :commands lsp-ui-mode
+  :config
+  (setq lsp-ui-doc-show-with-cursor nil))
 
 (use-package flycheck
   :commands global-flycheck-mode
