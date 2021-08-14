@@ -104,8 +104,8 @@
   :config
   (setq treemacs-show-cursor nil)
   (treemacs-load-theme "all-the-icons")
-  :bind
-  (([f9] . treemacs)))
+  :bind ([f9] . treemacs)
+        ("M-0" . treemacs-select-window))
 
 (use-package treemacs-projectile
   :after treemacs projectile)
