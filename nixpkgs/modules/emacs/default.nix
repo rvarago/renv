@@ -23,6 +23,7 @@ in {
         counsel
         counsel-projectile
         direnv
+        diff-hl
         dockerfile-mode
         doom-modeline
         elpy

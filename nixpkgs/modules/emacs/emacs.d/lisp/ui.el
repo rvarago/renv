@@ -57,7 +57,7 @@
 
 (global-set-key (kbd "C-x t c") 'create-terminal)
 
-;; move line up
+;; Move line up.
 (defun move-line-up ()
   "Move the current line up."
   (interactive)
@@ -66,7 +66,7 @@
 
 (global-set-key (kbd "M-<up>") 'move-line-up)
 
-;; move line down
+;; Move line down.
 (defun move-line-down ()
   "Move the current line down."
   (interactive)
