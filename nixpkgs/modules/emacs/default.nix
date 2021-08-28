@@ -17,6 +17,7 @@ in {
       (with epkgs; [
         all-the-icons
         auto-dim-other-buffers
+        centaur-tabs
         command-log-mode
         company
         company-coq

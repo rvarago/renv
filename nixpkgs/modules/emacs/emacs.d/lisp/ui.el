@@ -157,3 +157,19 @@
   ([remap describe-variable] . helpful-variable)
   ([remap describe-command] . helpful-command)
   ([remap describe-key] . helpful-key))
+
+(use-package centaur-tabs
+  :demand
+  :config
+  (centaur-tabs-mode t)
+  :custom
+  (centaur-tabs-gray-out-icons 'buffer)
+  (centaur-tabs-style "rounded")
+  (centaur-tabs-height 36)
+  (centaur-tabs-set-icons t)
+  (centaur-tabs-set-modified-marker t)
+  (centaur-tabs-modified-marker "●")
+  (centaur-tabs-buffer-groups-function centaur-tabs-projectile-buffer-groups)
+  :bind
+  ("C-<prior>" . centaur-tabs-backward)
+  ("C-<next>" . centaur-tabs-forward))
