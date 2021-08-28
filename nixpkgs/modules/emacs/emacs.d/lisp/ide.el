@@ -86,8 +86,15 @@
   :config
   (setq sqlformat-command 'pgformatter))
 
+(use-package proof-general
+  :commands (coq-mode)
+  :hook ((coq-mode . yas-minor-mode))
+  :init
+  (setq proof-splash-enable nil))
+
 (use-package company-coq
-  :hook (coq-mode . company-coq-mode))
+  :hook (coq-mode . company-coq-mode)
+  (setq company-coq-live-on-the-edge t))
 
 (use-package yang-mode)
 
