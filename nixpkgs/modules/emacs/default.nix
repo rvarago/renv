@@ -71,6 +71,8 @@ in {
   };
 
   xresources.properties = {
+    "Emacs.menuBar" = false;
+    "Emacs.toolBar" = false;
     "Emacs.Font" =
       "-CYEL-Iosevka-normal-normal-normal-*-16-*-*-*-d-0-iso10646-1";
   };
