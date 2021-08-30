@@ -23,6 +23,7 @@ in {
         company-coq
         counsel
         counsel-projectile
+        dap-mode
         direnv
         diff-hl
         dockerfile-mode

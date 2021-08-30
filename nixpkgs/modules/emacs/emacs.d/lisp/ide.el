@@ -53,6 +53,31 @@
   :init
   (global-flycheck-mode))
 
+(use-package dap-mode
+  :ensure
+  :config
+  (dap-ui-mode)
+  (dap-ui-controls-mode 1)
+
+  ;; Debug via dap-lldb.
+  ;;(require 'dap-lldb)
+  ;;(require 'dap-gdb-lldb)
+
+  ;;(dap-gdb-lldb-setup)
+  ;;(dap-register-debug-template
+   ;; "Rust::LLDB Run Configuration"
+   ;; (list :type "lldb"
+   ;;       :request "launch"
+   ;;       :name "LLDB::Run"
+   ;;   :gdbpath "rust-lldb"
+   ;;       :target nil
+   ;;       :cwd nil)))
+
+  ;; Debug via ms cpptools.
+  (require 'dap-cpptools)
+
+  (dap-cpptools-setup))
+
 (use-package rustic
   :config
   (unbind-key "C-c C-c C-t" rustic-mode-map)
