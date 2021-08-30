@@ -53,25 +53,6 @@
   (setq current-prefix-arg '(10))
   (call-interactively 'enlarge-window))
 
-
-;; Move line up.
-(defun move-line-up ()
-  "Move the current line up."
-  (interactive)
-  (transpose-lines 1)
-  (previous-line 2))
-
-(global-set-key (kbd "M-<up>") 'move-line-up)
-
-;; Move line down.
-(defun move-line-down ()
-  "Move the current line down."
-  (interactive)
-  (next-line 1)
-  (transpose-lines 1)
-  (previous-line 1))
-
-(global-set-key (kbd "M-<down>") 'move-line-down)
 (global-set-key (kbd "C-x t c") 'split-small-window)
 
 ;; =============================== Theme ===============================
