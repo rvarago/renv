@@ -46,14 +46,13 @@
 (setq create-lockfiles nil)
 
 ;; A small horizontal split.
-(defun create-terminal ()
+(defun split-small-window ()
   "Create a small terminal-like window."
   (interactive)
   (split-window-below)
   (setq current-prefix-arg '(10))
   (call-interactively 'enlarge-window))
 
-(global-set-key (kbd "C-x t c") 'create-terminal)
 
 ;; Move line up.
 (defun move-line-up ()
@@ -73,6 +72,7 @@
   (previous-line 1))
 
 (global-set-key (kbd "M-<down>") 'move-line-down)
+(global-set-key (kbd "C-x t c") 'split-small-window)
 
 ;; =============================== Theme ===============================
 (use-package zenburn-theme
