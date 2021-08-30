@@ -169,7 +169,7 @@
   :config
   (centaur-tabs-mode t)
   :hook
-  (dired-mode . centaur-tabs-local-mode)
+  (eshell-mode . centaur-tabs-local-mode)
   :custom
   (centaur-tabs-gray-out-icons 'buffer)
   (centaur-tabs-style "rounded")
