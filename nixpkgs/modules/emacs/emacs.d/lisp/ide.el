@@ -35,11 +35,13 @@
   :commands lsp
   :diminish lsp-mode
   :hook
+  (lsp-mode . lsp-lens-mode)
   (lsp-deferred)
   :init
   (setq lsp-keymap-prefix "C-c l")
   :config
-  (lsp-enable-which-key-integration t))
+  (lsp-enable-which-key-integration t)
+  (setq lsp-lens-enable t))
 
 (use-package lsp-ui
   :commands lsp-ui-mode
