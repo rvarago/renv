@@ -181,3 +181,33 @@
   :bind
   ("C-<prior>" . centaur-tabs-backward)
   ("C-<next>" . centaur-tabs-forward))
+
+(use-package shackle
+  :hook (after-init . shackle-mode)
+  :custom
+  (shackle-default-size 0.5)
+  (shackle-default-alignment 'below)
+  (shackle-rules
+   '((magit-log-mode       :select t :inhibit-window-quit t :same t)
+     ("*quickrun*"         :select t :inhibit-window-quit t :same t)
+     (profiler-report-mode :select t)
+     (apropos-mode         :select t :align t :size 0.3)
+     (help-mode            :select t :align t :size 0.4)
+     (comint-mode          :select t :align t :size 0.4)
+     (grep-mode            :select t :align t)
+     (rg-mode              :select t :align t)
+     (ag-mode              :select t :align t)
+     ("*org-roam*"         :select nil :align t :inhibit-window-quit t :same t)
+     ("*Flycheck errors*"         :select t   :align t :size 10)
+     ("*Backtrace*"               :select t   :align t :size 15)
+     ("*ydcv*"                    :select nil :align t :size 0.4)
+     ("*Shell Command Output*"    :select nil :align t :size 0.4)
+     ("*Async Shell Command*"     :select nil :align t :size 0.4)
+     ("*Org-Babel Error Output*"  :select nil :align t :size 0.3)
+     ("*package update results*"  :select nil :align t :size 10)
+     ("*Process List*"            :select t   :align t :size 0.3)
+     ("*Help*"                    :select t   :align t :size 0.3)
+     ("*Occur*"                   :select t   :align right)
+     ("\\*ivy-occur .*\\*"        :select t   :align right :regexp t)
+     ("\\*eldoc\\( for \\)?.*\\*" :select nil :align t :size 15 :regexp t)
+     )))

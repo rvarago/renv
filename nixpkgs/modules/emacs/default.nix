@@ -46,6 +46,7 @@ in {
         rainbow-delimiters
         rg
         rustic
+        shackle
         sqlformat
         swiper
         tide
