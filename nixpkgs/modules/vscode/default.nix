@@ -17,6 +17,7 @@
         haskell.haskell
         james-yu.latex-workshop
         justusadam.language-haskell
+        kahole.magit
         matklad.rust-analyzer
         ms-azuretools.vscode-docker
         ms-dotnettools.csharp
