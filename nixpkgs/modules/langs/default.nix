@@ -7,6 +7,7 @@
     (agda.withPackages (p: [ p.standard-library ]))
 
     # C/C++
+    ccls
     clang-tools
     cmake
     conan
@@ -86,4 +87,3 @@
   home.file.".stack/config.yaml".text =
     lib.generators.toYAML { } { nix.enable = true; };
 }
-

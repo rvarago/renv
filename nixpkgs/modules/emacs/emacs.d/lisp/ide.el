@@ -88,6 +88,14 @@
   ;; ((rustic-mode . ((rustic-test-arguments . "-- --skip integration"))))
   :bind (("C-c C-c C-t" . rustic-cargo-test-rerun)))
 
+(use-package ccls
+   :config
+  (setq lsp-prefer-flymake nil)
+  :hook ((c-mode c++-mode objc-mode) .
+         (lambda () (require 'ccls) (lsp))))
+
+(use-package cmake-mode)
+
 (use-package lsp-haskell
   :hook (
     (haskell-mode . lsp)
