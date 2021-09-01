@@ -38,6 +38,7 @@ in {
         ivy
         ivy-rich
         lsp-haskell
+        lsp-metals
         lsp-mode
         lsp-treemacs
         lsp-ui
@@ -49,6 +50,8 @@ in {
         rainbow-delimiters
         rg
         rustic
+        sbt-mode
+        scala-mode
         shackle
         sqlformat
         swiper
