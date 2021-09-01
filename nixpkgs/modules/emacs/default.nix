@@ -38,6 +38,7 @@ in {
         ivy
         ivy-rich
         lsp-haskell
+        lsp-ivy
         lsp-metals
         lsp-mode
         lsp-treemacs
