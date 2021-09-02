@@ -26,6 +26,7 @@
 
     # Go
     go
+    go-outline
     gopls
     gotests
 
