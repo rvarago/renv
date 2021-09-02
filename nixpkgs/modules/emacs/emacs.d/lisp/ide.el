@@ -42,6 +42,7 @@
   :diminish lsp-mode
   :hook
   (scala-mode . lsp)
+  (sh-mode . lsp)
   (lsp-mode . lsp-lens-mode)
   (lsp-deferred)
   :init
@@ -63,6 +64,12 @@
   :commands global-flycheck-mode
   :init
   (global-flycheck-mode))
+
+;; flycheck?
+(use-package flymake-shellcheck
+  :commands flymake-shellcheck-load
+  :init
+  (add-hook 'sh-mode-hook 'flymake-shellcheck-load))
 
 (use-package flyspell
   :custom

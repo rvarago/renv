@@ -33,6 +33,7 @@ in {
         doom-modeline
         elpy
         flycheck
+        flymake-shellcheck
         # flyspell
         helm-ag
         helpful
