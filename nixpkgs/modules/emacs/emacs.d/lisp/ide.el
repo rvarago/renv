@@ -26,6 +26,7 @@
   (projectile-mode +1)
   :config
   (setq projectile-project-search-path '(("~/Projects/" . 2)))
+  (setq projectile-switch-project-action #'projectile-dired)
   :bind
   (:map projectile-mode-map
         ("C-c p" . projectile-command-map)))
