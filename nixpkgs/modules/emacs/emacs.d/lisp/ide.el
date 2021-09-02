@@ -80,6 +80,10 @@
   :hook
   (prog-mode . flyspell-prog-mode))
 
+(use-package smartparens
+  :commands (smartparens-global-mode show-smartparens-global-mode)
+  :init (smartparens-global-mode 1))
+
 (use-package dap-mode
   :ensure
   :config

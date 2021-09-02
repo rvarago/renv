@@ -60,6 +60,7 @@ in {
         scala-mode
         shackle
         sqlformat
+        smartparens
         swiper
         tide
         treemacs
