@@ -50,6 +50,7 @@ in {
         protobuf-mode
         rainbow-delimiters
         rg
+        ripgrep
         rustic
         sbt-mode
         scala-mode

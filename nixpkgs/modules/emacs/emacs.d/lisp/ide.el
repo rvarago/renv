@@ -20,6 +20,8 @@
 	      ("C-n" . #'company-select-next)
 	      ("C-p" . #'company-select-previous)))
 
+(use-package ripgrep :commands ripgrep-regexp)
+
 (use-package projectile
   :commands projectile-mode
   :init
