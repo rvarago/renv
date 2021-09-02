@@ -80,6 +80,8 @@
 (use-package treemacs-all-the-icons)
 
 (use-package treemacs
+  :init
+  (add-hook 'projectile-after-switch-project-hook 'treemacs-display-current-project-exclusively)
   :config
   (setq treemacs-show-cursor nil)
   (treemacs-load-theme "all-the-icons")
