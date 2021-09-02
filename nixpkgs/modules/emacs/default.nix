@@ -33,6 +33,7 @@ in {
         doom-modeline
         elpy
         flycheck
+        # flyspell
         helm-ag
         helpful
         ini-mode

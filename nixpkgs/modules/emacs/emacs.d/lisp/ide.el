@@ -64,6 +64,15 @@
   :init
   (global-flycheck-mode))
 
+(use-package flyspell
+  :custom
+  (ispell-program-name "aspell")
+  (ispell-extra-args (quote ("--sug-mode=ultra" "--lang=en_GB-ise")))
+  (flyspell-sort-corrections nil)
+  (flyspell-issue-message-flag nil)
+  :hook
+  (prog-mode . flyspell-prog-mode))
+
 (use-package dap-mode
   :ensure
   :config
