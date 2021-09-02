@@ -25,6 +25,7 @@ in {
         company-coq
         counsel
         counsel-projectile
+        # dap-java
         dap-mode
         direnv
         diff-hl
@@ -39,6 +40,7 @@ in {
         ivy-rich
         lsp-haskell
         lsp-ivy
+        lsp-java
         lsp-metals
         lsp-mode
         lsp-treemacs

@@ -112,6 +112,14 @@
     (haskell-mode . lsp)
     (haskell-literate-mode . lsp)))
 
+(use-package lsp-java
+  :defer t
+  :hook (java-mode . lsp)
+  :bind ((:map java-mode-map ("C-c r o" . 'lsp-java-organize-imports))))
+
+(use-package dap-java
+  :after dap-mode lsp-java)
+
 ;; Enable scala-mode for highlighting, indentation and motion commands
 (use-package scala-mode
   :interpreter
