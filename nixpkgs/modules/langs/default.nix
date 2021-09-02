@@ -47,6 +47,10 @@
     openjdk
     maven
 
+    # JS/TS
+    nodejs
+    yarn
+
     # Python
     python3
     python3Packages.pip
