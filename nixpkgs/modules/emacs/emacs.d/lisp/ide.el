@@ -26,13 +26,14 @@
   (projectile-mode +1)
   :config
   (setq projectile-project-search-path '(("~/Projects/" . 3)))
-  (setq projectile-switch-project-action #'projectile-dired)
   :bind
   (:map projectile-mode-map
         ("C-c p" . projectile-command-map)))
 
 (use-package counsel-projectile
   :init (counsel-projectile-mode +1))
+  ;; :config
+  ;; (setq counsel-projectile-switch-project-action 'projectile-dired))
 
 (use-package lsp-mode
   :commands lsp
