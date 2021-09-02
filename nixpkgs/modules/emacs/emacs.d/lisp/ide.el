@@ -24,6 +24,8 @@
   :commands projectile-mode
   :init
   (projectile-mode +1)
+  :config
+  (setq projectile-project-search-path '(("~/Projects/" . 2)))
   :bind
   (:map projectile-mode-map
         ("C-c p" . projectile-command-map)))
