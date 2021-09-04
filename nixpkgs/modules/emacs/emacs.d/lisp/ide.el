@@ -169,7 +169,9 @@
    (setq sbt:program-options '("-Dsbt.supershell=false"))
 )
 
-(use-package lsp-metals)
+(use-package lsp-metals
+  :custom
+  (lsp-metals-show-inferred-type t))
 
 (use-package elpy
   :commands elpy-enable
