@@ -52,7 +52,7 @@
       "terminal.integrated.fontFamily" = "Iosevka";
 
       # "workbench.colorTheme" = "Zenburn";
-      "workbench.colorTheme" = "Visual Studio Dark - C++";
+      "workbench.colorTheme" = "Visual Studio Dark";
 
       "files.watcherExclude" = {
         "**/.bloop" = true;
