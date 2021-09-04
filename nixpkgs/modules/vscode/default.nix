@@ -67,6 +67,8 @@
       "idris.idrisPath" = "${pkgs.idris2}/bin/idris2";
       "idris.idris2Mode" = true;
 
+      "[java]" = { "editor.defaultFormatter" = "redhat.java"; };
+
       "shellformat.path" = "${pkgs.shfmt}/bin/shfmt";
 
       "python.linting.enabled" = true;
