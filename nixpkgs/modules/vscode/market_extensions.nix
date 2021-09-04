@@ -87,8 +87,8 @@
   (extensionFromVscodeMarketplace {
     publisher = "ms-vscode";
     name = "cmake-tools";
-    version = "1.7.3";
-    sha256 = "0jisjyk5n5y59f1lbpbg8kmjdpnp1q2bmhzbc1skq7fa8hj54hp9";
+    version = "1.8.1";
+    sha256 = "0k1m9k3cjjflpz75gjicsb59r1c4mnld9aps5rnyqa154a6mwnkl";
   })
   (extensionFromVscodeMarketplace {
     publisher = "ms-vscode";
