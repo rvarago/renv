@@ -109,6 +109,12 @@
     sha256 = "0lz9dgldd6q9xsl3f3n27iv752kwrn6ca0nimmxq1gqcwq19hmsg";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "redhat";
+    name = "vscode-xml";
+    version = "0.18.0";
+    sha256 = "03igpqq8j6qbnr2z7bsg1sj4lvd38s2b59rgc2g714pgj3m80wd4";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "Rubymaniac";
     name = "vscode-direnv";
     version = "0.0.2";

@@ -16,6 +16,7 @@ ms-vscode.cmake-tools
 ms-vscode.makefile-tools
 notskm.clang-tidy
 ocamllabs.ocaml-platform
+redhat.vscode-xml
 Rubymaniac.vscode-direnv
 ryanolsonx.zenburn
 sjhuangx.vscode-scheme
