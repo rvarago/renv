@@ -138,4 +138,16 @@
     version = "0.0.17";
     sha256 = "11hzjd0gxkq37689rrr2aszxng5l9fwpgs9nnglq3zhfa1msyn08";
   })
+  (extensionFromVscodeMarketplace {
+    publisher = "vscjava";
+    name = "vscode-java-debug";
+    version = "0.35.0";
+    sha256 = "01sskdm7fizzh6d8bzgdmj9pmrshvh58ks0l6qyf0gr2ifnhli57";
+  })
+  (extensionFromVscodeMarketplace {
+    publisher = "vscjava";
+    name = "vscode-java-test";
+    version = "0.31.3";
+    sha256 = "0sqp0kzdz3crablksmm0q1b4nbkl1nkjsvgp2k3mic8k1kpfjrn5";
+  })
 ]
