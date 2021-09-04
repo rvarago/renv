@@ -76,6 +76,8 @@ in {
         which-key
         yaml-mode
         yang-mode
+        yasnippet
+        yasnippet-snippets
         zenburn-theme
       ]));
   };

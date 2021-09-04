@@ -37,6 +37,16 @@
   ;; :config
   ;; (setq counsel-projectile-switch-project-action 'projectile-dired))
 
+(use-package yasnippet
+  :ensure
+  :config
+  (yas-reload-all)
+  (add-hook 'prog-mode-hook 'yas-minor-mode)
+  (add-hook 'text-mode-hook 'yas-minor-mode))
+
+(use-package yasnippet-snippets
+  :after yasnippet)
+
 (use-package lsp-mode
   :commands lsp
   :diminish lsp-mode
