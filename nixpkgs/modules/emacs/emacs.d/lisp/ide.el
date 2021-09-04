@@ -130,7 +130,9 @@
   ;;
   ;; To pass custom test args, add this to .dir-locals.el:
   ;; ((rustic-mode . ((rustic-test-arguments . "-- --skip integration"))))
-  :bind (("C-c C-c C-t" . rustic-cargo-test-rerun)))
+  :bind (:map rustic-mode-map
+              ("C-c C-c C-t" . rustic-cargo-test-rerun)
+              ("C-c C-c C-e" . lsp-rust-analyzer-expand-macro)))
 
 (use-package ccls
    :config
