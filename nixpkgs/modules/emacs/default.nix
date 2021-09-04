@@ -35,6 +35,7 @@ in {
         flycheck
         flymake-shellcheck
         # flyspell
+        go-mode
         helm-ag
         helpful
         ini-mode

@@ -127,6 +127,11 @@
 
 (use-package cmake-mode)
 
+(use-package go-mode
+  :hook ((go-mode . lsp-deferred)
+         (before-save . lsp-format-buffer)
+         (before-save . lsp-organize-imports)))
+
 (use-package lsp-haskell
   :hook (
     (haskell-mode . lsp)
