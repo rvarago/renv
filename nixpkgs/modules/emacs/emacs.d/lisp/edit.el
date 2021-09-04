@@ -26,3 +26,19 @@
   (previous-line 1))
 
 (global-set-key (kbd "M-<down>") 'move-line-down)
+
+;; Delete line from point to begin.
+(defun delete-line-to-begin ()
+  "Deletes from point to end of line without backing up into 'kill-ring'."
+  (interactive)
+  (delete-region (line-beginning-position) (point)))
+
+(global-set-key (kbd "C-<") 'delete-line-to-begin)
+
+;; Delete line from point to end.
+(defun delete-line-to-end ()
+  "Deletes from point to end of line without backing up into 'kill-ring'."
+  (interactive)
+  (delete-region (point) (line-end-position)))
+
+(global-set-key (kbd "C->") 'delete-line-to-end)
