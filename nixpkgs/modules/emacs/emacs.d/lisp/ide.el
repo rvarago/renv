@@ -135,6 +135,9 @@
 (use-package lsp-java
   :defer t
   :hook (java-mode . lsp)
+         ;; (java-mode . lsp-java-lens-mode)
+         ;; (java-mode . lsp-jt-lens-mode))
+  :config
   :bind ((:map java-mode-map ("C-c r o" . 'lsp-java-organize-imports))))
 
 (use-package dap-java
