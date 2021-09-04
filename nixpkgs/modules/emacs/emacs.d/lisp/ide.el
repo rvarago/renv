@@ -123,6 +123,7 @@
   :custom
   (lsp-rust-analyzer-server-display-inlay-hints t)
   :config
+  ;; (setq rustic-format-on-save t)
   (unbind-key "C-c C-c C-t" rustic-mode-map)
   ;; when passing custom test args with rustic-test-arguments, we need
   ;; to run rustic-cargo-test-rerun instead of rustic-cargo-test
