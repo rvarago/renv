@@ -8,6 +8,8 @@
 (put 'downcase-region 'disabled nil)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+(defalias 'yes-or-no-p 'y-or-n-p)
+
 ;; Move line up.
 (defun move-line-up ()
   "Move the current line up."
