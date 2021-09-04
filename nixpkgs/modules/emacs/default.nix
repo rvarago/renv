@@ -16,6 +16,7 @@ in {
     extraPackages = (epkgs:
       (with epkgs; [
         all-the-icons
+        all-the-icons-ivy
         auto-dim-other-buffers
         ccls
         centaur-tabs
