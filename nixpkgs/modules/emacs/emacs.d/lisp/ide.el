@@ -110,6 +110,8 @@
   (dap-cpptools-setup))
 
 (use-package rustic
+  :custom
+  (lsp-rust-analyzer-server-display-inlay-hints t)
   :config
   (unbind-key "C-c C-c C-t" rustic-mode-map)
   ;; when passing custom test args with rustic-test-arguments, we need
