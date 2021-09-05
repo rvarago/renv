@@ -60,6 +60,9 @@ in {
     nixfmt
     shellcheck
     shfmt
+
+    # General tools
+    skype
   ];
 
   programs.direnv = {
