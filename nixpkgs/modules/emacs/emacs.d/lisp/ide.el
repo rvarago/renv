@@ -58,7 +58,9 @@
 (use-package lsp-mode
   :commands lsp
   :diminish lsp-mode
+  ;; :after company flycheck
   :hook
+  (lsp-mode . lsp-enable-which-key-integration)
   (scala-mode . lsp)
   (sh-mode . lsp)
   (lsp-mode . lsp-lens-mode)
@@ -66,7 +68,6 @@
   :init
   (setq lsp-keymap-prefix "C-c l")
   :config
-  (lsp-enable-which-key-integration t)
   (setq lsp-lens-enable t))
 
 (use-package lsp-ui
