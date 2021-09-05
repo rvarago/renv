@@ -127,6 +127,12 @@
     sha256 = "1gb159fkvadsnx5gb3l8pps9sa5xjcaqqiym952ar0yfhpfd0ziz";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "sdras";
+    name = "night-owl";
+    version = "2.0.1";
+    sha256 = "0c8zp946ynf7vvlj2w1xnp71cgpplgw5vb0b5s39yqa6bxaxr9q2";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "sjhuangx";
     name = "vscode-scheme";
     version = "0.4.0";
