@@ -7,11 +7,12 @@
   (company-idle-delay 0)
   ;; Number of chars before triggering completion.
   (company-minimum-prefix-length 1)
+  ;; Allow to keep typing even if there's no match according to company.
+  (company-require-match nil)
 
-  :init
-  (add-hook 'emacs-lisp-mode-hook 'company-mode)
-  (add-hook 'cmake-mode-hook 'company-mode)
-
+  ;; :hook
+  ;; ((emacs-lisp-mode cmake-mode) . company-mode)
+  
   :config
   ;; Enable in all buffers.
   (global-company-mode)
