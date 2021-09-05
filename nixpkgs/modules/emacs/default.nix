@@ -24,6 +24,7 @@ in {
         cmake-mode
         command-log-mode
         company
+        company-box
         company-coq
         counsel
         counsel-projectile

@@ -20,6 +20,10 @@
 	      ("C-n" . #'company-select-next)
 	      ("C-p" . #'company-select-previous)))
 
+;; Completions with icons.
+(use-package company-box
+  :hook (company-mode . company-box-mode))
+
 (use-package ripgrep :commands ripgrep-regexp)
 
 (use-package projectile
