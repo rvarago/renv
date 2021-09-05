@@ -25,9 +25,19 @@
 	      ("C-n" . #'company-select-next)
 	      ("C-p" . #'company-select-previous)))
 
+(use-package company-quickhelp
+  :after company
+  :commands company-quickhelp-mode
+  :config (company-quickhelp-mode 1))
+
 ;; Completions with icons.
 (use-package company-box
   :hook (company-mode . company-box-mode))
+  ;; :config (setq company-box-icons-alist 'company-box-icons-all-the-icons))
+
+(use-package company-yasnippet
+  :after company yasnippet
+  :bind ("M-/" . company-yasnippet))
 
 (use-package ripgrep :commands ripgrep-regexp)
 

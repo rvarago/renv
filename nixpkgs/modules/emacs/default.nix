@@ -26,6 +26,8 @@ in {
         company
         company-box
         company-coq
+        company-quickhelp
+        # company-yasnippet
         counsel
         counsel-projectile
         # dap-java
