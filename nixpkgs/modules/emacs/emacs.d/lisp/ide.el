@@ -8,6 +8,8 @@
   ;; Number of chars before triggering completion.
   (company-minimum-prefix-length 1)
 
+  :init
+  (add-hook 'emacs-lisp-mode-hook 'company-mode)
   :config
   ;; Enable in all buffers.
   (global-company-mode)
