@@ -10,6 +10,8 @@
 
   :init
   (add-hook 'emacs-lisp-mode-hook 'company-mode)
+  (add-hook 'cmake-mode-hook 'company-mode)
+
   :config
   ;; Enable in all buffers.
   (global-company-mode)
