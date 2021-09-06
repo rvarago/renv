@@ -58,6 +58,11 @@
   ;; :config
   ;; (setq counsel-projectile-switch-project-action 'projectile-dired))
 
+(use-package hl-todo
+  :config
+  (add-to-list 'hl-todo-keyword-faces '("WIP" . "#94bff3"))
+  (global-hl-todo-mode 1))
+
 (use-package yasnippet
   :ensure
   :config

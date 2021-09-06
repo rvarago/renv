@@ -43,6 +43,7 @@ in {
         go-mode
         helm-ag
         helpful
+        hl-todo
         ini-mode
         ivy
         ivy-rich
