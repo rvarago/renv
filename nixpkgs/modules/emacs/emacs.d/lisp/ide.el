@@ -93,7 +93,9 @@
 (use-package lsp-ui
   :commands lsp-ui-mode
   :config
-  (setq lsp-ui-doc-show-with-cursor nil))
+  (setq lsp-ui-doc-show-with-cursor nil)
+  :bind (:map lsp-ui-mode-map
+              ("M-j" . lsp-ui-imenu)))
 
 (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
 
