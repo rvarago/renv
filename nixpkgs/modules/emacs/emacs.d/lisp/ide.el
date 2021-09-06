@@ -18,12 +18,12 @@
   (global-company-mode)
 
   :bind
-  ;; use <C> instead of <M> to navigate completions
+  ;; use only <M> and not <C> to navigate completions.
   (:map company-active-map
-	      ("M-n" . nil)
-	      ("M-p" . nil)
-	      ("C-n" . #'company-select-next)
-	      ("C-p" . #'company-select-previous)))
+          ("C-n" . nil)
+          ("C-p" . nil)
+          ("M-n" . #'company-select-next)
+          ("M-p" . #'company-select-previous)))
 
 (use-package company-quickhelp
   :after company
