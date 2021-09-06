@@ -79,7 +79,14 @@
   :init
   (setq lsp-keymap-prefix "C-c l")
   :config
-  (setq lsp-lens-enable t))
+  (setq lsp-lens-enable t)
+  :bind (:map lsp-mode-map
+              ("C-c r r" . lsp-rename)
+              ("C-c r f" . lsp-format-buffer)
+              ("C-c r g" . lsp-format-region)
+              ("C-c a" . lsp-execute-code-action)
+              ("C-c f r" . lsp-find-references)
+              ("C-c h" . lsp-describe-thing-at-point)))
 
 (use-package lsp-ui
   :commands lsp-ui-mode
