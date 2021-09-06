@@ -17,6 +17,8 @@
   ;; Enable in all buffers.
   (global-company-mode)
 
+  (setq lsp-completion-provider :capf)
+
   :bind
   ;; use only <M> and not <C> to navigate completions.
   (:map company-active-map
