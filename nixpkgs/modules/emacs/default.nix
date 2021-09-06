@@ -60,6 +60,7 @@ in {
         proof-general
         protobuf-mode
         rainbow-delimiters
+        # recentf
         rg
         ripgrep
         rustic
