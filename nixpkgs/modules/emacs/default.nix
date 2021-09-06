@@ -78,6 +78,8 @@ in {
         undo-tree
         use-package
         use-package-chords
+        vterm
+        vterm-toggle
         which-key
         yaml-mode
         yang-mode
