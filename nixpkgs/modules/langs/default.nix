@@ -32,6 +32,7 @@
 
     # Haskell
     ghc
+    haskellPackages.cabal2nix
     haskellPackages.cabal-install
     haskellPackages.haskell-language-server
     haskellPackages.hlint
