@@ -10,8 +10,8 @@
   ;; Allow to keep typing even if there's no match according to company.
   (company-require-match nil)
 
-  ;; :hook
-  ;; ((emacs-lisp-mode cmake-mode) . company-mode)
+  :hook
+  ((emacs-lisp-mode cmake-mode) . company-mode)
   
   :config
   ;; Enable in all buffers.
