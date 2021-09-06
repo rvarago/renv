@@ -67,6 +67,7 @@
     cargo-expand
     cargo-license
     cargo-modules
+    cargo-outdated
     cargo-tarpaulin
     cargo-udeps
     cargo-watch
