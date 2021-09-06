@@ -52,8 +52,8 @@
       "terminal.integrated.fontFamily" = "Iosevka";
 
       # "workbench.colorTheme" = "Zenburn";
-      # "workbench.colorTheme" = "Visual Studio Dark";
-      "workbench.colorTheme" = "Night Owl";
+      # "workbench.colorTheme" = "One Monokai";
+      # "workbench.colorTheme" = "Night Owl";
 
       "files.watcherExclude" = {
         "**/.bloop" = true;
