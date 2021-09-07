@@ -60,6 +60,7 @@ in {
         magit
         move-text
         nix-mode
+        # nxml-mode
         projectile
         proof-general
         protobuf-mode

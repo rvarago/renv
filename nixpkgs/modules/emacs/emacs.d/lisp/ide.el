@@ -298,6 +298,13 @@
 (use-package yaml-mode
   :mode ("\\.ya?ml$" . yaml-mode))
 
+(use-package nxml-mode
+  :mode "\\.xml\\'"
+  :config
+  (setq nxml-child-indent 2
+        nxml-attribute-indent 4
+        nxml-slash-auto-complete-flag t))
+
 (use-package nix-mode
   :mode "\\.nix\\'")
 
