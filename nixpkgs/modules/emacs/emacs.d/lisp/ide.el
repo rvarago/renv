@@ -11,7 +11,7 @@
   (company-require-match nil)
 
   :hook
-  ((emacs-lisp-mode cmake-mode scala-mode) . company-mode)
+  ((emacs-lisp-mode) . company-mode)
   
   :config
   ;; Enable in all buffers.
