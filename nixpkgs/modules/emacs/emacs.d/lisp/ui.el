@@ -1,11 +1,11 @@
-;; ============================ General emacs settings ============================
+;; ============================ User interface settings  ============================
 
-;; Maximize window on startup
+;; Maximize window on startup.
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 (setq inhibit-startup-screen t)
 
-;; Disable menu-bar and tool-bar
+;; Disable menu-bar and tool-bar.
 (if (fboundp 'menu-bar-mode)
     (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode)
@@ -92,10 +92,10 @@
         ("M-0" . treemacs-select-window))
 
 (use-package treemacs-projectile
-  :after treemacs projectile)
+  :after (treemacs projectile))
 
 (use-package treemacs-magit
-  :after treemacs magit)
+  :after (treemacs magit))
 
 (use-package auto-dim-other-buffers
   :commands auto-dim-other-buffers-mode
@@ -109,39 +109,11 @@
   (setq uniquify-after-kill-buffer-p t)     ; Rename after killing uniquified.
   (setq uniquify-ignore-buffers-re "^\\*")) ; Don't muck with special buffers.
 
-;; ======================== Ivy ========================
-
-(use-package ivy
-  :init (ivy-mode)
-  :custom
-  (ivy-use-virtual-buffers t)
-  (enable-recursive-minibuffers t)
-  ;; No regex starting with ^.
-  (ivy-initial-inputs-alist nil))
-
-(use-package ivy-rich
-  :after ivy
-  :init (ivy-rich-mode))
-
-(use-package all-the-icons-ivy
-  :after (ivy all-the-icons)
-  :config (all-the-icons-ivy-setup))
-
 (use-package which-key
   :init (which-key-mode)
   :diminish which-key-mode
   :config
   (setq which-key-idle-delay 0.2))
-
-(use-package counsel
-  :after ivy
-  :config (counsel-mode)
-  :bind ((:map minibuffer-local-map ("C-r" . 'counsel-minibuffer-history))))
-
-(use-package swiper
-  :after ivy
-  :bind (("C-s" . swiper)
-         ("C-r" . swiper)))
 
 (use-package helpful
   :custom

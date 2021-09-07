@@ -11,8 +11,12 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (use-package move-text
-  :ensure t
   :config (move-text-default-bindings))
+
+(use-package swiper
+  :after ivy
+  :bind (("C-s" . swiper)
+         ("C-r" . swiper)))
 
 ;; Delete line from point to begin.
 (defun delete-line-to-begin ()
