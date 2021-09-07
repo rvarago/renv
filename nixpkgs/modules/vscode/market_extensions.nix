@@ -31,6 +31,12 @@
     sha256 = "08dp9bqxsxxqw8pm1sryl14xrvicagqwlxi5cc1vmksjh30dmn1a";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "exiasr";
+    name = "hadolint";
+    version = "1.1.0";
+    sha256 = "11pf45fbq1rfxa68n8hy7z3iwi3sxfykla20d942wd7faymddk54";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "formulahendry";
     name = "terminal";
     version = "0.0.10";

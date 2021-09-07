@@ -51,6 +51,7 @@ in {
     kubectl
     kubectx
     minikube
+    hadolint
 
     # Fonts
     jetbrains-mono
