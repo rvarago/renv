@@ -15,6 +15,7 @@ in {
     enable = true;
     extraPackages = (epkgs:
       (with epkgs; [
+        agda2-mode
         all-the-icons
         all-the-icons-dired
         all-the-icons-ivy

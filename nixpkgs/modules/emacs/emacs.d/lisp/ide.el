@@ -292,6 +292,8 @@
   :hook (coq-mode . company-coq-mode)
   (setq company-coq-live-on-the-edge t))
 
+(use-package agda2-mode)
+
 (use-package yang-mode)
 
 (use-package yaml-mode
