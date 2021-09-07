@@ -22,6 +22,7 @@ in {
         auto-dim-other-buffers
         ccls
         centaur-tabs
+        centered-window
         cmake-mode
         command-log-mode
         company
@@ -79,6 +80,7 @@ in {
         sqlformat
         smartparens
         swiper
+        switch-window
         tide
         treemacs
         treemacs-all-the-icons
@@ -90,6 +92,8 @@ in {
         vterm
         vterm-toggle
         which-key
+        # window
+        # winner
         yaml-mode
         yang-mode
         yasnippet
