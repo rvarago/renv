@@ -68,11 +68,6 @@
                  (reusable-frames . visible)
                  (window-height . 0.3))))
 
-(use-package hl-todo
-  :config
-  (add-to-list 'hl-todo-keyword-faces '("WIP" . "#94bff3"))
-  (global-hl-todo-mode 1))
-
 (use-package yasnippet
   :ensure
   :config

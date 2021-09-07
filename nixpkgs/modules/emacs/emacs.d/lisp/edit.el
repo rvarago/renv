@@ -10,6 +10,11 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(use-package hl-todo
+  :config
+  (add-to-list 'hl-todo-keyword-faces '("WIP" . "#94bff3"))
+  (global-hl-todo-mode 1))
+
 (use-package move-text
   :config (move-text-default-bindings))
 
