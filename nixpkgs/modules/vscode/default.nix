@@ -71,6 +71,10 @@
 
       "[java]" = { "editor.defaultFormatter" = "redhat.java"; };
 
+      "[dockerfile]" = {
+        "editor.defaultFomatter" = "ms-azuretools.vscode-docker";
+      };
+
       "shellformat.path" = "${pkgs.shfmt}/bin/shfmt";
 
       "python.linting.enabled" = true;
