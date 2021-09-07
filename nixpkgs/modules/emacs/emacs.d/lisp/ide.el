@@ -144,7 +144,9 @@
 (use-package flycheck
   :commands global-flycheck-mode
   :init
-  (global-flycheck-mode))
+  (global-flycheck-mode)
+  :bind (:map flycheck-mode-map
+              ("C-c e" . flycheck-list-errors)))
 
 ;; flycheck?
 (use-package flymake-shellcheck
