@@ -115,8 +115,7 @@
   ;; :after company flycheck
   :hook
   (lsp-mode . lsp-enable-which-key-integration)
-  (scala-mode . lsp)
-  (sh-mode . lsp)
+  ((scala-mode sh-mode c+-mode dockerfile-mode cmake-mode) . lsp-deferred)
   (lsp-mode . lsp-lens-mode)
   (lsp-deferred)
   :init
