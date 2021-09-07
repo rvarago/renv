@@ -41,6 +41,7 @@ in {
         flycheck
         flymake-shellcheck
         # flyspell
+        git-timemachine
         go-mode
         helm-ag
         helpful
