@@ -110,20 +110,22 @@
   (setq uniquify-ignore-buffers-re "^\\*")) ; Don't muck with special buffers.
 
 ;; ======================== Ivy ========================
+
 (use-package ivy
-  :config
-  (ivy-mode 1)
-  (setq ivy-use-virtual-buffers t)
-  (setq enable-recursive-minibuffers t)
+  :init (ivy-mode)
+  :custom
+  (ivy-use-virtual-buffers t)
+  (enable-recursive-minibuffers t)
   ;; No regex starting with ^.
-  (setq ivy-initial-inputs-alist nil))
+  (ivy-initial-inputs-alist nil))
 
 (use-package ivy-rich
-  :init
-  (ivy-rich-mode 1))
+  :after ivy
+  :init (ivy-rich-mode))
 
 (use-package all-the-icons-ivy
-  :init (add-hook 'after-init-hook 'all-the-icons-ivy-setup))
+  :after (ivy all-the-icons)
+  :config (all-the-icons-ivy-setup))
 
 (use-package which-key
   :init (which-key-mode)
@@ -133,8 +135,7 @@
 
 (use-package counsel
   :after ivy
-  :config
-  (counsel-mode)
+  :config (counsel-mode)
   :bind ((:map minibuffer-local-map ("C-r" . 'counsel-minibuffer-history))))
 
 (use-package swiper

@@ -1,27 +1,30 @@
 ;; ============================ Project management ============================
 
 (use-package projectile
-  :commands projectile-mode
-  :init
-  (projectile-mode +1)
+  :hook (after-init . projectile-mode)
+
+  :custom
+  (projectile-completion-system 'ivy)
+  (projectile-project-search-path '(("~/Projects/" . 3)))
+  (projectile-enable-caching t)
+  (projectile-switch-project-action #'projectile-dired)
+  (projectile-mode-line '(:eval (projectile-project-name)))
+
   :config
-  (setq projectile-project-search-path '(("~/Projects/" . 3)))
+  (projectile-global-mode)
+
   :bind
   (:map projectile-mode-map
         ("C-c p" . projectile-command-map)))
 
 (use-package counsel-projectile
-  :init (counsel-projectile-mode +1))
-  ;; :config
-  ;; (setq counsel-projectile-switch-project-action 'projectile-dired))
+  :after (counsel projectile)
+  :init (counsel-projectile-mode))
 
 (use-package recentf
-  :ensure nil
-  :config
-  (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/early-init.el" (getenv "HOME")))
-  (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/init.el" (getenv "HOME")))
-  (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/elpa/.*" (getenv "HOME")))
-  (add-to-list 'recentf-exclude (format "%s/\\.emacs.d/workspace/.*" (getenv "HOME")))
-  (add-to-list 'recentf-exclude (format "%s/\\.local/lib/python3.9/site-packages/.*" (getenv "HOME")))
-  (add-to-list 'recentf-exclude "/usr/lib/.*")
-  (recentf-mode +1))
+  :init (recentf-mode)
+  :custom
+  (recentf-exclude (list "COMMIT_EDITMSG"
+                         "~$"
+                         "/tmp/"))
+  (recentf-max-menu-items 20))
