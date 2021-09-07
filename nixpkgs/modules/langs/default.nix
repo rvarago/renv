@@ -58,6 +58,8 @@
     python3Packages.pip
     python3Packages.pylint
     python3Packages.autopep8
+    poetry
+
 
     # OCaml
     ocamlformat
