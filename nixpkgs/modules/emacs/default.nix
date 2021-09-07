@@ -35,6 +35,7 @@ in {
         dap-mode
         direnv
         diff-hl
+        diminish
         dockerfile-mode
         doom-modeline
         elpy

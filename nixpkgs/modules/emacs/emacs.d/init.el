@@ -6,6 +6,9 @@
 (eval-when-compile
   (require 'use-package))
 
+(use-package diminish
+  :ensure t)
+
 (load-file "~/.emacs.d/lisp/edit.el")
 (load-file "~/.emacs.d/lisp/git.el")
 (load-file "~/.emacs.d/lisp/ide.el")
