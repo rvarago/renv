@@ -52,7 +52,7 @@
       "terminal.integrated.fontFamily" = "Iosevka";
 
       # "workbench.colorTheme" = "Zenburn";
-      # "workbench.colorTheme" = "One Monokai";
+      "workbench.colorTheme" = "One Monokai";
       # "workbench.colorTheme" = "Night Owl";
 
       "files.watcherExclude" = {
