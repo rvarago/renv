@@ -212,6 +212,9 @@
   :hook ((c-mode c++-mode objc-mode) .
          (lambda () (require 'ccls) (lsp))))
 
+(use-package cpp-auto-include
+  :bind (:map c++-mode-map ("C-c i" . cpp-auto-include)))
+
 (use-package cmake-mode)
 
 (use-package go-mode

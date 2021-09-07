@@ -30,6 +30,7 @@ in {
         # company-yasnippet
         counsel
         counsel-projectile
+        cpp-auto-include
         # dap-java
         dap-mode
         direnv
