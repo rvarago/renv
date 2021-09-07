@@ -80,6 +80,7 @@
       "python.linting.enabled" = true;
       "python.linting.pylintEnabled" = true;
       "python.linting.pylintPath" = "${pkgs.python3Packages.pylint}/bin/pylint";
+      "python.formatting.autopep8Path" = "${pkgs.python3Packages.autopep8}/bin/autopep8";
     };
 
     keybindings = [
