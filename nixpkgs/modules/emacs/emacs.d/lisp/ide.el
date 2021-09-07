@@ -204,7 +204,9 @@
   ;; ((rustic-mode . ((rustic-test-arguments . "-- --skip integration"))))
   :bind (:map rustic-mode-map
               ("C-c C-c C-t" . rustic-cargo-test-rerun)
-              ("C-c C-c C-e" . lsp-rust-analyzer-expand-macro)))
+              ("C-c C-c C-e" . lsp-rust-analyzer-expand-macro)
+              ("C-c C-c C-d" . rustic-cargo-doc)
+              ("C-c C-c C-a" . rustic-cargo-add)))
 
 (use-package ccls
    :config
