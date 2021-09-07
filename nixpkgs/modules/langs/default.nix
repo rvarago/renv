@@ -53,6 +53,9 @@
     nodejs
     yarn
 
+    # .Net
+    dotnetCorePackages.sdk_5_0
+
     # Python
     python3
     python3Packages.pip

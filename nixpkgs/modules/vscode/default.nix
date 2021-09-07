@@ -14,6 +14,7 @@
         foxundermoon.shell-format
         golang.go
         haskell.haskell
+        ionide.ionide-fsharp
         james-yu.latex-workshop
         justusadam.language-haskell
         kahole.magit

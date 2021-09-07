@@ -42,6 +42,7 @@ in {
         flycheck
         flymake-shellcheck
         # flyspell
+        fsharp-mode
         git-timemachine
         go-mode
         helm-ag

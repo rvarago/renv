@@ -115,7 +115,7 @@
   ;; :after company flycheck
   :hook
   (lsp-mode . lsp-enable-which-key-integration)
-  ((scala-mode sh-mode java-mode python-mode haskell-mode c+-mode dockerfile-mode cmake-mode) . lsp-deferred)
+  ((scala-mode sh-mode java-mode python-mode haskell-mode c+-mode dockerfile-mode cmake-mode fsharp-mode) . lsp-deferred)
   (lsp-mode . lsp-lens-mode)
   (lsp-deferred)
   :init
@@ -240,6 +240,10 @@
 
 (use-package dap-java
   :after dap-mode lsp-java)
+
+(use-package fsharp-mode
+  :defer t
+  :ensure t)
 
 ;; Enable scala-mode for highlighting, indentation and motion commands
 (use-package scala-mode
