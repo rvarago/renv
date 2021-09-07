@@ -39,7 +39,6 @@ in {
         diminish
         dockerfile-mode
         doom-modeline
-        elpy
         flycheck
         flymake-shellcheck
         # flyspell
@@ -57,6 +56,8 @@ in {
         lsp-java
         lsp-metals
         lsp-mode
+        # lsp-python-ms
+        lsp-pyright
         lsp-treemacs
         lsp-ui
         magit

@@ -115,7 +115,7 @@
   ;; :after company flycheck
   :hook
   (lsp-mode . lsp-enable-which-key-integration)
-  ((scala-mode sh-mode c+-mode dockerfile-mode cmake-mode) . lsp-deferred)
+  ((scala-mode sh-mode java-mode python-mode haskell-mode c+-mode dockerfile-mode cmake-mode) . lsp-deferred)
   (lsp-mode . lsp-lens-mode)
   (lsp-deferred)
   :init
@@ -262,16 +262,20 @@
   :custom
   (lsp-metals-show-inferred-type t))
 
-(use-package elpy
-  :commands elpy-enable
-  ;; Only call `elpy-enable` when needed.
-  :init (with-eval-after-load 'python (elpy-enable))
+;; (use-package lsp-python-ms
+;;   :ensure t
+;;   :init (setq lsp-python-ms-auto-install-server t)
+;;   :hook (python-mode . (lambda ()
+;;                           (require 'lsp-python-ms)
+;;                           (lsp-deferred))))  ; or lsp
+
+(use-package lsp-pyright
+  :ensure t
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp-deferred))) ; or lsp
   :config
-  (setq elpy-rpc-virtualenv-path 'current)
-  ;; Forces flycheck instead of flymake.
-  (when (require 'flycheck nil t)
-    (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
-    (add-hook 'elpy-mode-hook 'flycheck-mode)))
+  (setq lsp-pyright-typechecking-mode "basic"))
 
 (use-package sql
   :config

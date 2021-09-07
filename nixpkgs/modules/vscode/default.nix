@@ -21,7 +21,8 @@
         matklad.rust-analyzer
         ms-azuretools.vscode-docker
         ms-dotnettools.csharp
-        ms-python.python
+        # ms-python.python
+        ms-python.vscode-pylance
         ms-vscode.cpptools
         ocamllabs.ocaml-platform
         redhat.java
@@ -77,6 +78,7 @@
 
       "shellformat.path" = "${pkgs.shfmt}/bin/shfmt";
 
+      "python.analysis.typeCheckingMode" = "basic";
       "python.linting.enabled" = true;
       "python.linting.pylintEnabled" = true;
       "python.linting.pylintPath" = "${pkgs.python3Packages.pylint}/bin/pylint";
