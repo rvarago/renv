@@ -294,6 +294,8 @@
 
 (use-package agda2-mode)
 
+(use-package idris-mode)
+
 (use-package yang-mode)
 
 (use-package yaml-mode

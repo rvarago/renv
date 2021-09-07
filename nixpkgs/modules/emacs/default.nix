@@ -48,6 +48,7 @@ in {
         helm-ag
         helpful
         hl-todo
+        idris-mode
         ini-mode
         ivy
         ivy-rich
