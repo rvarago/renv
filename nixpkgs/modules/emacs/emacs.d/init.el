@@ -15,4 +15,5 @@
 (load-file "~/.emacs.d/lisp/project.el")
 (load-file "~/.emacs.d/lisp/git.el")
 (load-file "~/.emacs.d/lisp/window.el")
+(load-file "~/.emacs.d/lisp/term.el")
 (load-file "~/.emacs.d/lisp/ide.el")
