@@ -10,24 +10,9 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;; Move line up.
-(defun move-line-up ()
-  "Move the current line up."
-  (interactive)
-  (transpose-lines 1)
-  (previous-line 2))
-
-(global-set-key (kbd "M-<up>") 'move-line-up)
-
-;; Move line down.
-(defun move-line-down ()
-  "Move the current line down."
-  (interactive)
-  (next-line 1)
-  (transpose-lines 1)
-  (previous-line 1))
-
-(global-set-key (kbd "M-<down>") 'move-line-down)
+(use-package move-text
+  :ensure t
+  :config (move-text-default-bindings))
 
 ;; Delete line from point to begin.
 (defun delete-line-to-begin ()

@@ -56,6 +56,7 @@ in {
         lsp-treemacs
         lsp-ui
         magit
+        move-text
         nix-mode
         projectile
         proof-general
