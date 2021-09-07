@@ -9,7 +9,6 @@
         bbenoist.nix
         brettm12345.nixfmt-vscode
         davidanson.vscode-markdownlint
-        dotjoshjohnson.xml
         eamodio.gitlens
         elmtooling.elm-ls-vscode
         foxundermoon.shell-format
