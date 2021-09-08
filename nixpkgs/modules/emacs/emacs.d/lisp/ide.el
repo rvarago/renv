@@ -271,10 +271,7 @@
 (use-package direnv
   :config (direnv-mode))
 
-(use-package command-log-mode)
-
 (use-package undo-tree
   :init (global-undo-tree-mode))
 
-(use-package rg
-  :config (rg-enable-default-bindings))
+

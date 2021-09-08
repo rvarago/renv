@@ -25,3 +25,8 @@
   :after ivy
   :bind (("C-s" . swiper)
          ("C-r" . swiper)))
+
+(use-package command-log-mode)
+
+(use-package rg
+  :config (rg-enable-default-bindings))
