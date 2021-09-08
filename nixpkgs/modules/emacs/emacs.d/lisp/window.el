@@ -19,7 +19,7 @@
     (other-window 1)))
 
 (use-package centered-window
-  :bind (("C-x c w" . centered-window-mode))
+  :bind (("C-x t c" . centered-window-mode))
   :custom
   (cwm-centered-window-width 130)
   (cwm-frame-internal-border 0)
