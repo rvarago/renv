@@ -9,16 +9,13 @@
   (company-minimum-prefix-length 1)
   ;; Allow to keep typing even if there's no match according to company.
   (company-require-match nil)
-
+  (company-tooltip-align-annotations 't)
   :hook
   ((emacs-lisp-mode) . company-mode)
-  
   :config
   ;; Enable in all buffers.
   (global-company-mode)
-
   (setq lsp-completion-provider :capf)
-
   :bind
   ;; use only <M> and not <C> to navigate completions.
   (:map company-active-map
@@ -27,15 +24,10 @@
           ("M-n" . #'company-select-next)
           ("M-p" . #'company-select-previous)))
 
-(use-package company-quickhelp
-  :after company
-  :commands company-quickhelp-mode
-  :config (company-quickhelp-mode 1))
-
 ;; Completions with icons.
 (use-package company-box
+  :after company
   :hook (company-mode . company-box-mode))
-  ;; :config (setq company-box-icons-alist 'company-box-icons-all-the-icons))
 
 (use-package company-yasnippet
   :after company yasnippet
