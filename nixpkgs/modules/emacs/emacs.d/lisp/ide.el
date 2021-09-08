@@ -271,7 +271,3 @@
 (use-package direnv
   :config (direnv-mode))
 
-(use-package undo-tree
-  :init (global-undo-tree-mode))
-
-

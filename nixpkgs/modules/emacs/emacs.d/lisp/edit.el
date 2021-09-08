@@ -33,3 +33,6 @@
   (delete-region (point) (line-end-position)))
 
 (global-set-key (kbd "C->") 'delete-line-to-end)
+
+(use-package undo-tree
+  :init (global-undo-tree-mode))
