@@ -17,6 +17,8 @@
 ;; Make window title the buffer name.
 (setq-default frame-title-format '("%b"))
 
+;; (set-frame-font "Iosevka-14")
+
 ;; Display line number except for certain modes.
 (global-display-line-numbers-mode t) ; requires emacs 26.
 (dolist (mode '(message-buffer-mode-hook
