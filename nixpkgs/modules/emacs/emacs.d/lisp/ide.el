@@ -1,5 +1,6 @@
 ;; ============================ IDE-like emacs ============================
 
+;; ======================== Completions ========================
 (use-package company
   :commands company-tng-configure-default
   :custom
@@ -29,10 +30,7 @@
   :after company
   :hook (company-mode . company-box-mode))
 
-(use-package company-yasnippet
-  :after company yasnippet
-  :bind ("M-/" . company-yasnippet))
-
+;; ======================== Snippets ========================
 (use-package yasnippet
   :ensure
   :config
@@ -43,6 +41,39 @@
 (use-package yasnippet-snippets
   :after yasnippet)
 
+(use-package company-yasnippet
+  :after (company yasnippet)
+  :bind ("M-/" . company-yasnippet))
+
+;; ======================== Checks ========================
+(use-package flycheck
+  :commands global-flycheck-mode
+  :init
+  (global-flycheck-mode)
+  :bind (:map flycheck-mode-map
+              ("C-c e" . flycheck-list-errors)))
+
+;; flycheck?
+(use-package flymake-shellcheck
+  :commands flymake-shellcheck-load
+  :init
+  (add-hook 'sh-mode-hook 'flymake-shellcheck-load))
+
+(use-package flyspell
+  :custom
+  (ispell-program-name "aspell")
+  (ispell-extra-args (quote ("--sug-mode=ultra" "--lang=en_GB-ise")))
+  (flyspell-sort-corrections nil)
+  (flyspell-issue-message-flag nil)
+  :hook
+  (prog-mode . flyspell-prog-mode))
+
+;; ======================== Parens ========================
+(use-package smartparens
+  :commands (smartparens-global-mode show-smartparens-global-mode)
+  :init (smartparens-global-mode 1))
+
+;; ======================== LSP + DAP ========================
 (use-package lsp-mode
   :commands lsp
   :diminish lsp-mode
@@ -75,32 +106,6 @@
 
 (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
 
-(use-package flycheck
-  :commands global-flycheck-mode
-  :init
-  (global-flycheck-mode)
-  :bind (:map flycheck-mode-map
-              ("C-c e" . flycheck-list-errors)))
-
-;; flycheck?
-(use-package flymake-shellcheck
-  :commands flymake-shellcheck-load
-  :init
-  (add-hook 'sh-mode-hook 'flymake-shellcheck-load))
-
-(use-package flyspell
-  :custom
-  (ispell-program-name "aspell")
-  (ispell-extra-args (quote ("--sug-mode=ultra" "--lang=en_GB-ise")))
-  (flyspell-sort-corrections nil)
-  (flyspell-issue-message-flag nil)
-  :hook
-  (prog-mode . flyspell-prog-mode))
-
-(use-package smartparens
-  :commands (smartparens-global-mode show-smartparens-global-mode)
-  :init (smartparens-global-mode 1))
-
 (use-package dap-mode
   :ensure
   :config
@@ -125,6 +130,8 @@
   (require 'dap-cpptools)
 
   (dap-cpptools-setup))
+
+;; ======================== Programming Languages ========================
 
 (use-package rustic
   :custom
