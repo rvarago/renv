@@ -58,20 +58,3 @@
   :commands auto-dim-other-buffers-mode
   :diminish auto-dim-other-buffers-mode
   :init (auto-dim-other-buffers-mode))
-
-(use-package which-key
-  :init (which-key-mode)
-  :diminish which-key-mode
-  :config
-  (setq which-key-idle-delay 0.2))
-
-(use-package helpful
-  :custom
-  (counsel-describe-function-function #'helpful-callable)
-  (counsel-describe-variable-function #'helpful-variable)
-  :bind
-  ([remap describe-function] . helpful-function)
-  ([remap describe-symbol] . helpful-symbol)
-  ([remap describe-variable] . helpful-variable)
-  ([remap describe-command] . helpful-command)
-  ([remap describe-key] . helpful-key))
