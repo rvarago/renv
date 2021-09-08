@@ -26,7 +26,7 @@
         ("M-0" . treemacs-select-window))
 
 (use-package treemacs-all-the-icons
-  :after (treemacs all-the-icons))
+  :after treemacs)
 
 (use-package treemacs-projectile
   :after (treemacs projectile))

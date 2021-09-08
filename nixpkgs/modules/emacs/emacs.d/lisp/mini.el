@@ -13,7 +13,7 @@
   :init (ivy-rich-mode))
 
 (use-package all-the-icons-ivy
-  :after (ivy all-the-icons)
+  :after ivy
   :init (add-hook 'after-init-hook 'all-the-icons-ivy-setup))
 
 (use-package counsel
