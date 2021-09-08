@@ -1,15 +1,5 @@
 ;; ============================ Navigation across trees/tabs  ============================
 
-;; A small horizontal split.
-(defun split-small-window ()
-  "Create a small terminal-like window."
-  (interactive)
-  (split-window-below)
-  (setq current-prefix-arg '(10))
-  (call-interactively 'enlarge-window))
-
-(global-set-key (kbd "C-x t c") 'split-small-window)
-
 ;; ======================== Dired ========================
 (use-package all-the-icons-dired
   :after (dired all-the-icons)
