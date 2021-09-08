@@ -20,12 +20,14 @@
 (set-frame-font "Iosevka-14")
 
 ;; Display line number except for certain modes.
+;; TODO: Enable only for specific local modes rather than enabling globally then disabling locally.
 (global-display-line-numbers-mode t) ; requires emacs 26.
 (dolist (mode '(message-buffer-mode-hook
                 treemacs-mode-hook
                 magit-status-mode-hook
                 org-mode-hook
                 term-mode-hook
+                vterm-mode-hook
                 eshell-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
