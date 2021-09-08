@@ -21,3 +21,7 @@
   :config (counsel-mode)
   :bind ((:map minibuffer-local-map ("C-r" . 'counsel-minibuffer-history))))
 
+(use-package swiper
+  :after ivy
+  :bind (("C-s" . swiper)
+         ("C-r" . swiper)))

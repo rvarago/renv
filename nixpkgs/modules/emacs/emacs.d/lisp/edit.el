@@ -18,11 +18,6 @@
 (use-package move-text
   :config (move-text-default-bindings))
 
-(use-package swiper
-  :after ivy
-  :bind (("C-s" . swiper)
-         ("C-r" . swiper)))
-
 ;; Delete line from point to begin.
 (defun delete-line-to-begin ()
   "Deletes from point to end of line without backing up into 'kill-ring'."
