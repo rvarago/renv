@@ -71,7 +71,6 @@ in {
         rainbow-delimiters
         # recentf
         rg
-        ripgrep
         rustic
         sbt-mode
         scala-mode

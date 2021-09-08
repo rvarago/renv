@@ -33,8 +33,6 @@
   :after company yasnippet
   :bind ("M-/" . company-yasnippet))
 
-(use-package ripgrep :commands ripgrep-regexp)
-
 (use-package yasnippet
   :ensure
   :config
