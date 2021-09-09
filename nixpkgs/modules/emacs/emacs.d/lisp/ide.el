@@ -4,8 +4,8 @@
 
 ;; ======================== Completions ========================
 (use-package company
-  :commands company-tng-configure-default
   :custom
+  (company-begin-commands '(self-insert-command))
   ;; No delay.
   (company-idle-delay 0)
   ;; Number of chars before triggering completion.
@@ -16,13 +16,12 @@
   :hook
   ((emacs-lisp-mode) . company-mode)
   :config
-  ;; Enable in all buffers.
   (global-company-mode)
   (setq lsp-completion-provider :capf)
   :bind
   (:map company-mode-map
         ("C-." . company-complete))
-  ;; use only <M> and not <C> to navigate completions.
+  ;; Use only <M> and not <C> to navigate completions.
   (:map company-active-map
           ("C-n" . nil)
           ("C-p" . nil)
