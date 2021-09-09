@@ -39,6 +39,10 @@
 ;; Highlight cursor line.
 (global-hl-line-mode +1)
 
+;; Show parenthesis.
+(show-paren-mode 1)
+(setq show-paren-delay 0)
+
 ;; =============================== Theme ===============================
 (use-package zenburn-theme
   :config
@@ -47,17 +51,10 @@
 (use-package doom-modeline
   :init (doom-modeline-mode 1))
 
-;; Colorful parenthesis.
-(use-package rainbow-delimiters
-  :hook (prog-mode . rainbow-delimiters-mode)
-  :custom-face
-  (rainbow-delimiters-unmatched-face ((t (:background "dark gray" :foreground "red"))))
-  (rainbow-delimiters-depth-1-face ((t (:foreground "wheat")))))
-(show-paren-mode 1)
-(setq show-paren-delay 0)
-
+;; ============================== All the icons ========================
 (use-package all-the-icons)
 
+;; ====================== Auto dim upon changing buffer ================
 (use-package auto-dim-other-buffers
   :commands auto-dim-other-buffers-mode
   :diminish auto-dim-other-buffers-mode

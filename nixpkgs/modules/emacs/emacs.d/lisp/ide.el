@@ -79,6 +79,12 @@
   :commands (smartparens-global-mode show-smartparens-global-mode)
   :init (smartparens-global-mode 1))
 
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode)
+  :custom-face
+  (rainbow-delimiters-unmatched-face ((t (:background "dark gray" :foreground "red"))))
+  (rainbow-delimiters-depth-1-face ((t (:foreground "wheat")))))
+
 ;; ======================== LSP + DAP ========================
 (use-package lsp-mode
   :commands lsp
