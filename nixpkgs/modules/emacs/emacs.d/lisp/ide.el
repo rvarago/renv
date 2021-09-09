@@ -110,7 +110,6 @@
 (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
 
 (use-package dap-mode
-  :ensure
   :config
   (dap-ui-mode)
   (dap-ui-controls-mode 1)
@@ -186,8 +185,7 @@
   :after dap-mode lsp-java)
 
 (use-package fsharp-mode
-  :defer t
-  :ensure t)
+  :defer t)
 
 ;; Enable scala-mode for highlighting, indentation and motion commands
 (use-package scala-mode
@@ -213,14 +211,12 @@
   (lsp-metals-show-inferred-type t))
 
 ;; (use-package lsp-python-ms
-;;   :ensure t
 ;;   :init (setq lsp-python-ms-auto-install-server t)
 ;;   :hook (python-mode . (lambda ()
 ;;                           (require 'lsp-python-ms)
 ;;                           (lsp-deferred))))  ; or lsp
 
 (use-package lsp-pyright
-  :ensure t
   :hook (python-mode . (lambda ()
                           (require 'lsp-pyright)
                           (lsp-deferred))) ; or lsp
