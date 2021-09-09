@@ -18,6 +18,8 @@
   (global-company-mode)
   (setq lsp-completion-provider :capf)
   :bind
+  (:map company-mode-map
+        ("C-." . company-complete))
   ;; use only <M> and not <C> to navigate completions.
   (:map company-active-map
           ("C-n" . nil)
