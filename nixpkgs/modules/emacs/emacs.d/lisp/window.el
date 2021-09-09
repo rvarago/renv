@@ -1,4 +1,6 @@
-;; ============================ Window management ============================
+;;; window.el --- Window management.
+;;; Commentary:
+;; Set up window management.
 
 (use-package window
   :bind (("C-x 2" . vsplit-last-buffer)

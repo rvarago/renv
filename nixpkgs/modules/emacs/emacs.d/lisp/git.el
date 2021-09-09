@@ -1,4 +1,6 @@
-;; ============================ Git integration ============================
+;;; git.el --- Git integration.
+;;; Commentary:
+;; Set up git integration.
 
 (use-package magit
   :bind

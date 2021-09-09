@@ -1,4 +1,7 @@
-;; ============================ Customizations ============================
+;;; custom.el --- Customizations.
+;;; Commentary:
+;; Overall customizations.
+
 
 (custom-set-variables
  '(rustic-ansi-faces

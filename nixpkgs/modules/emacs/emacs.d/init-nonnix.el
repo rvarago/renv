@@ -1,4 +1,6 @@
-;; ============================ Top-level grouping ============================
+;;; init-nonnix.el --- Base initialization for non-nix systems.
+;;; Commentary:
+;; Set up base where packages aren't expected to be installed via nix.
 
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("org" . "https://orgmode.org/elpa/")

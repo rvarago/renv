@@ -1,4 +1,6 @@
-;; ============================ User interface settings  ============================
+;;; ui.el --- User interface.
+;;; Commentary:
+;; Set up visual elements.
 
 ;; Maximize window on startup.
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))

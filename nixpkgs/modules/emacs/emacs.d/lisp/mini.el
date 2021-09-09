@@ -1,4 +1,6 @@
-;; ============================ Minibuffer completion settings ============================
+;;; mini.el --- Minibuffer search/narrowing/completion.
+;;; Commentary:
+;; Set up minibuffer search/narrowing/completion.
 
 (use-package ivy
   :init (ivy-mode)

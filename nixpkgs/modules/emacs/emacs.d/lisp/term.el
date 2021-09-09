@@ -1,4 +1,6 @@
-;; ============================ Project management ============================
+;;; term.el --- Terminal integration.
+;;; Commentary:
+;; Set up termination integration.
 
 (use-package vterm
   :hook (vterm-mode . (lambda ()

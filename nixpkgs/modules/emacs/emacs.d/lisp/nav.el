@@ -1,4 +1,6 @@
-;; ============================ Navigation across trees/tabs  ============================
+;;; nav.el --- Navigation across windows.
+;;; Commentary:
+;; Set up window navigation.
 
 ;; ======================== Dired ========================
 (use-package all-the-icons-dired

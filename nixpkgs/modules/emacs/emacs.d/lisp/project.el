@@ -1,4 +1,6 @@
-;; ============================ Project management ============================
+;;; project.el --- Project management.
+;;; Commentary:
+;; Set up project management.
 
 (use-package projectile
   :hook (after-init . projectile-mode)

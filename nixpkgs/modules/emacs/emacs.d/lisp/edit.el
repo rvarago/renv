@@ -1,4 +1,6 @@
-;; ============================ General editing settings ============================
+;;; edit.el --- General editing settings.
+;;; Commentary:
+;; Set up text editing settings.
 
 (setq-default indent-tabs-mode nil)
 

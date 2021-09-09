@@ -1,4 +1,6 @@
-;; ============================ IDE-like emacs ============================
+;;; ide.el --- Integrated development.
+;;; Commentary:
+;; Set up an integrated development environment.
 
 ;; ======================== Completions ========================
 (use-package company
