@@ -52,6 +52,7 @@ in {
         ini-mode
         ivy
         ivy-rich
+        ivy-yasnippet
         lsp-haskell
         lsp-ivy
         lsp-java

@@ -32,14 +32,17 @@
 
 ;; ======================== Snippets ========================
 (use-package yasnippet
-  :ensure
   :config
   (yas-reload-all)
   (add-hook 'prog-mode-hook 'yas-minor-mode)
   (add-hook 'text-mode-hook 'yas-minor-mode))
 
 (use-package yasnippet-snippets
-  :after yasnippet)
+  :after yasnippet
+  :config (yasnippet-snippets-initialize))
+
+(use-package ivy-yasnippet
+  :after (ivy yasnippet))
 
 (use-package company-yasnippet
   :after (company yasnippet)
