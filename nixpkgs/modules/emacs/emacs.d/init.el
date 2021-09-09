@@ -1,21 +1,25 @@
 ;; ============================ Top-level grouping ============================
 
-(load-file "~/.emacs.d/init-nix.el")
-;; (load-file "~/.emacs.d/init-nonnix.el")
+(defvar my-emacs-directory "~/.emacs.d/")
+
+(load-file (concat my-emacs-directory "init-nix.el"))
+;; (load-file (concat my-emacs-directory "init-nonnix.el"))
 
 (use-package diminish)
 
-;; TODO: Extract root from some constant (e.g. maybe with getenv).
-
-(setq custom-file "~/.emacs.d/custom.el")
+(setq custom-file (concat my-emacs-directory "custom.el"))
 (load custom-file)
 
-(load-file "~/.emacs.d/lisp/edit.el")
-(load-file "~/.emacs.d/lisp/git.el")
-(load-file "~/.emacs.d/lisp/ide.el")
-(load-file "~/.emacs.d/lisp/mini.el")
-(load-file "~/.emacs.d/lisp/nav.el")
-(load-file "~/.emacs.d/lisp/project.el")
-(load-file "~/.emacs.d/lisp/term.el")
-(load-file "~/.emacs.d/lisp/ui.el")
-(load-file "~/.emacs.d/lisp/window.el")
+(defun my/load-file (file)
+  "Load a elisp FILE from the Emacs directory."
+  (load-file (concat my-emacs-directory "lisp/" file)))
+
+(my/load-file "edit.el")
+(my/load-file "git.el")
+(my/load-file "ide.el")
+(my/load-file "mini.el")
+(my/load-file "nav.el")
+(my/load-file "project.el")
+(my/load-file "term.el")
+(my/load-file "ui.el")
+(my/load-file "window.el")
