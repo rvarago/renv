@@ -21,7 +21,7 @@
 (use-package counsel
   :after ivy
   :config (counsel-mode)
-  :bind (("C-c f" . 'counsel-fzf)
+  :bind (("C-x f" . 'counsel-fzf)
          (:map minibuffer-local-map ("C-r" . 'counsel-minibuffer-history))))
 
 (use-package swiper
