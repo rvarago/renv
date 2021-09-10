@@ -50,3 +50,5 @@
 
 (use-package undo-tree
   :init (global-undo-tree-mode))
+
+(global-set-key (kbd "<mouse-8>") 'xref-pop-marker-stack)
