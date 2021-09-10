@@ -141,6 +141,114 @@
 
 ;; ======================== Programming Languages ========================
 
+;; C/C++.
+
+(use-package ccls
+  :config
+  (setq lsp-prefer-flymake nil)
+  :hook ((c-mode c++-mode objc-mode) .
+         (lambda () (require 'ccls) (lsp))))
+
+(use-package dap-cpptools
+  :config
+  (dap-cpptools-setup))
+
+(use-package cpp-auto-include
+  :bind (:map c++-mode-map ("C-c i" . cpp-auto-include)))
+
+(use-package cmake-mode
+  :hook (cmake-mode . lsp))
+
+
+;; Docker.
+
+(use-package dockerfile-mode
+  :config (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
+  :hook (dockerfile-mode . lsp))
+
+
+;; F#.
+
+(use-package fsharp-mode
+  :hook (fsharp-mode . lsp))
+
+
+;; Go.
+
+(use-package go-mode
+  :hook ((go-mode . lsp)
+         (before-save . lsp-format-buffer)
+         (before-save . lsp-organize-imports)))
+
+
+;; Haskell.
+
+(use-package haskell-mode
+  :hook (haskell-mode . lsp))
+
+(use-package lsp-haskell
+  :hook (
+    (haskell-mode . lsp)
+    (haskell-literate-mode . lsp)))
+
+
+;; Java.
+
+(use-package java-mode
+  :hook (java-mode . lsp))
+
+(use-package lsp-java
+  :defer t
+  :hook (java-mode . lsp)
+         ;; (java-mode . lsp-java-lens-mode)
+         ;; (java-mode . lsp-jt-lens-mode))
+  :config
+  :bind ((:map java-mode-map ("C-c r o" . 'lsp-java-organize-imports))))
+
+(use-package dap-java
+  :after dap-mode lsp-java)
+
+
+;; Nix.
+
+(use-package nix-mode
+  :mode "\\.nix\\'")
+
+
+;; Proof-assistants.
+
+(use-package proof-general
+  :commands (coq-mode)
+  :hook ((coq-mode . yas-minor-mode))
+  :init
+  (setq proof-splash-enable nil))
+
+(use-package company-coq
+  :hook (coq-mode . company-coq-mode)
+  (setq company-coq-live-on-the-edge t))
+
+(use-package agda2-mode)
+
+(use-package idris-mode)
+
+
+;; Python.
+
+(use-package python-mode
+  :hook (python-mode . lsp)
+  :config
+  (require 'dap-python))
+
+(use-package lsp-pyright
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp))) ; or lsp
+  :config
+  (setq lsp-pyright-typechecking-mode "basic"))
+
+
+;; Rust.
+
 (use-package rustic
   :custom
   (lsp-rust-analyzer-server-display-inlay-hints t)
@@ -159,51 +267,8 @@
               ("C-c C-c C-d" . rustic-cargo-doc)
               ("C-c C-c C-a" . rustic-cargo-add)))
 
-(use-package ccls
-  :config
-  (setq lsp-prefer-flymake nil)
-  :hook ((c-mode c++-mode objc-mode) .
-         (lambda () (require 'ccls) (lsp))))
 
-(use-package dap-cpptools
-  :config
-  (dap-cpptools-setup))
-
-(use-package cpp-auto-include
-  :bind (:map c++-mode-map ("C-c i" . cpp-auto-include)))
-
-(use-package cmake-mode
-  :hook (cmake-mode . lsp))
-
-(use-package go-mode
-  :hook ((go-mode . lsp)
-         (before-save . lsp-format-buffer)
-         (before-save . lsp-organize-imports)))
-
-(use-package haskell-mode
-  :hook (haskell-mode . lsp))
-
-(use-package lsp-haskell
-  :hook (
-    (haskell-mode . lsp)
-    (haskell-literate-mode . lsp)))
-
-(use-package java-mode
-  :hook (java-mode . lsp))
-
-(use-package lsp-java
-  :defer t
-  :hook (java-mode . lsp)
-         ;; (java-mode . lsp-java-lens-mode)
-         ;; (java-mode . lsp-jt-lens-mode))
-  :config
-  :bind ((:map java-mode-map ("C-c r o" . 'lsp-java-organize-imports))))
-
-(use-package dap-java
-  :after dap-mode lsp-java)
-
-(use-package fsharp-mode
-  :hook (fsharp-mode . lsp))
+;; Scala.
 
 ;; Enable scala-mode for highlighting, indentation and motion commands
 (use-package scala-mode
@@ -229,17 +294,12 @@
   :custom
   (lsp-metals-show-inferred-type t))
 
-(use-package python-mode
-  :hook (python-mode . lsp)
-  :config
-  (require 'dap-python))
+;; Shell.
 
-(use-package lsp-pyright
-  :hook (python-mode . (lambda ()
-                          (require 'lsp-pyright)
-                          (lsp))) ; or lsp
-  :config
-  (setq lsp-pyright-typechecking-mode "basic"))
+(use-package sh-mode
+  :hook (sh-mode . lsp))
+
+;; SQL.
 
 (use-package sql
   :config
@@ -250,27 +310,19 @@
   :config
   (setq sqlformat-command 'pgformatter))
 
-(use-package proof-general
-  :commands (coq-mode)
-  :hook ((coq-mode . yas-minor-mode))
-  :init
-  (setq proof-splash-enable nil))
 
-(use-package company-coq
-  :hook (coq-mode . company-coq-mode)
-  (setq company-coq-live-on-the-edge t))
-
-(use-package sh-mode
-  :hook (sh-mode . lsp))
-
-(use-package agda2-mode)
-
-(use-package idris-mode)
+;; YANG.
 
 (use-package yang-mode)
 
+
+;; YAML.
+
 (use-package yaml-mode
   :mode ("\\.ya?ml$" . yaml-mode))
+
+
+;; XML.
 
 (use-package nxml-mode
   :mode "\\.xml\\'"
@@ -279,13 +331,6 @@
         nxml-attribute-indent 4
         nxml-slash-auto-complete-flag t))
 
-(use-package nix-mode
-  :mode "\\.nix\\'")
-
-(use-package dockerfile-mode
-  :config (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
-  :hook (dockerfile-mode . lsp))
-
+;; ================================ Direnv =========================
 (use-package direnv
   :config (direnv-mode))
-
