@@ -59,3 +59,13 @@
   :commands auto-dim-other-buffers-mode
   :diminish auto-dim-other-buffers-mode
   :init (auto-dim-other-buffers-mode))
+
+;; ============================= Clickable links ========================
+(use-package goto-addr
+  :bind
+  (:map goto-address-highlight-keymap
+        ("C-c k" . goto-address-at-point))
+  :hook
+  ((eshell-mode shell-mode vterm-mode) . goto-address-mode)
+  (prog-mode . goto-address-prog-mode))
+

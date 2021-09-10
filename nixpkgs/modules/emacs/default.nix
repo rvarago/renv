@@ -45,6 +45,7 @@ in {
         # flyspell
         fsharp-mode
         git-timemachine
+        # goto-addr
         go-mode
         haskell-mode
         helm-ag
