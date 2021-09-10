@@ -34,6 +34,7 @@ in {
         cpp-auto-include
         # dap-java
         dap-mode
+        # dap-cpptools
         direnv
         diff-hl
         diminish

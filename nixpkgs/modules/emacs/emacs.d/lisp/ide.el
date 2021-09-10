@@ -118,10 +118,12 @@
 (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
 
 (use-package dap-mode
+  :after
+  lsp-mode
   :config
   (dap-ui-mode)
   (dap-ui-controls-mode 1)
-
+  (dap-auto-configure-mode)
   ;; Debug via dap-lldb.
   ;;(require 'dap-lldb)
   ;;(require 'dap-gdb-lldb)
@@ -135,11 +137,7 @@
    ;;   :gdbpath "rust-lldb"
    ;;       :target nil
    ;;       :cwd nil)))
-
-  ;; Debug via ms cpptools.
-  (require 'dap-cpptools)
-
-  (dap-cpptools-setup))
+  )
 
 ;; ======================== Programming Languages ========================
 
@@ -165,6 +163,10 @@
   (setq lsp-prefer-flymake nil)
   :hook ((c-mode c++-mode objc-mode) .
          (lambda () (require 'ccls) (lsp))))
+
+(use-package dap-cpptools
+  :config
+  (dap-cpptools-setup))
 
 (use-package cpp-auto-include
   :bind (:map c++-mode-map ("C-c i" . cpp-auto-include)))
