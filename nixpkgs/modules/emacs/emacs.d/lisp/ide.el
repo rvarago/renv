@@ -25,8 +25,10 @@
   (:map company-active-map
           ("C-n" . nil)
           ("C-p" . nil)
-          ("M-n" . #'company-select-next)
-          ("M-p" . #'company-select-previous)))
+          ("M-n" . company-select-next)
+          ("M-p" . company-select-previous)
+          ("M-<" . company-select-first)
+          ("M->" . company-select-last)))
 
 ;; Completions with icons.
 (use-package company-box
