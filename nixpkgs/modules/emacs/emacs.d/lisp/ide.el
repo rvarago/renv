@@ -92,7 +92,6 @@
   ;; :after company flycheck
   :hook
   (lsp-mode . lsp-enable-which-key-integration)
-  ((scala-mode sh-mode java-mode python-mode haskell-mode c+-mode dockerfile-mode cmake-mode fsharp-mode) . lsp-deferred)
   (lsp-mode . lsp-lens-mode)
   (lsp-deferred)
   :init
@@ -162,7 +161,7 @@
               ("C-c C-c C-a" . rustic-cargo-add)))
 
 (use-package ccls
-   :config
+  :config
   (setq lsp-prefer-flymake nil)
   :hook ((c-mode c++-mode objc-mode) .
          (lambda () (require 'ccls) (lsp))))
@@ -170,17 +169,24 @@
 (use-package cpp-auto-include
   :bind (:map c++-mode-map ("C-c i" . cpp-auto-include)))
 
-(use-package cmake-mode)
+(use-package cmake-mode
+  :hook (cmake-mode . lsp))
 
 (use-package go-mode
-  :hook ((go-mode . lsp-deferred)
+  :hook ((go-mode . lsp)
          (before-save . lsp-format-buffer)
          (before-save . lsp-organize-imports)))
+
+(use-package haskell-mode
+  :hook (haskell-mode . lsp))
 
 (use-package lsp-haskell
   :hook (
     (haskell-mode . lsp)
     (haskell-literate-mode . lsp)))
+
+(use-package java-mode
+  :hook (java-mode . lsp))
 
 (use-package lsp-java
   :defer t
@@ -194,10 +200,11 @@
   :after dap-mode lsp-java)
 
 (use-package fsharp-mode
-  :defer t)
+  :hook (fsharp-mode . lsp))
 
 ;; Enable scala-mode for highlighting, indentation and motion commands
 (use-package scala-mode
+  :hook (scala-mode . lsp)
   :interpreter
     ("scala" . scala-mode))
 
@@ -219,16 +226,15 @@
   :custom
   (lsp-metals-show-inferred-type t))
 
-;; (use-package lsp-python-ms
-;;   :init (setq lsp-python-ms-auto-install-server t)
-;;   :hook (python-mode . (lambda ()
-;;                           (require 'lsp-python-ms)
-;;                           (lsp-deferred))))  ; or lsp
+(use-package python-mode
+  :hook (python-mode . lsp)
+  :config
+  (require 'dap-python))
 
 (use-package lsp-pyright
   :hook (python-mode . (lambda ()
                           (require 'lsp-pyright)
-                          (lsp-deferred))) ; or lsp
+                          (lsp))) ; or lsp
   :config
   (setq lsp-pyright-typechecking-mode "basic"))
 
@@ -251,6 +257,9 @@
   :hook (coq-mode . company-coq-mode)
   (setq company-coq-live-on-the-edge t))
 
+(use-package sh-mode
+  :hook (sh-mode . lsp))
+
 (use-package agda2-mode)
 
 (use-package idris-mode)
@@ -271,7 +280,8 @@
   :mode "\\.nix\\'")
 
 (use-package dockerfile-mode
-  :config (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode)))
+  :config (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
+  :hook (dockerfile-mode . lsp))
 
 (use-package direnv
   :config (direnv-mode))

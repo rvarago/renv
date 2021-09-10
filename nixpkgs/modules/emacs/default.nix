@@ -45,6 +45,7 @@ in {
         fsharp-mode
         git-timemachine
         go-mode
+        haskell-mode
         helm-ag
         helpful
         hl-todo
@@ -53,6 +54,7 @@ in {
         ivy
         ivy-rich
         ivy-yasnippet
+        # java-mode
         lsp-haskell
         lsp-ivy
         lsp-java
@@ -69,6 +71,7 @@ in {
         projectile
         proof-general
         protobuf-mode
+        python-mode
         rainbow-delimiters
         # recentf
         rg
@@ -76,6 +79,7 @@ in {
         sbt-mode
         scala-mode
         shackle
+        # sh-mode
         sqlformat
         smartparens
         swiper
