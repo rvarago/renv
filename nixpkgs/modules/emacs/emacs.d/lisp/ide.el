@@ -144,6 +144,7 @@
 (use-package rustic
   :custom
   (lsp-rust-analyzer-server-display-inlay-hints t)
+  (lsp-rust-analyzer-cargo-watch-command "clippy") ;; Default is "check".
   :config
   ;; (setq rustic-format-on-save t)
   (unbind-key "C-c C-c C-t" rustic-mode-map)
