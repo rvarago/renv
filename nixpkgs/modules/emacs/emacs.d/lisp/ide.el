@@ -147,10 +147,10 @@
 ;; C/C++.
 
 (use-package ccls
+  :after projectile
+  :hook ((c-mode c++-mode objc-mode) . lsp)
   :config
-  (setq lsp-prefer-flymake nil)
-  :hook ((c-mode c++-mode objc-mode) .
-         (lambda () (require 'ccls) (lsp))))
+  (add-to-list 'projectile-globally-ignored-directories ".ccls-cache"))
 
 (use-package dap-cpptools
   :config
