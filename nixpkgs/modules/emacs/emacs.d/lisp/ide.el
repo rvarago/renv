@@ -353,6 +353,11 @@
 (use-package idris-mode)
 
 
+;; Protobuf.
+
+(use-package protobuf-mode)
+
+
 ;; Python.
 
 (use-package python-mode
