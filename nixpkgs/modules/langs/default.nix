@@ -57,11 +57,11 @@
     dotnetCorePackages.sdk_5_0
 
     # Python
+    poetry
     python3
+    python3Packages.autopep8
     python3Packages.pip
     python3Packages.pylint
-    python3Packages.autopep8
-    poetry
 
     # OCaml
     ocamlformat
