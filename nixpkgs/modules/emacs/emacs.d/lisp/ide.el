@@ -87,6 +87,10 @@
   (rainbow-delimiters-unmatched-face ((t (:background "dark gray" :foreground "red"))))
   (rainbow-delimiters-depth-1-face ((t (:foreground "wheat")))))
 
+;; ======================== Rest Client ======================
+(use-package restclient
+  :mode (("\\.http\\'" . restclient-mode)))
+
 ;; ======================== LSP + DAP ========================
 (use-package lsp-mode
   :commands lsp

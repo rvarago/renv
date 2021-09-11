@@ -86,6 +86,7 @@ in {
         python-mode
         rainbow-delimiters
         # recentf
+        restclient
         rg
         rustic
         sbt-mode
