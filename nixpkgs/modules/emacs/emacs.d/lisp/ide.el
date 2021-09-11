@@ -248,6 +248,11 @@
               ("C-c c" . haskell-process-cabal)))
 
 
+;; INI.
+
+(use-package ini-mode :mode "\\.ini\\'")
+
+
 ;; Java.
 
 (use-package java-mode
