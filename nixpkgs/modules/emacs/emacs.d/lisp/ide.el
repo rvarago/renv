@@ -170,6 +170,15 @@
   :hook (dockerfile-mode . lsp))
 
 
+;; Elm.
+
+(use-package elm-mode
+  :hook (elm-mode . lsp))
+
+(use-package lsp-elm
+  :hook (elm-mode . lsp))
+
+
 ;; F#.
 
 (use-package fsharp-mode

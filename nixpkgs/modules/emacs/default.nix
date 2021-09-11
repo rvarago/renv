@@ -40,6 +40,7 @@ in {
         diminish
         dockerfile-mode
         doom-modeline
+        elm-mode
         flycheck
         flymake-shellcheck
         # flyspell
@@ -58,6 +59,7 @@ in {
         ivy-rich
         ivy-yasnippet
         # java-mode
+        # lsp-elm
         lsp-haskell
         lsp-ivy
         lsp-java
