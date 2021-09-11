@@ -23,6 +23,8 @@ in {
         ccls
         centaur-tabs
         centered-window
+        cmake-font-lock
+        cmake-ide
         cmake-mode
         command-log-mode
         company
@@ -48,6 +50,7 @@ in {
         git-timemachine
         # goto-addr
         go-mode
+        google-c-style
         gradle-mode
         haskell-mode
         # haskell-cabal

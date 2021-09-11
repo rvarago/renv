@@ -153,14 +153,48 @@
   (add-to-list 'projectile-globally-ignored-directories ".ccls-cache"))
 
 (use-package dap-cpptools
+  :after (lsp-mode ccls)
   :config
   (dap-cpptools-setup))
 
 (use-package cpp-auto-include
   :bind (:map c++-mode-map ("C-c i" . cpp-auto-include)))
 
+(use-package google-c-style
+  :hook (((c-mode c++-mode) . google-set-c-style)
+         (c-mode-common . google-make-newline-indent)))
+
 (use-package cmake-mode
-  :hook (cmake-mode . lsp))
+  :hook
+  (cmake-mode . lsp)
+  :mode ("CMakeLists\\.txt\\'" "\\.cmake\\'"))
+
+(use-package cmake-font-lock
+  :hook (cmake-mode . cmake-font-lock-activate))
+
+(use-package cmake-ide
+  :after (cmake-mode projectile)
+  :init (cmake-ide-setup)
+  :hook
+  ((cmake-mode c-mode c++-mode) . my/cmake-ide-find-project)
+  :preface
+  (defun my/cmake-ide-find-project ()
+    "Finds the directory of the project for cmake-ide."
+    (with-eval-after-load 'projectile
+      (setq cmake-ide-project-dir (projectile-project-root))
+      (setq cmake-ide-build-dir (concat cmake-ide-project-dir "build")))
+    (setq cmake-ide-compile-command
+          (concat "cmake -B " cmake-ide-build-dir " && cmake --build " cmake-ide-build-dir))
+    (cmake-ide-load-db))
+
+  (defun my/switch-to-compilation-window ()
+    "Switches to the *compilation* buffer after compilation."
+    (other-window 1))
+  :bind
+  ([remap comment-region] . cmake-ide-compile)
+  (:map cmake-mode-map
+        ("C-c C-c" . cmake-ide-compile))
+  :config (advice-add 'cmake-ide-compile :after #'my/switch-to-compilation-window))
 
 
 ;; Docker.
