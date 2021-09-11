@@ -95,7 +95,6 @@
   :hook
   (lsp-mode . lsp-enable-which-key-integration)
   (lsp-mode . lsp-lens-mode)
-  (lsp-deferred)
   :init
   (setq lsp-keymap-prefix "C-c l")
   :config
