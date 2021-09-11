@@ -71,9 +71,12 @@ in {
         lsp-treemacs
         lsp-ui
         magit
+        markdown-mode
+        markdown-preview-mode
         move-text
         nix-mode
         # nxml-mode
+        pandoc-mode
         projectile
         proof-general
         protobuf-mode

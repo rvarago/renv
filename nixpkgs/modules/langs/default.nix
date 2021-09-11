@@ -89,6 +89,9 @@
     # Scheme
     racket
     guile
+
+    # Text
+    nodePackages.unified-language-server
   ];
 
   home.file.".ghc/ghci.conf".text = ''

@@ -239,6 +239,54 @@
   (advice-add 'gradle-build :after #'my/switch-to-compilation-window)
   (advice-add 'gradle-test :after #'my/switch-to-compilation-window))
 
+
+;; Markdown.
+
+(use-package markdown-mode
+  :mode ("\\.\\(md\\|markdown\\)\\'")
+  :hook
+  (markdown-mode . lsp)
+  (markdown-mode . pandoc-mode)
+  :custom (markdown-command "pandoc"))
+
+(use-package markdown-preview-mode
+  :commands markdown-preview-mode
+  :custom
+  (markdown-preview-javascript
+   (list (concat "https://github.com/highlightjs/highlight.js/"
+                 "9.15.6/highlight.min.js")
+         "<script>
+            $(document).on('mdContentChange', function() {
+              $('pre code').each(function(i, block)  {
+                hljs.highlightBlock(block);
+              });
+            });
+          </script>"))
+  (markdown-preview-stylesheets
+   (list (concat "https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/"
+                 "3.0.1/github-markdown.min.css")
+         (concat "https://github.com/highlightjs/highlight.js/"
+                 "9.15.6/styles/github.min.css")
+
+         "<style>
+            .markdown-body {
+              box-sizing: border-box;
+              min-width: 200px;
+              max-width: 980px;
+              margin: 0 auto;
+              padding: 45px;
+            }
+
+            @media (max-width: 767px) { .markdown-body { padding: 15px; } }
+          </style>")))
+
+(use-package pandoc-mode
+  :after markdown-mode
+  :hook markdown-mode
+  :bind (:map markdown-mode-map
+              ("C-c C-c" . pandoc-run-pandoc)))
+
+
 ;; Nix.
 
 (use-package nix-mode
