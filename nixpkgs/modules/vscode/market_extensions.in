@@ -15,6 +15,7 @@ meraymond.idris-vscode
 ms-kubernetes-tools.vscode-kubernetes-tools
 ms-vscode.cmake-tools
 ms-vscode.makefile-tools
+naco-siren.gradle-language
 notskm.clang-tidy
 ocamllabs.ocaml-platform
 redhat.vscode-xml

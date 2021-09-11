@@ -46,6 +46,7 @@
     idris2
 
     # Java
+    gradle
     openjdk
     maven
 

@@ -103,6 +103,12 @@
     sha256 = "05bnjikk0r7ix9sdd0w0rs543wzl46951z7gxrj378r0hjjwww3z";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "naco-siren";
+    name = "gradle-language";
+    version = "0.2.3";
+    sha256 = "15lzxvym0mkljjn57av1p4z6hqqwbsbn5idw2fn7nccgrl93aywf";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "notskm";
     name = "clang-tidy";
     version = "0.5.1";

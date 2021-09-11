@@ -47,6 +47,7 @@ in {
         git-timemachine
         # goto-addr
         go-mode
+        gradle-mode
         haskell-mode
         helm-ag
         helpful

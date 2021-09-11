@@ -211,6 +211,18 @@
 (use-package dap-java
   :after dap-mode lsp-java)
 
+(use-package gradle-mode
+  :hook (java-mode . gradle-mode)
+  :bind (:map gradle-mode-map
+              ("C-c C-c" . gradle-build)
+              ("C-c C-t" . gradle-test))
+  :preface
+  (defun my/switch-to-compilation-window ()
+    "Switches to the *compilation* buffer after compilation."
+    (other-window 1))
+  :config
+  (advice-add 'gradle-build :after #'my/switch-to-compilation-window)
+  (advice-add 'gradle-test :after #'my/switch-to-compilation-window))
 
 ;; Nix.
 
