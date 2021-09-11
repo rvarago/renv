@@ -99,6 +99,8 @@
   (setq lsp-keymap-prefix "C-c l")
   :config
   (setq lsp-lens-enable t)
+  (setq lsp-modeline-diagnostics-scope :workspace)
+  (setq lsp-modeline-code-actions-segments '(count icon name))
   :bind (:map lsp-mode-map
               ("C-c r r" . lsp-rename)
               ("C-c r f" . lsp-format-buffer)
