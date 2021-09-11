@@ -74,7 +74,12 @@
   (flyspell-sort-corrections nil)
   (flyspell-issue-message-flag nil)
   :hook
+  ((markdown-mode org-mode text-mode) . flyspell-mode)
   (prog-mode . flyspell-prog-mode))
+
+(use-package flyspell-correct-ivy
+  :after (flyspell ivy)
+  :init (setq flyspell-correct-interface #'flyspell-correct-ivy))
 
 ;; ======================== Parens ========================
 (use-package smartparens

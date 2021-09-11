@@ -46,6 +46,7 @@ in {
         flycheck
         flymake-shellcheck
         # flyspell
+        flyspell-correct-ivy
         fsharp-mode
         git-timemachine
         # goto-addr
