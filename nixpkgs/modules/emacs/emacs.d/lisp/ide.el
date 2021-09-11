@@ -326,6 +326,10 @@
   (setq sqlformat-command 'pgformatter))
 
 
+;; systemd.
+
+(use-package systemd)
+
 ;; YANG.
 
 (use-package yang-mode)

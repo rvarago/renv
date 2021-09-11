@@ -87,6 +87,7 @@ in {
         smartparens
         swiper
         switch-window
+        systemd
         tide
         treemacs
         treemacs-all-the-icons

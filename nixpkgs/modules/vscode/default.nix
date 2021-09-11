@@ -8,6 +8,7 @@
         baccata.scaladex-search
         bbenoist.nix
         brettm12345.nixfmt-vscode
+        coolbear.systemd-unit-file
         davidanson.vscode-markdownlint
         eamodio.gitlens
         elmtooling.elm-ls-vscode
