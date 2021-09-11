@@ -203,6 +203,12 @@
     (haskell-mode . lsp)
     (haskell-literate-mode . lsp)))
 
+(use-package haskell-cabal
+  :mode ("\\.cabal\\'" . haskell-cabal-mode)
+  :bind (:map haskell-cabal-mode-map
+              ("C-c C-c" . haskell-process-cabal-build)
+              ("C-c c" . haskell-process-cabal)))
+
 
 ;; Java.
 

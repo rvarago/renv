@@ -50,6 +50,7 @@ in {
         go-mode
         gradle-mode
         haskell-mode
+        # haskell-cabal
         helm-ag
         helpful
         hl-todo
