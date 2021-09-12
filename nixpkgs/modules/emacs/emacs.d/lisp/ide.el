@@ -56,16 +56,16 @@
 ;; ======================== Checks ========================
 (use-package flycheck
   :commands global-flycheck-mode
+  :preface
+  (defvar-local flycheck-local-checkers nil)
+  (defun +flycheck-checker-get(fn checker property)
+    (or (alist-get property (alist-get checker flycheck-local-checkers))
+        (funcall fn checker property)))
+  (advice-add 'flycheck-checker-get :around '+flycheck-checker-get)
   :init
   (global-flycheck-mode)
   :bind (:map flycheck-mode-map
               ("C-c e" . flycheck-list-errors)))
-
-;; flycheck?
-(use-package flymake-shellcheck
-  :commands flymake-shellcheck-load
-  :init
-  (add-hook 'sh-mode-hook 'flymake-shellcheck-load))
 
 (use-package flyspell
   :custom
@@ -428,7 +428,9 @@
 ;; Shell.
 
 (use-package sh-mode
-  :hook (sh-mode . lsp))
+  :hook
+  (sh-mode . lsp)
+  (sh-mode . (lambda () (setq flycheck-local-checkers '((lsp . ((next-checkers . (sh-shellcheck)))))))))
 
 ;; SQL.
 

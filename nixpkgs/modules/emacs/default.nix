@@ -44,7 +44,6 @@ in {
         doom-modeline
         elm-mode
         flycheck
-        flymake-shellcheck
         # flyspell
         flyspell-correct-ivy
         fsharp-mode
