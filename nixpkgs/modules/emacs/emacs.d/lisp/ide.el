@@ -173,6 +173,16 @@
   :hook (((c-mode c++-mode) . google-set-c-style)
          (c-mode-common . google-make-newline-indent)))
 
+(use-package flycheck-clang-tidy
+  :after flycheck
+  :config
+  (setq flycheck-clang-tidy-extra-options
+        ;; Available checks: https://clang.llvm.org/extra/clang-tidy/.
+        (concat "--checks=-*,clang-analyzer-*,cppcoreguidelines-*,google-*"))
+  :hook
+  (flycheck-mode . flycheck-clang-tidy-setup)
+  ((c-mode c++-mode) . (lambda () (setq flycheck-local-checkers '((lsp . ((next-checkers . (c/c++-clang-tidy)))))))))
+
 (use-package cmake-mode
   :hook
   (cmake-mode . lsp)

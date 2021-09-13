@@ -68,6 +68,15 @@
 
       "cmake.configureOnOpen" = true;
 
+      # Available checks: https://clang.llvm.org/extra/clang-tidy/.
+      "clang-tidy.checks" = [
+        "-*"
+        "clang-analyzer-*"
+        "readability-*"
+        "cppcoreguidelines-*"
+        "google-*"
+      ];
+
       "idris.idrisPath" = "${pkgs.idris2}/bin/idris2";
       "idris.idris2Mode" = true;
 
