@@ -42,6 +42,7 @@ in {
         diff-hl
         diminish
         dockerfile-mode
+        docker-compose-mode
         doom-modeline
         elm-mode
         flycheck

@@ -222,6 +222,8 @@
   :config (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
   :hook (dockerfile-mode . lsp))
 
+(use-package docker-compose-mode)
+
 
 ;; Elm.
 
