@@ -59,7 +59,9 @@ in {
     (nerdfonts.override { fonts = [ "Hack" "Iosevka" ]; })
 
     # Languages & tooling
-    nixfmt
+    rnix-lsp
+    nixpkgs-fmt
+
     shellcheck
     shfmt
 

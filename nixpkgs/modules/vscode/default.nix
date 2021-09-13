@@ -6,8 +6,6 @@
     extensions = with pkgs.vscode-extensions;
       [
         baccata.scaladex-search
-        bbenoist.nix
-        brettm12345.nixfmt-vscode
         coolbear.systemd-unit-file
         davidanson.vscode-markdownlint
         eamodio.gitlens
@@ -89,6 +87,8 @@
       "shellformat.path" = "${pkgs.shfmt}/bin/shfmt";
 
       "plantuml.render" = "Local";
+
+      "nix.enableLanguageServer" =  true;
 
       "python.analysis.typeCheckingMode" = "basic";
       "python.linting.enabled" = true;

@@ -61,6 +61,12 @@
     sha256 = "030rrzadp39byjh792r0wz4mms622plsf9amkics843nf09zzgkv";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "jnoortheen";
+    name = "nix-ide";
+    version = "0.1.16";
+    sha256 = "04ky1mzyjjr1mrwv3sxz4mgjcq5ylh6n01lvhb19h3fmwafkdxbp";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "jroesch";
     name = "lean";
     version = "0.16.39";

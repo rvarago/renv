@@ -354,7 +354,8 @@
 ;; Nix.
 
 (use-package nix-mode
-  :mode "\\.nix\\'")
+  :mode "\\.nix\\'"
+  :hook (nix-mode . lsp))
 
 
 ;; Proof-assistants.
