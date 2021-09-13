@@ -39,6 +39,9 @@
 ;; Highlight cursor line.
 (global-hl-line-mode +1)
 
+;; Wrap at word boundaries.
+(global-visual-line-mode 1)
+
 ;; Show parenthesis.
 (show-paren-mode 1)
 (setq show-paren-delay 0)
