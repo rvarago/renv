@@ -72,3 +72,26 @@
   (setq uniquify-separator "/")
   (setq uniquify-after-kill-buffer-p t)     ; Rename after killing uniquified.
   (setq uniquify-ignore-buffers-re "^\\*")) ; Don't muck with special buffers.
+
+(use-package ibuffer
+  :bind ("C-x C-b" . ibuffer))
+
+(use-package ibuffer-projectile
+  :after (ibuffer projectile)
+  :preface
+  (defun my/ibuffer-projectile ()
+    (ibuffer-projectile-set-filter-groups)
+    (unless (eq ibuffer-sorting-mode 'alphabetic)
+      (ibuffer-do-sort-by-alphabetic)))
+  :hook (ibuffer . my/ibuffer-projectile))
+
+(defvar *protected-buffers* '("*scratch*" "*Messages*")
+  "Buffers that cannot be killed.")
+
+(defun my/protected-buffers ()
+  "Protects some buffers from being killed."
+  (dolist (buffer *protected-buffers*)
+    (with-current-buffer buffer
+      (emacs-lock-mode 'kill))))
+
+(add-hook 'after-init-hook #'my/protected-buffers)

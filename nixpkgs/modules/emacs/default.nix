@@ -58,6 +58,8 @@ in {
         helm-ag
         helpful
         hl-todo
+        # ibuffer
+        ibuffer-projectile
         idris-mode
         ini-mode
         ivy
