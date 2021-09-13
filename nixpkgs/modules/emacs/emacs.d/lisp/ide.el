@@ -458,6 +458,7 @@
 
 (use-package systemd)
 
+
 ;; YANG.
 
 (use-package yang-mode)
@@ -477,7 +478,8 @@
   :config
   (setq nxml-child-indent 2
         nxml-attribute-indent 4
-        nxml-slash-auto-complete-flag t))
+        nxml-slash-auto-complete-flag t)
+  :hook (nxml-mode . lsp))
 
 ;; ================================ Direnv =========================
 (use-package direnv
