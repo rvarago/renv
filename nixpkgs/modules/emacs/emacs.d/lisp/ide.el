@@ -245,6 +245,15 @@
          (before-save . lsp-format-buffer)
          (before-save . lsp-organize-imports)))
 
+;; Graphviz.
+
+(use-package graphviz-dot-mode
+  :config
+  (setq graphviz-dot-indent-width 4))
+
+(use-package company-graphviz-dot
+  :after (graphviz-dot-mode))
+
 
 ;; Haskell.
 

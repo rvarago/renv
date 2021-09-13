@@ -30,6 +30,7 @@ in {
         company
         company-box
         company-coq
+        # company-graphviz-dot
         # company-yasnippet
         counsel
         counsel-projectile
@@ -53,6 +54,7 @@ in {
         go-mode
         google-c-style
         gradle-mode
+        graphviz-dot-mode
         haskell-mode
         # haskell-cabal
         helm-ag

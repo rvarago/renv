@@ -67,6 +67,12 @@
     sha256 = "04ky1mzyjjr1mrwv3sxz4mgjcq5ylh6n01lvhb19h3fmwafkdxbp";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "joaompinto";
+    name = "vscode-graphviz";
+    version = "0.0.6";
+    sha256 = "17z5zgr8l94mj8dgqxwsrpixnkz0778fp1g4rxc7i56wb1zbik3w";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "jroesch";
     name = "lean";
     version = "0.16.39";
