@@ -64,6 +64,7 @@ in {
         ivy-rich
         ivy-yasnippet
         # java-mode
+        json-mode
         # lsp-elm
         lsp-haskell
         lsp-ivy

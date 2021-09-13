@@ -298,6 +298,12 @@
   (advice-add 'gradle-test :after #'my/switch-to-compilation-window))
 
 
+;; JSON.
+
+(use-package json-mode
+  :hook (json-mode . lsp))
+
+
 ;; Markdown.
 
 (use-package markdown-mode
