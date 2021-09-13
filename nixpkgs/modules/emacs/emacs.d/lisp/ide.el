@@ -466,7 +466,8 @@
 ;; YAML.
 
 (use-package yaml-mode
-  :mode ("\\.ya?ml$" . yaml-mode))
+  :mode ("\\.ya?ml$" . yaml-mode)
+  :hook (yaml-mode . lsp))
 
 
 ;; XML.
