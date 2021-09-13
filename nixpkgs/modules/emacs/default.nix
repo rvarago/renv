@@ -70,6 +70,7 @@ in {
         ivy-yasnippet
         # java-mode
         json-mode
+        kubernetes
         # lsp-elm
         lsp-haskell
         lsp-ivy

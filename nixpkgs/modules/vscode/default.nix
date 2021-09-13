@@ -20,6 +20,7 @@
         matklad.rust-analyzer
         ms-azuretools.vscode-docker
         ms-dotnettools.csharp
+        ms-kubernetes-tools.vscode-kubernetes-tools
         # ms-python.python
         ms-python.vscode-pylance
         ms-vscode.cpptools
