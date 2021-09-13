@@ -58,13 +58,6 @@ in {
     jetbrains-mono
     (nerdfonts.override { fonts = [ "Hack" "Iosevka" ]; })
 
-    # Languages & tooling
-    rnix-lsp
-    nixpkgs-fmt
-
-    shellcheck
-    shfmt
-
     # General tools
     skype
   ];

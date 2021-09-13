@@ -57,6 +57,10 @@
     # .Net
     dotnetCorePackages.sdk_5_0
 
+    # Nix.
+    nixpkgs-fmt
+    rnix-lsp
+
     # Python
     poetry
     python3
@@ -89,6 +93,10 @@
     # Scheme
     racket
     guile
+
+    # Shell
+    shellcheck
+    shfmt
 
     # Text
     nodePackages.unified-language-server
