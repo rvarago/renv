@@ -55,6 +55,12 @@
     sha256 = "0ndapfrv3j82792hws7b3zki76m2s1bfh9dss1xjgcal1aqajka1";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "jebbs";
+    name = "plantuml";
+    version = "2.15.1";
+    sha256 = "030rrzadp39byjh792r0wz4mms622plsf9amkics843nf09zzgkv";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "jroesch";
     name = "lean";
     version = "0.16.39";

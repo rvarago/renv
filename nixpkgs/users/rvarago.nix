@@ -42,6 +42,7 @@ in {
     # Dev tools
     diff-so-fancy
     meld
+    plantuml
     valgrind
     wireshark
 

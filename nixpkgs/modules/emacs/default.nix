@@ -82,6 +82,7 @@ in {
         nix-mode
         # nxml-mode
         pandoc-mode
+        plantuml-mode
         projectile
         proof-general
         protobuf-mode

@@ -465,6 +465,14 @@
 (use-package systemd)
 
 
+;; UML.
+
+(use-package plantuml-mode
+  :mode ("\\.\\(plantuml\\|puml\\)\\'")
+  :config
+  (setq plantuml-default-exec-mode 'executable))
+
+
 ;; YANG.
 
 (use-package yang-mode)

@@ -88,6 +88,8 @@
 
       "shellformat.path" = "${pkgs.shfmt}/bin/shfmt";
 
+      "plantuml.render" = "Local";
+
       "python.analysis.typeCheckingMode" = "basic";
       "python.linting.enabled" = true;
       "python.linting.pylintEnabled" = true;
