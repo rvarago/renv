@@ -198,4 +198,10 @@
     version = "0.31.3";
     sha256 = "0sqp0kzdz3crablksmm0q1b4nbkl1nkjsvgp2k3mic8k1kpfjrn5";
   })
+  (extensionFromVscodeMarketplace {
+    publisher = "zxh404";
+    name = "vscode-proto3";
+    version = "0.5.4";
+    sha256 = "08dfl5h1k6s542qw5qx2czm1wb37ck9w2vpjz44kp2az352nmksb";
+  })
 ]
