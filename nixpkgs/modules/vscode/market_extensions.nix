@@ -79,12 +79,6 @@
     sha256 = "0v1w0rmx2z7q6lfrl430fl6aq6n70y14s2fqsp734igdkdhdnvmk";
   })
   (extensionFromVscodeMarketplace {
-    publisher = "lighttiger2505";
-    name = "sqls";
-    version = "0.1.2";
-    sha256 = "13ybdba5xwsq9qrjq9z4d61lmi3r3hi5ws8rc681xlic8b52fs09";
-  })
-  (extensionFromVscodeMarketplace {
     publisher = "mads-hartmann";
     name = "bash-ide-vscode";
     version = "1.11.0";
@@ -125,6 +119,24 @@
     name = "makefile-tools";
     version = "0.2.2";
     sha256 = "05bnjikk0r7ix9sdd0w0rs543wzl46951z7gxrj378r0hjjwww3z";
+  })
+  (extensionFromVscodeMarketplace {
+    publisher = "mtxr";
+    name = "sqltools";
+    version = "0.23.0";
+    sha256 = "0gkm1m7jss25y2p2h6acm8awbchyrsqfhmbg70jaafr1dfxkzfir";
+  })
+  (extensionFromVscodeMarketplace {
+    publisher = "mtxr";
+    name = "sqltools-driver-mysql";
+    version = "0.2.0";
+    sha256 = "0l3apg0ickfj9j3qgr4fgvki1p0x4jrwvalp1id8fyzyskv5qlxw";
+  })
+  (extensionFromVscodeMarketplace {
+    publisher = "mtxr";
+    name = "sqltools-driver-pg";
+    version = "0.2.0";
+    sha256 = "0ws17sna87rs4ihcdj5lzxf8g2nkcgyjpqlafl5kii2c8x364y6j";
   })
   (extensionFromVscodeMarketplace {
     publisher = "naco-siren";

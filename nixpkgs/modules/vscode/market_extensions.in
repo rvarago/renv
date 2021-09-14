@@ -11,7 +11,6 @@ jebbs.plantuml
 jnoortheen.nix-ide
 joaompinto.vscode-graphviz
 jroesch.lean
-lighttiger2505.sqls
 mads-hartmann.bash-ide-vscode
 mattn.lisp
 maximedenes.vscoq
@@ -19,6 +18,9 @@ meraymond.idris-vscode
 ms-kubernetes-tools.vscode-kubernetes-tools
 ms-vscode.cmake-tools
 ms-vscode.makefile-tools
+mtxr.sqltools
+mtxr.sqltools-driver-mysql
+mtxr.sqltools-driver-pg
 naco-siren.gradle-language
 notskm.clang-tidy
 ocamllabs.ocaml-platform
