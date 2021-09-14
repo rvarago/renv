@@ -98,6 +98,9 @@
     shellcheck
     shfmt
 
+    # SQL.
+    sqls
+
     # Text
     nodePackages.unified-language-server
   ];

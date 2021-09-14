@@ -473,12 +473,16 @@
 
 (use-package sql
   :config
-  ;; Fixes default regexp with mariadb.
-  (sql-set-product-feature 'mysql :prompt-regexp "^\\(MariaDB\\|MySQL\\) \\[[_a-zA-Z]*\\]> "))
-
-(use-package sqlformat
-  :config
-  (setq sqlformat-command 'pgformatter))
+  ;; Fixes default regexp with mysql/mariadb.
+  (sql-set-product-feature 'mysql :prompt-regexp "^\\(MariaDB\\|MySQL\\) \\[[_a-zA-Z]*\\]> ")
+  :hook (sql-mode . lsp)
+  :bind (:map sql-mode-map
+              ("C-c C-r" . lsp-sql-execute-query)
+              ("C-c c" . lsp-sql-switch-connection)
+              ("C-c d" . lsp-sql-switch-database)
+              ("C-c C-l c" . lsp-sql-show-connections)
+              ("C-c C-l s" . lsp-sql-show-schemas)
+              ("C-c C-l d" . lsp-sql-show-databases)))
 
 
 ;; systemd.

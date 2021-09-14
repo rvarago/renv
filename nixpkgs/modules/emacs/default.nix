@@ -102,7 +102,7 @@ in {
         scala-mode
         shackle
         # sh-mode
-        sqlformat
+        # sql
         smartparens
         swiper
         switch-window
