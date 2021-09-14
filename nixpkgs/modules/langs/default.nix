@@ -86,6 +86,7 @@
     cargo-watch
     rustup
     rust-analyzer
+    sqlx-cli
 
     # Scala
     sbt
