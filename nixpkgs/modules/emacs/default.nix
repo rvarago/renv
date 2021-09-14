@@ -47,6 +47,7 @@ in {
         elm-mode
         flycheck
         flycheck-clang-tidy
+        flycheck-golangci-lint
         # flyspell
         flyspell-correct-ivy
         fsharp-mode

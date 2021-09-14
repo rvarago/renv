@@ -29,6 +29,7 @@
     delve
     go
     go-outline
+    golangci-lint
     gopls
     gopkgs
     gotests

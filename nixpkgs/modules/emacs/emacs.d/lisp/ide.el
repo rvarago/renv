@@ -245,9 +245,20 @@
 ;; Go.
 
 (use-package go-mode
-  :hook ((go-mode . lsp)
-         (before-save . lsp-format-buffer)
-         (before-save . lsp-organize-imports)))
+  :hook
+  ((go-mode . lsp)
+  (before-save . lsp-format-buffer)
+  (before-save . lsp-organize-imports)))
+
+(use-package flycheck-golangci-lint
+  :after flycheck
+  :config
+  ;; Enable this if things slow down significantly.
+  ;; (setq flycheck-golangci-lint-fast t)
+  :hook
+  (go-mode . flycheck-golangci-lint-setup)
+  (go-mode . (lambda () (setq flycheck-local-checkers '((lsp . ((next-checkers . (golangci-lint)))))))))
+
 
 ;; Graphviz.
 

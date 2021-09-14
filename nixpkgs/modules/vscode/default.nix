@@ -76,6 +76,10 @@
         "google-*"
       ];
 
+      "go.lintTool" = "golangci-lint";
+      # Enable this if things slow down significantly.
+      # "go.lintFlags" = ["--fast"];
+
       "idris.idrisPath" = "${pkgs.idris2}/bin/idris2";
       "idris.idris2Mode" = true;
 
