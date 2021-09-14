@@ -220,7 +220,9 @@
 
 (use-package dockerfile-mode
   :config (add-to-list 'auto-mode-alist '("Dockerfile\\'" . dockerfile-mode))
-  :hook (dockerfile-mode . lsp))
+  :hook
+  (dockerfile-mode . lsp)
+  (dockerfile-mode . (lambda () (setq flycheck-local-checkers '((lsp . ((next-checkers . (dockerfile-hadolint)))))))))
 
 (use-package docker-compose-mode)
 
