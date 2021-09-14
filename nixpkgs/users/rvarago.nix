@@ -10,11 +10,13 @@ in {
   home.homeDirectory = home;
   home.sessionVariables = {
     EDITOR = "nvim";
-    JAVA_HOME = "${home}/.nix-profile/lib/openjdk/";
+    JAVA_HOME = "${pkgs.openjdk}/lib/openjdk";
   };
 
   xdg.enable = true;
   xdg.mime.enable = true;
+
+  targets.genericLinux.enable = true;
 
   fonts.fontconfig.enable = true;
 
