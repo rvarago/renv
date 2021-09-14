@@ -92,6 +92,7 @@
     sqlx-cli
 
     # Scala
+    ammonite
     sbt
 
     # Scheme
