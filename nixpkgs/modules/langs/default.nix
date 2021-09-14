@@ -26,9 +26,11 @@
     elmPackages.elm-test
 
     # Go
+    delve
     go
     go-outline
     gopls
+    gopkgs
     gotests
 
     # Haskell
