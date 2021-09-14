@@ -45,6 +45,7 @@ in {
     diff-so-fancy
     meld
     plantuml
+    protobuf
     valgrind
     wireshark
 
