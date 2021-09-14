@@ -31,6 +31,12 @@ COMMAND:
 
 ## Post-Installation
 
+### Load Session Variables for X Sessions
+
+```bash
+echo ". \${HOME}/.nix-profile/etc/profile.d/hm-session-vars.sh" >> "${HOME}/.xprofile"
+```
+
 ### Set Fish as Default Shell
 
 Append to shells and then set the shell:
