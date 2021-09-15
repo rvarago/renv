@@ -135,9 +135,11 @@
 (use-package dap-mode
   :after lsp-mode
   :config
+  (dap-auto-configure-mode)
   (dap-ui-mode)
   (dap-ui-controls-mode 1)
-  (dap-auto-configure-mode)
+  :bind (:map dap-mode-map
+              ("C-c d d" . dap-debug))
   ;; Debug via dap-lldb.
   ;;(require 'dap-lldb)
   ;;(require 'dap-gdb-lldb)
