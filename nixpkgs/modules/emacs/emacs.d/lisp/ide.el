@@ -109,6 +109,7 @@
   (setq lsp-lens-enable t)
   (setq lsp-modeline-diagnostics-scope :workspace)
   (setq lsp-modeline-code-actions-segments '(count icon name))
+  ;; (setq lsp-log-io t) ;; Enable for debugging only.
   :bind (:map lsp-mode-map
               ("C-c r r" . lsp-rename)
               ("C-c r f" . lsp-format-buffer)
