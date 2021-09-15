@@ -320,8 +320,8 @@
 (use-package gradle-mode
   :hook (java-mode . gradle-mode)
   :bind (:map gradle-mode-map
-              ("C-c C-c" . gradle-build)
-              ("C-c C-t" . gradle-test))
+              ("C-c C-c C-c" . gradle-build)
+              ("C-c C-c C-t" . gradle-test))
   :preface
   (defun my/switch-to-compilation-window ()
     "Switches to the *compilation* buffer after compilation."
