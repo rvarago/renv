@@ -315,7 +315,8 @@
   :bind ((:map java-mode-map
                ("C-c r o" . lsp-java-organize-imports))))
 
-(use-package dap-java)
+(use-package dap-java
+  :after (dap-mode lsp-java))
 
 (use-package gradle-mode
   :hook (java-mode . gradle-mode)
