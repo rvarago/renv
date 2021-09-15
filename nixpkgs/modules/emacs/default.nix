@@ -35,6 +35,7 @@ in {
         counsel
         counsel-projectile
         cpp-auto-include
+        # dap-go
         # dap-java
         dap-mode
         # dap-cpptools

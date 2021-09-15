@@ -264,6 +264,11 @@
   (go-mode . (lambda () (setq flycheck-local-checkers '((lsp . ((next-checkers . (golangci-lint)))))))))
 
 
+(use-package dap-go
+  :after (dap-mode go-mode)
+  :config
+  (dap-go-setup))
+
 ;; Graphviz.
 
 (use-package graphviz-dot-mode
