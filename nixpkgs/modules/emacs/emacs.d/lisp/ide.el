@@ -99,7 +99,6 @@
 ;; ======================== LSP + DAP ========================
 (use-package lsp-mode
   :commands lsp
-  :diminish lsp-mode
   ;; :after company flycheck
   :hook
   (lsp-mode . lsp-enable-which-key-integration)
@@ -125,13 +124,15 @@
   :bind (:map lsp-ui-mode-map
               ("M-j" . lsp-ui-imenu)))
 
-(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+(use-package lsp-ivy
+  :commands lsp-ivy-workspace-symbol
+  :config
+  (define-key lsp-mode-map [remap xref-find-apropos] #'lsp-ivy-workspace-symbol))
 
 (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
 
 (use-package dap-mode
-  :after
-  lsp-mode
+  :after lsp-mode
   :config
   (dap-ui-mode)
   (dap-ui-controls-mode 1)
@@ -298,15 +299,16 @@
   :hook (java-mode . lsp))
 
 (use-package lsp-java
-  :defer t
-  :hook (java-mode . lsp)
-         ;; (java-mode . lsp-java-lens-mode)
-         ;; (java-mode . lsp-jt-lens-mode))
-  :config
-  :bind ((:map java-mode-map ("C-c r o" . 'lsp-java-organize-imports))))
+  :hook
+  (java-mode . lsp)
+  ;; (java-mode . lsp-java-lens-mode)
+  ;; (java-mode . lsp-jt-lens-mode)
+  ;; :custom
+  ;; (lsp-jt-browser)
+  :bind ((:map java-mode-map
+               ("C-c r o" . lsp-java-organize-imports))))
 
-(use-package dap-java
-  :after dap-mode lsp-java)
+(use-package dap-java)
 
 (use-package gradle-mode
   :hook (java-mode . gradle-mode)
