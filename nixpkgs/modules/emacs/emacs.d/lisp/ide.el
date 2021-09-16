@@ -100,6 +100,9 @@
 (use-package lsp-mode
   :commands lsp
   ;; :after company flycheck
+  :custom
+  (lsp-enable-folding nil)
+  (read-process-output-max (* 1024 1024)) ;; 1mb
   :hook
   (lsp-mode . lsp-enable-which-key-integration)
   (lsp-mode . lsp-lens-mode)
