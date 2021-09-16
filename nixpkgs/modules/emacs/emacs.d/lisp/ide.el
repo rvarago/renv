@@ -302,21 +302,16 @@
 
 ;; Java.
 
-(use-package java-mode
-  :hook (java-mode . lsp))
-
-;; (use-package lsp-java
-;;   :hook
-;;   (java-mode . lsp)
-;;   (java-mode . lsp-jt-lens-mode)
-;;   :bind ((:map java-mode-map
-;;                ("C-c r o" . lsp-java-organize-imports))))
+(use-package lsp-java
+  :preface
+  (add-hook 'java-mode-hook 'lsp)
+  :bind ((:map java-mode-map
+               ("C-c r o" . lsp-java-organize-imports))))
 
 (use-package dap-java
   :after (dap-mode lsp-java))
 
 (use-package gradle-mode
-  :hook (java-mode . gradle-mode)
   :bind (:map gradle-mode-map
               ("C-c C-c C-c" . gradle-build)
               ("C-c C-c C-t" . gradle-test))
