@@ -305,15 +305,12 @@
 (use-package java-mode
   :hook (java-mode . lsp))
 
-(use-package lsp-java
-  :hook
-  (java-mode . lsp)
-  ;; (java-mode . lsp-java-lens-mode)
-  ;; (java-mode . lsp-jt-lens-mode)
-  ;; :custom
-  ;; (lsp-jt-browser)
-  :bind ((:map java-mode-map
-               ("C-c r o" . lsp-java-organize-imports))))
+;; (use-package lsp-java
+;;   :hook
+;;   (java-mode . lsp)
+;;   (java-mode . lsp-jt-lens-mode)
+;;   :bind ((:map java-mode-map
+;;                ("C-c r o" . lsp-java-organize-imports))))
 
 (use-package dap-java
   :after (dap-mode lsp-java))
