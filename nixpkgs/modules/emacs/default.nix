@@ -13,6 +13,7 @@ in {
   services.emacs.enable = true;
   programs.emacs = {
     enable = true;
+    package = pkgs.emacsGcc;
     extraPackages = (epkgs:
       (with epkgs; [
         agda2-mode
