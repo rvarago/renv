@@ -43,6 +43,7 @@
     haskellPackages.hoogle
     haskellPackages.hpack
     haskellPackages.implicit-hie
+    haskellPackages.retrie
     haskellPackages.stack
 
     # Idris
