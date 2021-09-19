@@ -3,7 +3,8 @@
 let
   user = settings.user;
   home = "/home/${user}";
-in {
+in
+{
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = user;
@@ -78,7 +79,7 @@ in {
 
   imports = [
 
-    ../modules/emacs
+    ../modules/emacs-doom
     ../modules/fish
     ../modules/git
     ../modules/langs

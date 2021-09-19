@@ -33,7 +33,7 @@
     gopls
     gopkgs
     gotests
-
+    
     # Haskell
     ghc
     haskellPackages.cabal2nix
