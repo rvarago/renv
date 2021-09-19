@@ -32,6 +32,7 @@
     golangci-lint
     gopls
     gopkgs
+    gore
     gotests
     
     # Haskell
