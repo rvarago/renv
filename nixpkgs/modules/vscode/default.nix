@@ -83,7 +83,14 @@
       "idris.idrisPath" = "${pkgs.idris2}/bin/idris2";
       "idris.idris2Mode" = true;
 
-      "[java]" = { "editor.defaultFormatter" = "redhat.java"; };
+      "sql.linter.executablePath" = "${pkgs.sqlfluff}/bin/sqlfluff";
+      "[sql]" = {
+        "editor.defaultFormatter" = "dorzey.vscode-sqlfluff";
+      };
+
+      "[java]" = {
+        "editor.defaultFormatter" = "redhat.java";
+      };
 
       "[dockerfile]" = {
         "editor.defaultFomatter" = "ms-azuretools.vscode-docker";
@@ -93,7 +100,7 @@
 
       "plantuml.render" = "Local";
 
-      "nix.enableLanguageServer" =  true;
+      "nix.enableLanguageServer" = true;
 
       "python.analysis.typeCheckingMode" = "basic";
       "python.linting.enabled" = true;

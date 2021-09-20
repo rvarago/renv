@@ -355,6 +355,12 @@
           ("C-c C-c C-d" . lsp-sql-show-databases)
           ("C-c C-c C-s" . lsp-sql-show-schemas)))
 
+(use-package! sqlformat
+  :after sql
+  :config (setq sqlformat-command 'sqlfluff)
+  :bind (:map sql-mode-map
+          ("C-c c f" . 'sqlformat)))
+
 (use-package! sqlup-mode
   :after sql
   :init

@@ -3,6 +3,7 @@ arrterian.nix-env-selector
 avli.clojure
 azemoh.one-monokai
 cschlosser.doxdocgen
+dorzey.vscode-sqlfluff
 exiasr.hadolint
 formulahendry.terminal
 humao.rest-client

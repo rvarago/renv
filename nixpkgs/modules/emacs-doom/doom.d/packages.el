@@ -31,6 +31,7 @@
 
 ;; Sql.
 (package! sql)
+(package! sqlformat)
 (package! sqlup-mode)
 
 ;; Systemd.

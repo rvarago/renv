@@ -31,6 +31,12 @@
     sha256 = "08dp9bqxsxxqw8pm1sryl14xrvicagqwlxi5cc1vmksjh30dmn1a";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "dorzey";
+    name = "vscode-sqlfluff";
+    version = "0.0.5";
+    sha256 = "14zyz4gjwvia1sl32zv758havjhgp8yz5xjcga7w3ix9kdm0irhs";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "exiasr";
     name = "hadolint";
     version = "1.1.0";

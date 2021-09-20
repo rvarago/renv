@@ -108,6 +108,8 @@
 
     # SQL.
     sqls
+    sqlfluff
+    sqlint
 
     # Text
     nodePackages.unified-language-server
