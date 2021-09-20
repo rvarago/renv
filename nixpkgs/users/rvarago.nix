@@ -22,7 +22,7 @@ in
   fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
-    # CLI tools
+    # CLI tools.
     bat
     exa
     fd
@@ -42,7 +42,7 @@ in
     xsv
     wget
 
-    # Dev tools
+    # Dev tools.
     diff-so-fancy
     meld
     plantuml
@@ -50,7 +50,7 @@ in
     valgrind
     wireshark
 
-    # Cloud
+    # Cloud.
     docker-compose
     helm
     kubectl
@@ -58,12 +58,13 @@ in
     minikube
     hadolint
 
-    # Fonts
+    # Fonts.
     jetbrains-mono
     (nerdfonts.override { fonts = [ "Hack" "Iosevka" ]; })
 
-    # General tools
+    # General tools.
     skype
+    # slack
   ];
 
   programs.direnv = {
