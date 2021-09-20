@@ -31,6 +31,8 @@
 
 ;; Sql.
 (package! sql)
+(package! sqlup-mode)
+
 ;; Systemd.
 (package! systemd)
 

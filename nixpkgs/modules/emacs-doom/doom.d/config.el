@@ -355,6 +355,14 @@
           ("C-c C-c C-d" . lsp-sql-show-databases)
           ("C-c C-c C-s" . lsp-sql-show-schemas)))
 
+(use-package! sqlup-mode
+  :after sql
+  :init
+  (add-hook 'sql-mode-hook 'sqlup-mode)
+  :bind (:map sql-mode-map
+          ("C-c c u r" . sqlup-capitalize-keyworks-in-region)
+          ("C-c c u b" . sqlup-capitalize-keyworks-in-buffer)))
+
 
 ;; Systemd.
 (use-package! systemd)
