@@ -3,29 +3,29 @@
 {
 
   home.packages = with pkgs; [
-    # Agda
+    # Agda.
     (agda.withPackages (p: [ p.standard-library ]))
 
-    # C/C++
+    # C/C++.
     ccls
     clang-tools
     cmake
     conan
     cmake-language-server
 
-    # Clojure
+    # Clojure.
     leiningen
 
-    # Coq
+    # Coq.
     coq
 
-    # Elm
+    # Elm.
     elmPackages.elm
     elmPackages.elm-analyse
     elmPackages.elm-format
     elmPackages.elm-test
 
-    # Go
+    # Go.
     delve
     go
     go-outline
@@ -35,7 +35,7 @@
     gore
     gotests
     
-    # Haskell
+    # Haskell.
     ghc
     haskellPackages.cabal2nix
     haskellPackages.cabal-install
@@ -47,39 +47,39 @@
     haskellPackages.retrie
     haskellPackages.stack
 
-    # Idris
+    # Idris.
     idris2
 
-    # Java
+    # Java.
     gradle
     openjdk
     maven
 
-    # JS/TS
+    # JS/TS.
     nodejs
     yarn
 
-    # .Net
+    # .Net.
     dotnetCorePackages.sdk_5_0
 
     # Nix.
     nixpkgs-fmt
     rnix-lsp
 
-    # Python
+    # Python.
     poetry
     python3
     python3Packages.autopep8
     python3Packages.pip
     python3Packages.pylint
 
-    # OCaml
+    # OCaml.
     ocamlformat
     ocamlPackages.ocaml-lsp
     ocamlPackages.utop
     opam
 
-    # Rust
+    # Rust.
     cargo-audit
     cargo-edit
     cargo-expand
@@ -93,15 +93,15 @@
     rust-analyzer
     sqlx-cli
 
-    # Scala
+    # Scala.
     ammonite
     sbt
 
-    # Scheme
+    # Scheme.
     racket
     guile
 
-    # Shell
+    # Shell.
     shellcheck
     shfmt
 
