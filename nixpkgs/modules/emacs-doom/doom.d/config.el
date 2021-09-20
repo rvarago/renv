@@ -111,6 +111,14 @@
   :after (company yasnippet)
   :bind ("M-/" . company-yasnippet))
 
+;; =================== VCS ===================
+
+(use-package! magit
+  :bind
+  ("C-c v m" . magit-checkout)
+  ("C-c v e" . magit-ediff-resolve)
+  ("C-c v P" . magit-push))
+
 ;; ================= CHECKER =================
 
 (use-package! flycheck
