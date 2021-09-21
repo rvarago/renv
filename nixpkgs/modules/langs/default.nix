@@ -71,8 +71,12 @@
     poetry
     python3
     python3Packages.autopep8
+    python3Packages.black
+    python3Packages.isort
     python3Packages.pip
+    python3Packages.pyflakes
     python3Packages.pylint
+    python3Packages.pytest
 
     # OCaml.
     ocamlformat
