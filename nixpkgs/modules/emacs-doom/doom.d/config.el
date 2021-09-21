@@ -315,7 +315,9 @@
 
 ;; Python.
 (use-package! lsp-pyright
-  :config (setq lsp-pyright-typechecking-mode "basic"))
+  :config (setq lsp-pyright-typechecking-mode "basic")
+  :hook
+  (python-mode . (lambda () (setq flycheck-local-checkers '((lsp . ((next-checkers . (python-pylint)))))))))
 
 
 ;; Rust.
