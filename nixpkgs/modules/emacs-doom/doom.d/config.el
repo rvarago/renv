@@ -124,6 +124,10 @@
   :after (company yasnippet)
   :bind ("M-/" . company-yasnippet))
 
+(use-package! consult
+  :bind (("C-s" . consult-line)
+         ("C-r" . consult-line)))
+
 ;; =================== VCS ===================
 
 (use-package! magit
