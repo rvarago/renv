@@ -85,6 +85,12 @@
     sha256 = "0v1w0rmx2z7q6lfrl430fl6aq6n70y14s2fqsp734igdkdhdnvmk";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "lucax88x";
+    name = "codeacejumper";
+    version = "3.3.2";
+    sha256 = "02a5f0lg0rmrjjf52z30mk19ii71pcdxjmbcb4v6haw1pkm6anqn";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "mads-hartmann";
     name = "bash-ide-vscode";
     version = "1.11.0";

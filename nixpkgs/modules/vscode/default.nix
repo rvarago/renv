@@ -125,6 +125,11 @@
         command = "codelens.showLensesInCurrentLine";
       }
 
+      # Jump
+      {
+        key = "ctrl+s";
+        command = "extension.aceJump";
+      }
       # Idris
       {
         key = "ctrl+alt+a";

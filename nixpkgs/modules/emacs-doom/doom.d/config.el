@@ -66,6 +66,11 @@
 
 (setq org-directory "~/org/")
 
+(use-package! avy
+  :bind (("M-g g" . avy-goto-line)
+         ("M-g M-g" . avy-goto-line)
+         ("C-:" . avy-goto-char)))
+
 (use-package! goto-addr
   :bind (:map goto-address-highlight-keymap
           ("C-c C-o" . goto-address-at-point))
