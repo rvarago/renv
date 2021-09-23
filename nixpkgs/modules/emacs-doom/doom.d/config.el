@@ -60,6 +60,7 @@
 ;; ================= EDIT =================
 
 (global-set-key (kbd "<mouse-8>") 'xref-pop-marker-stack)
+
 (global-set-key (kbd "C-c d") 'delete-region)
 
 (setq doom-scratch-buffer-major-mode 'emacs-lisp-mode)
@@ -84,6 +85,9 @@
 (use-package! move-text
   :bind (("M-p" . move-text-up)
          ("M-n" . move-text-down)))
+
+(use-package! whole-line-or-region
+  :init (whole-line-or-region-global-mode))
 
 ;; ================= PROJECT =================
 

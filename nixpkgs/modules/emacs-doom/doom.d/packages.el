@@ -12,6 +12,7 @@
 
 ;; Edit.
 (package! move-text)
+(package! whole-line-or-region)
 
 ;; Graphviz.
 (package! graphviz-dot-mode)
