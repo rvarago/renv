@@ -34,7 +34,9 @@
 (use-package! treemacs
   :after projectile
   :init (add-hook 'projectile-after-switch-project-hook #'treemacs-display-current-project-exclusively)
-  :config (treemacs-follow-mode t)
+  :config
+  (treemacs-project-follow-mode t)
+  (treemacs-follow-mode t)
   :bind ("M-0" . treemacs-select-window))
 
 (use-package! window
