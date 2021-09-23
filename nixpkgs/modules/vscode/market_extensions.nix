@@ -201,8 +201,8 @@
   (extensionFromVscodeMarketplace {
     publisher = "vscjava";
     name = "vscode-java-test";
-    version = "0.31.3";
-    sha256 = "0sqp0kzdz3crablksmm0q1b4nbkl1nkjsvgp2k3mic8k1kpfjrn5";
+    version = "0.32.0";
+    sha256 = "0lq6daz228ipzls88y09zbdsv9n6backs5bddpdam628rs99qvn3";
   })
   (extensionFromVscodeMarketplace {
     publisher = "zxh404";
