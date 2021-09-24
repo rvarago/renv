@@ -127,7 +127,7 @@
 
       # Jump
       {
-        key = "ctrl+s";
+        key = "alt+g";
         command = "extension.aceJump";
       }
       # Idris
