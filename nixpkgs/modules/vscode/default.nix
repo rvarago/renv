@@ -6,6 +6,7 @@
     extensions = with pkgs.vscode-extensions;
       [
         baccata.scaladex-search
+        betterthantomorrow.calva
         coolbear.systemd-unit-file
         davidanson.vscode-markdownlint
         eamodio.gitlens

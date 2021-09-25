@@ -13,12 +13,6 @@
     sha256 = "0mralimyzhyp4x9q98x3ck64ifbjqdp8cxcami7clvdvkmf8hxhf";
   })
   (extensionFromVscodeMarketplace {
-    publisher = "avli";
-    name = "clojure";
-    version = "0.13.1";
-    sha256 = "1qh17lp7xpc9ggf5awya9d65wxxmr0z1cbpb2w6i63w0118iggx8";
-  })
-  (extensionFromVscodeMarketplace {
     publisher = "azemoh";
     name = "one-monokai";
     version = "0.5.0";
