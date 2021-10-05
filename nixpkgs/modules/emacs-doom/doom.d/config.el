@@ -165,6 +165,9 @@
   (add-hook 'lsp-mode-hook 'lsp-lens-mode)
   :config (setq lsp-lens-enable t))
   
+(use-package! lsp-ui
+  :config (setq lsp-ui-doc-show-with-cursor nil))
+
 ;; ================= DEV =================
 
 ;; C/C++.
