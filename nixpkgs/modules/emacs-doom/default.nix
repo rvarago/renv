@@ -45,7 +45,6 @@ in
   };
 
   # Doom.
-
   home.sessionPath = [ "${emacsdir}/bin" ];
   home.sessionVariables = {
     DOOMDIR = "${doomprivatedir}";
