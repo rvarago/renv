@@ -169,7 +169,8 @@
   (map! :map lsp-mode-map "C-c c h" #'lsp-describe-thing-at-point))
 
 (use-package! lsp-ui
-  :config (setq lsp-ui-doc-show-with-cursor nil))
+  :config (setq lsp-ui-doc-show-with-cursor nil
+                lsp-ui-doc-show-with-mouse t))
 
 ;; ================= DEV =================
 
