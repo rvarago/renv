@@ -163,10 +163,9 @@
   ;; FIXME: Somwehow ccls' lens show up in other modes.
   (remove-hook 'lsp-lens-mode-hook 'ccls-code-lens-mode)
   (add-hook 'lsp-mode-hook 'lsp-lens-mode)
-  :config (setq lsp-lens-enable t))
-
-(after! lsp
-  (map! :map lsp-mode-map "C-c c h" #'lsp-describe-thing-at-point))
+  :config (setq lsp-lens-enable t)
+  :bind (:map lsp-mode-map
+         ("C-c c h" . #'lsp-describe-thing-at-point)))
 
 (use-package! lsp-ui
   :config (setq lsp-ui-doc-show-with-cursor nil
