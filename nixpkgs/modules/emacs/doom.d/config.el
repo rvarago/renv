@@ -92,7 +92,7 @@
 ;; ================= PROJECT =================
 
 (use-package! projectile
-  :config (setq projectile-project-search-path '(("~/Projects/" . 3))
+  :config (setq projectile-project-search-path '(("~/Work/" . 3))
                 projectile-switch-project-action #'projectile-dired))
 
 ;; ================= COMPLETION =================
