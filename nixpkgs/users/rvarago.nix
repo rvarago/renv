@@ -80,7 +80,7 @@ in
 
   imports = [
 
-    ../modules/emacs-doom
+    ../modules/emacs
     ../modules/fish
     ../modules/git
     ../modules/langs
