@@ -100,7 +100,7 @@ home() {
 }
 
 nix() {
-  if ! command_exists "nix"; then
+  if ! command_exists "nix-shell"; then
     log "Installing nix"
 
     curl -L https://nixos.org/nix/install | sh
