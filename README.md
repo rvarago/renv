@@ -21,7 +21,8 @@ OPTION:
 COMMAND:
   check-deps              Check whether all required pre-conditions (e.g dependencies) hold
   home                    Install packages with home-manager
-  nix                     Install nix and home-manager (imperative)
+  home-manager            Install home-manage (imperative)
+  nix                     Install nix (imperative)
   nix-update              Update nix (imperative)
   ocaml                   Install OCaml toolchain (imperative)
   prune                   Prune old generations and collect relevant garbage

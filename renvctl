@@ -27,7 +27,8 @@ OPTION:
 COMMAND:
   check-deps              Check whether all required pre-conditions (e.g dependencies) hold
   home                    Install packages with home-manager
-  nix                     Install nix and home-manager (imperative)
+  home-manager            Install home-manage (imperative)
+  nix                     Install nix (imperative)
   nix-update              Update nix (imperative)
   ocaml                   Install OCaml toolchain (imperative)
   prune                   Prune old generations and collect relevant garbage
@@ -105,12 +106,13 @@ nix() {
 
     curl -L https://nixos.org/nix/install | sh
 
-    nix-channel --add https://github.com/nix-community/home-manager/archive/release-21.05.tar.gz home-manager
-    nix_update
+    log "nix installed, please reboot"
   else
     log "nix alredy installed"
   fi
+}
 
+home_manager() {
   if ! command_exists "home-manager"; then
     log "Installing home-manager"
 
@@ -171,6 +173,9 @@ handle() {
     ;;
   "home")
     home
+    ;;
+  "home-manager")
+    home_manager
     ;;
   "nix")
     nix
