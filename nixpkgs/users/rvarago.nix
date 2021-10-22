@@ -39,6 +39,7 @@ in
     tokei
     tree
     xclip
+    xdot
     xsv
     wget
 
