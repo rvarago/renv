@@ -59,6 +59,15 @@ in
     minikube
     hadolint
 
+    # Writing
+    aspell
+    aspellDicts.de
+    aspellDicts.en
+    aspellDicts.en-computers
+    aspellDicts.en-science
+    aspellDicts.pt_BR
+    languagetool
+
     # Fonts.
     jetbrains-mono
     (nerdfonts.override { fonts = [ "Hack" "Iosevka" ]; })
