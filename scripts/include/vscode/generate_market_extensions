@@ -29,9 +29,9 @@ fetch_hash() {
     local name=$2
     local version=$3
 
-    local url="https://$publisher.gallery.vsassets.io/_apis/public/gallery/publisher/$publisher/extension/$name/$version/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
+    local url="https://${publisher}.gallery.vsassets.io/_apis/public/gallery/publisher/${publisher}/extension/${name}/${version}/assetbyname/Microsoft.VisualStudio.Services.VSIXPackage"
 
-    nix-prefetch-url --type sha256 --name "$publisher-$name.zip" "$url"
+    nix-prefetch-url --type sha256 --name "${publisher}-${name}.zip" "${url}"
 }
 
 generate_section() {
@@ -75,7 +75,6 @@ main() {
         IFS="." read -r publisher name <<<"${line}"
 
         generate_section "${publisher}" "${name}" >>"${OUTFILE}"
-
     done <"${INFILE}"
 
     close_extensions >>"${OUTFILE}"
