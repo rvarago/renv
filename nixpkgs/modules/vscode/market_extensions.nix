@@ -151,6 +151,12 @@
     sha256 = "15lzxvym0mkljjn57av1p4z6hqqwbsbn5idw2fn7nccgrl93aywf";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "nicoespeon";
+    name = "abracadabra";
+    version = "6.6.0";
+    sha256 = "0324p7a2swpd4r47xfna1134s3xzpdggws39zwm99zqsijz7mjkj";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "notskm";
     name = "clang-tidy";
     version = "0.5.1";
@@ -167,6 +173,12 @@
     name = "vscode-xml";
     version = "0.18.0";
     sha256 = "03igpqq8j6qbnr2z7bsg1sj4lvd38s2b59rgc2g714pgj3m80wd4";
+  })
+  (extensionFromVscodeMarketplace {
+    publisher = "ritwickdey";
+    name = "LiveServer";
+    version = "5.6.1";
+    sha256 = "077arf3hsn1yb8xdhlrax5gf93ljww78irv4gm8ffmsqvcr1kws0";
   })
   (extensionFromVscodeMarketplace {
     publisher = "Rubymaniac";
@@ -203,6 +215,12 @@
     name = "vscode-java-test";
     version = "0.32.0";
     sha256 = "0lq6daz228ipzls88y09zbdsv9n6backs5bddpdam628rs99qvn3";
+  })
+  (extensionFromVscodeMarketplace {
+    publisher = "xabikos";
+    name = "JavaScriptSnippets";
+    version = "1.8.0";
+    sha256 = "19xg24alxsvq8pvafprshg7qxzx8p37bzk7qz6kjgkpvandrdpl6";
   })
   (extensionFromVscodeMarketplace {
     publisher = "zxh404";

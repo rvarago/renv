@@ -35,7 +35,7 @@
     gotests
     gotools
     go-outline
-    
+
     # Haskell.
     ghc
     haskellPackages.cabal2nix
@@ -58,6 +58,9 @@
 
     # JS/TS.
     nodejs
+    nodePackages.eslint
+    nodePackages.prettier
+    nodePackages.typescript
     yarn
 
     # .Net.

@@ -23,13 +23,16 @@ mtxr.sqltools
 mtxr.sqltools-driver-mysql
 mtxr.sqltools-driver-pg
 naco-siren.gradle-language
+nicoespeon.abracadabra
 notskm.clang-tidy
 ocamllabs.ocaml-platform
 redhat.vscode-xml
+ritwickdey.LiveServer
 Rubymaniac.vscode-direnv
 ryanolsonx.zenburn
 sjhuangx.vscode-scheme
 twxs.cmake
 vscjava.vscode-java-debug
 vscjava.vscode-java-test
+xabikos.JavaScriptSnippets
 zxh404.vscode-proto3

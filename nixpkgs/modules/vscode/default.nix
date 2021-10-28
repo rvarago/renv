@@ -9,8 +9,10 @@
         betterthantomorrow.calva
         coolbear.systemd-unit-file
         davidanson.vscode-markdownlint
+        dbaeumer.vscode-eslint
         eamodio.gitlens
         elmtooling.elm-ls-vscode
+        esbenp.prettier-vscode
         foxundermoon.shell-format
         golang.go
         haskell.haskell
