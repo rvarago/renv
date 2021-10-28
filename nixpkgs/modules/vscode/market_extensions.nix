@@ -57,14 +57,14 @@
   (extensionFromVscodeMarketplace {
     publisher = "jebbs";
     name = "plantuml";
-    version = "2.15.1";
-    sha256 = "030rrzadp39byjh792r0wz4mms622plsf9amkics843nf09zzgkv";
+    version = "2.16.0";
+    sha256 = "13vy0wnvx509kq92alad40s7gb68x68x19v2ah8k0mgk04dp6vqk";
   })
   (extensionFromVscodeMarketplace {
     publisher = "jnoortheen";
     name = "nix-ide";
-    version = "0.1.16";
-    sha256 = "04ky1mzyjjr1mrwv3sxz4mgjcq5ylh6n01lvhb19h3fmwafkdxbp";
+    version = "0.1.18";
+    sha256 = "1v3j67j8bydyqba20b2wzsfximjnbhknk260zkc0fid1xzzb2sbn";
   })
   (extensionFromVscodeMarketplace {
     publisher = "joaompinto";
@@ -105,8 +105,8 @@
   (extensionFromVscodeMarketplace {
     publisher = "meraymond";
     name = "idris-vscode";
-    version = "0.0.10";
-    sha256 = "15sq8g16bxmw6wzacz757nkkpqr03gsxxj4ig3fpr8blzf6v2bd0";
+    version = "0.0.11";
+    sha256 = "0dfvrqvfpx34fwc87cbr5kq2cc4w5mdccwvwl2kmlrys1j4gjp0q";
   })
   (extensionFromVscodeMarketplace {
     publisher = "ms-kubernetes-tools";
@@ -117,8 +117,8 @@
   (extensionFromVscodeMarketplace {
     publisher = "ms-vscode";
     name = "cmake-tools";
-    version = "1.8.1";
-    sha256 = "0k1m9k3cjjflpz75gjicsb59r1c4mnld9aps5rnyqa154a6mwnkl";
+    version = "1.9.1";
+    sha256 = "1r6wrqpcm2l74x25aa83aihy8hz86civgrs4j2rdx0y1pkvl61s3";
   })
   (extensionFromVscodeMarketplace {
     publisher = "ms-vscode";
