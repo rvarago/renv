@@ -58,6 +58,7 @@ in
     kubectx
     minikube
     hadolint
+    terraform
 
     # Writing
     aspell

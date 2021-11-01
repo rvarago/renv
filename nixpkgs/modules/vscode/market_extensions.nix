@@ -43,6 +43,12 @@
     sha256 = "0gj71xy7r82n1pic00xsi04dg7zg0dsxx000s03iq6lnz47s84gn";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "hashicorp";
+    name = "terraform";
+    version = "2.16.0";
+    sha256 = "0ya0xmmn4rmbvh8mxz466msbb3y2xqi4bg9dgymy2wq8cwzbn81b";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "humao";
     name = "rest-client";
     version = "0.24.5";
