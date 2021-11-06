@@ -223,6 +223,12 @@
     sha256 = "0lq6daz228ipzls88y09zbdsv9n6backs5bddpdam628rs99qvn3";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "wix";
+    name = "glean";
+    version = "5.2.2";
+    sha256 = "0zicmdhphsyvbqsbabydfsr3gljmzjdixxqjk77qrfwjd2mzjh16";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "xabikos";
     name = "JavaScriptSnippets";
     version = "1.8.0";
