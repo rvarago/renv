@@ -177,8 +177,8 @@
   (extensionFromVscodeMarketplace {
     publisher = "redhat";
     name = "vscode-xml";
-    version = "0.18.0";
-    sha256 = "03igpqq8j6qbnr2z7bsg1sj4lvd38s2b59rgc2g714pgj3m80wd4";
+    version = "0.18.1";
+    sha256 = "006fjcr8s3rsznqgpp13cmvw8k94cfpr24r3rp019jaj5as3l1ck";
   })
   (extensionFromVscodeMarketplace {
     publisher = "ritwickdey";
