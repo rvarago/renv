@@ -13,6 +13,7 @@
         eamodio.gitlens
         elmtooling.elm-ls-vscode
         esbenp.prettier-vscode
+        formulahendry.code-runner
         foxundermoon.shell-format
         golang.go
         haskell.haskell
