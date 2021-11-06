@@ -231,7 +231,7 @@
   (extensionFromVscodeMarketplace {
     publisher = "zxh404";
     name = "vscode-proto3";
-    version = "0.5.4";
-    sha256 = "08dfl5h1k6s542qw5qx2czm1wb37ck9w2vpjz44kp2az352nmksb";
+    version = "0.5.5";
+    sha256 = "08gjq2ww7pjr3ck9pyp5kdr0q6hxxjy3gg87aklplbc9bkfb0vqj";
   })
 ]
