@@ -159,8 +159,8 @@
   (extensionFromVscodeMarketplace {
     publisher = "nicoespeon";
     name = "abracadabra";
-    version = "6.6.0";
-    sha256 = "0324p7a2swpd4r47xfna1134s3xzpdggws39zwm99zqsijz7mjkj";
+    version = "6.7.1";
+    sha256 = "1qk40h2pjj4zxhsyfnr1ib6rahi634ji5c4490y3l7909h0qsw9f";
   })
   (extensionFromVscodeMarketplace {
     publisher = "notskm";
