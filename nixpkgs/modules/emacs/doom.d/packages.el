@@ -12,6 +12,7 @@
 
 ;; Edit.
 (package! move-text)
+(package! multiple-cursors)
 (package! whole-line-or-region)
 
 ;; Graphviz.

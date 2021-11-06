@@ -86,6 +86,11 @@
   :bind (("M-p" . move-text-up)
          ("M-n" . move-text-down)))
 
+(use-package! multiple-cursors
+  :hook
+  (prog-mode . multiple-cursors-mode)
+  :bind (("C-c m" . mc/edit-lines)))
+
 (use-package! whole-line-or-region
   :init (whole-line-or-region-global-mode))
 
