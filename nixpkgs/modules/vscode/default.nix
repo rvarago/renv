@@ -79,6 +79,13 @@
         "google-*"
       ];
 
+      "todohighlight.keywords" = [
+        {
+          "text" = "WIP:";
+          "color" = "#94bff3";
+        }
+      ];
+
       "go.lintTool" = "golangci-lint";
       # Enable this if things slow down significantly.
       # "go.lintFlags" = ["--fast"];

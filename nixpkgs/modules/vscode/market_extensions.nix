@@ -223,6 +223,12 @@
     sha256 = "0lq6daz228ipzls88y09zbdsv9n6backs5bddpdam628rs99qvn3";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "wayou";
+    name = "vscode-todo-highlight";
+    version = "1.0.5";
+    sha256 = "1sg4zbr1jgj9adsj3rik5flcn6cbr4k2pzxi446rfzbzvcqns189";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "wix";
     name = "glean";
     version = "5.2.2";
