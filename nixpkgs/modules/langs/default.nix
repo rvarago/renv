@@ -11,7 +11,7 @@
     clang-tools
     cmake
     conan
-    # cmake-language-server
+    cmake-language-server
 
     # Clojure.
     leiningen
