@@ -19,7 +19,10 @@
 
     extraConfig = {
       diff = { tool = "meld"; };
-      merge = { tool = "meld"; };
+      merge = {
+        tool = "meld";
+        conflictStyle = "diff3";
+      };
 
       init = { defaultBranch = "main"; };
 
