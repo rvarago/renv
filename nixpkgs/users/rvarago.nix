@@ -84,7 +84,6 @@ in
     nix-direnv.enable = true;
 
     enableBashIntegration = true;
-    enableFishIntegration = true;
   };
 
   services.lorri = { enable = true; };
