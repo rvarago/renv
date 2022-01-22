@@ -46,7 +46,7 @@ apt install build-essential make
 Append to shells and then set the shell:
 
 ```bash
-echo /home/rvarago/.nix-profile/bin/fish >> "/etc/shells" && chsh -s /home/rvarago/.nix-profile/bin/fish
+echo /home/rvarago/.nix-profile/bin/fish >> "/etc/shells" && chsh -s /home/rvarago/.nix-profile/bin/fish $USER
 ```
 
 ### Setup Docker
