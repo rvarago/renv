@@ -67,7 +67,9 @@
       };
 
       # Extensions
-      "[cpp]" = { "editor.defaultFormatter" = "xaver.clang-format"; };
+      "[cpp][c]" = {
+        "editor.defaultFormatter" = "xaver.clang-format";
+      };
 
       "cmake.configureOnOpen" = true;
 
