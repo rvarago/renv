@@ -51,6 +51,7 @@ in
     meld
     plantuml
     protobuf
+    strace
     valgrind
     wireshark
 
