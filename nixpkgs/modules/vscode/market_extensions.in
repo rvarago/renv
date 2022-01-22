@@ -20,6 +20,7 @@ meraymond.idris-vscode
 ms-kubernetes-tools.vscode-kubernetes-tools
 ms-vscode.cmake-tools
 ms-vscode.makefile-tools
+ms-vscode.test-adapter-converter
 mtxr.sqltools
 mtxr.sqltools-driver-mysql
 mtxr.sqltools-driver-pg

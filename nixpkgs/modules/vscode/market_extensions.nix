@@ -133,6 +133,12 @@
     sha256 = "0xsawwqvp2rhgz6cx587ygjb3ggysilnwba2xpfialj1czl2984q";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "ms-vscode";
+    name = "test-adapter-converter";
+    version = "0.1.5";
+    sha256 = "11x29njy746mjbv58s7cis2fj6xnmjqc0vn3nb4vv53skxcbhn4y";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "mtxr";
     name = "sqltools";
     version = "0.23.0";
