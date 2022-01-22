@@ -39,6 +39,7 @@ in
     socat
     texlive.combined.scheme-small
     tokei
+    tmux
     tree
     xclip
     xdot
