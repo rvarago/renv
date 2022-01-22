@@ -265,6 +265,12 @@
   :mode "\\.ini\\'")
 
 
+;; Idris.
+(use-package! idris-mode
+  :custom
+  (idris-interpreter-path "idris2"))
+
+
 ;; Java.
 (use-package! gradle-mode
   :bind (:map gradle-mode-map
