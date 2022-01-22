@@ -14,6 +14,7 @@
     cmake-language-server
 
     # Clojure.
+    clojure
     leiningen
 
     # Coq.
