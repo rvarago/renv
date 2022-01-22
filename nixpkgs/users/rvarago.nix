@@ -24,6 +24,7 @@ in
   home.packages = with pkgs; [
     # CLI tools.
     bat
+    bc
     exa
     fd
     fzf

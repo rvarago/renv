@@ -19,6 +19,12 @@
       nr = "nix-shell --run fish";
     };
 
+    functions = {
+      d2h = "echo \"obase=16; ibase=10; $argv\" | bc";
+
+      h2d = "echo \"obase=10; ibase=16; $argv\" | bc";
+    };
+
     plugins = [
       {
         name = "bass";
