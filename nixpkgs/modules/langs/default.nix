@@ -104,6 +104,7 @@
     # Scala.
     ammonite
     sbt
+    scala
 
     # Scheme.
     racket
