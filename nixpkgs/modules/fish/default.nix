@@ -11,7 +11,11 @@
       end
     '';
 
-    shellAliases = { nr = "nix-shell --run fish"; };
+    shellAliases = {
+      idris2w = "rlwrap idris2";
+      
+      nr = "nix-shell --run fish";
+    };
 
     plugins = [
       {
