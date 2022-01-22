@@ -10,6 +10,7 @@ let
 
   emacsdir = "${config.home.homeDirectory}/.emacs.d";
   doomprivatedir = "${config.home.homeDirectory}/.doom.d";
+  doombin = "${emacsdir}/bin/doom";
 in
 {
   # Emacs.
@@ -57,10 +58,10 @@ in
 
       onChange = "${pkgs.writeShellScript "doom-change" ''
         if [ ! -d "$DOOMLOCALDIR" ]; then
-          doom -y install
+          ${doombin} -y install
         else
-          doom -y clean
-          doom -y sync -u
+          ${doombin} -y clean
+          ${doombin} -y sync -u
         fi
       ''}";
     };
@@ -70,7 +71,7 @@ in
       recursive = true;
 
       onChange = "${pkgs.writeShellScript "doom-private-change" ''
-        doom -y sync
+        ${doombin} -y sync
       ''}";
     };
 
