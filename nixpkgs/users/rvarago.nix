@@ -37,6 +37,7 @@ in
     ripgrep
     rlwrap
     socat
+    tealdeer
     texlive.combined.scheme-small
     tokei
     tmux
