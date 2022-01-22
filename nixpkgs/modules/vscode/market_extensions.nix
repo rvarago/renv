@@ -7,6 +7,12 @@
     sha256 = "0kmmk6bpsdrvbb7dqf0d3annpg41n9g6ljzc1dh0akjzpbchdcwp";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "ArashSahebolamri";
+    name = "alloy";
+    version = "0.7.1";
+    sha256 = "00qm8rg0bbkmrvwrx13v68ninn8d4dm57m1j5f5p8r0344wcbwdj";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "arrterian";
     name = "nix-env-selector";
     version = "1.0.7";
@@ -23,6 +29,12 @@
     name = "doxdocgen";
     version = "1.3.2";
     sha256 = "08dp9bqxsxxqw8pm1sryl14xrvicagqwlxi5cc1vmksjh30dmn1a";
+  })
+  (extensionFromVscodeMarketplace {
+    publisher = "dongyuzhao";
+    name = "alloy-vscode";
+    version = "0.1.6";
+    sha256 = "1yyckiyf7ki6f951xij8i22zwkhb9hxaix36558qjwivqs6330y1";
   })
   (extensionFromVscodeMarketplace {
     publisher = "dorzey";

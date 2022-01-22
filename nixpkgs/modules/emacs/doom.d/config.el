@@ -176,6 +176,10 @@
 
 ;; ================= DEV =================
 
+;; Alloy.
+(use-package! alloy-mode)
+
+
 ;; C/C++.
 (use-package! cpp-auto-include
   :bind (:map c++-mode-map

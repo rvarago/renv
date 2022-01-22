@@ -6,6 +6,9 @@
     # Agda.
     (agda.withPackages (p: [ p.standard-library ]))
 
+    # Alloy.
+    alloy6
+
     # C/C++.
     ccls
     clang-tools

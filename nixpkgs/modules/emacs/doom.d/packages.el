@@ -4,6 +4,10 @@
 ;; Completion.
 (package! company-box)
 
+;; Alloy.
+(package! alloy-mode
+    :recipe (:host github :repo "dwwmmn/alloy-mode"))
+
 ;; C/C++.
 (package! cpp-auto-include)
 (package! cmake-ide)
