@@ -198,6 +198,11 @@
         command = "idris.proofSearch";
         when = "editorLangId == idris && editorTextFocus";
       }
+      {
+        key = "ctrl+alt+t";
+        command = "idris.typeAt";
+        when = "editorLangId == idris && editorTextFocus";
+      }
     ];
   };
 }
