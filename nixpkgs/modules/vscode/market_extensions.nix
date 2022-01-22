@@ -7,6 +7,12 @@
     sha256 = "0kmmk6bpsdrvbb7dqf0d3annpg41n9g6ljzc1dh0akjzpbchdcwp";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "alygin";
+    name = "vscode-tlaplus";
+    version = "1.5.4";
+    sha256 = "0mf98244z6wzb0vj6qdm3idgr2sr5086x7ss2khaxlrziif395dx";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "ArashSahebolamri";
     name = "alloy";
     version = "0.7.1";

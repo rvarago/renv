@@ -125,6 +125,11 @@
 
     # Text
     nodePackages.unified-language-server
+
+    # TLA+
+    tlaps
+    tlaplus
+    # tla-toolbox
   ];
 
   home.file.".ghc/ghci.conf".text = ''
