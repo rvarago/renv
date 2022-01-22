@@ -34,6 +34,7 @@ in
     pandoc
     procs
     ripgrep
+    rlwrap
     socat
     texlive.combined.scheme-small
     tokei
