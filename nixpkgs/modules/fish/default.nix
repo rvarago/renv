@@ -12,8 +12,10 @@
     '';
 
     shellAliases = {
+      guilew = "rlwrap guile";
+
       idris2w = "rlwrap idris2";
-      
+
       nr = "nix-shell --run fish";
     };
 
