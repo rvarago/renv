@@ -109,6 +109,10 @@
         "editor.defaultFomatter" = "ms-azuretools.vscode-docker";
       };
 
+      "[html][javascript][typescript][scss]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
+
       "shellformat.path" = "${pkgs.shfmt}/bin/shfmt";
 
       "plantuml.render" = "Local";
