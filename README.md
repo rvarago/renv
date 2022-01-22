@@ -21,6 +21,7 @@ OPTION:
 COMMAND:
   check-deps              Check whether all required pre-conditions (e.g dependencies) hold
   home                    Install packages with home-manager
+  lean                    Install Lean toolchains managed by Elan (imperative)
   home-manager            Install home-manage (imperative)
   nix                     Install nix (imperative)
   nix-update              Update nix (imperative)

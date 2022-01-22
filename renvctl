@@ -28,6 +28,7 @@ COMMAND:
   check-deps              Check whether all required pre-conditions (e.g dependencies) hold
   home                    Install packages with home-manager
   home-manager            Install home-manage (imperative)
+  lean                    Install Lean toolchains managed by Elan (imperative)
   nix                     Install nix (imperative)
   nix-update              Update nix (imperative)
   ocaml                   Install OCaml toolchain (imperative)
@@ -122,6 +123,14 @@ home_manager() {
   fi
 }
 
+lean() {
+  log "Installing Lean utilities"
+  
+  elan update
+  elan toolchain install leanprover/lean4:nightly
+  elan default leanprover/lean4:nightly
+}
+
 nix_update() {
   log "Updating nix"
 
@@ -173,6 +182,9 @@ handle() {
     ;;
   "home")
     home
+    ;;
+  "lean")
+    lean
     ;;
   "home-manager")
     home_manager

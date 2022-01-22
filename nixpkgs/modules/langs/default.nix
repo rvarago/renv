@@ -60,6 +60,9 @@
     openjdk
     maven
 
+    # Lean4.
+    elan
+    
     # JS/TS.
     nodejs
     nodePackages.eslint

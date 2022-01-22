@@ -296,6 +296,12 @@
                 kubernetes-redraw-frequency 3600))
 
 
+;; Lean
+(use-package! lean4-mode
+  :mode "\\.lean"
+  :commands (lean4-mode))
+
+
 ;; Markdown.
 (use-package! markdown-mode
   :mode ("\\.\\(md\\|markdown\\)\\'")

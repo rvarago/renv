@@ -97,10 +97,10 @@
     sha256 = "17z5zgr8l94mj8dgqxwsrpixnkz0778fp1g4rxc7i56wb1zbik3w";
   })
   (extensionFromVscodeMarketplace {
-    publisher = "jroesch";
-    name = "lean";
-    version = "0.16.44";
-    sha256 = "1xhi9cmw07f09j80p57vwbbdilvlx782745fb9cbsmj7jb7yadw6";
+    publisher = "leanprover";
+    name = "lean4";
+    version = "0.0.56";
+    sha256 = "09sqvdm8svpl0v66lnvs03h1j54wnmyakhyb1axwq6vc80x81ygm";
   })
   (extensionFromVscodeMarketplace {
     publisher = "lucax88x";
