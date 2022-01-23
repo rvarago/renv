@@ -9,7 +9,7 @@ let
       lens
       megaparsec
       mtl
-      # polysemy # TODO: Fix build error due to doctest.
+      polysemy
       servant
       transformers
     ]);
