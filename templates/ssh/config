@@ -1,0 +1,14 @@
+# Generate keys with, e.g.:
+#
+# ssh-keygen -t ed25519 -f ~/.ssh/$ROLE/id_ed25519 -C "$EMAIL ($ROLE)"
+
+#Host $HOSTALIAS
+#   HostName $HOST
+#   User $USER
+#   IdentityFile ~/.ssh/$ROLE/id_ed25519
+#   IdentitiesOnly yes
+
+Host github.com
+   HostName github.com
+   IdentityFile ~/.ssh/github/id_ed25519
+   IdentitiesOnly yes
