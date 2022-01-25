@@ -298,8 +298,7 @@
 
 ;; Lean
 (use-package! lean4-mode
-  :mode "\\.lean"
-  :commands (lean4-mode))
+  :mode "\\.lean\\'")
 
 
 ;; Markdown.
