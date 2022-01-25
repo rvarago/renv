@@ -14,8 +14,10 @@ in
     JAVA_HOME = "${pkgs.openjdk}/lib/openjdk";
   };
 
-  xdg.enable = true;
-  xdg.mime.enable = true;
+  xdg = {
+    enable = true;
+    mime.enable = true;
+  };
 
   targets.genericLinux.enable = true;
 
