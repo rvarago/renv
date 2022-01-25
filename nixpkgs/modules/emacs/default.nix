@@ -9,7 +9,8 @@ let
   );
 
   emacsdir = "${config.home.homeDirectory}/.emacs.d";
-  doomprivatedir = "${config.home.homeDirectory}/.doom.d";
+  doomdir = "${config.home.homeDirectory}/.doom.d";
+  doomlocaldir = "${config.home.homeDirectory}/.doom.local.d";
   doombin = "${emacsdir}/bin/doom";
 in
 {
@@ -48,8 +49,8 @@ in
   # Doom.
   home.sessionPath = [ "${emacsdir}/bin" ];
   home.sessionVariables = {
-    DOOMDIR = "${doomprivatedir}";
-    DOOMLOCALDIR = "${doomprivatedir}/var";
+    DOOMDIR = "${doomdir}";
+    DOOMLOCALDIR = "${doomlocaldir}";
   };
 
   home.file = {
@@ -57,6 +58,8 @@ in
       source = builtins.fetchGit "https://github.com/hlissner/doom-emacs";
 
       onChange = "${pkgs.writeShellScript "doom-change" ''
+        export DOOMDIR="${doomdir}"
+        export DOOMLOCALDIR="${doomlocaldir}"
         if [ ! -d "$DOOMLOCALDIR" ]; then
           ${doombin} -y install
         else
@@ -70,7 +73,9 @@ in
       source = ./doom.d;
       recursive = true;
 
-      onChange = "${pkgs.writeShellScript "doom-private-change" ''
+      onChange = "${pkgs.writeShellScript "doom-local-change" ''
+        export DOOMDIR="${doomdir}"
+        export DOOMLOCALDIR="${doomlocaldir}"
         ${doombin} -y sync
       ''}";
     };
