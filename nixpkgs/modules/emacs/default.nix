@@ -29,12 +29,12 @@ in
 
     extraPackages = (
       epkgs:
-        (
-          with epkgs; [
-            all-the-icons
-            vterm
-          ]
-        )
+      (
+        with epkgs; [
+          all-the-icons
+          vterm
+        ]
+      )
     );
   };
 
