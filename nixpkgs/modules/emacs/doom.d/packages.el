@@ -30,7 +30,7 @@
 
 ;; Lean
 (package! lean4-mode
-    :recipe (:host github :repo "leanprover/lean4" :files ("lean4-mode/lean4*.el")))
+    :recipe (:host github :repo "leanprover/lean4-mode"))
 
 ;; Markdown.
 (package! markdown-preview-mode)
