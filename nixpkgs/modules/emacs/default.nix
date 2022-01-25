@@ -61,7 +61,7 @@ in
         export DOOMDIR="${doomdir}"
         export DOOMLOCALDIR="${doomlocaldir}"
         if [ ! -d "$DOOMLOCALDIR" ]; then
-          ${doombin} -y install
+          yes | ${doombin} -y install
         else
           ${doombin} -y clean
           ${doombin} -y sync -u
