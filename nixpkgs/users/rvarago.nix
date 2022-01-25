@@ -19,6 +19,8 @@ in
     mime.enable = true;
   };
 
+  xsession.enable = true;
+
   targets.genericLinux.enable = true;
 
   fonts.fontconfig.enable = true;
