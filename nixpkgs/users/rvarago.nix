@@ -59,6 +59,7 @@ in
     strace
     valgrind
     wireshark
+    patchelf
 
     # Cloud.
     docker-compose
