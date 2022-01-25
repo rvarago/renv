@@ -55,13 +55,18 @@ in
 
   home.file = {
     ".emacs.d" = {
-      source = builtins.fetchGit "https://github.com/hlissner/doom-emacs";
+      source = builtins.fetchGit {
+        # Revert fork to upstream when https://github.com/hlissner/doom-emacs/pull/6038 gets accepted, if at all.
+        url = "https://github.com/rvarago/doom-emacs";
+        ref = "develop";
+        rev = "69c4e0a8d709f9e6b665b04ad1f8324cdc8508ff";
+      };
 
       onChange = "${pkgs.writeShellScript "doom-change" ''
         export DOOMDIR="${doomdir}"
         export DOOMLOCALDIR="${doomlocaldir}"
         if [ ! -d "$DOOMLOCALDIR" ]; then
-          yes | ${doombin} -y install
+          yes | ${doombin} -y install --no-hooks
         else
           ${doombin} -y clean
           ${doombin} -y sync -u
