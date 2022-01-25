@@ -59,7 +59,7 @@ in
         # Revert fork to upstream when https://github.com/hlissner/doom-emacs/pull/6038 gets accepted, if at all.
         url = "https://github.com/rvarago/doom-emacs";
         ref = "develop";
-        rev = "69c4e0a8d709f9e6b665b04ad1f8324cdc8508ff";
+        rev = "abaf908da9f3f5720bbe2a59f8f5c9c931519cea";
       };
 
       onChange = "${pkgs.writeShellScript "doom-change" ''
