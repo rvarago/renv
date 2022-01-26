@@ -11,7 +11,7 @@ NIXPKGS="${THIS_DIR}/nixpkgs"
 SCRIPTS="${THIS_DIR}/scripts/include"
 
 log() {
-  echo "[${THIS_SCRIPT}] " "$@" >&2
+  echo >&2 "[${THIS_SCRIPT}] " "$@"
 }
 
 usage() {
