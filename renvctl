@@ -155,6 +155,8 @@ prune() {
   home-manager generations |
     awk -v max="${generations_to_keep}" 'NR > max {print $5}' |
     xargs home-manager remove-generations
+
+  nix-collect-garbage
 }
 
 rust() {
