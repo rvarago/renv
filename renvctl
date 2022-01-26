@@ -43,14 +43,14 @@ command=""
 parse_args() {
   while getopts "h" opt; do
     case "${opt}" in
-    h)
-      usage
-      exit 0
-      ;;
-    *)
-      log "Please, provide a valid option other than '${opt}'"
-      exit 64
-      ;;
+      h)
+        usage
+        exit 0
+        ;;
+      *)
+        log "Please, provide a valid option other than '${opt}'"
+        exit 64
+        ;;
     esac
   done
 
@@ -125,7 +125,7 @@ home_manager() {
 
 lean() {
   log "Installing Lean utilities"
-  
+
   elan update
   elan toolchain install leanprover/lean4:nightly
   elan default leanprover/lean4:nightly
@@ -152,7 +152,10 @@ prune() {
 
   log "Pruning old generations and collecting garbage"
 
-  home-manager generations | tail -n +$(( generations_to_keep + 1 )) | awk '{print $5}' | xargs home-manager remove-generations
+  home-manager generations |
+    tail -n +$((generations_to_keep + 1)) |
+    awk '{print $5}' |
+    xargs home-manager remove-generations
 
   nix-collect-garbage
 }
@@ -177,40 +180,40 @@ handle() {
   local command="$1"
 
   case "${command}" in
-  "check-deps")
-    check_deps
-    ;;
-  "home")
-    home
-    ;;
-  "lean")
-    lean
-    ;;
-  "home-manager")
-    home_manager
-    ;;
-  "nix")
-    nix
-    ;;
-  "nix-update")
-    nix_update
-    ;;
-  "ocaml")
-    ocaml
-    ;;
-  "prune")
-    prune
-    ;;
-  "rust")
-    rust
-    ;;
-  "vscode")
-    vscode
-    ;;
-  *)
-    log "Please, provide a valid command other than '${command}'"
-    exit 64
-    ;;
+    "check-deps")
+      check_deps
+      ;;
+    "home")
+      home
+      ;;
+    "lean")
+      lean
+      ;;
+    "home-manager")
+      home_manager
+      ;;
+    "nix")
+      nix
+      ;;
+    "nix-update")
+      nix_update
+      ;;
+    "ocaml")
+      ocaml
+      ;;
+    "prune")
+      prune
+      ;;
+    "rust")
+      rust
+      ;;
+    "vscode")
+      vscode
+      ;;
+    *)
+      log "Please, provide a valid command other than '${command}'"
+      exit 64
+      ;;
   esac
 }
 
