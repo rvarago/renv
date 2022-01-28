@@ -11,8 +11,8 @@
 
 (setq doom-theme 'doom-zenburn
       doom-themes-treemacs-theme "doom-colors"
-      doom-font (font-spec :family "JetBrains Mono" :size 15)
-      doom-big-font (font-spec :family "JetBrains Mono" :size 30)
+      doom-font (font-spec :family "Iosevka" :size 16)
+      doom-big-font (font-spec :family "Iosevka" :size 30)
       display-line-numbers-type t)
 
 (defun my/protect-buffers ()
