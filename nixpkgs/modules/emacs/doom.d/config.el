@@ -16,6 +16,10 @@
       doom-themes-treemacs-enable-variable-pitch nil
       display-line-numbers-type t)
 
+(custom-set-faces!
+  '(font-lock-comment-face :slant italic)
+  '(font-lock-doc-face :slant italic))
+
 (defun my/protect-buffers ()
   "Protects some buffers from being killed."
   (let ((protected-buffers '("*scratch*" "*Messages*")))
