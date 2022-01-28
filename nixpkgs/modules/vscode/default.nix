@@ -51,7 +51,7 @@
       "editor.bracketPairColorization.enabled" = true;
       "editor.lineHeight" = 20;
       "editor.fontFamily" = "Iosevka";
-      "editor.fontLigatures" = "'SS01'";
+      "editor.fontLigatures" = "'SS09'";
       "editor.fontSize" = 16;
       "editor.minimap.enabled" = false;
       "editor.tokenColorCustomizations" = {
