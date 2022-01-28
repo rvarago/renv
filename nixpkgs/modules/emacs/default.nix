@@ -56,10 +56,8 @@ in
   home.file = {
     ".emacs.d" = {
       source = builtins.fetchGit {
-        # Revert fork to upstream when https://github.com/hlissner/doom-emacs/pull/6038 gets accepted, if at all.
-        url = "https://github.com/rvarago/doom-emacs";
-        ref = "develop";
-        rev = "abaf908da9f3f5720bbe2a59f8f5c9c931519cea";
+        url = "https://github.com/hlissner/doom-emacs";
+        ref = "master";
       };
 
       onChange = "${pkgs.writeShellScript "doom-change" ''
