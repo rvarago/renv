@@ -13,6 +13,7 @@
       doom-themes-treemacs-theme "doom-colors"
       doom-font (font-spec :family "Iosevka" :size 16)
       doom-big-font (font-spec :family "Iosevka" :size 30)
+      doom-themes-treemacs-enable-variable-pitch nil
       display-line-numbers-type t)
 
 (defun my/protect-buffers ()
