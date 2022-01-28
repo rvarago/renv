@@ -48,6 +48,7 @@
       };
 
     userSettings = {
+      "editor.bracketPairColorization.enabled" = true;
       "editor.lineHeight" = 20;
       "editor.fontFamily" = "JetBrains Mono";
       "editor.fontLigatures" = true;
