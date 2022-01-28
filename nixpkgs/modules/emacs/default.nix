@@ -26,7 +26,7 @@ in
 
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs; # pkgs.emacsGit for 28.x.
+    package = pkgs.emacsUnstable;
 
     extraPackages = (
       epkgs:
