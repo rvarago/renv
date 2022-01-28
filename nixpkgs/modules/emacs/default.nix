@@ -33,6 +33,7 @@ in
       (
         with epkgs; [
           all-the-icons
+          pdf-tools
           vterm
         ]
       )

@@ -36,6 +36,9 @@
 (package! markdown-preview-mode)
 (package! pandoc-mode)
 
+;; PDF.
+(package! pdf-tools :built-in 'prefer)
+
 ;; Protobuf.
 (package! protobuf-mode)
 
