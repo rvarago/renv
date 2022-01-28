@@ -105,8 +105,8 @@
         "editor.defaultFormatter" = "redhat.java";
       };
 
-      "[docker]" = {
-        "editor.defaultFomatter" = "ms-azuretools.vscode-docker";
+      "[dockerfile]" = {
+        "editor.defaultFormatter" = "ms-azuretools.vscode-docker";
       };
 
       "[html][javascript][typescript][scss]" = {
