@@ -54,6 +54,16 @@
       "editor.fontLigatures" = "'SS01'";
       "editor.fontSize" = 16;
       "editor.minimap.enabled" = false;
+      "editor.tokenColorCustomizations" = {
+        "textMateRules" = [
+          {
+            "scope" = "comment";
+            "settings" = {
+              "fontStyle" = "italic";
+            };
+          }
+        ];
+      };
 
       "terminal.integrated.fontFamily" = "Iosevka";
 
