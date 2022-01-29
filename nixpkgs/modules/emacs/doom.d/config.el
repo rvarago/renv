@@ -16,6 +16,15 @@
       doom-themes-treemacs-enable-variable-pitch nil
       display-line-numbers-type t)
 
+(defun my/switch-doom-theme (theme-prefix)
+  "Switches to a different doom theme, e.g. 'zenburn' or 'vibrant'."
+  (interactive "stheme prefix: ")
+  (let ((theme (intern (concat "doom-" theme-prefix))))
+    (setq doom-theme theme)
+    (load-theme theme)))
+
+(map! "C-x t s" #'my/switch-doom-theme)
+
 (custom-set-faces!
   '(font-lock-comment-face :slant italic)
   '(font-lock-doc-face :slant italic))
