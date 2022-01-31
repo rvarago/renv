@@ -223,10 +223,6 @@
   :mode ("CMakeLists\\.txt\\'" "\\.cmake\\'")
   :hook (cmake-mode . lsp-deferred))
 
-(use-package! cmake-font-lock
-  :defer t
-  :hook (cmake-mode . cmake-font-lock-activate))
-
 (use-package! cmake-ide
   :defer t
   :after (cmake-mode projectile)
