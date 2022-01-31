@@ -231,12 +231,13 @@
   :preface
   (defun my/cmake-ide-find-project ()
     "Finds the directory of the project for cmake-ide."
-    (with-eval-after-load 'projectile
-      (setq cmake-ide-project-dir (projectile-project-root))
-            cmake-ide-build-dir (concat cmake-ide-project-dir "build")
-            cmake-ide-compile-command
-              (concat "cmake -B " cmake-ide-build-dir " && cmake --build " cmake-ide-build-dir))
-    (cmake-ide-load-db))
+    (if (not (null (projectile-project-root)))
+      (with-eval-after-load 'projectile
+        (setq cmake-ide-project-dir (projectile-project-root))
+              cmake-ide-build-dir (concat cmake-ide-project-dir "build")
+              cmake-ide-compile-command
+                (concat "cmake -B " cmake-ide-build-dir " && cmake --build " cmake-ide-build-dir))
+      (cmake-ide-load-db)))
 
   (defun my/switch-to-compilation-window ()
     "Switches to the *compilation* buffer after compilation."
