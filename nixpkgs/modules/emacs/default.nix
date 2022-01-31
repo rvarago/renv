@@ -26,7 +26,7 @@ in
 
   programs.emacs = {
     enable = true;
-    package = pkgs.emacsUnstable;
+    package = pkgs.emacsGcc;
 
     extraPackages = (
       epkgs:
@@ -81,6 +81,7 @@ in
         export DOOMDIR="${doomdir}"
         export DOOMLOCALDIR="${doomlocaldir}"
         ${doombin} -y sync
+        # To recompile Run ${doombin} -y build 
       ''}";
     };
 
