@@ -139,6 +139,9 @@
     tlaps
     tlaplus
     # tla-toolbox
+
+    # Web
+    html-tidy
   ];
 
   home.file.".ghc/ghci.conf".text = ''
