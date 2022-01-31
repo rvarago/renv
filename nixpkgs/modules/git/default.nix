@@ -67,5 +67,8 @@
     };
   };
 
-  home.packages = [ pkgs.gitAndTools.gitflow ];
+  home.packages = [
+    pkgs.gitAndTools.gitflow
+    pkgs.git-lfs
+  ];
 }
