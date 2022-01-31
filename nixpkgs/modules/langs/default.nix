@@ -23,6 +23,10 @@
     # Coq.
     coq
 
+    # Common-Lisp
+    sbcl
+    lispPackages.quicklisp
+
     # Elm.
     elmPackages.elm
     elmPackages.elm-analyse
