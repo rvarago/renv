@@ -11,6 +11,7 @@
 ;; C/C++.
 (package! cpp-auto-include)
 (package! cmake-ide)
+(package! cmake-font-lock)
 (package! flycheck-clang-tidy)
 (package! google-c-style)
 
