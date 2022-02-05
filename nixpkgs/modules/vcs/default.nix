@@ -29,7 +29,6 @@
       init = { defaultBranch = "main"; };
 
       core = {
-        editor = "nvim";
         ignorecase = false;
         pager = "diff-so-fancy | less --tabs=4 -RFX";
       };
