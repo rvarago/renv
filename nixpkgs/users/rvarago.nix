@@ -52,8 +52,6 @@ in
     wget
 
     # Dev tools.
-    diff-so-fancy
-    meld
     plantuml
     protobuf
     strace

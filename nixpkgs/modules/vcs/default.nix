@@ -69,8 +69,10 @@
     };
   };
 
-  home.packages = [
-    pkgs.gitAndTools.gitflow
-    pkgs.git-lfs
+  home.packages = with pkgs; [
+    diff-so-fancy
+    gitAndTools.gitflow
+    git-lfs
+    meld
   ];
 }
