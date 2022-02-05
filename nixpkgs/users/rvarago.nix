@@ -102,10 +102,10 @@ in
 
     ../modules/emacs
     ../modules/fish
-    ../modules/git
     ../modules/langs
     ../modules/neovim
     ../modules/tmux
+    ../modules/vcs
     ../modules/vscode
 
   ];
