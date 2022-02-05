@@ -10,7 +10,6 @@ in
   home.username = user;
   home.homeDirectory = home;
   home.sessionVariables = {
-    EDITOR = "nvim";
     JAVA_HOME = "${pkgs.openjdk}/lib/openjdk";
   };
 
