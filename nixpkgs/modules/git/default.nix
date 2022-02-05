@@ -13,6 +13,8 @@
       "\\#*#"
       # vscode
       ".vscode"
+      # jetbrains
+      ".idea"
       # direnv
       ".direnv"
     ];
