@@ -43,7 +43,6 @@ in
     rlwrap
     socat
     tealdeer
-    texlive.combined.scheme-small
     tokei
     tree
     xclip
@@ -68,7 +67,7 @@ in
     hadolint
     terraform
 
-    # Writing
+    # Writing.
     aspell
     aspellDicts.de
     aspellDicts.en
@@ -76,6 +75,7 @@ in
     aspellDicts.en-science
     aspellDicts.pt_BR
     languagetool
+    texlive.combined.scheme-small
 
     # Fonts.
     jetbrains-mono
@@ -98,13 +98,11 @@ in
 
   imports = [
 
-    ../modules/emacs
+    ../modules/editors
     ../modules/fish
     ../modules/langs
-    ../modules/neovim
     ../modules/tmux
     ../modules/vcs
-    ../modules/vscode
 
   ];
 
