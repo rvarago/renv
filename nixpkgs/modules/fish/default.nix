@@ -13,12 +13,16 @@
 
     shellAliases = {
       clojurew = "rlwrap clojure";
-      
+
       guilew = "rlwrap guile";
 
       idris2w = "rlwrap idris2";
 
       nr = "nix-shell --run fish";
+
+      ei = "emacs -nw";
+
+      magit = "ei --eval '(magit)'";
     };
 
     functions = {
