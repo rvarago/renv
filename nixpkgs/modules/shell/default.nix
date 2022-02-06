@@ -14,6 +14,7 @@
 
   imports = [
     ./fish
+    ./tmux
   ];
 
 }

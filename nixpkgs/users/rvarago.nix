@@ -89,7 +89,6 @@ in
     ../modules/editors
     ../modules/langs
     ../modules/shell
-    ../modules/tmux
     ../modules/vcs
   ];
 
