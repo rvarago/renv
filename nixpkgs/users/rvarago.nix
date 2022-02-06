@@ -9,9 +9,6 @@ in
   # paths it should manage.
   home.username = user;
   home.homeDirectory = home;
-  home.sessionVariables = {
-    JAVA_HOME = "${pkgs.openjdk}/lib/openjdk";
-  };
 
   xdg = {
     enable = true;

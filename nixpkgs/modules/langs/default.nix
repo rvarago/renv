@@ -2,6 +2,10 @@
 
 {
 
+  home.sessionVariables = {
+    JAVA_HOME = "${pkgs.openjdk}/lib/openjdk";
+  };
+
   home.packages = with pkgs; [
     # Agda.
     (agda.withPackages (p: [ p.standard-library ]))
@@ -66,7 +70,7 @@
 
     # Lean4.
     elan
-    
+
     # JS/TS.
     nodejs
     nodePackages.eslint
