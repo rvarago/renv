@@ -10,17 +10,6 @@ in
   home.username = user;
   home.homeDirectory = home;
 
-  xdg = {
-    enable = true;
-    mime.enable = true;
-  };
-
-  xsession.enable = true;
-
-  targets.genericLinux.enable = true;
-
-  fonts.fontconfig.enable = true;
-
   home.packages = with pkgs; [
     # CLI tools.
     bat
@@ -81,9 +70,12 @@ in
     # slack
   ];
 
+  fonts.fontconfig.enable = true;
+
   imports = [
     ../modules/editors
     ../modules/langs
+    ../modules/linux
     ../modules/shell
     ../modules/vcs
   ];
