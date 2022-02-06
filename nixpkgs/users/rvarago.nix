@@ -25,7 +25,6 @@ in
     # CLI tools.
     bat
     bc
-    editorconfig-core-c
     exa
     fd
     fzf
