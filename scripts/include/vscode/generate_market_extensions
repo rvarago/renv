@@ -7,7 +7,7 @@ set -eu
 BASE_DIR="${PWD}"
 THIS_SCRIPT=$(basename "${BASH_SOURCE[0]}")
 
-VSCODE_DIR="${BASE_DIR}/nixpkgs/modules/vscode"
+VSCODE_DIR="${BASE_DIR}/nixpkgs/modules/editors/vscode"
 INFILE="${VSCODE_DIR}/market_extensions.in"
 OUTFILE="${VSCODE_DIR}/market_extensions.nix"
 
