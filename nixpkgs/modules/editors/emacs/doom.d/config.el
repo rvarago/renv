@@ -352,8 +352,8 @@
   :defer t
   :mode ("\\.\\(md\\|markdown\\)\\'")
   :hook
-    (markdown-mode . lsp-deferred)
-    (markdown-mode . pandoc-mode)
+  (markdown-mode . lsp-deferred)
+  (markdown-mode . pandoc-mode)
   :custom (markdown-command "pandoc"))
 
 (use-package! markdown-preview-mode
