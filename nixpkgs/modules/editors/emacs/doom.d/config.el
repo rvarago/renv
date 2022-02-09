@@ -126,9 +126,9 @@
 
 (use-package! company
   :defer t
-  :config (setq company-idle-delay 0.3
-                company-minimum-prefix-length 2
-                company-require-match nil)
+  :config (setq company-idle-delay 0.2
+                company-minimum-prefix-length 1
+                company-require-match 'never)
   :bind (:map company-mode-map
           ("C-." . company-complete)))
 
