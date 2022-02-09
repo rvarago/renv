@@ -31,6 +31,7 @@ naco-siren.gradle-language
 nicoespeon.abracadabra
 notskm.clang-tidy
 ocamllabs.ocaml-platform
+pivotal.vscode-spring-boot
 redhat.vscode-xml
 ritwickdey.LiveServer
 Rubymaniac.vscode-direnv
@@ -39,6 +40,8 @@ sjhuangx.vscode-scheme
 twxs.cmake
 vscjava.vscode-java-debug
 vscjava.vscode-java-test
+vscjava.vscode-spring-boot-dashboard
+vscjava.vscode-spring-initializr
 wayou.vscode-todo-highlight
 wix.glean
 xabikos.JavaScriptSnippets

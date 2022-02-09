@@ -199,6 +199,12 @@
     sha256 = "0lz9dgldd6q9xsl3f3n27iv752kwrn6ca0nimmxq1gqcwq19hmsg";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "pivotal";
+    name = "vscode-spring-boot";
+    version = "1.31.0";
+    sha256 = "18flcpf5xv33s54iivmpb67vf07i4pcwrqvaqa270sflv3igfyw3";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "redhat";
     name = "vscode-xml";
     version = "0.18.3";
@@ -246,6 +252,17 @@
     version = "0.34.0";
     sha256 = "049fn36mhwdgkp11srym1lhvhrwil5lv3b9vg3chbgsd4sd1rszf";
   })
+  (extensionFromVscodeMarketplace {
+    publisher = "vscjava";
+    name = "vscode-spring-boot-dashboard";
+    version = "0.2.0";
+    sha256 = "0m08v48p6554a1g7ynpzv1v0a6p5adaac95s8i07vp7y117g85a3";
+  })
+  (extensionFromVscodeMarketplace {
+    publisher = "vscjava";
+    name = "vscode-spring-initializr";
+    version = "0.8.0";
+    sha256 = "0x7dmss5jxz5iy6yhbzv8d6a19y061fnh5cwg01vgzgavv0hvjfi";
   })
   (extensionFromVscodeMarketplace {
     publisher = "wayou";
