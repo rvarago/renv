@@ -416,7 +416,10 @@
 ;; Scala.
 (use-package! lsp-metals
   :defer t
-  :config (setq lsp-metals-show-inferred-type t))
+  :config (setq lsp-metals-show-inferred-type t
+                lsp-metals-show-implicit-arguments nil
+                lsp-metals-show-implicit-conversions-and-classes nil
+                lsp-metals-super-method-lenses-enabled t))
 
 
 ;; Shell.

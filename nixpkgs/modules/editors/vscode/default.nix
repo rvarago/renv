@@ -124,6 +124,10 @@
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
 
+      "metals.showInferredType" = true;
+      "metals.showImplicitArguments" = false;
+      "metals.showImplicitConversionsAndClasses" = false;
+
       "shellformat.path" = "${pkgs.shfmt}/bin/shfmt";
 
       "plantuml.render" = "Local";
