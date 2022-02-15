@@ -401,7 +401,9 @@
   :defer t
   :config
   (setq lsp-rust-analyzer-cargo-watch-command "clippy"
-        lsp-rust-analyzer-server-display-inlay-hints t)
+        lsp-rust-analyzer-server-display-inlay-hints t
+        lsp-rust-analyzer-display-parameter-hints t
+        lsp-rust-analyzer-display-chaining-hints t)
   :bind (:map rustic-mode-map
           ("C-c C-c C-t" . rustic-cargo-test-rerun)
           ("C-c C-c C-d" . rustic-cargo-doc)
