@@ -1,9 +1,6 @@
 ;; -*- no-byte-compile: t; -*-
 ;;; $DOOMDIR/packages.el
 
-;; Completion.
-(package! company-box)
-
 ;; Alloy.
 (package! alloy-mode
     :recipe (:host github :repo "dwwmmn/alloy-mode"))
