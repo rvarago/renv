@@ -178,9 +178,7 @@
 (use-package! lsp
   :defer t
   :init
-  ;; FIXME: Somwehow ccls' lens show up in other modes.
-  (remove-hook 'lsp-lens-mode-hook 'ccls-code-lens-mode)
-  (add-hook 'lsp-mode-hook 'lsp-lens-mode)
+  (add-hook 'lsp-after-open-hook 'lsp-lens-mode)
   :config (setq lsp-lens-enable t))
 
 (use-package! lsp-ui
