@@ -14,7 +14,8 @@
       doom-font (font-spec :family "Iosevka" :size 16)
       doom-big-font (font-spec :family "Iosevka" :size 30)
       doom-themes-treemacs-enable-variable-pitch nil
-      display-line-numbers-type t)
+      display-line-numbers-type t
+      doom-scratch-initial-major-mode 'lisp-interaction-mode)
 
 (defun my/switch-doom-theme (theme-prefix)
   "Switches to a different doom theme, e.g. 'zenburn' or 'vibrant'."
