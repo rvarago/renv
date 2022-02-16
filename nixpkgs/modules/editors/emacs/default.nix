@@ -22,7 +22,11 @@ in
     emacs-all-the-icons-fonts
   ];
 
-  services.emacs.enable = true;
+  services.emacs = {
+    enable = true;
+
+    client.enable = false;
+  };
 
   programs.emacs = {
     enable = true;
