@@ -301,6 +301,14 @@
 
 
 ;; Java.
+(use-package! lsp-java
+  :defer t
+  :config (setq lsp-java-references-code-lens-enabled t
+                lsp-java-implementations-code-lens-enabled t)
+  :bind (:map java-mode-map
+          ("C-c C-c C-b" . lsp-jt-browser)
+          ("C-c C-c C-r" . dap-java-debug)))
+
 (use-package! gradle-mode
   :defer t
   :bind (:map gradle-mode-map
