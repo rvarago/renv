@@ -124,7 +124,7 @@
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
 
-      "rust-analyzer.checkOnSave.command" = "clippy";
+      "rust-analyzer.checkOnSave.command" = "check";
 
       "metals.showInferredType" = true;
       "metals.showImplicitArguments" = false;

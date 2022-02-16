@@ -408,7 +408,7 @@
   :init
   (require 'dap-cpptools)
   :config
-  (setq lsp-rust-analyzer-cargo-watch-command "clippy"
+  (setq lsp-rust-analyzer-cargo-watch-command "check"
         lsp-rust-analyzer-server-display-inlay-hints t
         lsp-rust-analyzer-display-parameter-hints t
         lsp-rust-analyzer-display-chaining-hints t)
