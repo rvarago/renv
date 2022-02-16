@@ -397,6 +397,8 @@
 ;; Rust.
 (use-package! rustic
   :defer t
+  :init
+  (require 'dap-cpptools)
   :config
   (setq lsp-rust-analyzer-cargo-watch-command "clippy"
         lsp-rust-analyzer-server-display-inlay-hints t
