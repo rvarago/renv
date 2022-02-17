@@ -142,7 +142,7 @@ nix_update() {
 ocaml() {
   log "Installing OCaml utilities"
 
-  opam init
+  [[ ! -d "$HOME/.opam" ]] && opam init
   opam update
   opam install dune
 }
