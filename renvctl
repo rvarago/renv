@@ -143,8 +143,10 @@ ocaml() {
   log "Installing OCaml utilities"
 
   [[ ! -d "$HOME/.opam" ]] && opam init
+  
   opam update
-  opam install dune
+  # opam switch create 4.13.1
+  opam install dune ocamlformat utop ocaml-lsp-server
 }
 
 prune() {

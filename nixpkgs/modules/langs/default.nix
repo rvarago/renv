@@ -102,9 +102,6 @@
     python3Packages.setuptools
 
     # OCaml.
-    ocamlformat
-    ocamlPackages.ocaml-lsp
-    ocamlPackages.utop
     opam
 
     # Rust.
