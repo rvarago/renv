@@ -139,12 +139,6 @@
     sha256 = "1qvp5915gm9cx8143mn2xlnh4zbs87dscj7jrwb7b6ik93ja6vg3";
   })
   (extensionFromVscodeMarketplace {
-    publisher = "ms-kubernetes-tools";
-    name = "vscode-kubernetes-tools";
-    version = "1.3.6";
-    sha256 = "0rdjh9hyjdwivnqkqdhxrpma5b41094acw1bk4bsidl9jnagggii";
-  })
-  (extensionFromVscodeMarketplace {
     publisher = "ms-vscode";
     name = "cmake-tools";
     version = "1.9.2";
