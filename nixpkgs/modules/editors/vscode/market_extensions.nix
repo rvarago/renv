@@ -99,8 +99,8 @@
   (extensionFromVscodeMarketplace {
     publisher = "leanprover";
     name = "lean4";
-    version = "0.0.63";
-    sha256 = "0hin36l62a5b1vmfcmh95kvvjp37921qnmy7lkw665zlnb3iwccj";
+    version = "0.0.68";
+    sha256 = "1n7z4mj7dqw58dbnhm0pfzdncsb57sal1f54qp5aywjsbb4wspn5";
   })
   (extensionFromVscodeMarketplace {
     publisher = "lucax88x";
@@ -195,8 +195,8 @@
   (extensionFromVscodeMarketplace {
     publisher = "ocamllabs";
     name = "ocaml-platform";
-    version = "1.8.4";
-    sha256 = "0lz9dgldd6q9xsl3f3n27iv752kwrn6ca0nimmxq1gqcwq19hmsg";
+    version = "1.9.3";
+    sha256 = "1aynga6xm2ri2rlry1dxdzhg513yaykmv3cdqm82z3nbj3bnh1jg";
   })
   (extensionFromVscodeMarketplace {
     publisher = "pivotal";
@@ -207,8 +207,8 @@
   (extensionFromVscodeMarketplace {
     publisher = "redhat";
     name = "vscode-xml";
-    version = "0.18.3";
-    sha256 = "172szp70csia9n0xvj6pd3qln71brphj4cgh8cy2as5cmkydv5bc";
+    version = "0.19.1";
+    sha256 = "0k4lym09wbyz25q76db5awgdamx3ycpmjv5njvbi9b7damj0w99z";
   })
   (extensionFromVscodeMarketplace {
     publisher = "ritwickdey";
