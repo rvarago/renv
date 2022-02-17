@@ -68,6 +68,9 @@
     openjdk
     maven
 
+    # Kotlin
+    kotlin
+
     # Lean4.
     elan
 

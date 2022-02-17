@@ -61,6 +61,12 @@
     sha256 = "0gj71xy7r82n1pic00xsi04dg7zg0dsxx000s03iq6lnz47s84gn";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "fwcd";
+    name = "kotlin";
+    version = "0.2.23";
+    sha256 = "0r2flxawrfjx5ijn7wc7dva14hdxvqj7vrwr1dk7cak96yn51a4w";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "hashicorp";
     name = "terraform";
     version = "2.19.0";
