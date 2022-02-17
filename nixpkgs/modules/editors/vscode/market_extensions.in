@@ -30,7 +30,6 @@ mtxr.sqltools-driver-pg
 naco-siren.gradle-language
 nicoespeon.abracadabra
 notskm.clang-tidy
-ocamllabs.ocaml-platform
 pivotal.vscode-spring-boot
 redhat.vscode-xml
 ritwickdey.LiveServer

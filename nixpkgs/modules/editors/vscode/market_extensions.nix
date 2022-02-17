@@ -193,12 +193,6 @@
     sha256 = "0z44hbrbzlhxbzf1j55xpl5fb7gic9avvcz4dvljrwz4qqdjzq4x";
   })
   (extensionFromVscodeMarketplace {
-    publisher = "ocamllabs";
-    name = "ocaml-platform";
-    version = "1.9.3";
-    sha256 = "1aynga6xm2ri2rlry1dxdzhg513yaykmv3cdqm82z3nbj3bnh1jg";
-  })
-  (extensionFromVscodeMarketplace {
     publisher = "pivotal";
     name = "vscode-spring-boot";
     version = "1.31.0";
