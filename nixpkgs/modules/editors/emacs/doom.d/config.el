@@ -306,6 +306,7 @@
   :defer t
   :config (setq lsp-java-references-code-lens-enabled t
                 lsp-java-implementations-code-lens-enabled t)
+  :hook (lsp-lens-mode . lsp-jt-lens-mode)
   :bind (:map java-mode-map
           ("C-c C-c C-b" . lsp-jt-browser)
           ("C-c C-c C-r" . dap-java-debug)))
