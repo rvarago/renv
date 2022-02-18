@@ -432,6 +432,16 @@
                 lsp-metals-show-implicit-conversions-and-classes nil
                 lsp-metals-super-method-lenses-enabled t))
 
+(map! :map scala-mode-map
+  "C-c C-c C-s"  #'sbt-start
+  "C-c C-c C-b"  #'sbt-switch-to-active-sbt-buffer
+  "C-c C-c C-k"  #'sbt-do-clean
+  "C-c C-c C-c"  #'sbt-do-compile
+  "C-c C-c C-t"  #'sbt-do-test
+  "C-c C-c C-r"  #'sbt-do-run
+  "C-c C-c C-o"  #'sbt-command
+  "C-c C-c C-p"  #'sbt-run-previous-command)
+
 
 ;; Shell.
 (use-package! sh-script
