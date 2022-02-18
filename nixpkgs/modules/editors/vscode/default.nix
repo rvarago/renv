@@ -120,7 +120,7 @@
         "editor.defaultFormatter" = "ms-azuretools.vscode-docker";
       };
 
-      "[html][javascript][typescript][scss]" = {
+      "[html][javascript][json][typescript][scss]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
 
