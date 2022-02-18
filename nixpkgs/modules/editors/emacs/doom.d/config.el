@@ -19,7 +19,7 @@
 
 (defun my/switch-doom-theme (theme-prefix)
   "Switches to a different doom theme, e.g. 'zenburn' or 'vibrant'."
-  (interactive "stheme prefix: ")
+  (interactive "stheme prefix (e.g. 'vibrant'): ")
   (let ((theme (intern (concat "doom-" theme-prefix))))
     (setq doom-theme theme)
     (load-theme theme)))
