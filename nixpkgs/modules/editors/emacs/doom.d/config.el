@@ -116,6 +116,11 @@
 (use-package! whole-line-or-region
   :init (whole-line-or-region-global-mode))
 
+(use-package! rainbow-delimiters
+  :defer t
+  :hook
+  (prog-mode . rainbow-delimiters-mode))
+
 ;; ================= PROJECT =================
 
 (use-package! projectile
