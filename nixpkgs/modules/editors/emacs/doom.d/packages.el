@@ -22,6 +22,9 @@
 ;; Ini.
 (package! ini-mode)
 
+;; Java.
+(package! gradle-mode)
+
 ;; Kubernetes.
 (package! kubernetes)
 

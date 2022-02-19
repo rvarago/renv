@@ -311,17 +311,7 @@
           ("C-c C-c C-r" . dap-java-debug)))
 
 (use-package! gradle-mode
-  :defer t
-  :bind (:map gradle-mode-map
-          ("C-c C-c C-c" . gradle-build)
-          ("C-c C-c C-t" . gradle-test))
-  :preface
-  (defun my/switch-to-compilation-window ()
-    "Switches to the *compilation* buffer after compilation."
-    (other-window 1))
-  :config
-  (advice-add 'gradle-build :after #'my/switch-to-compilation-window)
-  (advice-add 'gradle-test :after #'my/switch-to-compilation-window))
+  :defer t)
 
 
 ;; Kubernetes.
