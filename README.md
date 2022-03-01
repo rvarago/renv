@@ -54,11 +54,3 @@ echo /home/rvarago/.nix-profile/bin/fish >> "/etc/shells" && chsh -s /home/rvara
 Install docker by following the steps:
 
 - <https://docs.docker.com/engine/install/>
-
-### Configure Wireshark
-
-Create the `wireshark` group and add my user to it.
-
-```sh
-groupadd wireshark && usermod -aG wireshark $USER
-```
