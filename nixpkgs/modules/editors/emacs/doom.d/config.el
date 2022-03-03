@@ -132,8 +132,8 @@
 
 (use-package! company
   :defer t
-  :config (setq company-idle-delay 0.2
-                company-minimum-prefix-length 1
+  :config (setq company-idle-delay 0.6
+                company-minimum-prefix-length 3
                 company-require-match 'never
                 company-tooltip-align-annotations t)
   :bind (:map company-mode-map
