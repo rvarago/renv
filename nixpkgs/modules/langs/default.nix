@@ -68,18 +68,18 @@
     openjdk
     maven
 
-    # Kotlin
-    kotlin
-
-    # Lean4.
-    elan
-
     # JS/TS.
     nodejs
     nodePackages.eslint
     nodePackages.prettier
     nodePackages.typescript
     yarn
+
+    # Kotlin
+    kotlin
+
+    # Lean4.
+    elan
 
     # .Net.
     dotnetCorePackages.sdk_5_0
