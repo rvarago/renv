@@ -1,6 +1,6 @@
 # renv
 
-> Rafael's Environment.
+> "Rafael's Environment", a bunch of quick & dirty, perhaps awkward hacks tailored for my own usage.
 
 My computing environment based on [nix](https://github.com/NixOS/nix)/[home-manager](https://github.com/nix-community/home-manager).
 
