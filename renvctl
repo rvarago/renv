@@ -31,7 +31,7 @@ COMMAND:
   lean                    Install Lean toolchains managed by Elan (imperative)
   nix                     Install nix (imperative)
   nix-update              Update nix (imperative)
-  ocaml                   Install OCaml toolchain (imperative)
+  ocaml                   Install OCaml toolchains (imperative)
   prune                   Prune old generations and collect relevant garbage
   rust                    Install Rust toolchains managed by Rustup (imperative)
   vscode                  Re-generate VSCode market extensions manifest
@@ -143,7 +143,7 @@ ocaml() {
   log "Installing OCaml utilities"
 
   [[ ! -d "$HOME/.opam" ]] && opam init
-  
+
   opam update
   # opam switch create 4.13.1
   opam install dune ocamlformat utop ocaml-lsp-server

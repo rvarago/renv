@@ -25,7 +25,7 @@ COMMAND:
   home-manager            Install home-manage (imperative)
   nix                     Install nix (imperative)
   nix-update              Update nix (imperative)
-  ocaml                   Install OCaml toolchain (imperative)
+  ocaml                   Install OCaml toolchains (imperative)
   prune                   Prune old generations and collect relevant garbage
   rust                    Install Rust toolchains managed by Rustup (imperative)
   vscode                  Re-generate VSCode market extensions manifest
