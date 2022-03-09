@@ -17,6 +17,9 @@
       ".idea"
       # direnv
       ".direnv"
+
+      # languages
+      ".metals"
     ];
 
     extraConfig = {
