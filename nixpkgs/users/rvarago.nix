@@ -66,7 +66,7 @@ in
     (nerdfonts.override { fonts = [ "Hack" "Iosevka" ]; })
 
     # General tools.
-    skype
+    skypeforlinux
     # slack
   ];
 
