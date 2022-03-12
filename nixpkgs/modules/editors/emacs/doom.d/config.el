@@ -181,7 +181,7 @@
 
 ;; ================= LSP =================
 
-(use-package! lsp
+(use-package! lsp-mode
   :defer t
   :init
   (add-hook 'lsp-after-open-hook 'lsp-lens-mode)
