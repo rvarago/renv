@@ -185,7 +185,8 @@
   :defer t
   :init
   (add-hook 'lsp-after-open-hook 'lsp-lens-mode)
-  :config (setq lsp-lens-enable t))
+  :config (setq lsp-lens-enable t
+                lsp-auto-execute-action nil))
 
 (use-package! lsp-ui
   :defer t
