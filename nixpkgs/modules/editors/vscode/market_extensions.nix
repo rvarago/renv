@@ -70,7 +70,7 @@
     publisher = "hashicorp";
     name = "terraform";
     version = "2.20.0";
-    sha256 = "16zkl49ci53b89ap8kyjc9zy4g6zdjybfjw4hqfjvpxlp5ghhcvv";
+    sha256 = "0imyddsk2hv68xqasbj1mprp66rpzarlmbq8jcqksbw4kc8drxwk";
   })
   (extensionFromVscodeMarketplace {
     publisher = "humao";
