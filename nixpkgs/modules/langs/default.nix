@@ -161,5 +161,7 @@
 
   home.file.".guile".text = ''
     (use-modules (texinfo reflection)) ;; help
+    (use-modules (ice-9 readline))
+    (activate-readline)
   '';
 }
