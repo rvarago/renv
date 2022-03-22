@@ -158,4 +158,8 @@
   '';
   home.file.".stack/config.yaml".text =
     lib.generators.toYAML { } { nix.enable = true; };
+
+  home.file.".guile".text = ''
+    (use-modules (texinfo reflection)) ;; help
+  '';
 }
