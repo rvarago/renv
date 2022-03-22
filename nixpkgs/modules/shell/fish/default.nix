@@ -13,7 +13,6 @@
 
     shellAliases = {
       clojurew = "rlwrap clojure";
-      guilew = "rlwrap guile";
       idris2w = "rlwrap idris2";
       sbclw = "rlwrap sbcl";
 
