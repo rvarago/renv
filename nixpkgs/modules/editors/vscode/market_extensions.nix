@@ -259,6 +259,11 @@
     version = "0.9.2022032503";
     sha256 = "08pcw003c9rxh7ygl17dqlnvlkw7zxzd47pzpwmc6j1n7gnkfckj";
   })
+  (extensionFromVscodeMarketplace {
+    publisher = "vscode-org-mode";
+    name = "org-mode";
+    version = "1.0.0";
+    sha256 = "1dp6mz1rb8awrrpig1j8y6nyln0186gkmrflfr8hahaqr668il53";
   })
   (extensionFromVscodeMarketplace {
     publisher = "wayou";
