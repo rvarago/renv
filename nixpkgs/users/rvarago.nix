@@ -33,6 +33,7 @@ in
     xdot
     xsv
     wget
+    wkhtmltopdf
 
     # Dev tools.
     plantuml
