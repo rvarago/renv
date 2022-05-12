@@ -27,7 +27,7 @@
     # Coq.
     coq
 
-    # Common-Lisp
+    # Common-Lisp.
     sbcl
     lispPackages.quicklisp
 
@@ -75,7 +75,7 @@
     nodePackages.typescript
     yarn
 
-    # Kotlin
+    # Kotlin.
     kotlin
 
     # Lean4.
@@ -136,15 +136,15 @@
     sqlfluff
     sqlint
 
-    # Text
+    # Text.
     nodePackages.unified-language-server
 
     # TLA+
-    tlaps
-    tlaplus
+    # tlaps
+    # tlaplus
     # tla-toolbox
 
-    # Web
+    # Web.
     html-tidy
   ];
 
