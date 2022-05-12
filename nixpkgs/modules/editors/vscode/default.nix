@@ -124,6 +124,14 @@
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
 
+      "[ruby]" = {
+        "editor.defaultFormatter" = "castwide.solargraph";
+      };
+      "solargraph.formatting" = true;
+      "ruby.lint" = {
+        "rubocop" = true;
+      };
+
       "rust-analyzer.checkOnSave.command" = "check";
 
       "metals.showInferredType" = true;

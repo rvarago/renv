@@ -31,6 +31,18 @@
     sha256 = "1rqg3np6jc9lrl9xqq8iq74y4ag3wnj5c0zv9h9ljpk5xzp4rdva";
   })
   (extensionFromVscodeMarketplace {
+    publisher = "castwide";
+    name = "solargraph";
+    version = "0.23.0";
+    sha256 = "0ivawyq16712j2q4wic3y42lbqfml5gs24glvlglpi0kcgnii96n";
+  })
+  (extensionFromVscodeMarketplace {
+    publisher = "connorshea";
+    name = "vscode-ruby-test-adapter";
+    version = "0.9.0";
+    sha256 = "0bl979grhcv7h6vms43f8m0xf48y6h3hwcbx7pl43rgbnrlr7rgw";
+  })
+  (extensionFromVscodeMarketplace {
     publisher = "cschlosser";
     name = "doxdocgen";
     version = "1.4.0";
@@ -101,6 +113,12 @@
     name = "vscode-graphviz";
     version = "0.0.6";
     sha256 = "17z5zgr8l94mj8dgqxwsrpixnkz0778fp1g4rxc7i56wb1zbik3w";
+  })
+  (extensionFromVscodeMarketplace {
+    publisher = "kaiwood";
+    name = "endwise";
+    version = "1.5.1";
+    sha256 = "1dg096dnv3isyimp3r73ih25ya0yj0m1y9ryzrz40m0mbsk21mp4";
   })
   (extensionFromVscodeMarketplace {
     publisher = "leanprover";
@@ -198,6 +216,11 @@
     version = "1.33.0";
     sha256 = "15av07f7n1l90pyd1q32asw2961ahlqcp5c9l6bmfyg8nsy493z2";
   })
+  (extensionFromVscodeMarketplace {
+    publisher = "rebornix";
+    name = "Ruby";
+    version = "0.28.1";
+    sha256 = "179g7nc6mf5rkha75v7rmb3vl8x4zc6qk1m0wn4pgylkxnzis18w";
   })
   (extensionFromVscodeMarketplace {
     publisher = "redhat";
@@ -270,6 +293,12 @@
     name = "vscode-todo-highlight";
     version = "1.0.5";
     sha256 = "1sg4zbr1jgj9adsj3rik5flcn6cbr4k2pzxi446rfzbzvcqns189";
+  })
+  (extensionFromVscodeMarketplace {
+    publisher = "wingrunr21";
+    name = "vscode-ruby";
+    version = "0.28.0";
+    sha256 = "1gab5cka87zw7i324rz9gmv423rf5sylsq1q1dhfkizmrpwzaxqz";
   })
   (extensionFromVscodeMarketplace {
     publisher = "wix";

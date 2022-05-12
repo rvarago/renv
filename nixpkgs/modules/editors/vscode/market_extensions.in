@@ -3,6 +3,8 @@ alygin.vscode-tlaplus
 ArashSahebolamri.alloy
 arrterian.nix-env-selector
 azemoh.one-monokai
+castwide.solargraph
+connorshea.vscode-ruby-test-adapter
 cschlosser.doxdocgen
 dongyuzhao.alloy-vscode
 dorzey.vscode-sqlfluff
@@ -15,6 +17,7 @@ jcanero.hoogle-vscode
 jebbs.plantuml
 jnoortheen.nix-ide
 joaompinto.vscode-graphviz
+kaiwood.endwise
 leanprover.lean4
 lucax88x.codeacejumper
 mads-hartmann.bash-ide-vscode
@@ -31,6 +34,7 @@ naco-siren.gradle-language
 nicoespeon.abracadabra
 notskm.clang-tidy
 pivotal.vscode-spring-boot
+rebornix.Ruby
 redhat.vscode-xml
 ritwickdey.LiveServer
 Rubymaniac.vscode-direnv
@@ -43,6 +47,7 @@ vscjava.vscode-spring-boot-dashboard
 vscjava.vscode-spring-initializr
 vscode-org-mode.org-mode
 wayou.vscode-todo-highlight
+wingrunr21.vscode-ruby
 wix.glean
 xabikos.JavaScriptSnippets
 zxh404.vscode-proto3
