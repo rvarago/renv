@@ -186,7 +186,8 @@
   :init
   (add-hook 'lsp-after-open-hook 'lsp-lens-mode)
   :config (setq lsp-lens-enable t
-                lsp-auto-execute-action nil))
+                lsp-auto-execute-action nil
+                lsp-verify-signature t))
 
 (use-package! lsp-ui
   :defer t
