@@ -129,6 +129,7 @@
       };
       "solargraph.formatting" = true;
       "solargraph.useBundler" = true;
+      "solargraph.diagnostics" = true;
 
       "rust-analyzer.checkOnSave.command" = "check";
 
