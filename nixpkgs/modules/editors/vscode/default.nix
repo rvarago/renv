@@ -128,9 +128,6 @@
         "editor.defaultFormatter" = "castwide.solargraph";
       };
       "solargraph.formatting" = true;
-      "ruby.lint" = {
-        "rubocop" = true;
-      };
       "solargraph.useBundler" = true;
 
       "rust-analyzer.checkOnSave.command" = "check";
