@@ -131,6 +131,7 @@
       "ruby.lint" = {
         "rubocop" = true;
       };
+      "solargraph.useBundler" = true;
 
       "rust-analyzer.checkOnSave.command" = "check";
 

@@ -399,6 +399,12 @@
   (python-mode . (lambda () (setq flycheck-local-checkers '((lsp . ((next-checkers . (python-pylint)))))))))
 
 
+;; Ruby.
+(use-package! ruby-mode
+  :defer t
+  :config (setq lsp-solargraph-use-bundler t))
+
+
 ;; Rust.
 (use-package! rustic
   :defer t
