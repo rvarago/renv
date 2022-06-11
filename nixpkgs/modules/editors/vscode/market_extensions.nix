@@ -267,14 +267,14 @@
   (extensionFromVscodeMarketplace {
     publisher = "vscjava";
     name = "vscode-java-test";
-    version = "0.35.2022051902";
-    sha256 = "0392f85jlsndjlzwlw1ylvlp12bmm8yxsn08xvihhaqzvc17li6z";
+    version = "0.35.2022061102";
+    sha256 = "1q8pzm9cyns2x3xqlpbwzj76hjyv07xx1b5g2gi0x5yg8h73a4fv";
   })
   (extensionFromVscodeMarketplace {
     publisher = "vscjava";
     name = "vscode-spring-boot-dashboard";
-    version = "0.4.2022060700";
-    sha256 = "07y62dpg1y3kiw7vcjkiq467a6jx82k714ncqqwsybn4narf85lq";
+    version = "0.4.2022061100";
+    sha256 = "13h0pymml6kki6iqyg2awmlq5vsgax0aj7llfp8lk3r6169b2311";
   })
   (extensionFromVscodeMarketplace {
     publisher = "vscjava";
