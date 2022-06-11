@@ -1,5 +1,4 @@
 aaron-bond.better-comments
-alygin.vscode-tlaplus
 ArashSahebolamri.alloy
 arrterian.nix-env-selector
 azemoh.one-monokai
@@ -11,16 +10,12 @@ dorzey.vscode-sqlfluff
 exiasr.hadolint
 formulahendry.terminal
 fwcd.kotlin
-hashicorp.terraform
-humao.rest-client
 jcanero.hoogle-vscode
 jebbs.plantuml
-jnoortheen.nix-ide
 joaompinto.vscode-graphviz
 kaiwood.endwise
 leanprover.lean4
 lucax88x.codeacejumper
-mads-hartmann.bash-ide-vscode
 mattn.lisp
 maximedenes.vscoq
 meraymond.idris-vscode
@@ -36,7 +31,6 @@ notskm.clang-tidy
 pivotal.vscode-spring-boot
 rebornix.Ruby
 redhat.vscode-xml
-ritwickdey.LiveServer
 Rubymaniac.vscode-direnv
 ryanolsonx.zenburn
 sjhuangx.vscode-scheme
@@ -50,4 +44,3 @@ wayou.vscode-todo-highlight
 wingrunr21.vscode-ruby
 wix.glean
 xabikos.JavaScriptSnippets
-zxh404.vscode-proto3

@@ -7,12 +7,6 @@
     sha256 = "17b7m50z0fbifs8azgn6ygcmgwclssilw9j8nb178szd6zrjz2vf";
   })
   (extensionFromVscodeMarketplace {
-    publisher = "alygin";
-    name = "vscode-tlaplus";
-    version = "1.5.4";
-    sha256 = "0mf98244z6wzb0vj6qdm3idgr2sr5086x7ss2khaxlrziif395dx";
-  })
-  (extensionFromVscodeMarketplace {
     publisher = "ArashSahebolamri";
     name = "alloy";
     version = "0.7.1";
@@ -79,18 +73,6 @@
     sha256 = "1br0vr4v1xcl4c7bcqwzfqd4xr6q2ajwkipqrwm928mj96dkafkn";
   })
   (extensionFromVscodeMarketplace {
-    publisher = "hashicorp";
-    name = "terraform";
-    version = "2.23.0";
-    sha256 = "1vgrchpgp3g69rynjvbv0a4p4rwsbgifvr3pi76xw4fwzw8s3zfy";
-  })
-  (extensionFromVscodeMarketplace {
-    publisher = "humao";
-    name = "rest-client";
-    version = "0.24.6";
-    sha256 = "196pm7gv0488bpv1lklh8hpwmdqc4yimz389gad6nsna368m4m43";
-  })
-  (extensionFromVscodeMarketplace {
     publisher = "jcanero";
     name = "hoogle-vscode";
     version = "0.0.7";
@@ -101,12 +83,6 @@
     name = "plantuml";
     version = "2.17.2";
     sha256 = "0yxnfq34g563w96dwfirqscjfclhzr48yb9cwfjjf0c0l638x9vv";
-  })
-  (extensionFromVscodeMarketplace {
-    publisher = "jnoortheen";
-    name = "nix-ide";
-    version = "0.1.20";
-    sha256 = "16mmivdssjky11gmih7zp99d41m09r0ii43n17d4i6xwivagi9a3";
   })
   (extensionFromVscodeMarketplace {
     publisher = "joaompinto";
@@ -131,12 +107,6 @@
     name = "codeacejumper";
     version = "3.3.2";
     sha256 = "02a5f0lg0rmrjjf52z30mk19ii71pcdxjmbcb4v6haw1pkm6anqn";
-  })
-  (extensionFromVscodeMarketplace {
-    publisher = "mads-hartmann";
-    name = "bash-ide-vscode";
-    version = "1.14.0";
-    sha256 = "058z0fil0xpbnay6b5hgd31bgd3k4x3rnfyb8n0a0m198sxrpd5z";
   })
   (extensionFromVscodeMarketplace {
     publisher = "mattn";
@@ -229,12 +199,6 @@
     sha256 = "1l073hqdivzyadjg8cn68wrmvbcrhc67yll4sypvb7rwvdznp80q";
   })
   (extensionFromVscodeMarketplace {
-    publisher = "ritwickdey";
-    name = "LiveServer";
-    version = "5.7.5";
-    sha256 = "0afjp8jr1s0f3ag0q8kw5d8cyd5fh6vzkfx2wdqq4pihm7ivp9xc";
-  })
-  (extensionFromVscodeMarketplace {
     publisher = "Rubymaniac";
     name = "vscode-direnv";
     version = "0.0.2";
@@ -311,11 +275,5 @@
     name = "JavaScriptSnippets";
     version = "1.8.0";
     sha256 = "19xg24alxsvq8pvafprshg7qxzx8p37bzk7qz6kjgkpvandrdpl6";
-  })
-  (extensionFromVscodeMarketplace {
-    publisher = "zxh404";
-    name = "vscode-proto3";
-    version = "0.5.5";
-    sha256 = "08gjq2ww7pjr3ck9pyp5kdr0q6hxxjy3gg87aklplbc9bkfb0vqj";
   })
 ]

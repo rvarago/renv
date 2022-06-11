@@ -5,6 +5,7 @@
 
     extensions = with pkgs.vscode-extensions;
       [
+        alygin.vscode-tlaplus
         baccata.scaladex-search
         betterthantomorrow.calva
         coolbear.systemd-unit-file
@@ -16,12 +17,16 @@
         formulahendry.code-runner
         foxundermoon.shell-format
         golang.go
+        hashicorp.terraform
         haskell.haskell
+        humao.rest-client
         ionide.ionide-fsharp
         james-yu.latex-workshop
+        jnoortheen.nix-ide
         justusadam.language-haskell
         kahole.magit
         rust-lang.rust-analyzer
+        mads-hartmann.bash-ide-vscode
         ms-azuretools.vscode-docker
         ms-dotnettools.csharp
         ms-kubernetes-tools.vscode-kubernetes-tools
@@ -31,6 +36,7 @@
         ocamllabs.ocaml-platform
         redhat.java
         redhat.vscode-yaml
+        ritwickdey.liveserver
         scalameta.metals
         scala-lang.scala
         serayuzgur.crates
@@ -43,6 +49,7 @@
         # vadimcn.vscode-lldb FIXME: liblldb is null.
         yzhang.markdown-all-in-one
         xaver.clang-format
+        zxh404.vscode-proto3
       ] ++ import ./market_extensions.nix {
         inherit (pkgs.vscode-utils) extensionFromVscodeMarketplace;
       };
