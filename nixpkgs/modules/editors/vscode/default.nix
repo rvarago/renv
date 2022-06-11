@@ -21,7 +21,7 @@
         james-yu.latex-workshop
         justusadam.language-haskell
         kahole.magit
-        matklad.rust-analyzer
+        rust-lang.rust-analyzer
         ms-azuretools.vscode-docker
         ms-dotnettools.csharp
         ms-kubernetes-tools.vscode-kubernetes-tools
