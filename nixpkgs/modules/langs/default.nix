@@ -116,7 +116,6 @@
     cargo-udeps
     cargo-watch
     rustup
-    rust-analyzer
     sqlx-cli
 
     # Scala.
