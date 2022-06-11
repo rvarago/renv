@@ -25,7 +25,6 @@
         jnoortheen.nix-ide
         justusadam.language-haskell
         kahole.magit
-        rust-lang.rust-analyzer
         mads-hartmann.bash-ide-vscode
         ms-azuretools.vscode-docker
         ms-dotnettools.csharp
@@ -37,6 +36,7 @@
         redhat.java
         redhat.vscode-yaml
         ritwickdey.liveserver
+        rust-lang.rust-analyzer
         scalameta.metals
         scala-lang.scala
         serayuzgur.crates
