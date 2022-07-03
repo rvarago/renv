@@ -99,7 +99,7 @@ home() {
     exit 66
   fi
 
-  log "Instaling '${source}' to '${target}'"
+  log "Installing '${source}' to '${target}'"
 
   mkdir -p "${target}"
   ln -sf "${source}" "${target}"
@@ -119,7 +119,7 @@ nix() {
 
     log "nix installed, please reboot"
   else
-    log "nix alredy installed"
+    log "nix already installed"
   fi
 }
 
