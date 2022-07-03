@@ -43,7 +43,6 @@ in
     # Dev tools.
     plantuml
     protobuf
-    strace
     valgrind
     wireshark
     patchelf
