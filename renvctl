@@ -43,14 +43,14 @@ command=""
 parse_args() {
   while getopts "h" opt; do
     case "${opt}" in
-    h)
-      usage
-      exit 0
-      ;;
-    *)
-      log "Please, provide a valid option other than '${opt}'"
-      exit 64
-      ;;
+      h)
+        usage
+        exit 0
+        ;;
+      *)
+        log "Please, provide a valid option other than '${opt}'"
+        exit 64
+        ;;
     esac
   done
 
@@ -191,40 +191,40 @@ handle() {
   local command="$1"
 
   case "${command}" in
-  "check-deps")
-    check_deps
-    ;;
-  "home")
-    home
-    ;;
-  "lean")
-    lean
-    ;;
-  "home-manager")
-    home_manager
-    ;;
-  "nix")
-    nix
-    ;;
-  "nix-update")
-    nix_update
-    ;;
-  "ocaml")
-    ocaml
-    ;;
-  "prune")
-    prune
-    ;;
-  "rust")
-    rust
-    ;;
-  "vscode")
-    vscode
-    ;;
-  *)
-    log "Please, provide a valid command other than '${command}'"
-    exit 64
-    ;;
+    "check-deps")
+      check_deps
+      ;;
+    "home")
+      home
+      ;;
+    "lean")
+      lean
+      ;;
+    "home-manager")
+      home_manager
+      ;;
+    "nix")
+      nix
+      ;;
+    "nix-update")
+      nix_update
+      ;;
+    "ocaml")
+      ocaml
+      ;;
+    "prune")
+      prune
+      ;;
+    "rust")
+      rust
+      ;;
+    "vscode")
+      vscode
+      ;;
+    *)
+      log "Please, provide a valid command other than '${command}'"
+      exit 64
+      ;;
   esac
 }
 
