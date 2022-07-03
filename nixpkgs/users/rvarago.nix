@@ -10,6 +10,11 @@ in
   home.username = user;
   home.homeDirectory = home;
 
+  home.sessionVariables = {
+    USER_FULL_NAME = settings.userFullName;
+    USER_EMAIL = settings.userEmail;
+  };
+
   home.packages = with pkgs; [
     # CLI tools.
     bat
@@ -74,11 +79,11 @@ in
   fonts.fontconfig.enable = true;
 
   imports = [
-    ../modules/editors
+    (import ../modules/editors { inherit pkgs settings; })
     ../modules/langs
     ../modules/linux
     ../modules/shell
-    ../modules/vcs
+    (import ../modules/vcs { inherit pkgs settings; })
   ];
 
 }

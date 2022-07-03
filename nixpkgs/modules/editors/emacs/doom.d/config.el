@@ -2,8 +2,8 @@
 
 ;; ================= USER =================
 
-(setq user-full-name "Rafael Varago"
-      user-mail-address "rafael.varago@gmail.com")
+(setq user-full-name (getenv "USER_FULL_NAME")
+      user-mail-address (getenv "USER_EMAIL"))
 
 ;; ================= UI =================
 

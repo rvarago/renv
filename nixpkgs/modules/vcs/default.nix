@@ -1,10 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs, settings, ... }: {
 
   programs.git = {
     enable = true;
 
-    userEmail = "rafael.varago@gmail.com";
-    userName = "Rafael Varago";
+    userName = settings.userFullName;
+    userEmail = settings.userEmail;
 
     ignores = [
       # local stuff
@@ -24,7 +24,7 @@
 
     extraConfig = {
       github = {
-        user = "rvarago";
+        user = settings.githubUser;
       };
 
       diff = { tool = "meld"; };
