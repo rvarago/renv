@@ -25,7 +25,7 @@ in
   services.emacs = {
     enable = true;
 
-    client.enable = false;
+    client.enable = true;
   };
 
   programs.emacs = {
