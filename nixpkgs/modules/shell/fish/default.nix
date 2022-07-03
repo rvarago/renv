@@ -19,7 +19,7 @@
       nr = "nix-shell --run fish";
 
       ei = "emacs -nw";
-      magit = "ei --eval '(magit-status)'";
+      mg = "ei --eval '(magit-status)'";
     };
 
     functions = {
