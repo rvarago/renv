@@ -23,6 +23,10 @@
     ];
 
     extraConfig = {
+      github = {
+        user = "rvarago";
+      };
+
       diff = { tool = "meld"; };
       merge = {
         tool = "meld";
