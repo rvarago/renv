@@ -9,27 +9,25 @@ My computing environment based on [nix](https://github.com/NixOS/nix)/[home-mana
 The script `renvctl` orchestrates part of the process of installing components with `home-manager` and similar:
 
 ```sh
-λ   ./renvctl -h
+λ   ./renvctl help
 Manage my computing environment
 
 USAGE:
-  renvctl [OPTION] COMMAND
-
-OPTION:
-  -h                      Show this message
+  renvctl COMMAND
 
 COMMAND:
-  check-deps              Check whether all required pre-conditions (e.g dependencies) hold
-  home                    Install packages with home-manager
-  lean                    Install Lean toolchains managed by Elan (imperative)
-  home-manager            Install home-manage (imperative)
-  nix                     Install nix (imperative)
-  nix-cache               Install binary cache (imperative)
-  nix-update              Update nix (imperative)
-  ocaml                   Install OCaml toolchains (imperative)
-  prune                   Prune old generations and collect relevant garbage
-  rust                    Install Rust toolchains managed by Rustup (imperative)
-  vscode                  Re-generate VSCode market extensions manifest
+  help               Show this message
+  check              Check whether all required pre-conditions (e.g dependencies) hold
+  nix:install        Install nix
+  nix:cache:install  Install binary cache
+  nix:update         Update nix
+  nix:prune          Prune old generations and collect relevant garbage
+  home:install       Install home-manage
+  home:apply         Install packages with home-manager
+  ocaml:install      Install OCaml toolchains
+  lean:install       Install Lean toolchains managed by Elan
+  rust:install       Install Rust toolchains managed by Rustup
+  vscode:generate    Re-generate VSCode market extensions manifest
 ```
 
 ## Post-Installation
