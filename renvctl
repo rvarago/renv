@@ -30,6 +30,7 @@ COMMAND:
   home-manager            Install home-manage (imperative)
   lean                    Install Lean toolchains managed by Elan (imperative)
   nix                     Install nix (imperative)
+  nix-cache               Install binary cache (imperative)
   nix-update              Update nix (imperative)
   ocaml                   Install OCaml toolchains (imperative)
   prune                   Prune old generations and collect relevant garbage
@@ -141,6 +142,14 @@ lean() {
   elan default leanprover/lean4:nightly
 }
 
+nix_cache() {
+  log "Setting up cache"
+
+  nix-env -iA cachix -f https://cachix.org/api/v1/install
+
+  cachix use nix-community
+}
+
 nix_update() {
   log "Updating nix"
 
@@ -205,6 +214,9 @@ handle() {
       ;;
     "nix")
       nix
+      ;;
+    "nix-cache")
+      nix_cache
       ;;
     "nix-update")
       nix_update

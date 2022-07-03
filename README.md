@@ -24,6 +24,7 @@ COMMAND:
   lean                    Install Lean toolchains managed by Elan (imperative)
   home-manager            Install home-manage (imperative)
   nix                     Install nix (imperative)
+  nix-cache               Install binary cache (imperative)
   nix-update              Update nix (imperative)
   ocaml                   Install OCaml toolchains (imperative)
   prune                   Prune old generations and collect relevant garbage
