@@ -32,14 +32,6 @@ COMMAND:
 
 ## Post-Installation
 
-### Install Essential Tools
-
-Depending on the distro:
-
-```bash
-apt install build-essential make
-```
-
 ### Set Fish as Default Shell
 
 Append to shells and then set the shell:

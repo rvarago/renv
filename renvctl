@@ -28,6 +28,8 @@ COMMAND:
   nix:cache:install  Install binary cache
   nix:update         Update nix
   nix:prune          Prune old generations and collect relevant garbage
+  deb:install        Install dependencies on a Debian-based distro
+  deb:upgrade        Upgrade components installed on a Debian-based distro
   home:install       Install home-manage
   home:apply         Install packages with home-manager
   ocaml:install      Install OCaml toolchains
@@ -103,6 +105,30 @@ nix:prune() {
     xargs home-manager remove-generations
 
   nix-collect-garbage
+}
+
+deb:install() {
+  if _command_exists "apt-get"; then
+    _log "Installing components on Debian-based distro"
+
+    apt-get install -y \
+      build-essential \
+      make \
+      nmap \
+      strace
+  else
+    _log "You might not be on a Debian-based distro"
+  fi
+}
+
+deb:upgrade() {
+  if _command_exists "apt-get"; then
+    _log "Upgrading components on Debian-based distro"
+
+    apt-get update && apt-get upgrade -y
+  else
+    _log "You might not be on a Debian-based distro"
+  fi
 }
 
 home:install() {
