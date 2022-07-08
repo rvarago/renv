@@ -194,6 +194,7 @@
   :config (setq lsp-ui-doc-show-with-cursor nil
                 lsp-ui-doc-show-with-mouse t))
 
+;; TODO: Replace this by https://github.com/emacs-lsp/lsp-mode/pull/3572.
 (defun my/lsp-update-servers ()
   "Update all lsp servers installed via Emacs."
   (interactive)
