@@ -19,7 +19,7 @@ The script `renvctl` orchestrates part of the process of installing components w
 Append to shells and then set the shell:
 
 ```bash
-echo /home/rvarago/.nix-profile/bin/fish >> "/etc/shells" && chsh -s /home/rvarago/.nix-profile/bin/fish $USER
+echo /home/$USER/.nix-profile/bin/fish >> "/etc/shells" && chsh -s /home/$USER/.nix-profile/bin/fish $USER
 ```
 
 ### Setup Docker
