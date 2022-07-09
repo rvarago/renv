@@ -14,6 +14,14 @@ The script `renvctl` orchestrates part of the process of installing components w
 
 ## Post-Installation
 
+### Load Environment Variables
+
+Append to variables exposed by home-manager to the login config:
+
+```bash
+. "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" >> "/home/$USER/.profile"
+```
+
 ### Set Fish as Default Shell
 
 Append to shells and then set the shell:
