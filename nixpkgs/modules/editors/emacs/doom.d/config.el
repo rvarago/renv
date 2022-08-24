@@ -194,21 +194,6 @@
   :config (setq lsp-ui-doc-show-with-cursor nil
                 lsp-ui-doc-show-with-mouse t))
 
-;; TODO: Replace this by https://github.com/emacs-lsp/lsp-mode/pull/3572.
-(defun my/lsp-update-servers ()
-  "Update all lsp servers installed via Emacs."
-  (interactive)
-  (let* ((clients (->> lsp-clients
-                       (ht-values)
-                       (-filter (-andfn (-not #'lsp--client-download-in-progress?)
-                                        #'lsp-client-download-server-fn
-                                        #'lsp--server-binary-present?))))
-         (servers-ids (mapcar
-                       (lambda (client) (-> client lsp--client-server-id)) clients)))
-    (dolist (server-id servers-ids)
-      (message "Updating lsp server with id `%s'" server-id)
-      (lsp-update-server server-id))))
-
 ;; ================= DEV =================
 
 ;; Alloy.
