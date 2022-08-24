@@ -137,6 +137,7 @@
     sqlint
 
     # Text.
+    grip
     nodePackages.unified-language-server
 
     # TLA+
