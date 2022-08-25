@@ -81,6 +81,7 @@ in
     (import ../modules/editors { inherit pkgs settings; })
     ../modules/langs
     ../modules/linux
+    ../modules/profiles
     ../modules/shell
     (import ../modules/vcs { inherit pkgs settings; })
   ];
