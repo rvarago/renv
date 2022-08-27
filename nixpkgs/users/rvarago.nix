@@ -69,10 +69,6 @@ in
     # Fonts.
     jetbrains-mono
     (nerdfonts.override { fonts = [ "Hack" "Iosevka" ]; })
-
-    # General tools.
-    skypeforlinux
-    # slack
   ];
 
   fonts.fontconfig.enable = true;
