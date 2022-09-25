@@ -11,6 +11,7 @@ let
   emacsdir = "${config.home.homeDirectory}/.emacs.d";
   doomdir = "${config.home.homeDirectory}/.doom.d";
   doomlocaldir = "${config.home.homeDirectory}/.doom.local.d";
+  doomprofileloadfile = "${doomlocaldir}/cache/profile-load.el";
   doombin = "${emacsdir}/bin/doom";
 in
 {
@@ -56,6 +57,7 @@ in
   home.sessionVariables = {
     DOOMDIR = "${doomdir}";
     DOOMLOCALDIR = "${doomlocaldir}";
+    DOOMPROFILELOADFILE = "${doomprofileloadfile}";
   };
 
   home.file = {
@@ -68,6 +70,7 @@ in
       onChange = "${pkgs.writeShellScript "doom-change" ''
         export DOOMDIR="${doomdir}"
         export DOOMLOCALDIR="${doomlocaldir}"
+        export DOOMPROFILELOADFILE="${doomprofileloadfile}"
         if [ ! -d "$DOOMLOCALDIR" ]; then
           ${doombin} install --force --no-hooks
         else
@@ -84,6 +87,7 @@ in
       onChange = "${pkgs.writeShellScript "doom-local-change" ''
         export DOOMDIR="${doomdir}"
         export DOOMLOCALDIR="${doomlocaldir}"
+        export DOOMPROFILELOADFILE="${doomprofileloadfile}"
         ${doombin} --force sync
         # To recompile Run ${doombin} build -r
       ''}";
