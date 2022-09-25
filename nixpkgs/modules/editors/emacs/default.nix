@@ -63,7 +63,7 @@ in
   home.file = {
     ".emacs.d" = {
       source = builtins.fetchGit {
-        url = "https://github.com/hlissner/doom-emacs";
+        url = "https://github.com/doomemacs/doom-emacs";
         ref = "master";
       };
 
