@@ -48,4 +48,12 @@ Install docker by following the steps:
 
 ## Update and Upgrades
 
-Run `./renvctl deb:upgrade` to upgrade Debian packages and `./renvctl nix:update` to update the Nix channel.
+Run `./renvctl deb:upgrade` to upgrade Debian packages and `./renvctl nix:update` to update the Nixpkg channel.
+
+## TODOs
+
+- Pin everything
+  - Use flakes for Nixpkg pinning
+  - Pin emacs
+  - Pin doomemacs
+  - Pin extra emacs packages managed with straight
