@@ -12,6 +12,16 @@ The script `renvctl` orchestrates part of the process of installing components w
 λ   ./renvctl help
 ```
 
+## Pre-Installation
+
+1. Run `./renvctl check`
+   - Install the missing dependencies
+2. Run `./renvctl deb:install`
+3. Run `./renvctl nix:install` (may need a reboot)
+4. Run `./renvctl nix:cache:install`
+5. Run `./renvctl home:install`
+6. Run `./renvctl $LANG:install` (where `$LANG in {ocaml, lean, rust}`)
+
 ## Post-Installation
 
 ### Load Environment Variables
@@ -35,3 +45,7 @@ echo /home/$USER/.nix-profile/bin/fish >> "/etc/shells" && chsh -s /home/$USER/.
 Install docker by following the steps:
 
 - <https://docs.docker.com/engine/install/>
+
+## Update and Upgrades
+
+Run `./renvctl deb:upgrade` to upgrade Debian packages and `./renvctl nix:update` to update the Nix channel.
