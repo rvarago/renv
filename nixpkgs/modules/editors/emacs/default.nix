@@ -69,10 +69,10 @@ in
         export DOOMDIR="${doomdir}"
         export DOOMLOCALDIR="${doomlocaldir}"
         if [ ! -d "$DOOMLOCALDIR" ]; then
-          ${doombin} install --no-hooks
+          ${doombin} install --force --no-hooks
         else
-          ${doombin} clean
-          ${doombin} sync -u
+          ${doombin} --force clean
+          ${doombin} --force sync -u
         fi
       ''}";
     };
@@ -84,7 +84,7 @@ in
       onChange = "${pkgs.writeShellScript "doom-local-change" ''
         export DOOMDIR="${doomdir}"
         export DOOMLOCALDIR="${doomlocaldir}"
-        ${doombin} sync
+        ${doombin} --force sync
         # To recompile Run ${doombin} build -r
       ''}";
     };
