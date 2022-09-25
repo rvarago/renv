@@ -55,6 +55,7 @@ in
   # Doom.
   home.sessionPath = [ "${emacsdir}/bin" ];
   home.sessionVariables = {
+    EMACSDIR = "${emacsdir}";
     DOOMDIR = "${doomdir}";
     DOOMLOCALDIR = "${doomlocaldir}";
     DOOMPROFILELOADFILE = "${doomprofileloadfile}";
@@ -68,6 +69,7 @@ in
       };
 
       onChange = "${pkgs.writeShellScript "doom-change" ''
+        export EMACSDIR="${emacsdir}"
         export DOOMDIR="${doomdir}"
         export DOOMLOCALDIR="${doomlocaldir}"
         export DOOMPROFILELOADFILE="${doomprofileloadfile}"
@@ -85,7 +87,8 @@ in
       recursive = true;
 
       onChange = "${pkgs.writeShellScript "doom-local-change" ''
-        export DOOMDIR="${doomdir}"
+        export EMACSDIR="${emacsdir}"
+        export DOOMDIR="${doomlocaldir}"
         export DOOMLOCALDIR="${doomlocaldir}"
         export DOOMPROFILELOADFILE="${doomprofileloadfile}"
         ${doombin} --force sync
