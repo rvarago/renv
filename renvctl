@@ -133,7 +133,7 @@ deb:upgrade() {
 
 home:install() {
   if ! _command_exists "home-manager"; then
-    log "Installing home-manager"
+    _log "Installing home-manager"
 
     nix-shell '<home-manager>' -A install
   else
