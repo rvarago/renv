@@ -14,13 +14,19 @@ The script `renvctl` orchestrates part of the process of installing components w
 
 ## Pre-Installation
 
+0. Ensure that [settings.nix](./nixpkgs/settings.nix) is correct for the environment (e.g. username matches the system)
 1. Run `./renvctl check`
    - Install the missing dependencies
 2. Run `./renvctl deb:install`
 3. Run `./renvctl nix:install` (may need a reboot)
-4. Run `./renvctl nix:cache:install`
-5. Run `./renvctl home:install`
-6. Run `./renvctl $LANG:install` (where `$LANG in {ocaml, lean, rust}`)
+4. Run `./renvctl nix:update`
+5. Run `./renvctl nix:cache:install`
+6. Run `./renvctl home:install`
+7. Run `./renvctl $LANG:install` (where `$LANG in {ocaml, lean, rust}`)
+
+## Usage
+
+Run `./renvctl deb:upgrade` to upgrade Debian packages, `./renvctl nix:update` to update the Nixpkg channel, and finally `./renvctl home:apply` to install all the home-manager managed packages.
 
 ## Post-Installation
 
@@ -45,10 +51,6 @@ echo /home/$USER/.nix-profile/bin/fish >> "/etc/shells" && chsh -s /home/$USER/.
 Install docker by following the steps:
 
 - <https://docs.docker.com/engine/install/>
-
-## Update and Upgrades
-
-Run `./renvctl deb:upgrade` to upgrade Debian packages and `./renvctl nix:update` to update the Nixpkg channel.
 
 ## TODOs
 
