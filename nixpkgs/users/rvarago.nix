@@ -50,6 +50,7 @@ in
     # Cloud.
     docker-compose
     helm
+    kind
     kubectl
     kubectx
     minikube
