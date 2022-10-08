@@ -76,6 +76,7 @@
   };
 
   home.packages = with pkgs; [
+    commitizen
     diff-so-fancy
     gitAndTools.gitflow
     git-lfs
