@@ -3,7 +3,7 @@
   programs.tmux = {
     enable = true;
 
-    prefix = "C-x";
+    prefix = "C-b";
     keyMode = "vi";
     customPaneNavigationAndResize = true;
 
