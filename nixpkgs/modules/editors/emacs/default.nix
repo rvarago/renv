@@ -66,8 +66,7 @@ in
     ".emacs.d" = {
       source = builtins.fetchGit {
         url = "https://github.com/doomemacs/doom-emacs";
-        ref = "master";
-        rev = "467761e7e559ec88a22827d6fa60fa978afa27e6"; # FIXME: A conservative attempt to point to a patch known to work. Figure how to properly interop profiles and resolve the failure to `doom sync`.
+        rev = "d5ccac5d71c819035fa251f01d023b3f94b4fba4";
       };
 
       onChange = "${pkgs.writeShellScript "doom-change" ''
