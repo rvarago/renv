@@ -4,7 +4,8 @@ let
   emacs-overlay = import (
     builtins.fetchTarball {
       url =
-        "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+        "https://github.com/nix-community/emacs-overlay/archive/2f7fff8ee668c01803cab2f0847151fdf647134e.tar.gz";
+      sha256 = "0pshwldb93g88d8mh8pfqzplhady2wspa9vjbqyshnbb7h2k717s";
     }
   );
 
