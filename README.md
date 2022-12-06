@@ -56,4 +56,3 @@ Install docker by following the steps:
 
 - Pin everything
   - Use flakes for Nixpkg pinning
-  - Pin extra emacs packages managed with straight
