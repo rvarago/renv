@@ -21,12 +21,11 @@ The script `renvctl` orchestrates part of the process of installing components w
 3. Run `./renvctl nix:install` (may need a reboot)
 4. Run `./renvctl nix:update`
 5. Run `./renvctl nix:cache:install`
-6. Run `./renvctl home:install`
-7. Run `./renvctl $LANG:install` (where `$LANG in {ocaml, lean, rust}`)
+6. Run `./renvctl $LANG:install` (where `$LANG in {ocaml, lean, rust}`)
 
 ## Usage
 
-Run `./renvctl deb:upgrade` to upgrade Debian packages, `./renvctl nix:update` to update the Nixpkg channel, and finally `./renvctl home:apply` to install all the home-manager managed packages.
+Run `./renvctl deb:upgrade` to upgrade Debian packages, `./renvctl nix:update` to update nixpkgs, and finally `./renvctl home:apply` to install all home-manager managed packages.
 
 ## Post-Installation
 
@@ -53,6 +52,3 @@ Install docker by following the steps:
 - <https://docs.docker.com/engine/install/>
 
 ## TODOs
-
-- Pin everything
-  - Use flakes for Nixpkg pinning
