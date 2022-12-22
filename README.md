@@ -4,7 +4,7 @@
 
 My computing environment based on [nix](https://github.com/NixOS/nix)/[home-manager](https://github.com/nix-community/home-manager).
 
-## Usage
+## Introduction
 
 The script `renvctl` orchestrates part of the process of installing components with `home-manager` and similar:
 
