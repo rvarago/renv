@@ -104,9 +104,9 @@ nix:prune() {
 
   _log "Pruning old generations and collecting garbage"
 
-  home-manager generations |
+  _home_manager generations |
     awk -v max="${generations_to_keep}" 'NR > max {print $5}' |
-    xargs home-manager remove-generations
+    xargs _home_manager remove-generations
 
   nix-collect-garbage
 }
