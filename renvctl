@@ -100,7 +100,7 @@ nix:update() {
 }
 
 nix:prune() {
-  local generations_to_keep=3
+  local generations_to_keep=5
 
   _log "Pruning old generations and collecting garbage"
 
