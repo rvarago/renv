@@ -89,13 +89,13 @@
     rnix-lsp
 
     # Python.
+    poetry
     python3
     python3Packages.autopep8
     python3Packages.black
     python3Packages.ipython
     python3Packages.isort
     python3Packages.pip
-    python3Packages.poetry
     python3Packages.pyflakes
     python3Packages.pylint
     python3Packages.pytest
