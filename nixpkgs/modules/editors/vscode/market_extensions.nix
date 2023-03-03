@@ -181,12 +181,6 @@
     sha256 = "0z44hbrbzlhxbzf1j55xpl5fb7gic9avvcz4dvljrwz4qqdjzq4x";
   })
   (extensionFromVscodeMarketplace {
-    publisher = "pivotal";
-    name = "vscode-spring-boot";
-    version = "1.39.0";
-    sha256 = "09gb8crkh38zl9wcb762mp7n1yhlkhqc8ava2rv3xr2hfd5awwjw";
-  })
-  (extensionFromVscodeMarketplace {
     publisher = "rebornix";
     name = "Ruby";
     version = "0.28.1";
@@ -221,6 +215,12 @@
     name = "cmake";
     version = "0.0.17";
     sha256 = "11hzjd0gxkq37689rrr2aszxng5l9fwpgs9nnglq3zhfa1msyn08";
+  })
+  (extensionFromVscodeMarketplace {
+    publisher = "vmware";
+    name = "vscode-spring-boot";
+    version = "1.45.2023030205";
+    sha256 = "0azi7aqmdm5s55zknm7g0srki9p1rc6428n2bynsmbldl73waz3c";
   })
   (extensionFromVscodeMarketplace {
     publisher = "vscjava";
