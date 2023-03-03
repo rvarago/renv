@@ -82,7 +82,7 @@
     elan
 
     # .Net.
-    dotnetCorePackages.sdk_5_0
+    dotnetCorePackages.sdk_6_0
 
     # Nix.
     nixpkgs-fmt
