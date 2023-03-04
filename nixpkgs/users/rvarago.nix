@@ -68,8 +68,9 @@ in
     texlive.combined.scheme-small
 
     # Fonts.
+    iosevka-bin
+    # (nerdfonts.override { fonts = [ "Hack" "Iosevka" ]; })
     jetbrains-mono
-    (nerdfonts.override { fonts = [ "Hack" "Iosevka" ]; })
   ];
 
   fonts.fontconfig.enable = true;
