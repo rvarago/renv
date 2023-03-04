@@ -17,7 +17,7 @@
     ccls
     clang-tools
     cmake
-    conan
+    # conan
     cmake-language-server
 
     # Clojure.
