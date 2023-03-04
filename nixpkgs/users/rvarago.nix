@@ -75,7 +75,7 @@ in
   fonts.fontconfig.enable = true;
 
   imports = [
-    (import ../modules/editors { inherit pkgs settings; })
+    (import ../modules/editors { inherit pkgs; })
     ../modules/langs
     ../modules/linux
     ../modules/profiles
