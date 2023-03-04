@@ -34,7 +34,7 @@ in
 
   programs.emacs = {
     enable = true;
-    package = pkgs.emacsNativeComp;
+    package = pkgs.emacsUnstable;
 
     extraPackages = (
       epkgs:
