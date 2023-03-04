@@ -65,6 +65,8 @@ _home_manager() {
   nix-shell --run "home-manager $1"
 }
 
+export -f _home_manager
+
 check() {
   _log "Checking dependencies"
 
@@ -106,7 +108,7 @@ nix:prune() {
 
   _home_manager generations |
     awk -v max="${generations_to_keep}" 'NR > max {print $5}' |
-    xargs _home_manager remove-generations
+    xargs "$BASH" -c "_home_manager remove-generations"
 
   nix-collect-garbage
 }
