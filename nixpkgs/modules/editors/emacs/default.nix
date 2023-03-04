@@ -1,10 +1,12 @@
 { pkgs, config, ... }:
 
 let
+  emacsOverlayRev = "2f7fff8ee668c01803cab2f0847151fdf647134e";
+  doomRev = "d5ccac5d71c819035fa251f01d023b3f94b4fba4";
+
   emacs-overlay = import (
     builtins.fetchTarball {
-      url =
-        "https://github.com/nix-community/emacs-overlay/archive/2f7fff8ee668c01803cab2f0847151fdf647134e.tar.gz";
+      url = "https://github.com/nix-community/emacs-overlay/archive/${emacsOverlayRev}.tar.gz";
       sha256 = "0pshwldb93g88d8mh8pfqzplhady2wspa9vjbqyshnbb7h2k717s";
     }
   );
@@ -66,7 +68,7 @@ in
     ".emacs.d" = {
       source = builtins.fetchGit {
         url = "https://github.com/doomemacs/doom-emacs";
-        rev = "d5ccac5d71c819035fa251f01d023b3f94b4fba4";
+        rev = doomRev;
       };
 
       onChange = "${pkgs.writeShellScript "doom-change" ''
