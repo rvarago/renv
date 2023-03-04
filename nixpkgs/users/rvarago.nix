@@ -38,7 +38,7 @@ in
     xdot
     xsv
     wget
-    wkhtmltopdf
+    #wkhtmltopdf
 
     # Dev tools.
     plantuml
