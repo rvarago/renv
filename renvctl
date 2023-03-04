@@ -9,6 +9,8 @@ THIS_SCRIPT=$(basename "${BASH_SOURCE[0]}")
 
 SCRIPTS="${THIS_DIR}/scripts/include"
 
+USERS="${THIS_DIR}/nixpkgs/users"
+
 _log() {
   echo >&2 "[${THIS_SCRIPT}] " "$@"
 }
@@ -21,19 +23,20 @@ USAGE:
   ${THIS_SCRIPT} COMMAND
 
 COMMAND:
-  help               Show this message
-  check              Check whether all required pre-conditions (e.g dependencies) hold
-  nix:install        Install nix
-  nix:cache:install  Install binary cache
-  nix:update         Update nix
-  nix:prune          Prune old generations and collect relevant garbage
-  deb:install        Install dependencies on a Debian-based distro
-  deb:upgrade        Upgrade components installed on a Debian-based distro
-  home:apply         Install packages with home-manager
-  ocaml:install      Install OCaml toolchains
-  lean:install       Install Lean toolchains managed by Elan
-  rust:install       Install Rust toolchains managed by Rustup
-  vscode:generate    Re-generate VSCode market extensions manifest
+  help                  Show this message
+  check                 Check whether all required pre-conditions (e.g dependencies) hold
+  nix:install           Install nix
+  nix:cache:install     Install binary cache
+  nix:update            Update nix
+  nix:prune             Prune old generations and collect relevant garbage
+  deb:install           Install dependencies on a Debian-based distro
+  deb:upgrade           Upgrade components installed on a Debian-based distro
+  home:configure user   Configure home-manager with the new user
+  home:apply            Istall packages with home-manager
+  ocaml:install         Install OCaml toolchains
+  lean:install          Install Lean toolchains managed by Elan
+  rust:install          Install Rust toolchains managed by Rustup
+  vscode:generate       Re-generate VSCode market extensions manifest
 EOF
 }
 
@@ -135,6 +138,17 @@ deb:upgrade() {
   else
     _log "You might not be on a Debian-based distro"
   fi
+}
+
+home:configure() {
+  local newuser="$1"
+  local templateuser="rvarago"
+
+  _log "Configuring home-manager for user ${newuser}"
+
+  ln -s "${USERS}/${templateuser}.nix" "${USERS}/${newuser}.nix"
+
+  grep -rl "${templateuser}" . | xargs sed -i "s/${templateuser}/${newuser}/g"
 }
 
 home:apply() {
