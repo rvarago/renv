@@ -149,7 +149,10 @@ home:configure() {
 
   cp "${USERS}/${templateuser}.nix" "${newuserfile}"
 
+  _log "Patching files (please check them afterwards):"
+
   grep -rl "${templateuser}" --include "*.nix" . \
+    | tee /dev/tty \
     | xargs sed -i "s/${templateuser}/${newuser}/g"
 }
 
