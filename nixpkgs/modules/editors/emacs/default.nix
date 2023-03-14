@@ -1,13 +1,13 @@
 { pkgs, config, ... }:
 
 let
-  emacsOverlayRev = "e962b871a0b0984569506a576543eff8926d478f";
-  doomRev = "8f6b045dfdb6d00e5a324c3f9044dce773791502";
+  emacsOverlayRev = "4e9ef767be5f4fcb59cd0f908779cfc3729c1880";
+  doomRev = "63586423dab6248d6e5acfc68dc4324c15f05d83";
 
   emacs-overlay = import (
     builtins.fetchTarball {
       url = "https://github.com/nix-community/emacs-overlay/archive/${emacsOverlayRev}.tar.gz";
-      sha256 = "0sskn47rajc90vlvbvknlnvbalvamzrclicwq8d99ckg6kbqz0ip";
+      sha256 = "1yx66ccrsaiy3i05zkq2g7si00qypy9xp9gzbs2flhg3j61n7gfp";
     }
   );
 
