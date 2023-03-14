@@ -142,14 +142,15 @@ deb:upgrade() {
 
 home:configure() {
   local templateuser="rvarago"
-  local newuser="$USER"
+  local newuser="${USER}"
   local newuserfile="${USERS}/${newuser}.nix"
 
   _log "Configuring home-manager for user ${newuser} at ${newuserfile}"
 
   cp "${USERS}/${templateuser}.nix" "${newuserfile}"
 
-  grep -rl "${templateuser}" . | xargs sed -i "s/${templateuser}/${newuser}/g"
+  grep -rl "${templateuser}" --include "*.nix" . \
+    | xargs sed -i "s/${templateuser}/${newuser}/g"
 }
 
 home:apply() {
