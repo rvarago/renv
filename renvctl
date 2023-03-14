@@ -31,7 +31,7 @@ COMMAND:
   nix:prune             Prune old generations and collect relevant garbage
   deb:install           Install dependencies on a Debian-based distro
   deb:upgrade           Upgrade components installed on a Debian-based distro
-  home:configure user   Configure home-manager with the new user
+  home:configure        Configure home-manager with the new USER
   home:apply            Istall packages with home-manager
   ocaml:install         Install OCaml toolchains
   lean:install          Install Lean toolchains managed by Elan
@@ -141,12 +141,13 @@ deb:upgrade() {
 }
 
 home:configure() {
-  local newuser="$1"
   local templateuser="rvarago"
+  local newuser="$USER"
+  local newuserfile="${USERS}/${newuser}.nix"
 
-  _log "Configuring home-manager for user ${newuser}"
+  _log "Configuring home-manager for user ${newuser} at ${newuserfile}"
 
-  ln -s "${USERS}/${templateuser}.nix" "${USERS}/${newuser}.nix"
+  cp "${USERS}/${templateuser}.nix" "${newuserfile}"
 
   grep -rl "${templateuser}" . | xargs sed -i "s/${templateuser}/${newuser}/g"
 }

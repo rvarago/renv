@@ -14,8 +14,8 @@ The script `renvctl` orchestrates part of the process of installing components w
 
 ## Pre-Installation
 
-0. Ensure that [settings.nix](./nixpkgs/settings.nix) is correct for the environment (e.g. username matches the system)
-   1. Run `./renvctl home:configure username` where `username` to automate the task.
+0. Ensure that [settings.nix](./nixpkgs/settings.nix) is correct for the environment (e.g. username matches the system, email)
+   1. Run `./renvctl home:configure`
 1. Run `./renvctl check`
    - Install the missing dependencies
 2. Run `./renvctl deb:install`
