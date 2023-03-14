@@ -31,6 +31,10 @@
     sbcl
     lispPackages.quicklisp
 
+    # Dhall
+    dhall
+    dhall-json
+
     # Elm.
     elmPackages.elm
     elmPackages.elm-analyse
