@@ -90,6 +90,7 @@
 
     # Nix.
     nixpkgs-fmt
+    nixfmt
     rnix-lsp
 
     # Python.
