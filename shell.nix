@@ -17,6 +17,7 @@ pkgs.mkShell rec {
   ];
 
   shellHook = ''
+    export NIXPKGS_ALLOW_UNFREE=1
     export NIX_PATH="nixpkgs=${nixpkgs}:home-manager=${sources."home-manager"}"
     export HOME_MANAGER_CONFIG="./nixpkgs/home.nix"
   '';
