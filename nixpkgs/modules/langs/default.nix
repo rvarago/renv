@@ -110,9 +110,9 @@
     opam
 
     # Rust.
-    cargo-audit
     cargo-edit
     cargo-expand
+    cargo-generate
     cargo-license
     cargo-modules
     cargo-outdated
@@ -122,6 +122,7 @@
     cargo-watch
     rustup
     sqlx-cli
+    cargo-audit
 
     # Scala.
     ammonite
