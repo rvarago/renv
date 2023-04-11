@@ -41,6 +41,7 @@ in
     #wkhtmltopdf
 
     # Dev tools.
+    minicom
     plantuml
     protobuf
     valgrind
