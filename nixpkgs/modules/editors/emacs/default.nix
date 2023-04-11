@@ -13,7 +13,7 @@ let
 
   emacsdir = "${config.home.homeDirectory}/.emacs.d";
   doomdir = "${config.home.homeDirectory}/.doom.d";
-  doomlocaldir = "${config.home.homeDirectory}/.doom.local.d";
+  doomlocaldir = "${emacsdir}/local";
   doomprofileloadfile = "${doomlocaldir}/cache/profile-load.el";
   doombin = "${emacsdir}/bin/doom";
 in
@@ -65,7 +65,7 @@ in
   };
 
   home.file = {
-    ".emacs.d" = {
+    "${emacsdir}" = {
       source = builtins.fetchGit {
         url = "https://github.com/doomemacs/doom-emacs";
         rev = doomRev;
@@ -85,11 +85,11 @@ in
       ''}";
     };
 
-    ".doom.d" = {
+    "${doomdir}" = {
       source = ./doom.d;
       recursive = true;
 
-      onChange = "${pkgs.writeShellScript "doom-local-change" ''
+      onChange = "${pkgs.writeShellScript "doom-config-change" ''
         export EMACSDIR="${emacsdir}"
         export DOOMDIR="${doomlocaldir}"
         export DOOMLOCALDIR="${doomlocaldir}"
