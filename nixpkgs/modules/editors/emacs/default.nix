@@ -12,8 +12,8 @@ let
   );
 
   emacsdir = "${config.home.homeDirectory}/.emacs.d";
-  doomdir = "${config.home.homeDirectory}/.doom.d";
-  doomlocaldir = "${emacsdir}/local";
+  doomdir = "${config.home.homeDirectory}/.doom-config.d";
+  doomlocaldir = "${config.home.homeDirectory}/.doom-local.d";
   doomprofileloadfile = "${doomlocaldir}/cache/profile-load.el";
   doombin = "${emacsdir}/bin/doom";
 in
