@@ -43,7 +43,8 @@ echo ". $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" >> /home/$USER/.pro
 Append to shells and then set the shell:
 
 ```bash
-echo /home/$USER/.nix-profile/bin/fish >> "/etc/shells" && chsh -s /home/$USER/.nix-profile/bin/fish $USER
+export U=$USER
+echo /home/$U/.nix-profile/bin/fish >> "/etc/shells" && chsh -s /home/$U/.nix-profile/bin/fish $U
 ```
 
 ### Setup Docker
