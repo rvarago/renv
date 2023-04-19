@@ -35,7 +35,7 @@ Run `./renvctl deb:upgrade` to upgrade Debian packages, `./renvctl nix:update` t
 Append to variables exposed by home-manager to the login config:
 
 ```bash
-. "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" >> "/home/$USER/.profile"
+echo ". $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" >> /home/$USER/.profil
 ```
 
 ### Set Fish as Default Shell
