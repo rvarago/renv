@@ -9,7 +9,7 @@
 (package! cpp-auto-include :pin "0ce829f27d466c083e78b9fe210dcfa61fb417f4")
 (package! cmake-ide :pin "28dc4ab5bd01d99553901b4efeb7234280928b18")
 (package! flycheck-clang-tidy :pin "f9ae7306bd6ca08b689b36c1e8f6f6b91d61db5f")
-(package! google-c-style :pin "d2cc2a7ec3339b83a9fdae5f9eb2bc6f732aa43c")
+(package! google-c-style :pin "2173b8d68c05993d7ce009b1bd1dba64f1d606de")
 
 ;; Edit.
 (package! move-text :pin "cbcd0e5a316f26a8e8ef67ea0e633a43b045aa1e")
@@ -33,17 +33,17 @@
 
 ;; Lean
 (package! lean4-mode
-    :recipe (:host github :repo "leanprover/lean4-mode") :pin "2c6ef33f476fdf5eb5e4fa4fa023ba8b11372440")
+    :recipe (:host github :repo "leanprover/lean4-mode") :pin "43f5e2b6c771602786c5b8f234e91f66ccd1b808")
 
 ;; Markdown.
 (package! markdown-preview-mode :pin "85fbfec507a222326695a3b91ff7306d0c4f94c6")
-(package! pandoc-mode :pin "8f955abec9c1d75acd9b03389b90a276ec4e2137")
+(package! pandoc-mode :pin "da3f0f5238a8b1e5f09f2ec97e683dc488d25be0")
 
 ;; PDF.
 (package! pdf-tools :built-in 'prefer :pin "7ff6293a25baaae65651b3e1c54b61208279a7ef")
 
 ;; Protobuf.
-(package! protobuf-mode :pin "f11079b01f075bc7c5b3286d85a8feca798c09e9")
+(package! protobuf-mode :pin "f0de774705b43e120c43a545033ed29728351bdc")
 
 ;; Sql.
 (package! sql)

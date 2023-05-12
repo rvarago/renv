@@ -51,8 +51,8 @@
   (extensionFromVscodeMarketplace {
     publisher = "dorzey";
     name = "vscode-sqlfluff";
-    version = "2.2.7";
-    sha256 = "0gl9k3cp9gh9m8wp97pr4qwvz62pvw862z0d1xhww5344m3l7r1b";
+    version = "2.3.1";
+    sha256 = "1gkrm7spw9y1d8w6703y86dm4ws13s25gz8xhnncm248xhyzx719";
   })
   (extensionFromVscodeMarketplace {
     publisher = "exiasr";
@@ -69,8 +69,8 @@
   (extensionFromVscodeMarketplace {
     publisher = "fwcd";
     name = "kotlin";
-    version = "0.2.26";
-    sha256 = "1br0vr4v1xcl4c7bcqwzfqd4xr6q2ajwkipqrwm928mj96dkafkn";
+    version = "0.2.31";
+    sha256 = "1yngrbqndb7jccmakpjv98y8amffvk2zbj3dhz0khdxz6ym18vb3";
   })
   (extensionFromVscodeMarketplace {
     publisher = "jcanero";
@@ -129,14 +129,14 @@
   (extensionFromVscodeMarketplace {
     publisher = "ms-vscode";
     name = "cmake-tools";
-    version = "1.14.25";
-    sha256 = "1ymbk3f6gl12b4xmaslvkbhfchfy2y1dfg8j8d9bvvs1xx2jga96";
+    version = "1.15.8";
+    sha256 = "135i7fjfv3i2qs240rrxszxd2b7ibzcrid713kj4fxmqq8nrs4ll";
   })
   (extensionFromVscodeMarketplace {
     publisher = "ms-vscode";
     name = "makefile-tools";
-    version = "0.6.0";
-    sha256 = "07zagq5ib9hd3w67yk2g728vypr4qazw0g9dyd5bax21shnmppa9";
+    version = "0.8.1";
+    sha256 = "05swb85r4s589c0j0yff54zwy7f08735a3vwyz54im0f6y2wqajl";
   })
   (extensionFromVscodeMarketplace {
     publisher = "ms-vscode";
@@ -171,8 +171,8 @@
   (extensionFromVscodeMarketplace {
     publisher = "nicoespeon";
     name = "abracadabra";
-    version = "7.0.0";
-    sha256 = "1b8sd1fj6mfkhg3whgj0z7ay8hkxkhlpnajcgx018331ir09mzpj";
+    version = "8.0.1";
+    sha256 = "1mizqzyn9jdjvdvs44b2rcasrm8ybwdsq8fky4qq881dfmn2r0i3";
   })
   (extensionFromVscodeMarketplace {
     publisher = "notskm";
@@ -189,8 +189,8 @@
   (extensionFromVscodeMarketplace {
     publisher = "redhat";
     name = "vscode-xml";
-    version = "0.25.2023032304";
-    sha256 = "0kwwhx49drmbxxnwpirzzsfkya7b9g0wkmb3lxszyx1xjlqky5fy";
+    version = "0.25.2023050404";
+    sha256 = "1jznfhxha8ci0scz7amzya8d8ddqc2sk3ighhqr7bawx61iym5lz";
   })
   (extensionFromVscodeMarketplace {
     publisher = "Rubymaniac";
@@ -219,32 +219,32 @@
   (extensionFromVscodeMarketplace {
     publisher = "vmware";
     name = "vscode-spring-boot";
-    version = "1.46.2023040404";
-    sha256 = "0ly3vdx5ycaagm1q6vhwmyxvcvs0l9qf5ihxr6s26z29727dlrga";
+    version = "1.47.2023051104";
+    sha256 = "1g7rddbv4pni0b4paqiim6i9s985vdg496bflnc4mn913x49c38k";
   })
   (extensionFromVscodeMarketplace {
     publisher = "vscjava";
     name = "vscode-java-debug";
-    version = "0.49.2023032407";
-    sha256 = "0p57q47bylrrpg75zd6q5q2qh8f8w88d52rc7l3xzdzbrl27l4k7";
+    version = "0.50.2023042406";
+    sha256 = "13dnbgayw2rym0rwz7nj9y2cspszgn9gl2zhw20lb3lq884misfz";
   })
   (extensionFromVscodeMarketplace {
     publisher = "vscjava";
     name = "vscode-java-test";
-    version = "0.38.2023032402";
-    sha256 = "1sqmk0n895ap6vpyr067i5ichz3pqrj3f38k863dcf5fx31sqqp1";
+    version = "0.38.2023051002";
+    sha256 = "0ml3pcpd6pjpbkkwdkkmr4vnfwl5z1870ikmbvr8frh5gsf88pap";
   })
   (extensionFromVscodeMarketplace {
     publisher = "vscjava";
     name = "vscode-spring-boot-dashboard";
-    version = "0.12.2023040700";
-    sha256 = "1cfs8lsdfpjjp94d7k9cl8pkjwp47ilgxc9cddf55w02xjd7ai1b";
+    version = "0.13.2023051200";
+    sha256 = "0sl5d4knkj9hzhd9zf06nr12r303h9qx9b2b65prmcmi4sf0rixm";
   })
   (extensionFromVscodeMarketplace {
     publisher = "vscjava";
     name = "vscode-spring-initializr";
-    version = "0.11.2023031603";
-    sha256 = "0gq849mmcf4n387pbis0vac4jr117sbgz9z1d62pz26s50nrab1i";
+    version = "0.11.2023041103";
+    sha256 = "1w3gymv70j2541awqpn95wnhcdcxbc25s8iz68a02rq4l9ll0jb6";
   })
   (extensionFromVscodeMarketplace {
     publisher = "vscode-org-mode";
