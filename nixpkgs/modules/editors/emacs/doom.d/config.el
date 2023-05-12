@@ -51,7 +51,7 @@
 (use-package! treemacs
   :defer t
   :after projectile
-  :init (add-hook 'projectile-after-switch-project-hook #'treemacs-display-current-project-exclusively)
+  :init (add-hook 'projectile-after-switch-project-hook #'treemacs-add-and-display-current-project-exclusively)
   :config
   (treemacs-project-follow-mode t)
   (treemacs-follow-mode t)
