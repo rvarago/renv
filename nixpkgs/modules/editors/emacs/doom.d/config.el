@@ -167,6 +167,15 @@
   ("C-c v e" . magit-ediff-resolve)
   ("C-c v P" . magit-push))
 
+(use-package! git-link
+  :defer t
+  :custom
+  (git-link-use-commit t)
+  (git-link-use-single-line-number t)
+  :commands (git-link git-link-commit git-link-homepage)
+  :bind
+  ("C-c v &" . git-link))
+
 ;; ================= CHECKER =================
 
 (use-package! flycheck
@@ -209,7 +218,6 @@
 (use-package! alloy-mode
   :defer t
   :mode "\\.als\\'")
-
 
 ;; C/C++.
 (use-package! cpp-auto-include

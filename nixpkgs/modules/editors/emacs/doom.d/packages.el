@@ -16,6 +16,9 @@
 (package! multiple-cursors :pin "6956e8e12ee191d7c80d042ae8ff495286fcbe38")
 (package! whole-line-or-region :pin "f7c9b25f8c932cff8239cde4a76e48135bdfa7e6")
 
+;; VCS.
+(package! git-link :pin "1727e9b7ec41a234a2cc14151b9ffd9c1c4f4b14")
+
 ;; Graphviz.
 (package! graphviz-dot-mode :pin "8ff793b13707cb511875f56e167ff7f980a31136")
 
