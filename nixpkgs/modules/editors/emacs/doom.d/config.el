@@ -124,6 +124,8 @@
 (map! "C-c C-s" #'replace-string)
 (map! "C-c C-r" #'query-replace-regexp)
 
+(add-hook! prog-mode-hook #'subword-mode)
+
 ;; ================= PROJECT =================
 
 (use-package! projectile
