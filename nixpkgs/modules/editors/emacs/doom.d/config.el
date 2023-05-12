@@ -121,6 +121,9 @@
   :hook
   (prog-mode . rainbow-delimiters-mode))
 
+(map! "C-c C-s" #'replace-string)
+(map! "C-c C-r" #'query-replace-regexp)
+
 ;; ================= PROJECT =================
 
 (use-package! projectile
