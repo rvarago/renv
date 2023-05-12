@@ -76,6 +76,10 @@
     (split-window-vertically)
     (other-window 1)))
 
+(map! "C-^" #'doom/increase-font-size)
+(map! "C-%" #'doom/decrease-font-size)
+(map! "C-&" #'doom/reset-font-size)
+
 ;; ================= EDIT =================
 
 (global-set-key (kbd "<mouse-8>") 'xref-pop-marker-stack)
