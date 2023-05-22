@@ -319,10 +319,11 @@
 
 
 ;; Idris.
-(use-package! idris-mode
+(use-package! idris2-mode
   :defer t
-  :custom
-  (idris-interpreter-path "idris2"))
+  :bind (:map idris2-mode-map
+          ("C-c C-g" . idris2-add-clause)
+          ("C-c C-u" . idris2-repl)))
 
 
 ;; Java.

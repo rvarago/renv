@@ -22,6 +22,10 @@
 ;; Graphviz.
 (package! graphviz-dot-mode :pin "8ff793b13707cb511875f56e167ff7f980a31136")
 
+;; Idris.
+(package! idris2-mode
+    :recipe (:host github :repo "idris-community/idris2-mode") :pin "3bcb52a65c488f31c99d20f235f6050418a84c9d")
+
 ;; Ini.
 (package! ini-mode :pin "5472abc94e564edc6b469c48d2324519a044a77c")
 
