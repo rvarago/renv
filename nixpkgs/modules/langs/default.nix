@@ -17,7 +17,7 @@
     ccls
     clang-tools
     cmake
-    conan
+    # conan
     cmake-language-server
 
     # Clojure.
@@ -30,6 +30,10 @@
     # Common-Lisp.
     sbcl
     lispPackages.quicklisp
+
+    # Dhall
+    dhall
+    dhall-json
 
     # Elm.
     elmPackages.elm
@@ -82,20 +86,21 @@
     elan
 
     # .Net.
-    dotnetCorePackages.sdk_5_0
+    dotnetCorePackages.sdk_6_0
 
     # Nix.
     nixpkgs-fmt
+    nixfmt
     rnix-lsp
 
     # Python.
+    poetry
     python3
     python3Packages.autopep8
     python3Packages.black
     python3Packages.ipython
     python3Packages.isort
     python3Packages.pip
-    python3Packages.poetry
     python3Packages.pyflakes
     python3Packages.pylint
     python3Packages.pytest
@@ -105,9 +110,9 @@
     opam
 
     # Rust.
-    cargo-audit
     cargo-edit
     cargo-expand
+    cargo-generate
     cargo-license
     cargo-modules
     cargo-outdated
@@ -117,6 +122,7 @@
     cargo-watch
     rustup
     sqlx-cli
+    cargo-audit
 
     # Scala.
     ammonite

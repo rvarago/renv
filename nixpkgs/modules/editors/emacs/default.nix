@@ -1,16 +1,19 @@
 { pkgs, config, ... }:
 
 let
+  emacsOverlayRev = "86ea3268b55bb632de43a80a37501a3d05cdb224";
+  doomRev = "042fe0c43831c8575abfdec4196ebd7305fa16ac";
+
   emacs-overlay = import (
     builtins.fetchTarball {
-      url =
-        "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+      url = "https://github.com/nix-community/emacs-overlay/archive/${emacsOverlayRev}.tar.gz";
+      sha256 = "1drrq6sa49w1ns7zny8fvv9fpbnlr4hagwb910gg7yww820aaang";
     }
   );
 
   emacsdir = "${config.home.homeDirectory}/.emacs.d";
-  doomdir = "${config.home.homeDirectory}/.doom.d";
-  doomlocaldir = "${config.home.homeDirectory}/.doom.local.d";
+  doomdir = "${config.home.homeDirectory}/.doom-config.d";
+  doomlocaldir = "${config.home.homeDirectory}/.doom-local.d";
   doomprofileloadfile = "${doomlocaldir}/cache/profile-load.el";
   doombin = "${emacsdir}/bin/doom";
 in
@@ -31,7 +34,7 @@ in
 
   programs.emacs = {
     enable = true;
-    package = pkgs.emacsNativeComp;
+    package = pkgs.emacs28;
 
     extraPackages = (
       epkgs:
@@ -62,11 +65,10 @@ in
   };
 
   home.file = {
-    ".emacs.d" = {
+    "${emacsdir}" = {
       source = builtins.fetchGit {
         url = "https://github.com/doomemacs/doom-emacs";
-        ref = "master";
-        rev = "467761e7e559ec88a22827d6fa60fa978afa27e6"; # FIXME: A conservative attempt to point to a patch known to work. Figure how to properly interop profiles and resolve the failure to `doom sync`.
+        rev = doomRev;
       };
 
       onChange = "${pkgs.writeShellScript "doom-change" ''
@@ -83,11 +85,11 @@ in
       ''}";
     };
 
-    ".doom.d" = {
+    "${doomdir}" = {
       source = ./doom.d;
       recursive = true;
 
-      onChange = "${pkgs.writeShellScript "doom-local-change" ''
+      onChange = "${pkgs.writeShellScript "doom-config-change" ''
         export EMACSDIR="${emacsdir}"
         export DOOMDIR="${doomlocaldir}"
         export DOOMLOCALDIR="${doomlocaldir}"

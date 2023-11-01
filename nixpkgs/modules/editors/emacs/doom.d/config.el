@@ -51,7 +51,7 @@
 (use-package! treemacs
   :defer t
   :after projectile
-  :init (add-hook 'projectile-after-switch-project-hook #'treemacs-display-current-project-exclusively)
+  :init (add-hook 'projectile-after-switch-project-hook #'treemacs-add-and-display-current-project-exclusively)
   :config
   (treemacs-project-follow-mode t)
   (treemacs-follow-mode t)
@@ -75,6 +75,10 @@
     (interactive)
     (split-window-vertically)
     (other-window 1)))
+
+(map! "C-^" #'doom/increase-font-size)
+(map! "C-%" #'doom/decrease-font-size)
+(map! "C-&" #'doom/reset-font-size)
 
 ;; ================= EDIT =================
 
@@ -121,6 +125,11 @@
   :hook
   (prog-mode . rainbow-delimiters-mode))
 
+(map! "C-c C-s" #'replace-string)
+(map! "C-c C-r" #'query-replace-regexp)
+
+(add-hook! prog-mode-hook #'subword-mode)
+
 ;; ================= PROJECT =================
 
 (use-package! projectile
@@ -157,6 +166,15 @@
   ("C-c v m" . magit-checkout)
   ("C-c v e" . magit-ediff-resolve)
   ("C-c v P" . magit-push))
+
+(use-package! git-link
+  :defer t
+  :custom
+  (git-link-use-commit t)
+  (git-link-use-single-line-number t)
+  :commands (git-link git-link-commit git-link-homepage)
+  :bind
+  ("C-c v &" . git-link))
 
 ;; ================= CHECKER =================
 
@@ -200,7 +218,6 @@
 (use-package! alloy-mode
   :defer t
   :mode "\\.als\\'")
-
 
 ;; C/C++.
 (use-package! cpp-auto-include
@@ -302,10 +319,11 @@
 
 
 ;; Idris.
-(use-package! idris-mode
+(use-package! idris2-mode
   :defer t
-  :custom
-  (idris-interpreter-path "idris2"))
+  :bind (:map idris2-mode-map
+          ("C-c C-g" . idris2-add-clause)
+          ("C-c C-u" . idris2-repl)))
 
 
 ;; Java.

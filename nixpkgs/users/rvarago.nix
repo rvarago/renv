@@ -38,9 +38,10 @@ in
     xdot
     xsv
     wget
-    wkhtmltopdf
+    #wkhtmltopdf
 
     # Dev tools.
+    minicom
     plantuml
     protobuf
     valgrind
@@ -68,14 +69,15 @@ in
     texlive.combined.scheme-small
 
     # Fonts.
+    iosevka-bin
+    # (nerdfonts.override { fonts = [ "Hack" "Iosevka" ]; })
     jetbrains-mono
-    (nerdfonts.override { fonts = [ "Hack" "Iosevka" ]; })
   ];
 
   fonts.fontconfig.enable = true;
 
   imports = [
-    (import ../modules/editors { inherit pkgs settings; })
+    (import ../modules/editors { inherit pkgs; })
     ../modules/langs
     ../modules/linux
     ../modules/profiles
