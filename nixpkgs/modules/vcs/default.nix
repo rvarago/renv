@@ -60,18 +60,45 @@
     };
 
     aliases = {
-      br = "branch";
-      ci = "commit";
-      cia = "commit --amend";
-      cif = "commit --fixup";
+      a = "add";
+      ap = "add -p";
+
+      b = "branch";
+      bv = "branch -vv";
+
+      c = "commit";
+      ca = "commit -a";
+      cm = "commit -m";
+      cam = "commit -a -m";
+      cf = "commit --fixup";
+      m = "commit --amend";
+      mf = "commit --amend --no-edit";
+
+      cp = "cherry-pick";
+
       co = "checkout";
+      cob = "checkout -b";
+
+      s = "status";
+      sh = "show";
+
+      ri = "rebase --interactive";
+      ria = "rebase --interactive --autosquash";
+
+      z = "reset";
+      zh = "reset --hard";
+
+      d = "diff";
+      ds = "diff --stat";
+      dc = "diff --cached";
+
+      df = "difftool --dir-diff --no-prompt";
+
+      pf = "push --force-with-lease";
+      greview = "push HEAD:refs/for/master";
+
       lg =
         "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all";
-      pf = "push --force-with-lease";
-      ria = "rebase --interactive --autosquash";
-      greview = "push HEAD:refs/for/master";
-      st = "status";
-      vdiff = "difftool --dir-diff --no-prompt";
     };
   };
 

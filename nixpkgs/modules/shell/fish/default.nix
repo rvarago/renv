@@ -12,6 +12,8 @@
     '';
 
     shellAliases = {
+      g = "git";
+
       clojurew = "rlwrap clojure";
       idris2w = "rlwrap idris2";
       sbclw = "rlwrap sbcl";
