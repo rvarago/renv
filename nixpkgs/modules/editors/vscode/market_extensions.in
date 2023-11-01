@@ -1,5 +1,7 @@
-aaron-bond.better-comments
 ArashSahebolamri.alloy
+Rubymaniac.vscode-direnv
+Shopify.ruby-extensions-pack
+aaron-bond.better-comments
 arrterian.nix-env-selector
 azemoh.one-monokai
 castwide.solargraph
@@ -28,9 +30,7 @@ mtxr.sqltools-driver-pg
 naco-siren.gradle-language
 nicoespeon.abracadabra
 notskm.clang-tidy
-rebornix.Ruby
 redhat.vscode-xml
-Rubymaniac.vscode-direnv
 ryanolsonx.zenburn
 sjhuangx.vscode-scheme
 twxs.cmake
@@ -41,6 +41,5 @@ vscjava.vscode-spring-boot-dashboard
 vscjava.vscode-spring-initializr
 vscode-org-mode.org-mode
 wayou.vscode-todo-highlight
-wingrunr21.vscode-ruby
 wix.glean
 xabikos.JavaScriptSnippets
