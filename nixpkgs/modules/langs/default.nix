@@ -21,7 +21,7 @@
     cmake-language-server
 
     # Clojure.
-    clojure
+    # clojure
     leiningen
 
     # Coq.
@@ -74,8 +74,8 @@
 
     # JS/TS.
     nodejs
-    nodePackages.eslint
-    nodePackages.prettier
+    # nodePackages.eslint
+    # nodePackages.prettier
     nodePackages.typescript
     yarn
 
@@ -96,14 +96,14 @@
     # Python.
     poetry
     python3
-    python3Packages.autopep8
-    python3Packages.black
-    python3Packages.ipython
-    python3Packages.isort
+    # python3Packages.autopep8
+    # python3Packages.black
+    # python3Packages.ipython
+    # python3Packages.isort
     python3Packages.pip
-    python3Packages.pyflakes
-    python3Packages.pylint
-    python3Packages.pytest
+    # python3Packages.pyflakes
+    # python3Packages.pylint
+    # python3Packages.pytest
     python3Packages.setuptools
 
     # OCaml.
@@ -125,9 +125,9 @@
     cargo-audit
 
     # Scala.
-    ammonite
+    # ammonite
     sbt
-    scala
+    scala-cli
 
     # Scheme.
     racket
