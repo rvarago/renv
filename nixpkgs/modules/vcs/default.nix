@@ -67,26 +67,37 @@
       bv = "branch -vv";
 
       c = "commit";
-      ca = "commit -a";
       cm = "commit -m";
-      cam = "commit -a -m";
+      ca = "commit --amend";
+      cam = "commit --amend -m";
+      cadn = "commit --amend --no-edit --date now";
       cf = "commit --fixup";
-      m = "commit --amend";
-      mf = "commit --amend --no-edit";
 
-      cp = "cherry-pick";
+      m = "merge";
+      mf = "merge --ff";
+
+      y = "cherry-pick";
 
       co = "checkout";
       cob = "checkout -b";
 
+      f = "fetch";
+      fp = "fetch --prune";
+
       s = "status";
       sh = "show";
 
+      z = "stash";
+      zp = "stash push";
+      zg = "stash get";
+
+      r = "rebase";
       ri = "rebase --interactive";
       ria = "rebase --interactive --autosquash";
 
-      z = "reset";
-      zh = "reset --hard";
+      x = "reset";
+      xs = "reset --soft";
+      xh = "reset --hard";
 
       d = "diff";
       ds = "diff --stat";
@@ -94,11 +105,22 @@
 
       df = "difftool --dir-diff --no-prompt";
 
+      p = "push";
+      pu = "push -u";
       pf = "push --force-with-lease";
+
       greview = "push HEAD:refs/for/master";
 
-      lg =
+      l =
         "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all";
+
+      primary = "!f() { git symbolic-ref --short refs/remotes/origin/HEAD | sed -e 's/origin\\///'; }; f";
+      trim = "!f() { git for-each-ref --format '%(upstream:track) %(refname:lstrip=2)' refs/heads | awk '/^\\[gone\\]/{print $2}' | xargs -I{} git branch -D {}; }; f";
+      sync = "!f() { git fetch -p && git checkout $(git primary) && git merge --ff; }; f";
+      asnew = "!f() { git sync && git trim; }; f }";
+      start = "!f() { git fetch && git checkout -b $1 $(git primary); }; f";
+      done = "!f() { git sync && git branch -D @{-1}; }; f";
+      ghreview = "!f() { git fetch && git checkout origin/$1; }; f";
     };
   };
 
