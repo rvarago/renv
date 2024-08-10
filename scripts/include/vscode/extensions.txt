@@ -31,7 +31,6 @@ Ionide.Ionide-fsharp
 James-Yu.latex-workshop
 jcanero.hoogle-vscode
 jebbs.plantuml
-joaompinto.vscode-graphviz
 jnoortheen.nix-ide
 justusadam.language-haskell
 kahole.magit
@@ -57,7 +56,6 @@ mtxr.sqltools-driver-mysql
 mtxr.sqltools-driver-pg
 naco-siren.gradle-language
 nicoespeon.abracadabra
-notskm.clang-tidy
 ocamllabs.ocaml-platform
 redhat.java
 redhat.vscode-xml
