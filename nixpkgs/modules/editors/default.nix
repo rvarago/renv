@@ -7,7 +7,6 @@
   imports = [
     ./emacs
     ./neovim
-    ./vscode
   ];
 
 }
