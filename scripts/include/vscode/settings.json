@@ -17,8 +17,7 @@
   "[sql]": {
     "editor.defaultFormatter": "dorzey.vscode-sqlfluff"
   },
-  "clang-tidy.checks": [
-    "-*",
+  "C_Cpp.codeAnalysis.clangTidy.checks.enabled": [
     "clang-analyzer-*",
     "readability-*",
     "cppcoreguidelines-*",
@@ -49,22 +48,13 @@
   "go.lintTool": "golangci-lint",
   "idris.idris2Mode": true,
   "idris.idrisPath": "/nix/store/3mxjdi2iv42brh1sx6mfa7zmn5br19q2-idris2-0.6.0/bin/idris2",
-  "metals.showImplicitArguments": false,
-  "metals.showImplicitConversionsAndClasses": false,
-  "metals.showInferredType": true,
   "nix.enableLanguageServer": true,
   "plantuml.render": "Local",
   "python.analysis.typeCheckingMode": "basic",
-  "python.formatting.autopep8Path": "/nix/store/8az7kv7hcfmnlqb9yz38fxyy3ban0pw6-python3.10-autopep8-2.0.1/bin/autopep8",
-  "python.linting.enabled": true,
-  "python.linting.pylintEnabled": true,
-  "python.linting.pylintPath": "/nix/store/gsl7r7aczj8ljnp7h568bskimkr41gpf-python3.10-pylint-2.16.2/bin/pylint",
-  "rust-analyzer.checkOnSave.command": "check",
   "shellformat.path": "/nix/store/jbvbbp3g8l8ii38hd1kdqbf8c7vnv1v9-shfmt-3.6.0/bin/shfmt",
   "solargraph.diagnostics": true,
   "solargraph.formatting": true,
   "solargraph.useBundler": true,
-  "sql.linter.executablePath": "/nix/store/yqvp3wkqpsh70bwjxfdrv7b0kva574if-sqlfluff-2.1.0/bin/sqlfluff",
   "terminal.integrated.fontFamily": "Iosevka",
   "todohighlight.keywords": [
     {
