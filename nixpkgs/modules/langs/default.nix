@@ -120,7 +120,6 @@
     cargo-tarpaulin
     cargo-udeps
     cargo-watch
-    rustup
     sqlx-cli
     cargo-audit
 

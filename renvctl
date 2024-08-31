@@ -183,6 +183,7 @@ lean:install() {
 rust:install() {
   _log "Installing Rust utilities"
 
+  command -v rustup || (curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && fenv . "$HOME/.cargo/env")
   rustup default stable
   rustup update
   rustup component add \
