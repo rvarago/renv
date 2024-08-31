@@ -1,5 +1,4 @@
 aaron-bond.better-comments
-alygin.vscode-tlaplus
 ArashSahebolamri.alloy
 arrterian.nix-env-selector
 azemoh.one-monokai
@@ -18,6 +17,7 @@ eamodio.gitlens
 elmTooling.elm-ls-vscode
 esbenp.prettier-vscode
 exiasr.hadolint
+fill-labs.dependi
 formulahendry.code-runner
 formulahendry.terminal
 foxundermoon.shell-format
@@ -66,7 +66,6 @@ rust-lang.rust-analyzer
 ryanolsonx.zenburn
 scala-lang.scala
 scalameta.metals
-serayuzgur.crates
 Shopify.ruby-extensions-pack
 Shopify.ruby-lsp
 sjhuangx.vscode-scheme
@@ -74,6 +73,7 @@ skyapps.fish-vscode
 streetsidesoftware.code-spell-checker
 tamasfe.even-better-toml
 timonwong.shellcheck
+tlaplus.vscode-ide
 tomoki1207.pdf
 twxs.cmake
 usernamehw.errorlens
