@@ -64,12 +64,14 @@
       ap = "add -p";
 
       b = "branch";
+      bd = "branch -D";
       bv = "branch -vv";
 
       c = "commit";
       cm = "commit -m";
       ca = "commit --amend";
       cam = "commit --amend -m";
+      cad = "commit --amend --no-edit";
       cadn = "commit --amend --no-edit --date now";
       cf = "commit --fixup";
 
@@ -89,7 +91,7 @@
 
       z = "stash";
       zp = "stash push";
-      zg = "stash get";
+      zg = "stash pop";
 
       r = "rebase";
       ri = "rebase --interactive";
@@ -107,6 +109,7 @@
 
       p = "push";
       pu = "push -u";
+      pushme = "!f() { git push -u $1 $(git rev-parse --abbrev-ref HEAD); }; f";
       pf = "push --force-with-lease";
 
       greview = "push HEAD:refs/for/master";
@@ -116,7 +119,7 @@
 
       primary = "!f() { git symbolic-ref --short refs/remotes/origin/HEAD | sed -e 's/origin\\///'; }; f";
       trim = "!f() { git for-each-ref --format '%(upstream:track) %(refname:lstrip=2)' refs/heads | awk '/^\\[gone\\]/{print $2}' | xargs -I{} git branch -D {}; }; f";
-      sync = "!f() { git fetch -p && git checkout $(git primary) && git merge --ff; }; f";
+      sync = "!f() { git fetch -p && git checkout $(git originprimary) && git merge --ff; }; f";
       asnew = "!f() { git sync && git trim; }; f }";
       start = "!f() { git fetch && git checkout -b $1 $(git primary); }; f";
       done = "!f() { git sync && git branch -D @{-1}; }; f";
