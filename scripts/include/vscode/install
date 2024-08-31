@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# Install VSCode with extensions.
+
+set -eu
+
+BASE_DIR="${PWD}"
+
+IN_VSCODE_DIR="${BASE_DIR}/scripts/include/vscode"
+IN_EXTENSIONS_FILENAME="${IN_VSCODE_DIR}/extensions.txt"
+IN_SETTINGS_FILENAME="${IN_VSCODE_DIR}/settings.json"
+
+OUT_CONFIG_DIR="${XDG_CONFIG_HOME}/Code"
+
+install_editor() {
+    local downloaded_filename="/tmp/vscode-$(date +%s).deb"
+
+    curl -L -o "${downloaded_filename}" 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
+    sudo dpkg -i "${downloaded_filename}"
+
+    mkdir -p "${OUT_CONFIG_DIR}"
+}
+
+install_extensions() {
+    cat "${IN_EXTENSIONS_FILENAME}" | xargs -I{} code --install-extension {} --force
+}
+
+install_settings() {
+    ln -sf "${IN_SETTINGS_FILENAME}" "${OUT_CONFIG_DIR}/User/"
+}
+
+main() {
+    install_editor
+    install_extensions || true
+    install_settings
+}
+
+main

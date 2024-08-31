@@ -36,7 +36,7 @@ COMMAND:
   ocaml:install         Install OCaml toolchains
   lean:install          Install Lean toolchains managed by Elan
   rust:install          Install Rust toolchains managed by Rustup
-  vscode:generate       Re-generate VSCode market extensions manifest
+  vscode:install        Install VSCode and a set of extensions
 EOF
 }
 
@@ -151,9 +151,9 @@ home:configure() {
 
   _log "Patching files (please check them afterwards):"
 
-  grep -rl "${templateuser}" --include "*.nix" . \
-    | tee /dev/tty \
-    | xargs sed -i "s/${templateuser}/${newuser}/g"
+  grep -rl "${templateuser}" --include "*.nix" . |
+    tee /dev/tty |
+    xargs sed -i "s/${templateuser}/${newuser}/g"
 }
 
 home:apply() {
@@ -190,10 +190,10 @@ rust:install() {
   rustup toolchain install nightly --allow-downgrade -c rustfmt
 }
 
-vscode:generate() {
-  _log "Re-generating VSCode market extensions manifest"
+vscode:install() {
+  _log "Deploying VSCode with extensions"
 
-  "${SCRIPTS}/vscode/generate_market_extensions"
+  "${SCRIPTS}/vscode/install"
 }
 
 help() {

@@ -22,7 +22,8 @@ The script `renvctl` orchestrates part of the process of installing components w
 3. Run `./renvctl nix:install` (may need a reboot)
 4. Run `./renvctl nix:update`
 5. Run `./renvctl nix:cache:install`
-6. Run `./renvctl $LANG:install` (where `$LANG in {ocaml, lean, rust}`)
+6. (Optional) Run `./renvctl vscode:install`
+7. (Optional) Run `./renvctl $LANG:install` (where `$LANG in {ocaml, lean, rust}`)
 
 ## Usage
 
@@ -35,7 +36,7 @@ Run `./renvctl deb:upgrade` to upgrade Debian packages, `./renvctl nix:update` t
 Append to variables exposed by home-manager to the login config:
 
 ```bash
-echo ". $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" >> /home/$USER/.profil
+echo ". $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" >> /home/$USER/.profile
 ```
 
 ### Set Fish as Default Shell

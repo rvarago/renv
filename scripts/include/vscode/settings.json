@@ -1,0 +1,66 @@
+{
+  "[cpp][c]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[html][javascript][javascriptreact][json][typescript][typescriptreact][scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "[ruby]": {
+    "editor.defaultFormatter": "castwide.solargraph"
+  },
+  "[sql]": {
+    "editor.defaultFormatter": "dorzey.vscode-sqlfluff"
+  },
+  "C_Cpp.codeAnalysis.clangTidy.checks.enabled": [
+    "clang-analyzer-*",
+    "readability-*",
+    "cppcoreguidelines-*",
+    "google-*"
+  ],
+  "cmake.configureOnOpen": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.fontFamily": "Iosevka",
+  "editor.fontLigatures": "'SS09'",
+  "editor.fontSize": 16,
+  "editor.lineHeight": 20,
+  "editor.minimap.enabled": false,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "comment",
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
+  "files.watcherExclude": {
+    "**/.ammonite": true,
+    "**/.bloop": true,
+    "**/.metals": true
+  },
+  "go.lintTool": "golangci-lint",
+  "idris.idris2Mode": true,
+  "idris.idrisPath": "/nix/store/3mxjdi2iv42brh1sx6mfa7zmn5br19q2-idris2-0.6.0/bin/idris2",
+  "nix.enableLanguageServer": true,
+  "plantuml.render": "Local",
+  "python.analysis.typeCheckingMode": "basic",
+  "shellformat.path": "/nix/store/jbvbbp3g8l8ii38hd1kdqbf8c7vnv1v9-shfmt-3.6.0/bin/shfmt",
+  "solargraph.diagnostics": true,
+  "solargraph.formatting": true,
+  "solargraph.useBundler": true,
+  "terminal.integrated.fontFamily": "Iosevka",
+  "todohighlight.keywords": [
+    {
+      "color": "#94bff3",
+      "text": "WIP:"
+    }
+  ],
+  "workbench.colorTheme": "One Monokai"
+}
