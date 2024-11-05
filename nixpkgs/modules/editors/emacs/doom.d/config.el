@@ -36,7 +36,7 @@
     (dolist (buffer protected-buffers)
       (with-current-buffer buffer
         (emacs-lock-mode 'kill)))))
-  
+
 (add-hook 'after-init-hook #'my/protect-buffers)
 
 (use-package! auto-dim-other-buffers
@@ -46,7 +46,7 @@
 (use-package! centaur-tabs
   :defer t
   :bind ("C-<prior>" . centaur-tabs-backward)
-        ("C-<next>" . centaur-tabs-forward))
+  ("C-<next>" . centaur-tabs-forward))
 
 (use-package! treemacs
   :defer t
@@ -99,7 +99,7 @@
 (use-package! goto-addr
   :defer t
   :bind (:map goto-address-highlight-keymap
-          ("C-c C-o" . goto-address-at-point))
+              ("C-c C-o" . goto-address-at-point))
   :hook
   ((compilation-mode shell-mode eshell-mode vterm-mode) . goto-address-mode)
   (prog-mode . goto-address-prog-mode))
@@ -130,6 +130,40 @@
 
 (add-hook! prog-mode-hook #'subword-mode)
 
+(defun my/blog-new-entry ()
+  "Prompt for a title and create an org file read to be blogged."
+  (interactive)
+  (let* ((title (read-string "Title: "))
+         (sanitized-title (downcase (replace-regexp-in-string "[[:space:]\"']+" "-" title)))
+         (current-date (format-time-string "%Y-%m-%d"))
+         (file-name (concat current-date "-" sanitized-title ".org"))
+         (file-content (concat "#+begin_export html\n"
+                               "---\n"
+                               "layout: post\n"
+                               (format "title: %s\n" title)
+                               "permalink: /:title/\n"
+                               "tags: []\n"
+                               "---\n"
+                               "#+end_export\n\n"
+                               "#+begin_quote\n"
+                               "/abstract/\n"
+                               "#+end_quote\n"
+                               "--------------\n\n"))
+         (project-root (projectile-project-root))
+         (posts-dir (expand-file-name "_posts" project-root)))
+
+    (unless (file-directory-p posts-dir)
+      (make-directory posts-dir t))
+
+    (let ((full-file-path (expand-file-name file-name posts-dir)))
+
+      (with-temp-file full-file-path
+        (insert file-content))
+
+      (find-file full-file-path)
+
+      (message "Have fun blogging at: %s" full-file-path))))
+
 ;; ================= PROJECT =================
 
 (use-package! projectile
@@ -146,7 +180,7 @@
                 company-require-match 'never
                 company-tooltip-align-annotations t)
   :bind (:map company-mode-map
-          ("C-." . company-complete)))
+              ("C-." . company-complete)))
 
 (use-package! company-yasnippet
   :defer t
@@ -183,11 +217,11 @@
   :preface
 
   (defun my/flycheck-switch-to-list-errors ()
-  "Switches to flycheck list errors window."
-  (interactive)
-  (flycheck-list-errors)
-  (pop-to-buffer "*Flycheck errors*"))
-   
+    "Switches to flycheck list errors window."
+    (interactive)
+    (flycheck-list-errors)
+    (pop-to-buffer "*Flycheck errors*"))
+
   (defvar-local flycheck-local-checkers nil)
   (defun +flycheck-checker-get(fn checker property)
     (or (alist-get property (alist-get checker flycheck-local-checkers))
@@ -195,7 +229,7 @@
   (advice-add 'flycheck-checker-get :around '+flycheck-checker-get)
   
   :bind (:map flycheck-mode-map
-         ("C-c x" . my/flycheck-switch-to-list-errors)))
+              ("C-c x" . my/flycheck-switch-to-list-errors)))
 
 ;; ================= LSP =================
 
@@ -223,7 +257,7 @@
 (use-package! cpp-auto-include
   :defer t
   :bind (:map c++-mode-map
-          ("C-c c o" . cpp-auto-include)))
+              ("C-c c o" . cpp-auto-include)))
 
 (use-package! cmake-mode
   :defer t
@@ -239,19 +273,19 @@
   (defun my/cmake-ide-find-project ()
     "Finds the directory of the project for cmake-ide."
     (if (not (null (projectile-project-root)))
-      (with-eval-after-load 'projectile
-        (setq cmake-ide-project-dir (projectile-project-root))
-              cmake-ide-build-dir (concat cmake-ide-project-dir "build")
-              cmake-ide-compile-command
-                (concat "cmake -B " cmake-ide-build-dir " && cmake --build " cmake-ide-build-dir))
+        (with-eval-after-load 'projectile
+          (setq cmake-ide-project-dir (projectile-project-root))
+          cmake-ide-build-dir (concat cmake-ide-project-dir "build")
+          cmake-ide-compile-command
+          (concat "cmake -B " cmake-ide-build-dir " && cmake --build " cmake-ide-build-dir))
       (cmake-ide-load-db)))
 
   (defun my/switch-to-compilation-window ()
     "Switches to the *compilation* buffer after compilation."
     (other-window 1))
   :bind ([remap comment-region] . cmake-ide-compile)
-    (:map cmake-mode-map
-      ("C-c C-c C-c" . cmake-ide-compile))
+  (:map cmake-mode-map
+        ("C-c C-c C-c" . cmake-ide-compile))
   :config (advice-add 'cmake-ide-compile :after #'my/switch-to-compilation-window))
 
 (use-package! flycheck-clang-tidy
@@ -309,7 +343,7 @@
   :defer t
   :mode ("\\.cabal\\'" . haskell-cabal-mode)
   :bind (:map haskell-cabal-mode-map
-          ("C-c C-c C-c" . haskell-process-cabal-build)))
+              ("C-c C-c C-c" . haskell-process-cabal-build)))
 
 
 ;; Ini.
@@ -322,8 +356,8 @@
 (use-package! idris2-mode
   :defer t
   :bind (:map idris2-mode-map
-          ("C-c C-g" . idris2-add-clause)
-          ("C-c C-u" . idris2-repl)))
+              ("C-c C-g" . idris2-add-clause)
+              ("C-c C-u" . idris2-repl)))
 
 
 ;; Java.
@@ -332,8 +366,8 @@
   :config (setq lsp-java-references-code-lens-enabled t
                 lsp-java-implementations-code-lens-enabled t)
   :bind (:map java-mode-map
-          ("C-c C-c C-b" . lsp-jt-browser)
-          ("C-c C-c C-r" . dap-java-debug)))
+              ("C-c C-c C-b" . lsp-jt-browser)
+              ("C-c C-c C-r" . dap-java-debug)))
 
 (use-package! gradle-mode
   :defer t)
@@ -435,10 +469,10 @@
         lsp-rust-analyzer-display-parameter-hints t
         lsp-rust-analyzer-display-chaining-hints t)
   :bind (:map rustic-mode-map
-          ("C-c C-c C-t" . rustic-cargo-test-rerun)
-          ("C-c C-c C-d" . rustic-cargo-doc)
-          ("C-c C-c C-a" . rustic-cargo-add)
-          ("C-c C-c C-e" . lsp-rust-analyzer-expand-macro)))
+              ("C-c C-c C-t" . rustic-cargo-test-rerun)
+              ("C-c C-c C-d" . rustic-cargo-doc)
+              ("C-c C-c C-a" . rustic-cargo-add)
+              ("C-c C-c C-e" . lsp-rust-analyzer-expand-macro)))
 
 (use-package! dap-cpptools
   :defer t
@@ -454,14 +488,14 @@
                 lsp-metals-super-method-lenses-enabled t))
 
 (map! :map scala-mode-map
-  "C-c C-c C-s"  #'sbt-start
-  "C-c C-c C-b"  #'sbt-switch-to-active-sbt-buffer
-  "C-c C-c C-k"  #'sbt-do-clean
-  "C-c C-c C-c"  #'sbt-do-compile
-  "C-c C-c C-t"  #'sbt-do-test
-  "C-c C-c C-r"  #'sbt-do-run
-  "C-c C-c C-o"  #'sbt-command
-  "C-c C-c C-p"  #'sbt-run-previous-command)
+      "C-c C-c C-s"  #'sbt-start
+      "C-c C-c C-b"  #'sbt-switch-to-active-sbt-buffer
+      "C-c C-c C-k"  #'sbt-do-clean
+      "C-c C-c C-c"  #'sbt-do-compile
+      "C-c C-c C-t"  #'sbt-do-test
+      "C-c C-c C-r"  #'sbt-do-run
+      "C-c C-c C-o"  #'sbt-command
+      "C-c C-c C-p"  #'sbt-run-previous-command)
 
 
 ;; Shell.
@@ -483,20 +517,20 @@
   (sql-set-product-feature 'mysql :prompt-regexp "^\\(MariaDB\\|MySQL\\) \\[[_a-zA-Z]*\\]> ")
   (unbind-key "C-c C-c" sql-mode-map)
   :bind (:map sql-mode-map
-          ("C-c C-c C-p" . lsp-sql-execute-paragraph)
-          ("C-c C-c C-r" . lsp-sql-execute-query)
-          ("C-c C-c C-c" . lsp-sql-switch-connection)
-          ("C-c C-c C-d" . lsp-sql-switch-database)
-          ("C-c C-c C-l" . lsp-sql-show-connections)
-          ("C-c C-c C-d" . lsp-sql-show-databases)
-          ("C-c C-c C-s" . lsp-sql-show-schemas)))
+              ("C-c C-c C-p" . lsp-sql-execute-paragraph)
+              ("C-c C-c C-r" . lsp-sql-execute-query)
+              ("C-c C-c C-c" . lsp-sql-switch-connection)
+              ("C-c C-c C-d" . lsp-sql-switch-database)
+              ("C-c C-c C-l" . lsp-sql-show-connections)
+              ("C-c C-c C-d" . lsp-sql-show-databases)
+              ("C-c C-c C-s" . lsp-sql-show-schemas)))
 
 (use-package! sqlformat
   :defer t
   :after sql
   :config (setq sqlformat-command 'sqlfluff)
   :bind (:map sql-mode-map
-          ("C-c c f" . 'sqlformat)))
+              ("C-c c f" . 'sqlformat)))
 
 (use-package! sqlup-mode
   :defer t
@@ -504,8 +538,8 @@
   :init
   (add-hook 'sql-mode-hook 'sqlup-mode)
   :bind (:map sql-mode-map
-          ("C-c c u r" . sqlup-capitalize-keyworks-in-region)
-          ("C-c c u b" . sqlup-capitalize-keyworks-in-buffer)))
+              ("C-c c u r" . sqlup-capitalize-keyworks-in-region)
+              ("C-c c u b" . sqlup-capitalize-keyworks-in-buffer)))
 
 
 ;; Systemd.
@@ -523,5 +557,5 @@
   :defer t
   :hook (nxml-mode . lsp-deferred)
   :config (setq nxml-child-indent 2
-        nxml-attribute-indent 4
-        nxml-slash-auto-complete-flag t))
+                nxml-attribute-indent 4
+                nxml-slash-auto-complete-flag t))
