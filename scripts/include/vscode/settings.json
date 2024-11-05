@@ -17,16 +17,23 @@
   "[sql]": {
     "editor.defaultFormatter": "dorzey.vscode-sqlfluff"
   },
+  "editor.formatOnSave": true,
+  "C_Cpp.codeAnalysis.runAutomatically": true,
+  "C_Cpp.codeAnalysis.clangTidy.enabled": true,
   "C_Cpp.codeAnalysis.clangTidy.checks.enabled": [
     "clang-analyzer-*",
     "readability-*",
     "cppcoreguidelines-*",
     "google-*"
   ],
+  "C_Cpp.codeAnalysis.clangTidy.checks.disabled": [
+    "readability-identifier-length",
+    "readability-magic-numbers",
+    "cppcoreguidelines-avoid-magic-numbers"
+  ],
   "cmake.configureOnOpen": true,
   "editor.bracketPairColorization.enabled": true,
-  "editor.fontFamily": "Iosevka",
-  "editor.fontLigatures": "'SS09'",
+  "editor.fontFamily": "JetBrains Mono",
   "editor.fontSize": 16,
   "editor.lineHeight": 20,
   "editor.minimap.enabled": false,
@@ -47,20 +54,23 @@
   },
   "go.lintTool": "golangci-lint",
   "idris.idris2Mode": true,
-  "idris.idrisPath": "/nix/store/3mxjdi2iv42brh1sx6mfa7zmn5br19q2-idris2-0.6.0/bin/idris2",
   "nix.enableLanguageServer": true,
+  "nix.serverPath": "nixd",
+  "nixd": {
+    "formatting": {
+      "command": "nixfmt"
+    }
+  },
   "plantuml.render": "Local",
   "python.analysis.typeCheckingMode": "basic",
-  "shellformat.path": "/nix/store/jbvbbp3g8l8ii38hd1kdqbf8c7vnv1v9-shfmt-3.6.0/bin/shfmt",
   "solargraph.diagnostics": true,
   "solargraph.formatting": true,
   "solargraph.useBundler": true,
-  "terminal.integrated.fontFamily": "Iosevka",
   "todohighlight.keywords": [
     {
       "color": "#94bff3",
       "text": "WIP:"
     }
   ],
-  "workbench.colorTheme": "One Monokai"
+  "workbench.colorTheme": "Zenburn"
 }

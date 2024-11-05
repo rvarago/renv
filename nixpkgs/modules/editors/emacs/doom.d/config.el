@@ -11,8 +11,8 @@
 
 (setq doom-theme 'doom-zenburn
       doom-themes-treemacs-theme "doom-colors"
-      doom-font (font-spec :family "Iosevka" :size 16)
-      doom-big-font (font-spec :family "Iosevka" :size 30)
+      doom-font (font-spec :family "JetBrains Mono" :size 16)
+      doom-big-font (font-spec :family "JetBrains Mono" :size 30)
       doom-themes-treemacs-enable-variable-pitch nil
       display-line-numbers-type t
       doom-scratch-initial-major-mode 'lisp-interaction-mode)
@@ -260,7 +260,7 @@
   :config
   (setq flycheck-clang-tidy-extra-options
         ;; Available checks: https://clang.llvm.org/extra/clang-tidy/.
-        (concat "--checks=-*,clang-analyzer-*,cppcoreguidelines-*,google-*"))
+        (concat "--checks=-*,clang-analyzer-*,cppcoreguidelines-*,google-*,-readability-identifier-length,-readability-magic-numbers,-cppcoreguidelines-avoid-magic-numbers"))
   :hook
   (flycheck-mode . flycheck-clang-tidy-setup)
   ((c-mode c++-mode) . (lambda () (setq flycheck-local-checkers '((lsp . ((next-checkers . (c/c++-clang-tidy)))))))))

@@ -7,14 +7,14 @@
   };
 
   home.packages = with pkgs; [
-    # Agda.
-    (agda.withPackages (p: [ p.standard-library ]))
+    # # Agda.
+    # (agda.withPackages (p: [ p.standard-library ]))
 
-    # Alloy.
-    alloy6
+    # # Alloy.
+    # alloy6
 
-    # C/C++.
-    ccls
+    # # C/C++.
+    # ccls
     clang-tools
     cmake
     # conan
@@ -22,24 +22,24 @@
 
     # Clojure.
     # clojure
-    leiningen
+    # leiningen
 
-    # Coq.
-    coq
+    # # Coq.
+    # coq
 
-    # Common-Lisp.
-    sbcl
-    lispPackages.quicklisp
+    # # Common-Lisp.
+    # sbcl
+    # lispPackages.quicklisp
 
     # Dhall
-    dhall
-    dhall-json
+    # dhall
+    # dhall-json
 
-    # Elm.
-    elmPackages.elm
-    elmPackages.elm-analyse
-    elmPackages.elm-format
-    elmPackages.elm-test
+    # # Elm.
+    # elmPackages.elm
+    # elmPackages.elm-analyse
+    # elmPackages.elm-format
+    # elmPackages.elm-test
 
     # Go.
     delve
@@ -64,8 +64,8 @@
     haskellPackages.retrie
     haskellPackages.stack
 
-    # Idris.
-    idris2
+    # # Idris.
+    # idris2
 
     # Java.
     gradle
@@ -79,19 +79,19 @@
     nodePackages.typescript
     yarn
 
-    # Kotlin.
-    kotlin
+    # # Kotlin.
+    # kotlin
 
-    # Lean4.
-    elan
+    # # Lean4.
+    # elan
 
-    # .Net.
-    dotnetCorePackages.sdk_6_0
+    # # .Net.
+    # dotnetCorePackages.sdk_6_0
 
-    # Nix.
-    nixpkgs-fmt
-    nixfmt
-    rnix-lsp
+    # # Nix.
+    nixfmt-rfc-style
+    # nixfmt-classic
+    nixd
 
     # Python.
     poetry
@@ -101,6 +101,7 @@
     # python3Packages.ipython
     # python3Packages.isort
     python3Packages.pip
+    pyright
     # python3Packages.pyflakes
     # python3Packages.pylint
     # python3Packages.pytest

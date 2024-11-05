@@ -85,7 +85,7 @@
 
        :tools
        ;;ansible
-       (debugger +lsp)          ; FIXME stepping through code, to help you add bugs
+       ;; (debugger +lsp)          ; FIXME stepping through code, to help you add bugs
        direnv
        (docker +lsp)
        editorconfig      ; let someone else argue about tabs vs spaces
@@ -111,25 +111,25 @@
        ;;tty               ; improve the terminal Emacs experience
 
        :lang
-       agda              ; types of types of types of types...
+       ;; agda              ; types of types of types of types...
        ;;beancount         ; mind the GAAP
        (cc +lsp +tree-sitter)                ; C > C++ == 1
-       (clojure +lsp)           ; java with a lisp
+       ;; (clojure +lsp)           ; java with a lisp
        common-lisp       ; if you've seen one lisp, you've seen them all
-       coq               ; proofs-as-programs
+       ;; coq               ; proofs-as-programs
        ;;crystal           ; ruby at the speed of c
        ;;csharp            ; unity, .NET, and mono shenanigans
        data              ; config/data formats
        ;;(dart +flutter)   ; paint ui and not much else
        dhall
        ;;elixir            ; erlang done right
-       (elm +lsp +tree-sitter)               ; care for a cup of TEA?
+       ;; (elm +lsp +tree-sitter)               ; care for a cup of TEA?
        emacs-lisp        ; drown in parentheses
        ;;erlang            ; an elegant language for a more civilized age
        ;;ess               ; emacs speaks statistics
        ;;factor
        ;;faust             ; dsp, but you get to keep your soul
-       (fsharp +lsp)            ; ML stands for Microsoft's Language
+       ;; (fsharp +lsp)            ; ML stands for Microsoft's Language
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
        ;;gdscript          ; the language you waited for
        (go +lsp +tree-sitter)         ; the hipster dialect
@@ -140,7 +140,7 @@
        (java +lsp +tree-sitter) ; the poster child for carpal tunnel syndrome
        (javascript +lsp +tree-sitter)        ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia             ; a better, faster MATLAB
-       (kotlin +lsp)            ; a better, slicker Java(Script)
+       ;; (kotlin +lsp)            ; a better, slicker Java(Script)
        ;;latex             ; writing papers in Emacs has never been so fun
        ;; lean              ; for folks with too much to prove
        ;;ledger            ; be audit you can be
@@ -151,7 +151,7 @@
        (ocaml +lsp)             ; an objective camel
        (org +journal +noter +pandoc +present +pretty)               ; organize your plain life in plain text
        ;;php               ; perl's insecure younger brother
-       plantuml          ; diagrams for confusing people more
+       ;; plantuml          ; diagrams for confusing people more
        ;;purescript        ; javascript, but functional
        (python +lsp +pyright +pyenv +poetry +tree-sitter)            ; beautiful is better than ugly
        ;;qt                ; the 'cutest' gui framework ever
@@ -159,10 +159,10 @@
        ;;raku              ; the artist formerly known as perl6
        (rest +jq)              ; Emacs as a REST client
        ;;rst               ; ReST in peace
-       (ruby +lsp +rails +rvm +tree-sitter)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
+       ;; (ruby +lsp +rails +rvm +tree-sitter)     ; 1.step {|i| p "Ruby is #{i.even? ? 'love' : 'life'}"}
        (rust +lsp)              ; Fe2O3.unwrap().unwrap().unwrap().unwrap()
        (scala +lsp +tree-sitter)             ; java, but good
-       (scheme +guile)   ; a fully conniving family of lisps
+       ;;(scheme +guile)   ; a fully conniving family of lisps
        (sh +lsp +fish +tree-sitter)                ; she sells {ba,z,fi}sh shells on the C xor
        ;;sml
        ;;solidity          ; do you need a blockchain? No.

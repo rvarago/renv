@@ -1,13 +1,13 @@
 { pkgs, config, ... }:
 
 let
-  emacsOverlayRev = "86ea3268b55bb632de43a80a37501a3d05cdb224";
-  doomRev = "042fe0c43831c8575abfdec4196ebd7305fa16ac";
+  emacsOverlayRev = "ab38e5767457fd7bc0ef00962feeb4c4e5ddfeb8";
+  doomRev = "1d3c2db274a23756a6abca69f74dc4a63016efff";
 
   emacs-overlay = import (
     builtins.fetchTarball {
       url = "https://github.com/nix-community/emacs-overlay/archive/${emacsOverlayRev}.tar.gz";
-      sha256 = "1drrq6sa49w1ns7zny8fvv9fpbnlr4hagwb910gg7yww820aaang";
+      sha256 = "00p3113pngpfz0prcx13bhz3lclw2r8cxmsailyrr4dzasdw872s";
     }
   );
 
@@ -24,6 +24,7 @@ in
   home.packages = with pkgs; [
     python3 # Treemacs requires python3
     emacs-all-the-icons-fonts
+    emacsPackages.nerd-icons
   ];
 
   services.emacs = {
@@ -34,7 +35,7 @@ in
 
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs28;
+    package = pkgs.emacs29;
 
     extraPackages = (
       epkgs:
@@ -52,7 +53,7 @@ in
     "Emacs.menuBar" = false;
     "Emacs.toolBar" = false;
     "Emacs.verticalScrollBars" = false;
-    "Emacs.font" = "-CYEL-Iosevka-normal-normal-normal-*-16-*-*-*-d-0-iso10646-1";
+    "Emacs.font" = "-JB-JetBrains Mono-bold-italic-normal-*-16-*-*-*-m-0-iso10646-1";
   };
 
   # Doom.
@@ -79,8 +80,7 @@ in
         if [ ! -d "$DOOMLOCALDIR" ]; then
           ${doombin} install --force --no-hooks
         else
-          ${doombin} --force clean
-          ${doombin} --force sync -u
+          ${doombin} --force sync -u --rebuild
         fi
       ''}";
     };
@@ -95,7 +95,7 @@ in
         export DOOMLOCALDIR="${doomlocaldir}"
         export DOOMPROFILELOADFILE="${doomprofileloadfile}"
         ${doombin} --force sync
-        # To recompile Run ${doombin} build -r
+        # To recompile Run ${doombin} sync --rebuild
       ''}";
     };
 
