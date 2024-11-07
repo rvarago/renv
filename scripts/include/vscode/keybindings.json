@@ -2,14 +2,36 @@
 [
     {
         "key": "ctrl+shift+;",
-        "command": "extension.aceJump"
+        "command": "extension.aceJump",
+        "when": "editorFocus",
     },
     {
-        "key": "ctrl+c w",
-        "command": "extension.aceJump.multiChar"
+        "key": "ctrl+c ctrl-w",
+        "command": "extension.aceJump.multiChar",
     },
     {
         "key": "ctrl+c v g",
         "command": "magit.status"
+    },
+    {
+        "key": "ctrl+c ctrl+p",
+        "command": "vscode.openFolder",
+        "when": "editorFocus",
+    },
+    {
+        "key": "ctrl+c ctrl+c",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u0003"
+        },
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u000b"
+        },
+        "when": "terminalFocus"
     }
 ]

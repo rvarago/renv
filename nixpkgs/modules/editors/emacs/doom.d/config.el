@@ -134,8 +134,8 @@
   "Prompt for a title and create an org file read to be blogged."
   (interactive)
   (let* ((title (read-string "Title: "))
-         (sanitized-title (downcase (replace-regexp-in-string "[[:space:]\"']+" "-" title)))
          (current-date (format-time-string "%Y-%m-%d"))
+         (sanitized-title (downcase (replace-regexp-in-string "[[:space:][:punct:]]+" "-" title)))
          (file-name (concat current-date "-" sanitized-title ".org"))
          (file-content (concat "#+begin_export html\n"
                                "---\n"
