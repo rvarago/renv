@@ -1,4 +1,9 @@
-{ pkgs, settings, ... }:
+{
+  pkgs,
+  lib,
+  settings,
+  ...
+}:
 
 let
   user = settings.user;
@@ -77,12 +82,11 @@ in
   fonts.fontconfig.enable = true;
 
   imports = [
-    (import ../modules/editors { inherit pkgs; })
+    ../modules/editors
     ../modules/langs
     ../modules/linux
-    ../modules/profiles
     ../modules/shell
     (import ../modules/vcs { inherit pkgs settings; })
-  ];
+  ] ++ lib.optional (builtins.pathExists ../modules/ephemeral.nix) ../modules/ephemeral.nix;
 
 }
