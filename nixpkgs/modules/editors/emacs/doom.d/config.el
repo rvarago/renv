@@ -248,6 +248,10 @@
 
 ;; ================= DEV =================
 
+;; General.
+(global-set-key (kbd "C-<") 'xref-go-back)
+(global-set-key (kbd "C->") 'xref-go-forward)
+
 ;; Alloy.
 (use-package! alloy-mode
   :defer t

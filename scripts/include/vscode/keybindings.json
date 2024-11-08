@@ -14,9 +14,52 @@
         "command": "magit.status"
     },
     {
+        "key": "ctrl+c c r",
+        "command": "editor.action.rename",
+        "when": "editorTextFocus && editorHasRenameProvider"
+    },
+    {
+        "key": "ctrl+c c k",
+        "command": "editor.action.showHover",
+        "when": "editorTextFocus && editorHasHoverProvider"
+    },
+    {
+        "key": "ctrl+ c t",
+        "command": "editor.action.goToTypeDefinition",
+        "when": "editorFocus && editorHasTypeDefinitionProvider"
+    },
+    {
+        "key": "alt+.",
+        "command": "editor.action.goToDeclaration",
+        "when": "editorFocus && editorHasDeclarationProvider"
+    },
+    {
+        "key": "ctrl+c c D",
+        "command": "editor.action.goToReferences",
+        "when": "editorFocus && editorHasReferenceProvider"
+    },
+    {
+        "key": "alt+,",
+        "command": "workbench.action.navigateBack",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+.",
+        "command": "workbench.action.navigateForward",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+c p p",
+        "command": "workbench.action.openRecent"
+    },
+    {
+        "key": "ctrl+c ctrl+o",
+        "command": "editor.action.openLink",
+        "when": "editorTextFocus"
+    },
+    {
         "key": "ctrl+c ctrl+p",
-        "command": "vscode.openFolder",
-        "when": "editorFocus",
+        "command": "vscode.openFolder"
     },
     {
         "key": "ctrl+c ctrl+c",
