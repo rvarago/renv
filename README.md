@@ -27,7 +27,10 @@ The script `renvctl` orchestrates part of the process of installing components w
 
 ## Usage
 
-Run `./renvctl deb:upgrade` to upgrade Debian packages, `./renvctl nix:update` to update nixpkgs, and finally `./renvctl home:apply` to install all home-manager managed packages.
+- `./renvctl customise:new` to start a new non-persistent customisation file
+- `./renvctl home:apply` to install all home-manager managed packages
+- `./renvctl deb:upgrade` to upgrade Debian packages
+- `./renvctl nix:update` to update nixpkgs
 
 ## Post-Installation
 

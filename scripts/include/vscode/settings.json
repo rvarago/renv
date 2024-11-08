@@ -17,6 +17,9 @@
   "[sql]": {
     "editor.defaultFormatter": "dorzey.vscode-sqlfluff"
   },
+  "[markdown]": {
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+  },
   "editor.formatOnSave": true,
   "C_Cpp.codeAnalysis.runAutomatically": true,
   "C_Cpp.codeAnalysis.clangTidy.enabled": true,
@@ -72,5 +75,5 @@
       "text": "WIP:"
     }
   ],
-  "workbench.colorTheme": "Zenburn"
+  "workbench.colorTheme": "Zenburn",
 }

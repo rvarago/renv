@@ -76,5 +76,63 @@
             "text": "\u000b"
         },
         "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+c o t",
+        "command": "workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "editor.action.clipboardCopyAction"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "-editor.action.clipboardCopyAction"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "sqltools.copyTextFromTreeItem",
+        "when": "sideBarFocus && focusedView == 'sqltools-view-connectionExplorer'"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "-sqltools.copyTextFromTreeItem",
+        "when": "sideBarFocus && focusedView == 'sqltools-view-connectionExplorer'"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "chat.inlineResourceAnchor.copyResource",
+        "when": "chatAnchorResource"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "-chat.inlineResourceAnchor.copyResource",
+        "when": "chatAnchorResource"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "keybindings.editor.copyKeybindingEntry",
+        "when": "inKeybindings && keybindingFocus && !whenFocus"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "-keybindings.editor.copyKeybindingEntry",
+        "when": "inKeybindings && keybindingFocus && !whenFocus"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "filesExplorer.copy",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus"
+    },
+    {
+        "key": "ctrl+c",
+        "command": "-filesExplorer.copy",
+        "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && !inputFocus"
     }
 ]

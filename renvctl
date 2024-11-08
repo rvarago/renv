@@ -37,6 +37,7 @@ COMMAND:
   lean:install          Install Lean toolchains managed by Elan
   rust:install          Install Rust toolchains managed by Rustup
   vscode:install        Install VSCode and a set of extensions
+  customise:new         Create module for local-only, non-persistent customisations
 EOF
 }
 
@@ -195,6 +196,25 @@ vscode:install() {
   _log "Deploying VSCode with extensions"
 
   "${SCRIPTS}/vscode/install"
+}
+
+customise:new() {
+  _log "Creating ephemeral customisation file"
+
+  local ephemeral="./nixpkgs/modules/ephemeral.nix"
+
+  if [ ! -f "${ephemeral}" ]; then
+    cat >"${ephemeral}" <<EOF
+{ pkgs, ... }:
+{
+
+  home.packages = [
+    pkgs.cowsay
+  ];
+}
+EOF
+    _log "Have fun hacking ${ephemeral}"
+  fi
 }
 
 help() {
