@@ -17,15 +17,6 @@
       display-line-numbers-type t
       doom-scratch-initial-major-mode 'lisp-interaction-mode)
 
-(defun my/switch-doom-theme (theme-prefix)
-  "Switches to a different doom theme, e.g. 'zenburn' or 'vibrant'."
-  (interactive "stheme prefix (e.g. 'vibrant'): ")
-  (let ((theme (intern (concat "doom-" theme-prefix))))
-    (setq doom-theme theme)
-    (load-theme theme)))
-
-(map! "C-x t s" #'my/switch-doom-theme)
-
 (custom-set-faces!
   '(font-lock-comment-face :slant italic)
   '(font-lock-doc-face :slant italic))
@@ -45,8 +36,9 @@
 
 (use-package! centaur-tabs
   :defer t
-  :bind ("C-<prior>" . centaur-tabs-backward)
-  ("C-<next>" . centaur-tabs-forward))
+  :bind
+  (("C-<prior>" . centaur-tabs-backward)
+   ("C-<next>" . centaur-tabs-forward)))
 
 (use-package! treemacs
   :defer t
@@ -54,8 +46,7 @@
   :init (add-hook 'projectile-after-switch-project-hook #'treemacs-add-and-display-current-project-exclusively)
   :config
   (treemacs-project-follow-mode t)
-  (treemacs-follow-mode t)
-  :bind ("M-0" . treemacs-select-window))
+  (treemacs-follow-mode t))
 
 (use-package! window
   :defer t
@@ -82,19 +73,56 @@
 
 ;; ================= EDIT =================
 
-(global-set-key (kbd "<mouse-8>") 'xref-pop-marker-stack)
+(map! "<mouse-8>" #'xref-pop-marker-stack)
 
-(global-set-key (kbd "C-c d") 'delete-region)
+(map! "C-c d" #'delete-region)
 
 (setq doom-scratch-buffer-major-mode 'emacs-lisp-mode)
 
 (setq org-directory "~/org/")
 
+(defun my/mark-word ()
+  "Mark a region around the word beginning."
+  (let ((begin (save-excursion
+                 (backward-word)
+                 (point))))
+    (forward-word)
+    (set-mark begin)))
+
+(defun my/wrap-region-or-words-pairs (wrapper)
+  (pcase wrapper
+    ("{"  '("{" "}"))
+    ("}"  '("{" "}"))
+    ("("  '("(" ")"))
+    (")"  '("(" ")"))
+    ("["  '("[" "]"))
+    ("]"  '("[" "]"))
+    ("<"  '("<" ">"))
+    (">"  '("<" ">"))
+    (_ (list wrapper wrapper))))
+
+
+(defun my/wrap-region-or-word ()
+  "Wrap a region (if selected) or a word (otherwise) between user-provided wrappers."
+  (interactive)
+  (unless (region-active-p)
+    (my/mark-word))
+  (let* ((user-wrapper (read-string "Wrapper (open or close): "))
+         (content (buffer-substring (region-beginning) (region-end)))
+         (wrappers (my/wrap-region-or-words-pairs user-wrapper))
+         (wrappers-open (car wrappers))
+         (wrappers-close (car (cdr wrappers))))
+    (delete-active-region)
+    (insert wrappers-open content wrappers-close)))
+
+
+(map! "C-x w" #'my/wrap-region-or-word)
+
 (use-package! avy
   :defer t
-  :bind (("M-g g" . avy-goto-line)
-         ("M-g M-g" . avy-goto-line)
+  :bind (("M-g M-g" . avy-goto-line)
          ("C-:" . avy-goto-char)))
+
 
 (use-package! goto-addr
   :defer t
@@ -161,31 +189,34 @@
         (insert file-content))
 
       (find-file full-file-path)
-
       (message "Have fun blogging at: %s" full-file-path))))
 
 ;; ================= PROJECT =================
 
-(use-package! projectile
-  :defer t
-  :config (setq projectile-project-search-path '(("~/Work/" . 3))
-                projectile-switch-project-action #'projectile-dired))
+(after! projectile
+  (setq projectile-project-search-path '(("~/Work/" . 3))))
+
+;; (defun my/workspace-switch-action (dir)
+;;   "Switch to the project documentation if there's any or to dired otherwise"
+;;   (let* ((files '("README.org" "README.md" "README"))
+;;          (file-matching (seq-find #'file-exists-p files)))
+;;     (if file-matching
+;;         (find-file (concat (file-name-as-directory dir) file-matching))
+;;       (projectile-dired))))
+;;
+;; (setq +workspaces-switch-project-function #'my/workspace-switch-action)
 
 ;; ================= COMPLETION =================
 
 (use-package! company
   :defer t
-  :config (setq company-idle-delay 0.4
-                company-minimum-prefix-length 2
-                company-require-match 'never
-                company-tooltip-align-annotations t)
-  :bind (:map company-mode-map
-              ("C-." . company-complete)))
+  :config
+  (setq company-idle-delay 0.3
+        company-minimum-prefix-length 1)
+  :bind (("C-." . company-complete)))
 
-(use-package! company-yasnippet
-  :defer t
-  :after (company yasnippet)
-  :bind ("M-/" . company-yasnippet))
+(after! company-yasnippet
+  (map! :map company-mode-map "M-/" #'company-yasnippet))
 
 (use-package! consult
   :defer t
@@ -227,9 +258,8 @@
     (or (alist-get property (alist-get checker flycheck-local-checkers))
         (funcall fn checker property)))
   (advice-add 'flycheck-checker-get :around '+flycheck-checker-get)
-  
-  :bind (:map flycheck-mode-map
-              ("C-c x" . my/flycheck-switch-to-list-errors)))
+  :bind
+  ("C-c x" . my/flycheck-switch-to-list-errors))
 
 ;; ================= LSP =================
 
@@ -249,20 +279,16 @@
 ;; ================= DEV =================
 
 ;; General.
-(global-set-key (kbd "C-<") 'xref-go-back)
-(global-set-key (kbd "C->") 'xref-go-forward)
+;; (global-set-key (kbd "C-<") 'xref-go-back)
+;; (global-set-key (kbd "C->") 'xref-go-forward)
 
 ;; Alloy.
 (use-package! alloy-mode
   :defer t
   :mode "\\.als\\'")
 
-;; C/C++.
-(use-package! cpp-auto-include
-  :defer t
-  :bind (:map c++-mode-map
-              ("C-c c o" . cpp-auto-include)))
 
+;; C/C++.
 (use-package! cmake-mode
   :defer t
   :mode ("CMakeLists\\.txt\\'" "\\.cmake\\'")
@@ -317,6 +343,35 @@
 
 
 ;; Go.
+(after! go-mode
+  (map!
+   :prefix "C-c C-c"
+   :map go-mode-map
+   "C-a" #'+go/test-all
+   "C-t" #'+go/test-single
+   "C-r" #'+go/test-rerun
+   "t f" #'+go/test-file
+   "t n" #'+go/test-nested
+   "C-b" #'+go/bench-single
+   "C-i" #'go-goto-imports
+   "C-s" #'gorepl-eval-region
+   "C-l" #'gorepl-eval-line
+   :map gorepl-mode-map
+   "C-a" #'gorepl-import))(after! go-mode
+  (map! :map go-mode-map :prefix "C-c C-c"
+        "C-a" #'+go/test-all
+        "C-t" #'+go/test-single
+        "C-r" #'+go/test-rerun
+        "t f" #'+go/test-file
+        "t n" #'+go/test-nested
+        "C-b" #'+go/bench-single
+        "C-i" #'go-goto-imports
+        "C-s" #'gorepl-eval-region
+        "C-l" #'gorepl-eval-line)
+  (map!   :map gorepl-mode-map
+          "C-a" #'gorepl-import))
+
+
 (use-package! flycheck-golangci-lint
   :defer t
   :after flycheck
@@ -338,9 +393,11 @@
   :defer t
   :config (setq graphviz-dot-indent-width 4))
 
+
 (use-package! company-graphviz-dot
   :defer t
   :after graphviz-dot-mode)
+
 
 ;; Haskell.
 (use-package! haskell-cabal
@@ -357,11 +414,8 @@
 
 
 ;; Idris.
-(use-package! idris2-mode
-  :defer t
-  :bind (:map idris2-mode-map
-              ("C-c C-g" . idris2-add-clause)
-              ("C-c C-u" . idris2-repl)))
+(use-package! idris-mode
+  :defer t)
 
 
 ;; Java.
@@ -387,8 +441,7 @@
 
 ;; Lean
 (use-package! lean4-mode
-  :defer t
-  :mode "\\.lean\\'")
+  :defer t)
 
 
 ;; Markdown.
@@ -433,7 +486,7 @@
 
 (use-package! pandoc-mode
   :defer t
-  :bind (:map markdown-mode-map
+  :bind (:map text-mode-map
               ("C-c C-c C-c" . pandoc-run-pandoc)))
 
 
@@ -449,12 +502,22 @@
 
 
 ;; Python.
-(use-package! lsp-pyright
-  :defer t
-  :config (setq lsp-pyright-typechecking-mode "basic")
-  :hook
-  (python-mode . (lambda () (setq flycheck-local-checkers '((lsp . ((next-checkers . (python-pylint)))))))))
-
+(after! python
+  (setq lsp-pyright-type-checking-mode "strict")
+  (python-mode . (lambda () (setq flycheck-local-checkers '((lsp . ((next-checkers . (python-pylint))))))))
+  (map!
+   :map python-mode-map
+   :prefix "C-c C-c"
+   "C-a" #'poetry-add
+   "C-o" #'lsp-pyright-organize-imports
+   "C-s" #'python-shell-send-buffer
+   "s f" #'python-shell-send-file
+   "s r" #'python-shell-send-region
+   "s d" #'python-shell-send-defun
+   "s s" #'python-shell-send-string
+   "C-t" #'python-pytest-run-def-or-class-at-point
+   "C-r" #'python-pytest-repeat
+   "t f" #'python-pytest-file))
 
 ;; Ruby.
 (use-package! ruby-mode
@@ -500,13 +563,6 @@
       "C-c C-c C-r"  #'sbt-do-run
       "C-c C-c C-o"  #'sbt-command
       "C-c C-c C-p"  #'sbt-run-previous-command)
-
-
-;; Shell.
-(use-package! sh-script
-  :defer t
-  :hook
-  (sh-mode . (lambda () (setq flycheck-local-checkers '((lsp . ((next-checkers . (sh-shellcheck)))))))))
 
 
 ;; Sql.

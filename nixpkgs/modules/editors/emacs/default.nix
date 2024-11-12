@@ -23,8 +23,6 @@ in
 
   home.packages = with pkgs; [
     python3 # Treemacs requires python3
-    emacs-all-the-icons-fonts
-    emacsPackages.nerd-icons
   ];
 
   services.emacs = {
@@ -39,13 +37,11 @@ in
 
     extraPackages = (
       epkgs:
-      (
-        with epkgs; [
-          all-the-icons
-          pdf-tools
-          vterm
-        ]
-      )
+      (with epkgs; [
+        pdf-tools
+        nerd-icons
+        vterm
+      ])
     );
   };
 
@@ -91,11 +87,10 @@ in
 
       onChange = "${pkgs.writeShellScript "doom-config-change" ''
         export EMACSDIR="${emacsdir}"
-        export DOOMDIR="${doomlocaldir}"
+        export DOOMDIR="${doomdir}"
         export DOOMLOCALDIR="${doomlocaldir}"
         export DOOMPROFILELOADFILE="${doomprofileloadfile}"
-        ${doombin} --force sync
-        # To recompile Run ${doombin} sync --rebuild
+        ${doombin} --force sync -u --rebuild
       ''}";
     };
 
