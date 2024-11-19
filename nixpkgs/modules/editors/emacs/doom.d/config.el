@@ -504,7 +504,9 @@
 ;; Python.
 (after! python
   (setq lsp-pyright-type-checking-mode "strict")
-  (python-mode . (lambda () (setq flycheck-local-checkers '((lsp . ((next-checkers . (python-pylint))))))))
+  (add-hook 'python-mode-hook
+            (lambda ()
+              (setq flycheck-local-checkers '((lsp . ((next-checkers . (python-pylint))))))))
   (map!
    :map python-mode-map
    :prefix "C-c C-c"
