@@ -22,7 +22,8 @@ in
   nixpkgs.overlays = [ emacs-overlay ];
 
   home.packages = with pkgs; [
-    python3 # Treemacs requires python3
+    python3 # for Treemacs
+    libvterm # for Vterm
   ];
 
   services.emacs = {
