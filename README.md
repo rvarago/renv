@@ -45,7 +45,7 @@ Install Visual Studio Code:
 
 Install a language toolchain:
 ```sh
-./renvctl $LANG:install
+./renvctl $LANG:sync
 ```
 Where `$LANG in {ocaml, lean, rust}`
 
