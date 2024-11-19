@@ -1,10 +1,17 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   programs.fish = {
     enable = true;
 
     shellInit = ''
       set fish_greeting
+
+      if status is-interactive
+      and type -q tmux
+      and not set -q TMUX
+          exec tmux
+      end
 
       if type -q opam
         eval (opam env)
@@ -13,6 +20,7 @@
 
     shellAliases = {
       g = "git";
+      cdp = "cd $(git rev-parse --show-toplevel)";
 
       clojurew = "rlwrap clojure";
       idris2w = "rlwrap idris2";
