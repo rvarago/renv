@@ -244,6 +244,15 @@
 ;; ================= SHELL =================
 
 (after! esh-mode
+  (set-eshell-alias!
+   "nr" "nix-shell -p $*"
+   "nrepl" "nix repl $*"
+   "nshell" "nix shell $*"
+   "ndev" "nix develop $*"
+   "nbuild" "nix build $*"
+   "nrun" "nix run $*"
+
+   "g" "git --no-pager $*")
   (map! :map eshell-mode-map
         :prefix "C-c"
         "\\" #'+eshell/split-right
