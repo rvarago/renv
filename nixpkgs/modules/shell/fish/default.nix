@@ -29,7 +29,7 @@
       nr = "nix-shell --run fish";
 
       ei = "emacsclient -nw";
-      mg = "ei --eval '(magit-status)'";
+      gg = "ei --eval '(magit-status)'";
     };
 
     functions = {
