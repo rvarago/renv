@@ -16,6 +16,7 @@
 (package! whole-line-or-region :pin "f7c9b25f8c932cff8239cde4a76e48135bdfa7e6")
 
 ;; VCS.
+(package! magit-todos :pin "501c8db90ab59f8b619618b9d10db2a32a113727")
 (package! git-link :pin "1727e9b7ec41a234a2cc14151b9ffd9c1c4f4b14")
 
 ;; Graphviz.

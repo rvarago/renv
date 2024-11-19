@@ -232,6 +232,15 @@
   ("C-c v e" . magit-ediff-resolve)
   ("C-c v P" . magit-push))
 
+(use-package! magit-todos
+  :after magit
+  :config
+  (setq magit-todos-keyword-suffix "\\(?:([^)]+)\\)?:?") ; make colon optional
+  (magit-todos-mode 1)
+  :bind (:map magit-mode-map
+              ("C-t" . magit-todos-list)))
+
+
 (use-package! git-link
   :defer t
   :custom
