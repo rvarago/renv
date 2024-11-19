@@ -9,47 +9,47 @@ My computing environment based on [nix](https://github.com/NixOS/nix)/[home-mana
 The script `renvctl` orchestrates part of the process of installing components with `home-manager` and similar:
 
 ```sh
-λ   ./renvctl help
+./renvctl help
 ```
 
-## Pre-Installation
+## Installation
 
-0. Ensure that [settings.nix](./nixpkgs/settings.nix) is correct for the environment (e.g. username matches the system, email)
-   1. Run `./renvctl home:configure`
-1. Run `./renvctl check`
-   - Install the missing dependencies
-2. Run `./renvctl deb:install`
-3. Run `./renvctl nix:install` (may need a reboot)
-4. Run `./renvctl nix:update`
-5. Run `./renvctl nix:cache:install`
-6. (Optional) Run `./renvctl vscode:install`
-7. (Optional) Run `./renvctl $LANG:install` (where `$LANG in {ocaml, lean, rust}`)
+> IMPORTANT: Ensure that [settings.nix](./nixpkgs/settings.nix) is correct for the environment (e.g. username matches the system, email)
+
+Install system components:
+```sh
+./renvctl system:install1
+```
+
+After rebooting, complete the installation:
+```sh
+./renvctl system:install2
+```
 
 ## Usage
 
-- `./renvctl customise:new` to start a new non-persistent customisation file
-- `./renvctl home:apply` to install all home-manager managed packages
-- `./renvctl deb:upgrade` to upgrade Debian packages
-- `./renvctl nix:update` to update nixpkgs
+Upgrade everything (except home):
+```sh
+./renvctl system:sync
+```
+
+Hack around and sync changes to home:
+```sh
+./renvctl home:sync
+```
+
+Install Visual Studio Code:
+```sh
+./renvctl vscode:sync
+```
+
+Install a language toolchain:
+```sh
+./renvctl $LANG:install
+```
+Where `$LANG in {ocaml, lean, rust}`
 
 ## Post-Installation
-
-### Load Environment Variables
-
-Append to variables exposed by home-manager to the login config:
-
-```bash
-echo ". $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" >> /home/$USER/.profile
-```
-
-### Set Fish as Default Shell
-
-Append to shells and then set the shell:
-
-```bash
-export U=$USER
-echo /home/$U/.nix-profile/bin/fish >> "/etc/shells" && chsh -s /home/$U/.nix-profile/bin/fish $U
-```
 
 ### Setup Docker
 
