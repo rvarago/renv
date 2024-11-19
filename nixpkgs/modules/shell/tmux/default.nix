@@ -1,9 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
 
   programs.tmux = {
     enable = true;
 
-    prefix = "C-b";
+    prefix = "C-c";
     keyMode = "vi";
     customPaneNavigationAndResize = true;
 
