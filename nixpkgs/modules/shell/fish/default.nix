@@ -10,7 +10,7 @@
       if status is-interactive
       and type -q tmux
       and not set -q TMUX
-          exec tmux
+          tmux # Don't `exec` so I can kill tmux without killing the terminal.
       end
 
       if type -q opam
