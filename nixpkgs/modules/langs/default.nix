@@ -44,7 +44,7 @@
     # Go.
     delve
     go
-    golangci-lint
+    # golangci-lint
     gopls
     gopkgs
     gore
@@ -94,13 +94,13 @@
     nixd
 
     # Python.
-    poetry
-    python3
+    # poetry
+    # python3
     # python3Packages.autopep8
     # python3Packages.black
     # python3Packages.ipython
     # python3Packages.isort
-    python3Packages.pip
+    # python3Packages.pip
     pyright
     # python3Packages.pyflakes
     # python3Packages.pylint
