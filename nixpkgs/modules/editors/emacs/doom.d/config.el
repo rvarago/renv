@@ -241,6 +241,14 @@
   :bind
   ("C-c v &" . git-link))
 
+;; ================= SHELL =================
+
+(after! esh-mode
+  (map! :map eshell-mode-map
+        :prefix "C-c"
+        "\\" #'+eshell/split-right
+        "-" #'+eshell/split-below))
+
 ;; ================= CHECKER =================
 
 (use-package! flycheck
