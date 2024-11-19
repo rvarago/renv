@@ -6,12 +6,14 @@
 
     shellInit = ''
       set fish_greeting
+    '';
 
-      if status is-interactive
-      and type -q tmux
-      and not set -q TMUX
-          tmux # Don't `exec` so I can kill tmux without killing the terminal.
-      end
+    interactiveShellInit = ''
+      # It seems to interact badly with direnv somehow.
+      # if type -q tmux
+      # and not set -q TMUX
+      #     tmux # Don't `exec` so I can kill tmux without killing the terminal.
+      # end
 
       if type -q opam
         eval (opam env)
@@ -21,6 +23,8 @@
     shellAliases = {
       g = "git";
       cdp = "cd $(git rev-parse --show-toplevel)";
+
+      t = "tmux";
 
       clojurew = "rlwrap clojure";
       idris2w = "rlwrap idris2";
