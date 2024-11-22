@@ -65,6 +65,20 @@ _as_sudo() {
   fi
 }
 
+_exec_on_yes() {
+  local msg="$1"
+  while true; do
+    read -rp "${msg}: " yn
+    case $yn in
+    [Yy]*)
+      "${@:2}"
+      break
+      ;;
+    [Nn]*) break ;;
+    *) echo "Please answer yes or no." ;;
+    esac
+  done
+}
 _niv() {
   nix-shell --run "niv $1"
 }
@@ -147,8 +161,7 @@ _nix_install() {
 
     _log "Nix installed"
 
-    _out "Press any to reboot (remember to run system:install2 afterwards)"
-    _as_sudo reboot
+    _exec_on_yes "Press any to reboot (remember to run system:install2 afterwards)" _as_sudo reboot
   else
     _log "Nix already installed"
   fi
@@ -217,8 +230,7 @@ system:install2() {
   _load_hm_vars
   _set_fish_as_default
 
-  _out "Press any to reboot (you're done afterwards)"
-  _as_sudo reboot
+  _exec_on_yes "Press any to reboot (you're done afterwards)" _as_sudo reboot
 }
 
 system:sync() {
