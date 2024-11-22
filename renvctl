@@ -66,7 +66,7 @@ _as_sudo() {
 _exec_on_yes() {
   local msg="$1"
   while true; do
-    read -rp "${msg}: " yn
+    read -rp "${msg} - Continue (y): " yn
     case $yn in
     [Yy]*)
       "${@:2}"
@@ -232,7 +232,7 @@ system:install() {
   _load_hm_vars
   _set_fish_as_default
 
-  _exec_on_yes "Press any to reboot (you're done afterwards)" _as_sudo reboot
+  _exec_on_yes "Will reboot" _as_sudo reboot
 }
 
 system:sync() {
