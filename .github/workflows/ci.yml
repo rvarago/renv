@@ -19,6 +19,7 @@ jobs:
         run: |
           echo yes | ./renvctl system:install1
           source ~/.profile
+          cat ~/.profile
           nix --version
           cat ~/.config/nix.conf
           cat ~/.config/nix/nix.conf | grep flakes

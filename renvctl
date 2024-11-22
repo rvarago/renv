@@ -225,10 +225,10 @@ system:install1() {
 }
 
 system:install2() {
-  # _nix_upgrade
-  # _cachix_install
-  # _load_hm_vars
-  # _set_fish_as_default
+  _nix_upgrade
+  _cachix_install
+  _load_hm_vars
+  _set_fish_as_default
 
   _exec_on_yes "Press any to reboot (you're done afterwards)" _as_sudo reboot
 }
