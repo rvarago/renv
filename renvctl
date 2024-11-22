@@ -158,8 +158,6 @@ _nix_install() {
     _nix_enable_features
 
     _log "Nix installed"
-
-    _exec_on_yes "Press any to reboot (remember to run system:install2 afterwards)" _as_sudo reboot
   else
     _log "Nix already installed"
   fi
