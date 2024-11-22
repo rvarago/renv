@@ -16,15 +16,23 @@ The script `renvctl` orchestrates part of the process of installing components w
 
 > IMPORTANT: Ensure that [settings.nix](./nixpkgs/settings.nix) is correct for the environment (e.g. username matches the system, email)
 
-Install system components:
+Install system packages:
 ```sh
-./renvctl system:install1
+./renvctl system:install
 ```
 
-After rebooting, complete the installation:
+### (Optional) Install external packages
+
+Install Visual Studio Code:
 ```sh
-./renvctl system:install2
+./renvctl vscode:sync
 ```
+
+Install a language toolchain:
+```sh
+./renvctl $LANG:install
+```
+Where `$LANG in {ocaml, lean, rust}`
 
 ## Usage
 
@@ -42,17 +50,6 @@ Hack around and sync changes to home:
 ```sh
 ./renvctl home:sync
 ```
-
-Install Visual Studio Code:
-```sh
-./renvctl vscode:sync
-```
-
-Install a language toolchain:
-```sh
-./renvctl $LANG:install
-```
-Where `$LANG in {ocaml, lean, rust}`
 
 ## Post-Installation
 

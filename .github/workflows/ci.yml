@@ -18,16 +18,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: System early install
+      - name: System install
         shell: bash
         run: |
-          echo no | ./renvctl system:install1
-
-      - name: System late install
-        shell: bash
-        run: |
-          . ~/.nix-profile/etc/profile.d/nix.sh
-          echo no | ./renvctl system:install2
+          sed -i 's/rvarago/runner/g' ./nixpkgs/settings.nix
+          echo no | ./renvctl system:install
 
       - name: System verify
         shell: bash
@@ -43,13 +38,15 @@ jobs:
         shell: bash
         run: |
           . ~/.nix-profile/etc/profile.d/nix.sh
-          sed -i 's/rvarago/runner/g' ./nixpkgs/settings.nix
+
           ./renvctl home:sync
 
       - name: Home verify
         shell: bash
         run: |
           . ~/.nix-profile/etc/profile.d/nix.sh
+          grep '.nix-profile/bin/fish' /etc/shells
+          grep '.nix-profile/bin/fish' /etc/passwd
           emacs --version
 
   ext:

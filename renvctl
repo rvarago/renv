@@ -29,13 +29,11 @@ USAGE:
 COMMAND:
   help                Show this message
 
-  system:install1     Install system pt1, requiredBy system:install2
-  system:install2     Install system pt2, requires system:install1
+  system:install     Install system packages
 
   system:sync         Upgrade system-wide packages
-  ext:sync            Upgrade external packages
-
   home:sync           Sync home packages, dotfiles, etc
+  ext:sync            Upgrade external packages
 
   vscode:sync         Install/Upgrade VSCode, config, and extensions
 
@@ -217,16 +215,20 @@ _set_fish_as_default() {
   _as_sudo chsh -s "/home/$USER/.nix-profile/bin/fish" "$USER"
 }
 
-system:install1() {
+system:install() {
   _home_configure
   _home_ephemeral_customise
   _deb_install
   _nix_install
-}
 
-system:install2() {
+  #shellcheck disable=SC1091
+  . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+
   _nix_upgrade
   _cachix_install
+
+  _home_manager switch
+
   _load_hm_vars
   _set_fish_as_default
 
