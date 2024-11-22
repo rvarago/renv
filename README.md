@@ -28,9 +28,14 @@ After rebooting, complete the installation:
 
 ## Usage
 
-Upgrade everything (except home):
+Upgrade system:
 ```sh
 ./renvctl system:sync
+```
+
+Upgrade external packages:
+```sh
+./renvctl ext:sync
 ```
 
 Hack around and sync changes to home:

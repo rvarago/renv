@@ -32,7 +32,9 @@ COMMAND:
   system:install1     Install system pt1, requiredBy system:install2
   system:install2     Install system pt2, requires system:install1
 
-  system:sync         Upgrade everything and cleanup garbage, except home
+  system:sync         Upgrade system-wide packages
+  ext:sync            Upgrade external packages
+
   home:sync           Sync home packages, dotfiles, etc
 
   vscode:sync         Install/Upgrade VSCode, config, and extensions
@@ -224,7 +226,9 @@ system:sync() {
   _deb_upgrade
 
   _nix_prune
+}
 
+ext:sync() {
   _command_exists "code" && vscode:sync
 
   _command_exists "elan" && lean:sync
