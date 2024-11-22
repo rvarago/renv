@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ startsWith(github.ref, 'refs/pull/') }}
+
+jobs:
+  system-home:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: System install
+        shell: bash
+        run: |
+          echo no | ./renvctl system:install
+
+      - name: System verify
+        shell: bash
+        run: |
+          . ~/.nix-profile/etc/profile.d/nix.sh
+          nix --version
+          nix flake --version
+          cat ~/.config/nix/nix.conf | grep flakes
+          cat ./nixpkgs/users/runner.nix
+          cat ./nixpkgs/modules/ephemeral.nix
+
+      - name: Home sync
+        shell: bash
+        run: |
+          . ~/.nix-profile/etc/profile.d/nix.sh
+
+          ./renvctl home:sync
+
+      - name: Home verify
+        shell: bash
+        run: |
+          . ~/.nix-profile/etc/profile.d/nix.sh
+          grep '.nix-profile/bin/fish' /etc/shells
+          grep '.nix-profile/bin/fish' /etc/passwd
+          emacs --version
+
+  ext:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install
+        shell: bash
+        run: |
+          ./renvctl vscode:sync
+          ./renvctl lean:sync
+          # ./renvctl ocaml:sync
+          ./renvctl rust:sync
+
+      - name: Verify
+        shell: bash
+        run: |
+          source ~/.profile
+
+          code --version
+          elan --version
+          # ocaml --version
+          cargo --version

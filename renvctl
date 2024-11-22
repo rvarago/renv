@@ -29,11 +29,11 @@ USAGE:
 COMMAND:
   help                Show this message
 
-  system:install1     Install system pt1, requiredBy system:install2
-  system:install2     Install system pt2, requires system:install1
+  system:install     Install system packages
 
-  system:sync         Upgrade everything and cleanup garbage, except home
+  system:sync         Upgrade system-wide packages
   home:sync           Sync home packages, dotfiles, etc
+  ext:sync            Upgrade external packages
 
   vscode:sync         Install/Upgrade VSCode, config, and extensions
 
@@ -63,6 +63,20 @@ _as_sudo() {
   fi
 }
 
+_exec_on_yes() {
+  local msg="$1"
+  while true; do
+    read -rp "${msg} - Continue (y): " yn
+    case $yn in
+    [Yy]*)
+      "${@:2}"
+      break
+      ;;
+    [Nn]*) break ;;
+    *) echo "Please answer yes or no." ;;
+    esac
+  done
+}
 _niv() {
   nix-shell --run "niv $1"
 }
@@ -145,8 +159,7 @@ _nix_install() {
 
     _log "Nix installed"
 
-    _out "Press any to reboot (remember to run system:install2 afterwards)"
-    _as_sudo reboot
+    _exec_on_yes "Press any to reboot (remember to run system:install2 afterwards)" _as_sudo reboot
   else
     _log "Nix already installed"
   fi
@@ -202,21 +215,24 @@ _set_fish_as_default() {
   _as_sudo chsh -s "/home/$USER/.nix-profile/bin/fish" "$USER"
 }
 
-system:install1() {
+system:install() {
   _home_configure
   _home_ephemeral_customise
   _deb_install
   _nix_install
-}
 
-system:install2() {
+  #shellcheck disable=SC1091
+  . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+
   _nix_upgrade
   _cachix_install
+
+  _home_manager switch
+
   _load_hm_vars
   _set_fish_as_default
 
-  _out "Press any to reboot (you're done afterwards)"
-  _as_sudo reboot
+  _exec_on_yes "Will reboot" _as_sudo reboot
 }
 
 system:sync() {
@@ -224,7 +240,9 @@ system:sync() {
   _deb_upgrade
 
   _nix_prune
+}
 
+ext:sync() {
   _command_exists "code" && vscode:sync
 
   _command_exists "elan" && lean:sync
@@ -247,6 +265,12 @@ vscode:sync() {
 lean:sync() {
   _log "Installing/Upgrading Lean utilities"
 
+  if ! command -v elan; then
+    curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y
+    # shellcheck disable=SC1090
+    . ~/.profile
+  fi
+
   elan update
   elan toolchain install leanprover/lean4:nightly
   elan default leanprover/lean4:nightly
@@ -265,7 +289,7 @@ ocaml:sync() {
 rust:sync() {
   _log "Installing/Upgrading Rust utilities"
 
-  command -v rustup || (curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && fenv . "$HOME/.cargo/env")
+  command -v rustup || (curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y)
   rustup default stable
   rustup update
   rustup component add \
