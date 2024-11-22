@@ -8,6 +8,10 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ startsWith(github.ref, 'refs/pull/') }}
+
 jobs:
   system-install:
     runs-on: ubuntu-24.04
