@@ -17,7 +17,7 @@ jobs:
       - name: Early install
         shell: bash
         run: |
-          yes no | ./renvctl system:install1
+          echo yes | ./renvctl system:install1
           source ~/.profile
           nix --version
           cat ~/.config/nix.conf
@@ -34,12 +34,12 @@ jobs:
       - name: Early install
         shell: bash
         run: |
-          yes | ./renvctl system:install1 # should do nothing as everything is already installed by the previous step
+          echo yes | ./renvctl system:install1 # should do nothing as everything is already installed by the previous step
 
       - name: Late install
         shell: bash
         run: |
-          yes no | ./renvctl system:install2
+          echo no | ./renvctl system:install2
           cat ~/.config/nix/nix.conf | grep cachix
           cat ~/.profile | grep hm-session-vars.sh
           cat /etc/shells | grep .nix-profile/bin/fish
