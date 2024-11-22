@@ -15,9 +15,9 @@
       #     tmux # Don't `exec` so I can kill tmux without killing the terminal.
       # end
 
-      if type -q opam
-        eval (opam env)
-      end
+      # if type -q opam
+      #   eval (opam env)
+      # end
     '';
 
     shellAliases = {
