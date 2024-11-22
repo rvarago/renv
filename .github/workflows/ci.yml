@@ -9,6 +9,31 @@ on:
       - main
 
 jobs:
+  system-install:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: System early install
+        shell: bash
+        run: |
+          echo no | ./renvctl system:install1
+
+      - name: System late install
+        shell: bash
+        run: |
+          . /home/runner/.nix-profile/etc/profile.d/nix.sh
+          echo no | ./renvctl system:install2
+
+      - name: System verify
+        shell: bash
+        run: |
+          nix --version
+          cat ~/.config/nix.conf
+          cat ~/.config/nix/nix.conf | grep flakes
+          cat ./nixpkgs/users/*.nix
+          cat ./nixpkgs/modules/ephemeral.nix
+
   system-early:
     runs-on: ubuntu-24.04
     steps:
