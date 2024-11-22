@@ -132,6 +132,7 @@ _deb_install() {
 
     _as_sudo apt-get install -y \
       curl \
+      git \
       build-essential \
       make \
       nmap \
