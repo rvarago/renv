@@ -55,7 +55,7 @@ jobs:
         shell: bash
         run: |
           ./renvctl vscode:sync
-          ./renvctl lean:sync
+          yes | ./renvctl lean:sync
           ./renvctl ocaml:sync
           ./renvctl rust:sync
 
