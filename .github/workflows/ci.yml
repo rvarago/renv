@@ -13,7 +13,7 @@ concurrency:
   cancel-in-progress: ${{ startsWith(github.ref, 'refs/pull/') }}
 
 jobs:
-  system-install:
+  system-home:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
@@ -26,62 +26,38 @@ jobs:
       - name: System late install
         shell: bash
         run: |
-          . /home/runner/.nix-profile/etc/profile.d/nix.sh
+          . ~/.nix-profile/etc/profile.d/nix.sh
           echo no | ./renvctl system:install2
 
       - name: System verify
         shell: bash
         run: |
+          . ~/.nix-profile/etc/profile.d/nix.sh
           nix --version
-          cat ~/.config/nix.conf
+          nix flake --version
           cat ~/.config/nix/nix.conf | grep flakes
-          cat ./nixpkgs/users/*.nix
+          cat ./nixpkgs/users/runner.nix
           cat ./nixpkgs/modules/ephemeral.nix
 
-  system-early:
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Early install
+      - name: Home sync
         shell: bash
         run: |
-          echo yes | ./renvctl system:install1
-          source ~/.profile
-          cat ~/.profile
-          nix --version
-          cat ~/.config/nix.conf
-          cat ~/.config/nix/nix.conf | grep flakes
-          cat ./nixpkgs/users/*.nix
-          cat ./nixpkgs/modules/ephemeral.nix
+          . ~/.nix-profile/etc/profile.d/nix.sh
+          sed -i 's/rvarago/runner/g' ./nixpkgs/settings.nix
+          ./renvctl home:sync
 
-  system-late:
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v4
-      - uses: cachix/install-nix-action@v27
-
-      - name: Early install
+      - name: Home verify
         shell: bash
         run: |
-          echo yes | ./renvctl system:install1 # should do nothing as everything is already installed by the previous step
-
-      - name: Late install
-        shell: bash
-        run: |
-          echo no | ./renvctl system:install2
-          cat ~/.config/nix/nix.conf | grep cachix
-          cat ~/.profile | grep hm-session-vars.sh
-          cat /etc/shells | grep .nix-profile/bin/fish
-          cat /etc/passwd | grep .nix-profile/bin/fish
+          . ~/.nix-profile/etc/profile.d/nix.sh
+          emacs --version
 
   ext:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - uses: cachix/install-nix-action@v27
 
-      - name: Ext install
+      - name: Install
         shell: bash
         run: |
           ./renvctl vscode:sync
@@ -89,23 +65,12 @@ jobs:
           # ./renvctl ocaml:sync
           ./renvctl rust:sync
 
+      - name: Verify
+        shell: bash
+        run: |
           source ~/.profile
 
           code --version
           elan --version
           # ocaml --version
           cargo --version
-
-  home:
-    runs-on: ubuntu-24.04
-    steps:
-      - uses: actions/checkout@v4
-      - uses: cachix/install-nix-action@v27
-
-      - name: Home sync
-        shell: bash
-        run: |
-          sed -i 's/rvarago/runner/g' ./nixpkgs/settings.nix
-          ./renvctl home:sync
-
-          emacs --version
