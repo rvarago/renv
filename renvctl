@@ -225,10 +225,10 @@ system:install1() {
 }
 
 system:install2() {
-  _nix_upgrade
-  _cachix_install
-  _load_hm_vars
-  _set_fish_as_default
+  # _nix_upgrade
+  # _cachix_install
+  # _load_hm_vars
+  # _set_fish_as_default
 
   _exec_on_yes "Press any to reboot (you're done afterwards)" _as_sudo reboot
 }
@@ -265,7 +265,8 @@ lean:sync() {
 
   if ! command -v elan; then
     curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y
-    export PATH=~/.elan/bin:$PATH
+    # shellcheck disable=SC1090
+    . ~/.profile
   fi
 
   elan update
@@ -286,7 +287,7 @@ ocaml:sync() {
 rust:sync() {
   _log "Installing/Upgrading Rust utilities"
 
-  command -v rustup || (curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && fenv . "$HOME/.cargo/env")
+  command -v rustup || (curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y)
   rustup default stable
   rustup update
   rustup component add \
