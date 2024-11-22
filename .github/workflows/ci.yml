@@ -59,6 +59,8 @@ jobs:
           ./renvctl ocaml:sync
           ./renvctl rust:sync
 
+          source ~/.profile
+
           code --version
           elan --version
           ocaml --version

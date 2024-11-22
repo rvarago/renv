@@ -263,7 +263,11 @@ vscode:sync() {
 lean:sync() {
   _log "Installing/Upgrading Lean utilities"
 
-  command -v elan || (curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y)
+  if ! command -v elan; then
+    curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y
+    export PATH=~/.elan:$PATH
+  fi
+
   elan update
   elan toolchain install leanprover/lean4:nightly
   elan default leanprover/lean4:nightly
