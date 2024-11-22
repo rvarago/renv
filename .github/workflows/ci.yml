@@ -73,6 +73,7 @@ jobs:
       - name: Home sync
         shell: bash
         run: |
+          sed -i 's/rvarago/runner/g' ./nixpkgs/settings.nix
           ./renvctl home:sync
 
           emacs --version
