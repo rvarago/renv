@@ -57,14 +57,14 @@ jobs:
         run: |
           ./renvctl vscode:sync
           ./renvctl lean:sync
-          ./renvctl ocaml:sync
+          # ./renvctl ocaml:sync
           ./renvctl rust:sync
 
           source ~/.profile
 
           code --version
           elan --version
-          ocaml --version
+          # ocaml --version
           cargo --version
 
   home:
