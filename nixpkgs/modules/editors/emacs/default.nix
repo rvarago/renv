@@ -2,7 +2,7 @@
 
 let
   emacsOverlayRev = "ab38e5767457fd7bc0ef00962feeb4c4e5ddfeb8";
-  doomRev = "1d3c2db274a23756a6abca69f74dc4a63016efff";
+  doomRev = "be4fb85dd93810e495d5f4a793d620f82508cb7e";
 
   emacs-overlay = import (
     builtins.fetchTarball {
