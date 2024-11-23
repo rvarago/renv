@@ -21,7 +21,7 @@ jobs:
       - name: System install
         shell: bash
         run: |
-          echo no | ./renvctl system:install
+          echo no | bash -x ./renvctl system:install
 
       - name: System verify
         shell: bash
