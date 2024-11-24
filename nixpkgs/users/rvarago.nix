@@ -79,14 +79,14 @@ in
     jetbrains-mono
   ];
 
-  fonts.fontconfig.enable = true;
+  # fonts.fontconfig.enable = true;
 
-  imports = [
-    ../modules/editors
-    ../modules/langs
-    ../modules/linux
-    ../modules/shell
-    (import ../modules/vcs { inherit pkgs settings; })
-  ] ++ lib.optional (builtins.pathExists ../modules/ephemeral.nix) ../modules/ephemeral.nix;
+  # imports = [
+  #   ../modules/editors
+  #   ../modules/langs
+  #   ../modules/linux
+  #   ../modules/shell
+  #   (import ../modules/vcs { inherit pkgs settings; })
+  # ] ++ lib.optional (builtins.pathExists ../modules/ephemeral.nix) ../modules/ephemeral.nix;
 
 }
