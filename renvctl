@@ -220,13 +220,13 @@ system:install() {
   _deb_install
   _nix_install
 
-  # #shellcheck disable=SC1091
+  #shellcheck disable=SC1091
   . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
   _nix_upgrade
   _cachix_install
 
-  # _home_manager switch
+  _home_manager switch
 
   _load_hm_vars
   _set_fish_as_default
