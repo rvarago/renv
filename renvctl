@@ -215,21 +215,21 @@ _set_fish_as_default() {
 }
 
 system:install() {
-  _home_configure
-  _home_ephemeral_customise
-  _deb_install
-  _nix_install
+  # _home_configure
+  # _home_ephemeral_customise
+  # _deb_install
+  # _nix_install
 
-  #shellcheck disable=SC1091
-  . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+  # #shellcheck disable=SC1091
+  # . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
-  _nix_upgrade
-  _cachix_install
+  # _nix_upgrade
+  # _cachix_install
 
-  _home_manager switch
+  # _home_manager switch
 
-  _load_hm_vars
-  _set_fish_as_default
+  # _load_hm_vars
+  # _set_fish_as_default
 
   _exec_on_yes "Will reboot" _as_sudo reboot
 }
@@ -288,7 +288,10 @@ ocaml:sync() {
 rust:sync() {
   _log "Installing/Upgrading Rust utilities"
 
-  command -v rustup || (curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y)
+  if ! command -v rustup; then
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    . ~/.profile
+  fi
   rustup default stable
   rustup update
   rustup component add \
