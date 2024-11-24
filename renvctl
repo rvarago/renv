@@ -215,16 +215,16 @@ _set_fish_as_default() {
 }
 
 system:install() {
-  # _home_configure
-  # _home_ephemeral_customise
-  # _deb_install
-  # _nix_install
+  _home_configure
+  _home_ephemeral_customise
+  _deb_install
+  _nix_install
 
   # #shellcheck disable=SC1091
-  # . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+  . "$HOME/.nix-profile/etc/profile.d/nix.sh"
 
-  # _nix_upgrade
-  # _cachix_install
+  _nix_upgrade
+  _cachix_install
 
   # _home_manager switch
 
