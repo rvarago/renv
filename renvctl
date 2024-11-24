@@ -288,7 +288,11 @@ ocaml:sync() {
 rust:sync() {
   _log "Installing/Upgrading Rust utilities"
 
-  command -v rustup || (curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y)
+  if ! command -v rustup; then
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+    # shellcheck disable=SC1090
+    . ~/.profile
+  fi
   rustup default stable
   rustup update
   rustup component add \
