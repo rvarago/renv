@@ -228,8 +228,8 @@ system:install() {
 
   # _home_manager switch
 
-  # _load_hm_vars
-  # _set_fish_as_default
+  _load_hm_vars
+  _set_fish_as_default
 
   _exec_on_yes "Will reboot" _as_sudo reboot
 }
