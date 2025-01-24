@@ -37,6 +37,7 @@
   "cmake.configureOnOpen": true,
   "editor.bracketPairColorization.enabled": true,
   "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": true,
   "editor.fontSize": 16,
   "editor.lineHeight": 20,
   "editor.minimap.enabled": false,
