@@ -14,7 +14,10 @@ concurrency:
 
 jobs:
   system-home:
-    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-13, macos-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
 
@@ -54,7 +57,10 @@ jobs:
           emacs --version
 
   ext:
-    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-13, macos-latest]
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
 
