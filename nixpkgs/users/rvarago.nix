@@ -74,8 +74,8 @@ in
     #texlive.combined.scheme-small
 
     # Fonts.
-    iosevka-bin
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    nerd-fonts.iosevka
+    nerd-fonts.jetbrains-mono
     jetbrains-mono
   ];
 
