@@ -41,7 +41,7 @@ in
     tree
     xclip
     xdot
-    xsv
+    xan
     wget
     #wkhtmltopdf
 
