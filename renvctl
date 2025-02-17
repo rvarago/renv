@@ -214,7 +214,7 @@ system:install() {
   # shellcheck disable=SC1091
   . "/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh"
 
-  _nix_upgrade
+  # _nix_upgrade # TODO: remove it after confirming ok install pulls the latest version 
   _cachix_install
 
   _home_manager switch
