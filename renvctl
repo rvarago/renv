@@ -57,7 +57,7 @@ _command_exists() {
 
 _as_sudo() {
   if [[ "${EUID}" != 0 ]]; then
-    sudo "$0" "$@"
+    sudo -i "$0" "$@"
   else
     "$0" "$@"
   fi
@@ -178,7 +178,7 @@ _deb_upgrade() {
 
 _nix_upgrade() {
   _log "Updating nix"
-  _as_sudo -i nix upgrade-nix
+  _as_sudo nix upgrade-nix
   _niv update
 }
 
