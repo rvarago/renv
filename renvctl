@@ -57,7 +57,7 @@ _command_exists() {
 
 _as_sudo() {
   if [[ "${EUID}" != 0 ]]; then
-    sudo -i "$0" "$@"
+    sudo "$0" "$@"
   else
     "$0" "$@"
   fi
