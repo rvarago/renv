@@ -24,7 +24,7 @@
       g = "git";
       cdp = "cd $(git rev-parse --show-toplevel)";
 
-      t = "tmux";
+      # t = "tmux";
 
       clojurew = "rlwrap clojure";
       idris2w = "rlwrap idris2";
@@ -46,6 +46,12 @@
       d2h = "echo \"obase=16; ibase=10; $argv\" | bc";
 
       h2d = "echo \"obase=10; ibase=16; $argv\" | bc";
+
+      t = ''
+        set temp_dir (mktemp -d /tmp/$argv-XXXXXX)
+        pushd $temp_dir
+        echo "switched to: $temp_dir"
+      '';
     };
 
     plugins = [
