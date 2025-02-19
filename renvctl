@@ -270,7 +270,7 @@ lean:sync() {
     . ~/.profile
   fi
 
-  elan update
+  elan self update
   elan toolchain install leanprover/lean4:nightly
   elan default leanprover/lean4:nightly
 }
