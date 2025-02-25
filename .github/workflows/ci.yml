@@ -27,7 +27,7 @@ jobs:
       - name: System verify
         shell: bash
         run: |
-          . ~/.nix-profile/etc/profile.d/nix.sh
+          . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
           nix --version
           nix flake --version
           cat ~/.config/nix/nix.conf | grep flakes
@@ -49,8 +49,8 @@ jobs:
         shell: bash
         run: |
           . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
-          grep '.nix-profile/bin/fish' /etc/shells
-          grep '.nix-profile/bin/fish' /etc/passwd
+          grep 'bin/fish' /etc/shells
+          grep 'bin/fish' /etc/passwd
           emacs --version
 
   ext:
