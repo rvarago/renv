@@ -24,7 +24,7 @@ in
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = settings.user;
-  home.homeDirectory = "${settings.user}";
+  home.homeDirectory = "/${if pkgs.stdenv.isDarwin then "Users" else "home"}/${settings.user}";
 
   home.sessionVariables = {
     USER_FULL_NAME = settings.userFullName;
