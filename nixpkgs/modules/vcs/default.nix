@@ -1,4 +1,5 @@
-{ pkgs, settings, ... }: {
+{ pkgs, settings, ... }:
+{
 
   programs.git = {
     enable = true;
@@ -27,18 +28,31 @@
         user = settings.githubUser;
       };
 
-      diff = { tool = "meld"; };
-      merge = {
+      diff = {
+        algorithm = "histogram";
+        colorMoved = "plain";
+        mnemonicPrefix = true;
+        renames = true;
         tool = "meld";
-        conflictStyle = "diff3";
       };
 
-      init = { defaultBranch = "main"; };
+      merge = {
+        tool = "meld";
+        conflictStyle = "zdiff3";
+      };
+
+      init = {
+        defaultBranch = "main";
+      };
 
       core = {
         ignorecase = false;
         pager = "diff-so-fancy | less --tabs=4 -RFX";
       };
+
+      commit.verbose = true;
+
+      tag.sort = "version:refname";
 
       color = {
         ui = true;
@@ -114,8 +128,7 @@
 
       greview = "push HEAD:refs/for/master";
 
-      l =
-        "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all";
+      l = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all";
 
       primary = "!f() { git symbolic-ref --short refs/remotes/origin/HEAD | sed -e 's/origin\\///'; }; f";
       trim = "!f() { git for-each-ref --format '%(upstream:track) %(refname:lstrip=2)' refs/heads | awk '/^\\[gone\\]/{print $2}' | xargs -I{} git branch -D {}; }; f";
