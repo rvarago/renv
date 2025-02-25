@@ -14,6 +14,10 @@
 
     extraConfig = ''
       shell tmux
+      map kitty_mod+enter launch --cwd=current --type=window
+      map cmd+enter       launch --cwd=current --type=window
+      map kitty_mod+t     launch --cwd=current --type=tab
+      map cmd+t           launch --cwd=current --type=tab
     '';
   };
 }
