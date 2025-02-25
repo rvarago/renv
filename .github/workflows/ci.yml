@@ -40,14 +40,14 @@ jobs:
       - name: Home sync
         shell: bash
         run: |
-          . ~/.nix-profile/etc/profile.d/nix.sh
+          . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 
           ./renvctl home:sync
 
       - name: Home verify
         shell: bash
         run: |
-          . ~/.nix-profile/etc/profile.d/nix.sh
+          . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
           grep '.nix-profile/bin/fish' /etc/shells
           grep '.nix-profile/bin/fish' /etc/passwd
           emacs --version

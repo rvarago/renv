@@ -79,7 +79,7 @@ in
     #aspellDicts.de
     aspellDicts.en
     aspellDicts.en-computers
-    aspellDicts.en-science
+    #aspellDicts.en-science
     aspellDicts.pt_BR
     languagetool
     #texlive.combined.scheme-small

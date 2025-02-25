@@ -20,11 +20,11 @@
       # "aarch64-darwin" # 64-bit ARM macOS
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-      settings = import ./settings.nix;
+      settings = import ./nixpkgs/settings.nix;
     in
     {
       homeConfigurations = {
-        settings.user = home-manager.lib.homeManagerConfiguration {
+        ${settings.user} = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           extraSpecialArgs = { inherit settings; };
 
