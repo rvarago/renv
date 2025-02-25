@@ -21,15 +21,16 @@ jobs:
       - name: System install
         shell: bash
         run: |
+          sed -i 's/rvarago/runner/g' ./nixpkgs/settings.nix
           echo no | bash -x ./renvctl system:install || true
 
       - name: System verify
         shell: bash
         run: |
-          . ~/.nix-profile/etc/profile.d/nix.sh
+          . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
           nix --version
           nix flake --version
-          cat ~/.config/nix/nix.conf | grep flakes
+          nix-shell -p hello --run hello
           cat ./nixpkgs/modules/ephemeral.nix
 
       - name: System update
@@ -40,16 +41,16 @@ jobs:
       - name: Home sync
         shell: bash
         run: |
-          . ~/.nix-profile/etc/profile.d/nix.sh
+          . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 
           ./renvctl home:sync
 
       - name: Home verify
         shell: bash
         run: |
-          . ~/.nix-profile/etc/profile.d/nix.sh
-          grep '.nix-profile/bin/fish' /etc/shells
-          grep '.nix-profile/bin/fish' /etc/passwd
+          . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+          grep 'bin/fish' /etc/shells
+          grep 'bin/fish' /etc/passwd
           emacs --version
 
   ext:
