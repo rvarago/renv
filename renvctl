@@ -77,33 +77,15 @@ _exec_on_yes() {
     esac
   done
 }
-_niv() {
-  nix-shell --run "niv $1"
+
+_home_manager_switch() {
+  env \
+    HOME_MANAGER_CONFIG="nixpkgs/home.nix" \
+    NIXPKGS_ALLOW_UNFREE=1 \
+    nix run nixpkgs#home-manager -- switch
 }
 
-_home_manager() {
-  nix-shell --run "home-manager $1"
-}
-
-export -f _home_manager
-
-_home_configure() {
-  local templateuser="rvarago"
-  local newuser="${USER}"
-  local newuserfile="${USERS}/${newuser}.nix"
-
-  _log "Configuring home-manager for user ${newuser} at ${newuserfile}"
-
-  if [ ! -f "${newuserfile}" ]; then
-    cp "${USERS}/${templateuser}.nix" "${newuserfile}"
-
-    _log "Patching files (please check them afterwards):"
-
-    grep -rl "${templateuser}" --include "*.nix" . |
-      tee /dev/tty |
-      xargs sed -i "s/${templateuser}/${newuser}/g"
-  fi
-}
+export -f _home_manager_switch
 
 _home_ephemeral_customise() {
   _log "Creating ephemeral (git-ignored) customisation file"
@@ -188,7 +170,7 @@ _nix_upgrade() {
   _log "Updating nix"
   nix-channel --update
   nix-env --install --attr nixpkgs.nix nixpkgs.cacert
-  _niv update
+  nix flake update
 }
 
 _nix_prune() {
@@ -196,7 +178,7 @@ _nix_prune() {
 
   _log "Pruning old generations and collecting garbage"
 
-  _home_manager generations |
+  home-manager generations |
     awk -v max="${generations_to_keep}" 'NR > max {print $5}' |
     xargs "$BASH" -c "_home_manager remove-generations"
 
@@ -215,7 +197,6 @@ _set_fish_as_default() {
 }
 
 system:install() {
-  _home_configure
   _home_ephemeral_customise
   _deb_install
   _nix_install
@@ -226,7 +207,7 @@ system:install() {
   _nix_upgrade
   _cachix_install
 
-  _home_manager switch
+  _home_manager_switch
 
   _load_hm_vars
   _set_fish_as_default
@@ -252,7 +233,7 @@ ext:sync() {
 home:sync() {
   _log "Switching home-manager"
 
-  _home_manager switch
+  _home_manager_switch
 }
 
 vscode:sync() {
