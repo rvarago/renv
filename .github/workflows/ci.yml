@@ -30,7 +30,7 @@ jobs:
           . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
           nix --version
           nix flake --version
-          cat ~/.config/nix/nix.conf | grep flakes
+          nix-shell -p hello --run hello
           cat ./nixpkgs/modules/ephemeral.nix
 
       - name: System update
