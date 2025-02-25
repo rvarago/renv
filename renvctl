@@ -171,7 +171,7 @@ _nix_prune() {
 
   home-manager generations |
     awk -v max="${generations_to_keep}" 'NR > max {print $5}' |
-    xargs "$BASH" -c "_home_manager remove-generations"
+    xargs "$BASH" -c "home-manager remove-generations"
 
   nix-collect-garbage
 }
