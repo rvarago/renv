@@ -30,8 +30,12 @@ jobs:
           nix --version
           nix flake --version
           cat ~/.config/nix/nix.conf | grep flakes
-          cat ./nixpkgs/users/runner.nix
           cat ./nixpkgs/modules/ephemeral.nix
+
+      - name: System update
+        shell: bash
+        run: |
+          ./renvctl system:sync
 
       - name: Home sync
         shell: bash
