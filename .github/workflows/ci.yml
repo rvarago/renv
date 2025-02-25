@@ -21,6 +21,8 @@ jobs:
       - name: System install
         shell: bash
         run: |
+          export USER=rvarago
+          export HOME=/home/$USER
           echo no | bash -x ./renvctl system:install || true
 
       - name: System verify
