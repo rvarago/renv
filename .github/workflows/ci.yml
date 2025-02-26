@@ -24,7 +24,7 @@ jobs:
       - name: System install
         shell: bash
         run: |
-          sed -i '' 's/rvarago/runner/g' ./nixpkgs/settings.nix
+          sed -i.bak 's/rvarago/runner/g' ./nixpkgs/settings.nix
           echo no | bash -x ./renvctl system:install || true
 
       - name: System verify
