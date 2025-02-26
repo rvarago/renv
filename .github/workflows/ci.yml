@@ -12,13 +12,16 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ startsWith(github.ref, 'refs/pull/') }}
 
+env:
+  NIX_CONFIG: 'access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}'
+
 jobs:
   system-home:
     strategy:
       matrix:
         os:
           - ubuntu-latest
-          #- macos-latest
+          - macos-latest
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
