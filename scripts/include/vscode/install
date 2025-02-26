@@ -27,7 +27,7 @@ install_editor() {
         curl -L -o "${downloaded_filename}" 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
         sudo dpkg -i "${downloaded_filename}"
 
-        mkdir -p "${OUT_CONFIG_DIR}"
+        mkdir -p "$(base_config_dir)/Code"
     fi
 }
 
