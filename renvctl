@@ -79,10 +79,11 @@ _exec_on_yes() {
 }
 
 _home_manager_switch() {
-  export NIXPKGS_ALLOW_UNFREE=1
+  # --impure because we want it to read the NIXPKGS_ALLOW_UNFREE envvar, a better way would set it in nix.conf.
   env \
     HOME_MANAGER_CONFIG="nixpkgs/home.nix" \
-    nix run nixpkgs#home-manager -- switch --flake ./
+    NIXPKGS_ALLOW_UNFREE=1 \
+    nix run nixpkgs#home-manager -- switch --impure --flake ./
 }
 
 export -f _home_manager_switch
@@ -128,7 +129,7 @@ _nix_install() {
   if ! _command_exists "nix"; then
     _log "Installing nix"
 
-    curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | \
+    curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix |
       sh -s -- install --no-confirm
 
     _log "Nix installed"
