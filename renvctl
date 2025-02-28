@@ -77,11 +77,17 @@ _exec_on_yes() {
 }
 
 _home_manager_switch() {
+  local arch=$(uname -m)
+  local os=$(uname -s | tr '[:upper:]' '[:lower:]')
+  local id="${arch}-${os}"
+
   # --impure because we want it to read the NIXPKGS_ALLOW_UNFREE envvar, a better way would set it in nix.conf.
+  # NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 \
+  # NIXPKGS_ALLOW_BROKEN=1 \
   env \
     HOME_MANAGER_CONFIG="nixpkgs/home.nix" \
-    NIXPKGS_ALLOW_UNFREE=1 \
-    nix run nixpkgs#home-manager -- switch --impure --flake ./
+    NIXPKGS_ALLOW_UNFREE=1
+  nix run nixpkgs#home-manager -- switch --impure --flake ".#${USER}@${id}"
 }
 
 export -f _home_manager_switch

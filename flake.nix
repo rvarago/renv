@@ -15,24 +15,36 @@
       ...
     }:
     let
-      # "aarch64-linux" # 64-bit ARM Linux
-      # "x86_64-darwin" # 64-bit Intel macOS
-      # "aarch64-darwin" # 64-bit ARM macOS
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
       settings = import ./nixpkgs/settings.nix;
+
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "x86_64-darwin"
+      ];
+
+      makeConfig =
+        system:
+        let
+          pkgs = import nixpkgs { inherit system; };
+        in
+        home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = {
+            inherit settings;
+            isDarwin = pkgs.stdenv.isDarwin;
+          };
+          modules = [
+            (import ./nixpkgs/home.nix)
+          ];
+        };
     in
     {
-      homeConfigurations = {
-        ${settings.user} = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          extraSpecialArgs = { inherit settings; };
-
-          modules = [
-            ./nixpkgs/home.nix
-          ];
-
-        };
-      };
+      homeConfigurations = builtins.listToAttrs (
+        builtins.map (system: {
+          name = "${settings.user}@${system}";
+          value = makeConfig system;
+        }) systems
+      );
     };
 }

@@ -2,9 +2,13 @@
   pkgs,
   lib,
   settings,
+  isDarwin,
   ...
 }:
 
+let
+  perSystemImports = if isDarwin then ./modules/darwin.nix else ./modules/linux.nix;
+in
 {
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -22,13 +26,13 @@
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = settings.user;
-  home.homeDirectory = "/${if pkgs.stdenv.isDarwin then "Users" else "home"}/${settings.user}";
+  home.homeDirectory = "/${if isDarwin then "Users" else "home"}/${settings.user}";
 
   home.sessionVariables = {
     USER_FULL_NAME = settings.userFullName;
     USER_EMAIL = settings.userEmail;
 
-    NIX_PATH="nixpkgs=flake:nixpkgs"; # We don't use channels, so this is for backwards-compatibility with tools insisting on their presence.
+    NIX_PATH = "nixpkgs=flake:nixpkgs"; # We don't use channels, so this is for backwards-compatibility with tools insisting on their presence.
   };
 
   home.packages = with pkgs; [
@@ -51,7 +55,6 @@
     tokei
     tree
     xclip
-    xdot
     xan
     wget
     #wkhtmltopdf
@@ -60,7 +63,6 @@
     minicom
     plantuml
     protobuf
-    valgrind
     wireshark
     patchelf
 
@@ -104,8 +106,7 @@
 
     ./modules/langs.nix
 
-    ./modules/linux.nix
-
+    perSystemImports
   ] ++ lib.optional (builtins.pathExists ./modules/ephemeral.nix) ./modules/ephemeral.nix;
 
 }

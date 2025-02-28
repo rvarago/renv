@@ -23,7 +23,6 @@ in
 
   home.packages = with pkgs; [
     python3 # for Treemacs
-    libvterm # for Vterm
   ];
 
   services.emacs = {
