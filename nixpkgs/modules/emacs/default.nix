@@ -1,13 +1,13 @@
 { pkgs, config, ... }:
 
 let
-  emacsOverlayRev = "93d351a5010799656026bb4ff253b0e68eab4de5";
-  doomRev = "2bc052425ca45a41532be0648ebd976d1bd2e6c1";
+  emacsOverlayRev = "502293ae094f7ecd604500ffb19ad35bd429311b";
+  doomRev = "56ce6cc284e8f4dd0cb0704dde6694a1b8e500ed";
 
   emacs-overlay = import (
     builtins.fetchTarball {
       url = "https://github.com/nix-community/emacs-overlay/archive/${emacsOverlayRev}.tar.gz";
-      sha256 = "sha256:0ajqaaip9a797niayhf87jwyxacb23zakn66yslv7i5cj6c07ybd";
+      sha256 = "sha256:078cxqn4zcdhq2ysdb5wicnqacy1ky48yz7r7b92cgzck3qk4xdh";
     }
   );
 
@@ -35,7 +35,7 @@ in
 
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs29;
+    package = pkgs.emacs30;
 
     extraPackages = (
       epkgs:
