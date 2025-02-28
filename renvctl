@@ -9,8 +9,6 @@ THIS_SCRIPT=$(basename "${BASH_SOURCE[0]}")
 
 SCRIPTS="${THIS_DIR}/scripts/include"
 
-USERS="${THIS_DIR}/nixpkgs/users"
-
 _out() {
   echo "[${THIS_SCRIPT}] " "$@"
 }
