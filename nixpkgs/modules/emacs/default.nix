@@ -35,7 +35,7 @@ in
 
   programs.emacs = {
     enable = true;
-    package = pkgs.emacs30;
+    package = pkgs.emacs30; # IMPORTANT: Run doom build whenever upgrading major Emacs versions.
 
     extraPackages = (
       epkgs:
@@ -70,7 +70,8 @@ in
         rev = doomRev;
       };
 
-      onChange = "${pkgs.writeShellScript "doom-change" ''
+      onChange = ''
+        echo "Doom installation/upgrade detected! Syncing"
         export EMACSDIR="${emacsdir}"
         export DOOMDIR="${doomdir}"
         export DOOMLOCALDIR="${doomlocaldir}"
@@ -78,22 +79,23 @@ in
         if [ ! -d "$DOOMLOCALDIR" ]; then
           ${doombin} install --force --no-hooks
         else
-          ${doombin} --force sync -u --rebuild
+          ${doombin} sync
         fi
-      ''}";
+      '';
     };
 
     "${doomdir}" = {
       source = ./doom.d;
       recursive = true;
 
-      onChange = "${pkgs.writeShellScript "doom-config-change" ''
+      onChange = ''
+        echo "Doom config changes detected! Syncing" 
         export EMACSDIR="${emacsdir}"
         export DOOMDIR="${doomdir}"
         export DOOMLOCALDIR="${doomlocaldir}"
         export DOOMPROFILELOADFILE="${doomprofileloadfile}"
-        ${doombin} --force sync -u --rebuild
-      ''}";
+        ${doombin} sync
+      '';
     };
 
   };
