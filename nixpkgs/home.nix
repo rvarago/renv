@@ -66,7 +66,7 @@
 
     # Cloud.
     docker-compose
-    helm
+    kubernetes-helm
     kind
     kubectl
     kubectx
