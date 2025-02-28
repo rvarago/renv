@@ -50,6 +50,12 @@
         pager = "diff-so-fancy | less --tabs=4 -RFX";
       };
 
+      fetch = {
+        prune = true;
+        pruneTags = true;
+        all = true;
+      };
+
       commit.verbose = true;
 
       tag.sort = "version:refname";
