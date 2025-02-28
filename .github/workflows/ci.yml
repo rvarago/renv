@@ -58,6 +58,8 @@ jobs:
         shell: bash
         run: |
           . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+          cat /etc/shells
+          cat /etc/passwd
           grep 'bin/fish' /etc/shells
           grep 'bin/fish' /etc/passwd
           emacs --version
