@@ -187,9 +187,9 @@ _load_hm_vars() {
 }
 
 _set_fish_as_default() {
-  echo "/home/$USER/.nix-profile/bin/fish" | _as_sudo tee -a "/etc/shells"
+  echo "$HOME/.nix-profile/bin/fish" | _as_sudo tee -a "/etc/shells"
 
-  _as_sudo chsh -s "/home/$USER/.nix-profile/bin/fish" "$USER"
+  _as_sudo chsh -s "$HOME/.nix-profile/bin/fish" "$USER"
 }
 
 system:install() {
