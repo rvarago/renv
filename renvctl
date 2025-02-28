@@ -182,7 +182,7 @@ _nix_prune() {
 }
 
 _load_hm_vars() {
-  echo >>"/home/$USER/.profile" \
+  echo >>"$HOME/.profile" \
     ". $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 }
 
