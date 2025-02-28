@@ -27,6 +27,8 @@
   home.sessionVariables = {
     USER_FULL_NAME = settings.userFullName;
     USER_EMAIL = settings.userEmail;
+
+    NIX_PATH="nixpkgs=flake:nixpkgs"; # We don't use channels, so this is for backwards-compatibility with tools insisting on their presence.
   };
 
   home.packages = with pkgs; [
