@@ -77,11 +77,17 @@ _exec_on_yes() {
 }
 
 _home_manager_switch() {
+  local arch=$(uname -m)
+  local os=$(uname -s | tr '[:upper:]' '[:lower:]')
+  local system="${arch}-${os}"
+
   # --impure because we want it to read the NIXPKGS_ALLOW_UNFREE envvar, a better way would set it in nix.conf.
+  # NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 \
+  # NIXPKGS_ALLOW_BROKEN=1 \
   env \
     HOME_MANAGER_CONFIG="nixpkgs/home.nix" \
-    NIXPKGS_ALLOW_UNFREE=1 \
-    nix run nixpkgs#home-manager -- switch --impure --flake ./
+    NIXPKGS_ALLOW_UNFREE=1
+  nix run nixpkgs#home-manager -- switch --impure --flake ".#${USER}@${system}"
 }
 
 export -f _home_manager_switch
@@ -176,14 +182,14 @@ _nix_prune() {
 }
 
 _load_hm_vars() {
-  echo >>"/home/$USER/.profile" \
+  echo >>"$HOME/.profile" \
     ". $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh"
 }
 
 _set_fish_as_default() {
-  echo "/home/$USER/.nix-profile/bin/fish" | _as_sudo tee -a "/etc/shells"
+  echo "$HOME/.nix-profile/bin/fish" | _as_sudo tee -a "/etc/shells"
 
-  _as_sudo chsh -s "/home/$USER/.nix-profile/bin/fish" "$USER"
+  _as_sudo chsh -s "$HOME/.nix-profile/bin/fish" "$USER"
 }
 
 system:install() {

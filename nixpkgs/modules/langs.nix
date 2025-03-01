@@ -130,7 +130,6 @@
     scala-cli
 
     # Scheme.
-    racket
     guile
 
     # Shell.
@@ -143,7 +142,6 @@
     sqlint
 
     # Text.
-    grip
     nodePackages.unified-language-server
 
     # TLA+

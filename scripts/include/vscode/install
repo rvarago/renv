@@ -11,7 +11,14 @@ IN_EXTENSIONS_FILENAME="${IN_VSCODE_DIR}/extensions.txt"
 IN_SETTINGS_FILENAME="${IN_VSCODE_DIR}/settings.json"
 IN_KEYBINDINGS_FILENAME="${IN_VSCODE_DIR}/keybindings.json"
 
-OUT_CONFIG_DIR="${XDG_CONFIG_HOME}/Code"
+base_config_dir() {
+    unameOut="$(uname -s)"
+    case "${unameOut}" in
+    Linux*) echo "$HOME/.config" ;;
+    Darwin*) echo "$HOME/Library/Application Support" ;;
+    *) exit 69 ;;
+    esac
+}
 
 install_editor() {
     if ! command -v code; then
@@ -20,7 +27,7 @@ install_editor() {
         curl -L -o "${downloaded_filename}" 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
         sudo dpkg -i "${downloaded_filename}"
 
-        mkdir -p "${OUT_CONFIG_DIR}"
+        mkdir -p "$(base_config_dir)/Code"
     fi
 }
 
@@ -30,8 +37,10 @@ install_extensions() {
 }
 
 install_config() {
-    ln -sf "${IN_SETTINGS_FILENAME}" "${OUT_CONFIG_DIR}/User/"
-    ln -sf "${IN_KEYBINDINGS_FILENAME}" "${OUT_CONFIG_DIR}/User/"
+    local target_dir="$(base_config_dir)/Code/User/"
+
+    ln -sf "${IN_SETTINGS_FILENAME}" "${target_dir}"
+    ln -sf "${IN_KEYBINDINGS_FILENAME}" "${target_dir}"
 }
 
 main() {

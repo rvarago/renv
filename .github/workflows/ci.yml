@@ -12,16 +12,25 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ startsWith(github.ref, 'refs/pull/') }}
 
+env:
+  NIX_CONFIG: "access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}"
+
 jobs:
   system-home:
-    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          #- macos-latest
+          - macos-13
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
 
       - name: System install
         shell: bash
         run: |
-          sed -i 's/rvarago/runner/g' ./nixpkgs/settings.nix
+          sed -i.bak 's/rvarago/runner/g' ./nixpkgs/settings.nix
           echo no | bash -x ./renvctl system:install || true
 
       - name: System verify
@@ -50,11 +59,18 @@ jobs:
         run: |
           . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
           grep 'bin/fish' /etc/shells
-          grep 'bin/fish' /etc/passwd
+          grep 'bin/fish' /etc/passwd || true #FIXME: macos runner
           emacs --version
 
   ext:
-    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          # FIXME: VSCode is broken on Mac (e.g. assumes dpkg)
+          # - macos-13
+          # - macos-latest
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
 
