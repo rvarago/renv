@@ -45,14 +45,14 @@ jobs:
       - name: System update
         shell: bash
         run: |
-          bash -x ./renvctl system:sync
+          ./renvctl system:sync
 
       - name: Home sync
         shell: bash
         run: |
           . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 
-          ./renvctl home:sync
+          bash -x ./renvctl home:sync
 
       - name: Home verify
         shell: bash
