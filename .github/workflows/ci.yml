@@ -39,7 +39,7 @@ jobs:
           . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
           nix --version
           nix flake --version
-          nix-shell -p hello --run hello
+          nix shell nixpkgs#cowsay --command cowsay hello
           cat ./nixpkgs/modules/ephemeral.nix
 
       - name: System update
