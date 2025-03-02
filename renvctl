@@ -77,7 +77,7 @@ _exec_on_yes() {
 }
 
 _home_manager_switch() {
-  local arch=$(uname -m)
+  local arch=$(uname -m | sed 's/arm64/aarch64/')
   local os=$(uname -s | tr '[:upper:]' '[:lower:]')
   local system="${arch}-${os}"
 
