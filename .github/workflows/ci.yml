@@ -67,8 +67,7 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-          # FIXME: VSCode is broken on Mac (e.g. assumes dpkg)
-          # - macos-13
+          - macos-13
           # - macos-latest
     runs-on: ${{ matrix.os }}
     steps:
