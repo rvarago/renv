@@ -195,6 +195,9 @@ _set_fish_as_default() {
 system:install() {
   _home_ephemeral_customise
   _deb_install
+
+  mkdir -p "$HOME/.nix-defexpr/channels" # HACK: Silence the spurious "Nix search path entry does not exist" warning.
+
   _nix_install
 
   #shellcheck disable=SC1091
