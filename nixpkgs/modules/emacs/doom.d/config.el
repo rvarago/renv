@@ -254,7 +254,6 @@
 
 (after! esh-mode
   (set-eshell-alias!
-   "nr" "nix-shell -p $*"
    "nrepl" "nix repl $*"
    "nshell" "nix shell $*"
    "ndev" "nix develop $*"

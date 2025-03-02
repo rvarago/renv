@@ -30,15 +30,12 @@
       idris2w = "rlwrap idris2";
       sbclw = "rlwrap sbcl";
 
-      nr = "nix-shell --run fish -p";
-
       ei = "emacsclient -nw";
       gg = "ei --eval '(magit-status)'";
 
       nrepl = "nix repl";
-      nshell = "nix shell";
       ndev = "nix develop";
-      nbuild = "nix run";
+      nbuild = "nix build";
       nrun = "nix run";
     };
 
