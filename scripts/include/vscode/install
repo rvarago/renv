@@ -6,6 +6,8 @@ set -eu
 
 BASE_DIR="${PWD}"
 
+DOWNLOAD_DIR="/tmp/vscode-$(date +%s)"
+
 IN_VSCODE_DIR="${BASE_DIR}/scripts/include/vscode"
 IN_EXTENSIONS_FILENAME="${IN_VSCODE_DIR}/extensions.txt"
 IN_SETTINGS_FILENAME="${IN_VSCODE_DIR}/settings.json"
@@ -20,14 +22,43 @@ base_config_dir() {
     esac
 }
 
+install_editor_deb() {
+    local download_filename="${DOWNLOAD_DIR}/code.deb"
+
+    mkdir -p "${DOWNLOAD_DIR}"
+
+    curl -L -o "${download_filename}" 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
+    sudo dpkg -i "${download_filename}"
+
+    mkdir -p "$(base_config_dir)/Code"
+}
+
+install_editor_macos() {
+    local destination="/Applications/Visual Studio Code.app"
+
+    local download_filename="${DOWNLOAD_DIR}/code.zip"
+
+    mkdir -p "${DOWNLOAD_DIR}"
+
+    curl -L -o "${download_filename}" 'https://code.visualstudio.com/sha/download?build=stable&os=darwin-universal'
+    unzip -q "${download_filename}" -d "${DOWNLOAD_DIR}"
+
+    mv -f "${DOWNLOAD_DIR}/Visual Studio Code.app" "${destination}"
+
+    sudo ln -sf "${destination}/Contents/Resources/app/bin/code" "/usr/local/bin/code"
+
+    mkdir -p "$(base_config_dir)/Code"
+
+}
+
 install_editor() {
     if ! command -v code; then
-        local downloaded_filename="/tmp/vscode-$(date +%s).deb"
-
-        curl -L -o "${downloaded_filename}" 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
-        sudo dpkg -i "${downloaded_filename}"
-
-        mkdir -p "$(base_config_dir)/Code"
+        unameOut="$(uname -s)"
+        case "${unameOut}" in
+        Linux*) install_editor_deb ;;
+        Darwin*) install_editor_macos ;;
+        *) exit 69 ;;
+        esac
     fi
 }
 
