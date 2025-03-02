@@ -45,7 +45,7 @@ jobs:
       - name: System update
         shell: bash
         run: |
-          ./renvctl system:sync
+          bash -x ./renvctl system:sync
 
       - name: Home sync
         shell: bash
