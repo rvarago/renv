@@ -23,6 +23,7 @@ jobs:
           - ubuntu-latest
           - macos-latest
           - macos-13
+  
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -52,7 +53,7 @@ jobs:
         run: |
           . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 
-          bash -x ./renvctl home:sync
+          ./renvctl home:sync
 
       - name: Home verify
         shell: bash
@@ -67,8 +68,9 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-          - macos-13
           - macos-latest
+          - macos-13
+
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
