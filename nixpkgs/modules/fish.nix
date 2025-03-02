@@ -49,6 +49,35 @@
         pushd $temp_dir
         echo "switched to: $temp_dir"
       '';
+
+      nshell = ''
+        set -l prefixing true
+        set -l flakefied_args
+
+        for arg in $argv
+            if test "$arg" = "--"
+                set prefixing false
+            else
+                if test "$prefixing" = "true"
+                    set flakefied_args $flakefied_args nixpkgs#$arg
+                else
+                    set flakefied_args $flakefied_args $arg
+                end
+            end
+        end
+
+        nix shell $flakefied_args
+      '';
+
+      ninstall = ''
+        set -l flakefied_args
+
+        for arg in $argv
+          set flakefied_args $flakefied_args nixpkgs#$arg
+        end
+
+        nix profile install $flakefied_args
+      '';
     };
 
     plugins = [
