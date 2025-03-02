@@ -21,8 +21,9 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-          #- macos-latest
+          - macos-latest
           - macos-13
+  
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -67,8 +68,9 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
+          - macos-latest
           - macos-13
-          # - macos-latest
+
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
