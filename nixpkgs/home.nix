@@ -94,6 +94,15 @@ in
 
   fonts.fontconfig.enable = true;
 
+  programs.direnv = {
+    enable = true;
+
+    nix-direnv.enable = true;
+
+    enableBashIntegration = true;
+  };
+  services.lorri.enable = true;
+
   imports = [
     ./modules/emacs
     ./modules/neovim.nix
