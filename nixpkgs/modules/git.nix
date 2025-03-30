@@ -18,6 +18,9 @@
       ".idea"
       # direnv
       ".direnv"
+      ".envrc"
+      "compile_commands.json"
+      ".cache"
 
       # languages
       ".metals"
