@@ -32,8 +32,8 @@
     # lispPackages.quicklisp
 
     # Dhall
-    # dhall
-    # dhall-json
+    dhall
+    dhall-json
 
     # # Elm.
     # elmPackages.elm
