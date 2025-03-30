@@ -142,7 +142,7 @@
 
       primary = "!f() { git symbolic-ref --short refs/remotes/origin/HEAD | sed -e 's/origin\\///'; }; f";
       trim = "!f() { git for-each-ref --format '%(upstream:track) %(refname:lstrip=2)' refs/heads | awk '/^\\[gone\\]/{print $2}' | xargs -I{} git branch -D {}; }; f";
-      sync = "!f() { git fetch -p && git checkout $(git originprimary) && git merge --ff; }; f";
+      sync = "!f() { git fetch -p && git checkout $(git primary) && git merge --ff; }; f";
       asnew = "!f() { git sync && git trim; }; f }";
       start = "!f() { git fetch && git checkout -b $1 $(git primary); }; f";
       done = "!f() { git sync && git branch -D @{-1}; }; f";
