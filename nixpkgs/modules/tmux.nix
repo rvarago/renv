@@ -4,7 +4,7 @@
   programs.tmux = {
     enable = true;
 
-    prefix = "C-b";
+    prefix = "C-space";
     keyMode = "vi";
     customPaneNavigationAndResize = true;
 
