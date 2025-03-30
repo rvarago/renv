@@ -15,10 +15,10 @@
 
     # # C/C++.
     # ccls
-    clang-tools
-    cmake
+    # clang-tools
+    # cmake
     # conan
-    cmake-language-server
+    # cmake-language-server
 
     # Clojure.
     # clojure
@@ -101,11 +101,11 @@
     # python3Packages.ipython
     # python3Packages.isort
     # python3Packages.pip
-    pyright
+    # pyright
     # python3Packages.pyflakes
     # python3Packages.pylint
     # python3Packages.pytest
-    python3Packages.setuptools
+    # python3Packages.setuptools
 
     # OCaml.
     opam
