@@ -307,6 +307,26 @@
 ;; (global-set-key (kbd "C-<") 'xref-go-back)
 ;; (global-set-key (kbd "C->") 'xref-go-forward)
 
+;; DAP.
+(map! :map dap-mode-map
+      :prefix "C-x C-p C-d"
+      "t" #'dap-debug-edit-template
+      "d" #'dap-debug
+      "l" #'dap-debug-last
+      "b a" #'dap-breakpoint-add
+      "b d" #'dap-breakpoint-delete
+      "b k" #'dap-breakpoint-delete-all
+      "c" #'dap-continue
+      "n" #'dap-next
+      "i" #'dap-step-in
+      "o" #'dap-step-out
+      "e e" #'dap-eval
+      "e r" #'dap-eval-region
+      "e t" #'dap-eval-thing-at-point
+      "s d" #'dap-delete-session
+      "s k" #'dap-delete-all-sessions)
+
+
 ;; Alloy.
 (use-package! alloy-mode
   :defer t
