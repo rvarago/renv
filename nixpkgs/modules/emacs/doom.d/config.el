@@ -314,6 +314,82 @@
 
 
 ;; C/C++.
+(defun my/cmake-configure (&optional suffix)
+  "Configure the CMake project. Optionally use a suffix for the build directory (e.g., 'linux'). All env-vars with RV_LOCAL_ are forwarded as -D with the prefix removed."
+  (interactive "sEnter build suffix (e.g., linux, or leave blank): ")
+  (let* ((project-root (or (projectile-project-root) default-directory))
+         (build-name (if (string-empty-p suffix)
+                         "build"
+                       (concat "build_" suffix)))
+         (build-dir (concat project-root build-name))
+         (source-dir project-root)
+         (env-var-prefix "RV_LOCAL_")
+         (env-vars (cl-remove-if-not (lambda (var) (string-prefix-p env-var-prefix var))
+                                     process-environment))
+         (env-vars-keys (mapcar (lambda (env) (car (split-string env "="))) env-vars))
+         (extra-args (concat "-DCMAKE_EXPORT_COMPILE_COMMANDS=YES" " " (mapconcat
+                                                                        (lambda (var)
+                                                                          (let* ((env-value (getenv var))
+                                                                                 (cmake-var (string-remove-prefix env-var-prefix var)))
+                                                                            (concat "-D" cmake-var "=" env-value)))
+                                                                        env-vars-keys
+                                                                        " "))))
+    (if (file-exists-p (concat project-root "CMakeLists.txt"))
+        (progn
+          (make-directory (concat project-root build-dir) t)
+          (message "Configuring CMake in %s..." build-dir)
+          (compile (concat "cmake" " -B" build-dir " -S" source-dir " " extra-args)))
+      (message "No CMakeLists.txt found in the project root."))))
+
+
+(defun my/cmake-build (&optional suffix target)
+  "Build the CMake project. Accepts an optional SUFFIX for the build directory and an optional TARGET."
+  (interactive "sEnter build suffix (e.g., linux, or leave blank): \nsEnter target name (Leave blank for default target): ")
+  (let* ((project-root (or (projectile-project-root) default-directory))
+         (build-name (if (string-empty-p suffix)
+                         "build"
+                       (concat "build_" suffix)))
+         (build-dir (concat project-root build-name)))
+    (if (file-exists-p (concat project-root "CMakeLists.txt"))
+        (let ((build-command (if (string-empty-p target)
+                                 (concat "cmake --build " build-dir)
+                               (concat "cmake --build " build-dir " --target " target))))
+          (message "Building CMake project in %s..." build-dir)
+          (compile build-command))
+      (message "No CMakeLists.txt found in the project root."))))
+
+(defun my/cmake-test-run (&optional suffix test-name)
+  "Run ctest with an optional SUFFIX appended to the build name.
+If TEST-NAME is provided, use it. Otherwise, if a region is selected,
+use the region as the test name. If no TEST-NAME or region is provided,
+run all tests."
+  (interactive "sEnter build suffix (e.g., linux): \nsEnter optional test name (leave empty for all tests): ")
+  (let* ((project-root (or (projectile-project-root) default-directory))
+         (build-name (if (string-empty-p suffix)
+                         "build"
+                       (concat "build_" suffix)))
+         (build-dir (concat project-root build-name))
+         (test-to-run (cond
+                       ((not (string-empty-p test-name)) test-name)
+                       ((use-region-p) (buffer-substring-no-properties (region-beginning) (region-end)))
+                       (t nil)))
+         (test-filter (if (null test-to-run)
+                          "'.*'"
+                        (concat "\"" test-to-run "\"")))
+         (command (concat "ctest --test-dir " build-dir " -R " test-filter)))
+
+    (if (file-exists-p (concat project-root "CMakeLists.txt"))
+        (progn
+          (message "Running ctest...")
+          (compile command))
+      (message "No CMakeLists.txt found in the project root."))))
+
+(map! :map c-mode-base-map
+      :prefix "C-x C-p"
+      "c" #'my/cmake-configure
+      "b" #'my/cmake-build
+      "t" #'my/cmake-test-run)
+
 (use-package! flycheck-clang-tidy
   :defer t
   :after flycheck
