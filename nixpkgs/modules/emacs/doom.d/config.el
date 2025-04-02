@@ -314,35 +314,6 @@
 
 
 ;; C/C++.
-(use-package! cmake-mode
-  :defer t
-  :mode ("CMakeLists\\.txt\\'" "\\.cmake\\'")
-  :hook (cmake-mode . lsp-deferred))
-
-(use-package! cmake-ide
-  :defer t
-  :after (cmake-mode projectile)
-  :init (cmake-ide-setup)
-  :hook ((c-mode c++-mode) . my/cmake-ide-find-project)
-  :preface
-  (defun my/cmake-ide-find-project ()
-    "Finds the directory of the project for cmake-ide."
-    (if (not (null (projectile-project-root)))
-        (with-eval-after-load 'projectile
-          (setq cmake-ide-project-dir (projectile-project-root))
-          cmake-ide-build-dir (concat cmake-ide-project-dir "build")
-          cmake-ide-compile-command
-          (concat "cmake -B " cmake-ide-build-dir " && cmake --build " cmake-ide-build-dir))
-      (cmake-ide-load-db)))
-
-  (defun my/switch-to-compilation-window ()
-    "Switches to the *compilation* buffer after compilation."
-    (other-window 1))
-  :bind ([remap comment-region] . cmake-ide-compile)
-  (:map cmake-mode-map
-        ("C-c C-c C-c" . cmake-ide-compile))
-  :config (advice-add 'cmake-ide-compile :after #'my/switch-to-compilation-window))
-
 (use-package! flycheck-clang-tidy
   :defer t
   :after flycheck
