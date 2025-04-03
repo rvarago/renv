@@ -463,6 +463,14 @@ run all tests."
   (dockerfile-mode . (lambda () (setq flycheck-local-checkers '((lsp . ((next-checkers . (dockerfile-hadolint)))))))))
 
 
+;; Env.
+(after! envrc-mode
+  (map!
+   :prefix "C-c"
+   :map envrc-mode-map
+   "C-a" #'envrc-allow
+   "C-l" #'envrc-reload))
+
 ;; Go.
 (after! go-mode
   (map!
