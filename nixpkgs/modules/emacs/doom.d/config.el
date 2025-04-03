@@ -307,6 +307,34 @@
 ;; (global-set-key (kbd "C-<") 'xref-go-back)
 ;; (global-set-key (kbd "C->") 'xref-go-forward)
 
+;; Misc.
+(defun my/find-file-in-project (filenames)
+  "Return the project directory containing one of the FILENAMES or nil if none are found."
+  (let* ((project-root (projectile-project-root))
+         (current-dir default-directory)
+         (file-found nil))
+    (catch 'found
+      ;; 1. Check if any of the filenames exist in the project root.
+      (dolist (filename filenames)
+        (if (file-exists-p (expand-file-name filename project-root))
+            (throw 'found project-root)))
+
+      ;; 2. Traverse upwards from the current directory to the project root.
+      (let ((dir current-dir))
+        (while (and dir (not file-found))
+          (dolist (filename filenames)
+            (if (file-exists-p (expand-file-name filename dir))
+                (progn
+                  (setq file-found t)
+                  (throw 'found dir))))
+          ;; Move up one directory level
+          (setq dir (file-name-directory (directory-file-name dir)))))
+
+      ;; 3. If a file was found, return the corresponding directory.
+      (if file-found
+          (expand-file-name (car filenames) current-dir)
+        nil))))
+
 ;; DAP.
 (map! :map dap-mode-map
       :prefix "C-c C-c C-d"
@@ -332,18 +360,19 @@
   :defer t
   :mode "\\.als\\'")
 
+(defvar my/cmake-project-files '("CMakeLists.txt"))
 
 ;; C/C++.
 (defun my/cmake-configure (&optional suffix)
-  "Configure the CMake project. Optionally use a suffix for the build directory (e.g., 'linux'). All env-vars with RV_LOCAL_ are forwarded as -D with the prefix removed."
+  "Configure the CMake project. Optionally use a suffix for the build directory (e.g., 'linux'). All env-vars with RV_LOCAL_CMAKE_ are forwarded as -D with the prefix removed."
   (interactive "sEnter build suffix (e.g., linux, or leave blank): ")
-  (let* ((project-root (or (projectile-project-root) default-directory))
+  (let* ((project-root (my/find-file-in-project my/cmake-project-files))
          (build-name (if (string-empty-p suffix)
                          "build"
                        (concat "build_" suffix)))
          (build-dir (concat project-root build-name))
          (source-dir project-root)
-         (env-var-prefix "RV_LOCAL_")
+         (env-var-prefix "RV_LOCAL_CMAKE_")
          (env-vars (cl-remove-if-not (lambda (var) (string-prefix-p env-var-prefix var))
                                      process-environment))
          (env-vars-keys (mapcar (lambda (env) (car (split-string env "="))) env-vars))
@@ -365,7 +394,7 @@
 (defun my/cmake-build (&optional suffix target)
   "Build the CMake project. Accepts an optional SUFFIX for the build directory and an optional TARGET."
   (interactive "sEnter build suffix (e.g., linux, or leave blank): \nsEnter target name (Leave blank for default target): ")
-  (let* ((project-root (or (projectile-project-root) default-directory))
+  (let* ((project-root (my/find-file-in-project my/cmake-project-files))
          (build-name (if (string-empty-p suffix)
                          "build"
                        (concat "build_" suffix)))
@@ -384,7 +413,7 @@ If TEST-NAME is provided, use it. Otherwise, if a region is selected,
 use the region as the test name. If no TEST-NAME or region is provided,
 run all tests."
   (interactive "sEnter build suffix (e.g., linux): \nsEnter optional test name (leave empty for all tests): ")
-  (let* ((project-root (or (projectile-project-root) default-directory))
+  (let* ((project-root (my/find-file-in-project my/cmake-project-files))
          (build-name (if (string-empty-p suffix)
                          "build"
                        (concat "build_" suffix)))
