@@ -309,7 +309,7 @@
 
 ;; DAP.
 (map! :map dap-mode-map
-      :prefix "C-x C-p C-d"
+      :prefix "C-c C-c C-d"
       "t" #'dap-debug-edit-template
       "d" #'dap-debug
       "l" #'dap-debug-last
@@ -405,10 +405,10 @@ run all tests."
       (message "No CMakeLists.txt found in the project root."))))
 
 (map! :map c-mode-base-map
-      :prefix "C-x C-p"
-      "c" #'my/cmake-configure
-      "b" #'my/cmake-build
-      "t" #'my/cmake-test-run)
+      :prefix "C-c C-c"
+      "C-c" #'my/cmake-configure
+      "C-b" #'my/cmake-build
+      "C-t" #'my/cmake-test-run)
 
 (use-package! flycheck-clang-tidy
   :defer t
