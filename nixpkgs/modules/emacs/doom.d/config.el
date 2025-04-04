@@ -337,7 +337,7 @@
 
 ;; DAP.
 (map! :map dap-mode-map
-      :prefix "C-c C-c C-d"
+      :prefix "C-c C-d"
       "t" #'dap-debug-edit-template
       "d" #'dap-debug
       "l" #'dap-debug-last
