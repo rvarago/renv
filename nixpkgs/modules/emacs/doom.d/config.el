@@ -721,6 +721,16 @@ run all tests."
               ("C-c c u b" . sqlup-capitalize-keyworks-in-buffer)))
 
 
+;; Swift
+(after! swift-mode
+  (map!
+   :prefix "C-c C-c"
+   :map swift-mode-map
+   "C-r" #'swift-mode:run-repl
+   "C-s" #'swift-mode:send-region
+   "C-b" #'swift-mode:send-buffer))
+
+
 ;; Systemd.
 (use-package! systemd
   :defer t)
