@@ -486,19 +486,7 @@ run all tests."
    "C-s" #'gorepl-eval-region
    "C-l" #'gorepl-eval-line
    :map gorepl-mode-map
-   "C-a" #'gorepl-import))(after! go-mode
-  (map! :map go-mode-map :prefix "C-c C-c"
-        "C-a" #'+go/test-all
-        "C-t" #'+go/test-single
-        "C-r" #'+go/test-rerun
-        "t f" #'+go/test-file
-        "t n" #'+go/test-nested
-        "C-b" #'+go/bench-single
-        "C-i" #'go-goto-imports
-        "C-s" #'gorepl-eval-region
-        "C-l" #'gorepl-eval-line)
-  (map!   :map gorepl-mode-map
-          "C-a" #'gorepl-import))
+   "C-a" #'gorepl-import))
 
 
 (use-package! flycheck-golangci-lint
