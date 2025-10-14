@@ -148,11 +148,6 @@
 (use-package! whole-line-or-region
   :init (whole-line-or-region-global-mode))
 
-(use-package! rainbow-delimiters
-  :defer t
-  :hook
-  (prog-mode . rainbow-delimiters-mode))
-
 (map! "C-c C-s" #'replace-string)
 (map! "C-c C-r" #'query-replace-regexp)
 
