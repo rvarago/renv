@@ -5,6 +5,8 @@
     enable = true;
 
     shellInit = ''
+      fenv source "$HOME/.profile"
+
       set fish_greeting
     '';
 
