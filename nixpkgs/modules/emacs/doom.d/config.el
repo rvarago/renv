@@ -453,8 +453,16 @@ run all tests."
 
 ;; Copilot.
 (use-package! copilot
+  :config
+  ;; Disable automatic completions
+  (setq copilot-idle-delay nil) ;; ensures no auto-trigger
+  (setq copilot-disable-predicates '(t))
+  (setq copilot-indent-offset-warning-disable t)
   :hook (prog-mode . copilot-mode)
-  :bind (:map copilot-completion-map
+  :bind (
+         :map prog-mode-map
+              ("C-c C-." . 'copilot-complete)
+         :map copilot-completion-map
               ("<tab>" . 'copilot-accept-completion)
               ("TAB" . 'copilot-accept-completion)
               ("C-TAB" . 'copilot-accept-completion-by-word)
