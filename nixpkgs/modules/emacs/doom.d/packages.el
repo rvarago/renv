@@ -9,6 +9,10 @@
 (package! flycheck-clang-tidy :pin "f9ae7306bd6ca08b689b36c1e8f6f6b91d61db5f")
 (package! google-c-style :pin "8c4da230fc15e01e0ba3545c8a6ff55bc3da4649")
 
+;; Copilot.
+(package! copilot
+  :recipe (:host github :repo "copilot-emacs/copilot.el" :files ("*.el")) :pin "6a2ad80489b8a0d021df95293eb7ac370aea140b")
+
 ;; Edit.
 (package! move-text :pin "cbcd0e5a316f26a8e8ef67ea0e633a43b045aa1e")
 (package! multiple-cursors :pin "6956e8e12ee191d7c80d042ae8ff495286fcbe38")

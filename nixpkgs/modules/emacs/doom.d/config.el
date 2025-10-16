@@ -451,6 +451,15 @@ run all tests."
          (c-mode-common . google-make-newline-indent)))
 
 
+;; Copilot.
+(use-package! copilot
+  :hook (prog-mode . copilot-mode)
+  :bind (:map copilot-completion-map
+              ("<tab>" . 'copilot-accept-completion)
+              ("TAB" . 'copilot-accept-completion)
+              ("C-TAB" . 'copilot-accept-completion-by-word)
+              ("C-<tab>" . 'copilot-accept-completion-by-word)))
+
 ;; Docker
 (use-package! dockerfile-mode
   :defer t
