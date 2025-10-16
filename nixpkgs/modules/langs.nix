@@ -123,6 +123,7 @@
     cargo-watch
     sqlx-cli
     cargo-audit
+    taplo-lsp
 
     # Scala.
     # ammonite
