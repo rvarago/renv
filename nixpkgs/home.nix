@@ -84,7 +84,7 @@ in
     #aspellDicts.en-science
     aspellDicts.pt_BR
     languagetool
-    #texlive.combined.scheme-small
+    texlive.combined.scheme-small
 
     # Fonts.
     nerd-fonts.iosevka
