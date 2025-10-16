@@ -13,6 +13,8 @@
 (package! copilot
   :recipe (:host github :repo "copilot-emacs/copilot.el" :files ("*.el")) :pin "6a2ad80489b8a0d021df95293eb7ac370aea140b")
 
+(package! copilot-chat :recipe (:host github :repo "chep/copilot-chat.el") :pin "24719dbc3f68e8c467b678edda48b7cf64b30360")
+
 ;; Edit.
 (package! move-text :pin "cbcd0e5a316f26a8e8ef67ea0e633a43b045aa1e")
 (package! multiple-cursors :pin "6956e8e12ee191d7c80d042ae8ff495286fcbe38")

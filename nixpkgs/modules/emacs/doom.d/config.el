@@ -468,6 +468,33 @@ run all tests."
               ("C-TAB" . 'copilot-accept-completion-by-word)
               ("C-<tab>" . 'copilot-accept-completion-by-word)))
 
+(use-package! copilot-chat
+  :after copilot
+  :config
+  ;; Set Claude Sonnet 4.5 as the model
+  ;; (setq copilot-chat-backend 'anthropic)
+  ;; (setq copilot-chat-anthropic-model "claude-sonnet-4-5-20250929")
+
+  ;; Optional: Set Anthropic API key (or use environment variable ANTHROPIC_API_KEY)
+  ;; (setq copilot-chat-anthropic-api-key "your-api-key-here")
+
+  (map! (:prefix ("C-c C-a")
+         :desc "Copilot Chat" "c" #'copilot-chat-display
+         :desc "Copilot Chat Explain" "e" #'copilot-chat-explain
+         :desc "Copilot Chat Review" "r" #'copilot-chat-review
+         :desc "Copilot Chat Doc" "d" #'copilot-chat-doc
+         :desc "Copilot Chat Fix" "f" #'copilot-chat-fix
+         :desc "Copilot Chat Optimize" "o" #'copilot-chat-optimize
+         :desc "Copilot Chat Test" "t" #'copilot-chat-test
+         :desc "Copilot Chat Custom Prompt" "p" #'copilot-chat-custom-prompt-selection))
+
+  ;; Configure chat window behavior
+  (setq copilot-chat-window-config
+        '((display-buffer-in-side-window)
+          (side . right)
+          (window-width . 0.5))))
+
+
 ;; Docker
 (use-package! dockerfile-mode
   :defer t
