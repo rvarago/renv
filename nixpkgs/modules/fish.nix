@@ -24,9 +24,9 @@
 
     shellAliases = {
       g = "git";
-      cdp = "cd $(git rev-parse --show-toplevel)";
+      gcd = "cd $(git rev-parse --show-toplevel)";
 
-      # t = "tmux";
+      t = "tmux";
 
       clojurew = "rlwrap clojure";
       idris2w = "rlwrap idris2";
@@ -39,6 +39,9 @@
       ndev = "nix develop";
       nbuild = "nix build";
       nrun = "nix run";
+
+      print_by_line = "tr ' ' '\n' | sort -u";
+      ppath = "echo $PATH | print_by_line";
     };
 
     functions = {
@@ -46,7 +49,11 @@
 
       h2d = "echo \"obase=10; ibase=16; $argv\" | bc";
 
-      t = ''
+      mkd = ''
+        mkdir -p $argv && cd $argv
+      '';
+
+      mkt = ''
         set temp_dir (mktemp -d /tmp/$argv-XXXXXX)
         pushd $temp_dir
         echo "switched to: $temp_dir"
