@@ -94,8 +94,8 @@
       cm = "commit -m";
       ca = "commit --amend";
       cam = "commit --amend -m";
-      cad = "commit --amend --no-edit";
-      cadn = "commit --amend --no-edit --date now";
+      ce = "commit --amend --no-edit";
+      cen = "commit --amend --no-edit --date now";
       cf = "commit --fixup";
 
       m = "merge";
@@ -149,7 +149,7 @@
       asnew = "!f() { git sync && git trim; }; f }";
       start = "!f() { git fetch && git checkout -b $1 $(git primary); }; f";
       done = "!f() { git sync && git branch -D @{-1}; }; f";
-      ghreview = "!f() { git fetch && git checkout origin/$1; }; f";
+      review = "!f() { git fetch origin $1 && git checkout origin/$1; }; f";
     };
   };
 
