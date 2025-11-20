@@ -5,7 +5,7 @@
     enable = true;
 
     shellInit = ''
-      fenv source "$HOME/.profile"
+      bass source "$HOME/.profile"
 
       set fish_greeting
     '';
