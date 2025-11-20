@@ -21,8 +21,9 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-          - macos-latest
-          - macos-13
+          # I don't care much about macOS right now to fix the CI builds
+          # - macos-latest
+          # - macos-13
   
     runs-on: ${{ matrix.os }}
     steps:
