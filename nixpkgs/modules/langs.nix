@@ -1,9 +1,12 @@
 { pkgs, ... }:
 
+let
+  jdk = pkgs.jdk25;
+in
 {
 
   home.sessionVariables = {
-    JAVA_HOME = "${pkgs.openjdk}/lib/openjdk";
+    JAVA_HOME = "${jdk}/lib/openjdk";
   };
 
   home.packages = with pkgs; [
@@ -61,7 +64,8 @@
     haskellPackages.hoogle
     haskellPackages.hpack
     haskellPackages.implicit-hie
-    haskellPackages.retrie
+    # Broken: error: Package ‘retrie-1.2.3’ in /nix/store/hhyjq4dr4w4dwssm8vzq4cfjzxixhanp-source/pkgs/development/haskell-modules/hackage-packages.nix:574352 is marked as broken, refusing to evaluate.
+    # haskellPackages.retrie
     haskellPackages.stack
 
     # # Idris.
@@ -69,7 +73,7 @@
 
     # Java.
     gradle
-    openjdk
+    jdk
     maven
 
     # JS/TS.
@@ -123,7 +127,7 @@
     cargo-watch
     sqlx-cli
     cargo-audit
-    taplo-lsp
+    taplo
 
     # Scala.
     # ammonite
@@ -141,9 +145,6 @@
     sqls
     sqlfluff
     sqlint
-
-    # Text.
-    nodePackages.unified-language-server
 
     # TLA+
     # tlaps
