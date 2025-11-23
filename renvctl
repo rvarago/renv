@@ -165,7 +165,7 @@ _deb_upgrade() {
 
 _nix_upgrade() {
   _log "Updating nix"
-  sudo -i nix upgrade-nix
+  sudo determinate-nixd upgrade # sudo -i nix upgrade-nix
   nix flake update
 }
 
