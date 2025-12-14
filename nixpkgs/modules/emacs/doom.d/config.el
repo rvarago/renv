@@ -351,9 +351,9 @@
 
 
 ;; Alloy.
-(use-package! alloy-mode
-  :defer t
-  :mode "\\.als\\'")
+;; (use-package! alloy-mode
+;;   :defer t
+;;   :mode "\\.als\\'")
 
 
 ;; Bitbake.
