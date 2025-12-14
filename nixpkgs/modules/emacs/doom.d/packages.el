@@ -9,11 +9,26 @@
 (package! flycheck-clang-tidy :pin "f9ae7306bd6ca08b689b36c1e8f6f6b91d61db5f")
 (package! google-c-style :pin "8c4da230fc15e01e0ba3545c8a6ff55bc3da4649")
 
-;; Copilot.
+;; AI.
 (package! copilot
   :recipe (:host github :repo "copilot-emacs/copilot.el" :files ("*.el")) :pin "6a2ad80489b8a0d021df95293eb7ac370aea140b")
 
 (package! copilot-chat :recipe (:host github :repo "chep/copilot-chat.el") :pin "24719dbc3f68e8c467b678edda48b7cf64b30360")
+
+(package! shell-maker
+  :recipe (:host github :repo "xenodium/shell-maker" :files ("*.el")) :pin "63f178f925b535668eb68257016a01dca9d1cf30")
+
+(package! chatgpt-shell
+  :recipe (:host github :repo "xenodium/chatgpt-shell" :files ("*.el")) :pin "d9e49c327f06c8b75ac4d89c95172a11e3c08020")
+
+(package! acp
+  :recipe (:host github :repo "xenodium/acp.el" :files ("*.el")) :pin "9caa610d8d56b1001c6a5d17bddb508f1734f5b6")
+
+(package! agent-shell
+  :recipe (:host github :repo "xenodium/agent-shell" :files ("*.el")) :pin "da0f491e6af38b839b7b592e6a8754ece010abd1")
+
+(package! gptel-agent
+  :recipe (:host github :repo "karthink/gptel-agent" :files ("*.el")) :pin "99a8b940271fbe68cdfb7c2329d090dc4ef04b99")
 
 ;; Edit.
 (package! move-text :pin "cbcd0e5a316f26a8e8ef67ea0e633a43b045aa1e")

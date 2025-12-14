@@ -65,6 +65,8 @@ in
     protobuf
     wireshark
     patchelf
+    github-copilot-cli
+    gemini-cli
 
     # Cloud.
     docker-compose

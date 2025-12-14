@@ -105,6 +105,7 @@
        ;;tmux              ; an API for interacting with tmux
        tree-sitter
        ;;upload            ; map local to remote projects via ssh/ftp
+       llm
 
        :os
        (:if IS-MAC macos)  ; improve compatibility with macOS

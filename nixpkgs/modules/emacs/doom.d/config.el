@@ -451,16 +451,19 @@ run all tests."
          (c-mode-common . google-make-newline-indent)))
 
 
-;; Copilot.
+;; AI.
 (use-package! copilot
   :config
   ;; Disable automatic completions
   (setq copilot-idle-delay nil) ;; ensures no auto-trigger
   (setq copilot-disable-predicates '(t))
   (setq copilot-indent-offset-warning-disable t)
-  :hook (prog-mode . copilot-mode)
+  :hook ((prog-mode . copilot-mode)
+         (git-commit-mode . copilot-mode))
   :bind (
          :map prog-mode-map
+              ("C-c C-." . 'copilot-complete)
+         :map git-commit-mode-map
               ("C-c C-." . 'copilot-complete)
          :map copilot-completion-map
               ("<tab>" . 'copilot-accept-completion)
@@ -479,20 +482,47 @@ run all tests."
   ;; (setq copilot-chat-anthropic-api-key "your-api-key-here")
 
   (map! (:prefix ("C-c C-a")
-         :desc "Copilot Chat" "c" #'copilot-chat-display
-         :desc "Copilot Chat Explain" "e" #'copilot-chat-explain
-         :desc "Copilot Chat Review" "r" #'copilot-chat-review
-         :desc "Copilot Chat Doc" "d" #'copilot-chat-doc
-         :desc "Copilot Chat Fix" "f" #'copilot-chat-fix
-         :desc "Copilot Chat Optimize" "o" #'copilot-chat-optimize
-         :desc "Copilot Chat Test" "t" #'copilot-chat-test
-         :desc "Copilot Chat Custom Prompt" "p" #'copilot-chat-custom-prompt-selection))
+         :desc "Copilot Chat" "C-a" #'copilot-chat-display
+         :desc "Copilot Chat Send" "C-c" #'copilot-chat-prompt-send
+         :desc "Copilot Chat Explain" "C-e" #'copilot-chat-explain
+         :desc "Copilot Chat Review" "C-r" #'copilot-chat-review
+         :desc "Copilot Chat Doc" "C-d" #'copilot-chat-doc
+         :desc "Copilot Chat Fix" "C-f" #'copilot-chat-fix
+         :desc "Copilot Chat Optimize" "C-o" #'copilot-chat-optimize
+         :desc "Copilot Chat Test" "C-t" #'copilot-chat-test
+         :desc "Copilot Chat Commit" "C-m" #'copilot-chat-insert-commit-message
+         :desc "Copilot Chat Custom Prompt" "C-p" #'copilot-chat-custom-prompt-selection))
 
   ;; Configure chat window behavior
   (setq copilot-chat-window-config
         '((display-buffer-in-side-window)
           (side . right)
           (window-width . 0.5))))
+
+
+(use-package! chatgpt-shell
+  :commands (chatgpt-shell chatgpt-shell-describe-code chatgpt-shell-quick-insert))
+
+(use-package! agent-shell
+  :bind ("C-c C-g C-g" . agent-shell)
+  :config
+  (map! (:prefix ("C-c C-g")
+         "C-c" #'agent-shell-send-current-file
+         "C-f" #'agent-shell-send-file
+         "C-k" #'agent-shell-clear-buffer))
+  :commands (agent-shell))
+
+(use-package! gptel
+  :defer t
+  :config
+  (setq gptel-model 'claude-3.7-sonnet
+        gptel-backend (gptel-make-gh-copilot "Copilot"))
+  :bind (:map gptel-mode-map
+              ("C-c C-a C-a" . gptel-send)))
+
+
+(use-package! gptel-agent
+  :config (gptel-agent-update))
 
 
 ;; Docker
