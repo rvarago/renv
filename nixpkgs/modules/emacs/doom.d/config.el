@@ -355,6 +355,18 @@
   :defer t
   :mode "\\.als\\'")
 
+
+;; Bitbake.
+(use-package! bitbake-el
+  :defer t
+  :mode ("\\.\\(bb\\|bbappend\\|bbclass\\|conf\\)\\'" . bitbake-mode)
+  :hook (bitbake-mode . copilot-mode)
+  :bind (:map bitbake-minor-mode-map ("C-c C-." . 'copilot-complete))
+  :config
+  (setq bitbake-enable-multi-mode t
+        bitbake-multi-mode-engine 'mmm))
+
+
 (defvar my/cmake-project-files '("CMakeLists.txt"))
 
 ;; C/C++.

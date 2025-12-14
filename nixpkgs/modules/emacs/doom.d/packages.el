@@ -5,6 +5,10 @@
 ;;(package! alloy-mode
 ;;    :recipe (:host github :repo "dwwmmn/alloy-mode") :pin "0d05bdd10c77ec04c3d61eccf67e68c08284951f")
 
+;; Bitbake.
+(package! bitbake-el
+  :recipe (:host github :repo "canatella/bitbake-el") :pin "8285f46fe19cb99fe5ed42d38de0fe5c51c98fb0")
+
 ;; C/C++.
 (package! flycheck-clang-tidy :pin "f9ae7306bd6ca08b689b36c1e8f6f6b91d61db5f")
 (package! google-c-style :pin "8c4da230fc15e01e0ba3545c8a6ff55bc3da4649")
@@ -33,6 +37,7 @@
 ;; Edit.
 (package! move-text :pin "cbcd0e5a316f26a8e8ef67ea0e633a43b045aa1e")
 (package! multiple-cursors :pin "6956e8e12ee191d7c80d042ae8ff495286fcbe38")
+(package! mmm-mode :pin "b1f5c7dbdc405e6e10d9ddd99a43a6b2ad61b176")
 (package! whole-line-or-region :pin "f7c9b25f8c932cff8239cde4a76e48135bdfa7e6")
 
 ;; VCS.
