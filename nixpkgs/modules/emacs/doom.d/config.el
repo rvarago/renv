@@ -555,22 +555,33 @@ run all tests."
    "C-l" #'envrc-reload))
 
 ;; Go.
-(after! go-mode
-  (map!
-   :prefix "C-c C-c"
-   :map go-mode-map
-   "C-a" #'+go/test-all
-   "C-t" #'+go/test-single
-   "C-r" #'+go/test-rerun
-   "t f" #'+go/test-file
-   "t n" #'+go/test-nested
-   "C-b" #'+go/bench-single
-   "C-i" #'go-goto-imports
-   "C-s" #'gorepl-eval-region
-   "C-l" #'gorepl-eval-line
-   :map gorepl-mode-map
-   "C-a" #'gorepl-import))
+(after! go
+  (map! :map go-mode-map
+        :prefix "C-c C-c"
+        "C-a" #'+go/test-all
+        "C-t" #'+go/test-single
+        "C-r" #'+go/test-rerun
+        "t f" #'+go/test-file
+        "t n" #'+go/test-nested
+        "C-b" #'+go/bench-single
+        "C-i" #'go-goto-imports
+        "C-s" #'gorepl-eval-region
+        "C-l" #'gorepl-eval-line)
+  (map! :map gorepl-mode-map
+        :prefix "C-c C-c"
+        "C-a" #'gorepl-import))
 
+(use-package! go-fill-struct
+  :defer t
+  :after go-mode)
+
+(use-package! go-impl
+  :defer t
+  :after go-mode)
+
+(use-package! go-playground
+  :defer t
+  :after go-mode)
 
 (use-package! flycheck-golangci-lint
   :defer t

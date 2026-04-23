@@ -45,14 +45,26 @@ in
     # elmPackages.elm-test
 
     # Go.
-    delve
+    ginkgo
     go
-    # golangci-lint
-    gopls
+    godef
+    golangci-lint
+    gomodifytags
     gopkgs
+    gopls
     gore
     gotests
     gotools
+    reftools
+    impl
+    delve
+
+    # Fix conflicting name with Ruby's bundle.
+    # (gotools.overrideAttrs (old: {
+    #   postInstall = (old.postInstall or "") + ''
+    #     rm -f $out/bin/bundle
+    #   '';
+    # }))
     go-outline
 
     # Haskell.

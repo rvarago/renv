@@ -34,6 +34,16 @@
 (package! gptel-agent
   :recipe (:host github :repo "karthink/gptel-agent" :files ("*.el")) :pin "99a8b940271fbe68cdfb7c2329d090dc4ef04b99")
 
+;; Go.
+(package! go-fill-struct
+  :recipe (:host github :repo "s-kostyaev/go-fill-struct") :pin "9e2e4be5af716ecadba809e73ddc95d4c772b2d9")
+
+(package! go-fill-struct
+  :recipe (:repo "emacsorphanage/go-impl") :pin "1eebba6ccd02d11a5a82ad4540a8d562797bc3b3")
+
+(package! go-playground
+  :recipe (:repo "grafov/go-playground") :pin "5726251414d3d7cc05fd54566ee9149808501574")
+
 ;; Edit.
 (package! move-text :pin "cbcd0e5a316f26a8e8ef67ea0e633a43b045aa1e")
 (package! multiple-cursors :pin "6956e8e12ee191d7c80d042ae8ff495286fcbe38")
