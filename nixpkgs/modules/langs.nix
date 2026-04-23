@@ -90,10 +90,12 @@ in
 
     # JS/TS.
     nodejs
-    # nodePackages.eslint
-    # nodePackages.prettier
+    nodePackages.eslint
+    nodePackages.prettier
     nodePackages.typescript
+    tsx
     yarn
+    deno
 
     # # Kotlin.
     # kotlin

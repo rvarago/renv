@@ -77,4 +77,7 @@
     }
   ],
   "workbench.colorTheme": "Zenburn",
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
 }
