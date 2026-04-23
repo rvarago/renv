@@ -80,4 +80,5 @@
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
+  "python.defaultInterpreterPath": "/home/rvarago/.nix-profile/bin/python",
 }
