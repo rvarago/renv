@@ -529,7 +529,8 @@ run all tests."
 (use-package! gptel
   :defer t
   :config
-  (setq gptel-model 'claude-3.7-sonnet
+  (setq
+   ;; gptel-model 'claude-3.7-sonnet
         gptel-backend (gptel-make-gh-copilot "Copilot"))
   :bind (:map gptel-mode-map
               ("C-c C-a C-a" . gptel-send)))
