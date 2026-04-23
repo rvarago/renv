@@ -831,3 +831,6 @@ run all tests."
   :config (setq nxml-child-indent 2
                 nxml-attribute-indent 4
                 nxml-slash-auto-complete-flag t))
+
+
+;; (add-to-list 'treesit-extra-load-path "/nix/store/8qbpw720hbrcnc35jdgkc05pnilyhp81-emacs-tree-sitter-grammars/langs/bin/")
