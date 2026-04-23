@@ -1,8 +1,8 @@
 { pkgs, config, ... }:
 
 let
-  emacsOverlayRev = "502293ae094f7ecd604500ffb19ad35bd429311b";
-  doomRev = "ef9e8d892556595fcdfd723d145c29593a67c50d";
+  emacsOverlayRev = "568d47313336d3a10bd3e27aad32c399f0c8cde6";
+  doomRev = "57818a6da90fbef39ff80d62fab2cd319496c3b9";
 
   emacs-overlay = import (
     builtins.fetchTarball {
@@ -23,6 +23,21 @@ in
 
   home.packages = with pkgs; [
     python3 # for Treemacs
+    # tree-sitter
+    # (tree-sitter-grammars.with-grammars (grammars: with grammars; [
+    #   tree-sitter-typescript
+    #   tree-sitter-tsx
+    #   tree-sitter-javascript
+    #   tree-sitter-python
+    #   tree-sitter-rust
+    #   tree-sitter-go
+    #   tree-sitter-nix
+    #   tree-sitter-bash
+    #   tree-sitter-json
+    #   tree-sitter-yaml
+    #   tree-sitter-html
+    #   tree-sitter-css
+    # ]))
   ];
 
   services.emacs = {
@@ -42,6 +57,10 @@ in
         pdf-tools
         nerd-icons
         vterm
+        treesit-grammars.with-all-grammars
+        # tsc
+        # tree-sitter-langs
+        # tree-sitter
       ])
     );
   };
@@ -60,6 +79,7 @@ in
     DOOMDIR = "${doomdir}";
     DOOMLOCALDIR = "${doomlocaldir}";
     DOOMPROFILELOADFILE = "${doomprofileloadfile}";
+    # TREE_SITTER_LANGUAGE_DIR = "${pkgs.tree-sitter-grammars.with-grammars (g: with g; [tree-sitter-typescript tree-sitter-tsx tree-sitter-javascript tree-sitter-python tree-sitter-rust tree-sitter-go tree-sitter-nix tree-sitter-bash tree-sitter-json tree-sitter-yaml tree-sitter-html tree-sitter-css])}/lib";
   };
 
   home.file = {
