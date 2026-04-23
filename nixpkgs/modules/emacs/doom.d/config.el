@@ -302,6 +302,8 @@
 ;; (global-set-key (kbd "C-<") 'xref-go-back)
 ;; (global-set-key (kbd "C->") 'xref-go-forward)
 
+(map! "C-c c !" 'kill-compilation)
+
 ;; Misc.
 (defun my/find-file-in-project (filenames)
   "Return the project directory containing one of the FILENAMES or nil if none are found."
