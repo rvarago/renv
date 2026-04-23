@@ -247,7 +247,7 @@
 
 ;; ================= SHELL =================
 
-(after! esh-mode
+(after! esh
   (set-eshell-alias!
    "nrepl" "nix repl $*"
    "nshell" "nix shell $*"
@@ -545,7 +545,7 @@ run all tests."
 
 
 ;; Env.
-(after! envrc-mode
+(after! envrc
   (map!
    :prefix "C-c"
    :map envrc-mode-map
@@ -803,7 +803,7 @@ run all tests."
 
 
 ;; Swift
-(after! swift-mode
+(after! swift
   (map!
    :prefix "C-c C-c"
    :map swift-mode-map
