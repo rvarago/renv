@@ -13,6 +13,7 @@ in
     # # Agda.
     # (agda.withPackages (p: [ p.standard-library ]))
 
+    typst
     # # Alloy.
     # alloy6
 
