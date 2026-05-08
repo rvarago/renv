@@ -220,6 +220,49 @@
 
 ;; =================== VCS ===================
 
+(after! magit
+  (defvar my/magit-project "PROJ")
+
+  (defvar my/magit-branch-categories
+    '("feature"
+      "bugfix"
+      "chore"
+      "docs"
+      "refactor"
+      "test"))
+
+  (defun my/magit--slugify (s)
+    "Convert S to a lowercase slug."
+    (let* ((s (downcase (string-trim s)))
+           (s (replace-regexp-in-string "[[:space:]]+" "-" s))
+           (s (replace-regexp-in-string "[^a-z0-9_-]" "" s)))
+      s))
+
+  (defun my/magit-start-branch ()
+    "Create and switch to a branch with smarts."
+    (interactive)
+    (let* ((category
+            (completing-read
+             "Category: "
+             my/magit-branch-categories
+             nil
+             t))
+           (number (read-string "Ticket number: "))
+           (description (read-string "Description: "))
+           (branch
+            (format "%s/%s-%s/%s"
+                    category
+                    my/magit-project
+                    number
+                    (my/magit--slugify description))))
+
+      (magit-call-git "checkout" "-b" branch)
+      (magit-refresh)
+      (message "Started branch: %s" branch)))
+
+  (transient-append-suffix 'magit-branch "b"
+    '("A" "My start branch" my/magit-start-branch)))
+
 (use-package! magit
   :defer t
   :bind
