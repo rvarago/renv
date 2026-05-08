@@ -38,7 +38,7 @@
 (package! go-fill-struct
   :recipe (:host github :repo "s-kostyaev/go-fill-struct") :pin "9e2e4be5af716ecadba809e73ddc95d4c772b2d9")
 
-(package! go-fill-struct
+(package! go-impl
   :recipe (:repo "emacsorphanage/go-impl") :pin "1eebba6ccd02d11a5a82ad4540a8d562797bc3b3")
 
 (package! go-playground
