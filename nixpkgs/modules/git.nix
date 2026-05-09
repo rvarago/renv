@@ -136,6 +136,7 @@
         done = "!f() { git sync && git branch -D @{-1}; }; f";
         review = "!f() { git fetch origin $1 && git checkout origin/$1; }; f";
 
+        sb = "!~/.local/bin/git-start-branch";
       };
 
     };
@@ -159,6 +160,45 @@
       ".metals"
     ];
 
+  };
+
+  home.file.".local/bin/git-start-branch" = {
+    executable = true;
+    text = ''
+      #!/usr/bin/env bash
+
+      set -euo pipefail
+
+      project="PROJ"
+
+      category=$(
+        printf "%s\n" \
+          bugfix \
+          chore \
+          docs \
+          feature \
+          refactor \
+          test \
+          | fzf --prompt="Category > " --height=40% --border
+      )
+
+      [[ -n "$category" ]] || exit 1
+
+      read -rp "Ticket number: " number
+      read -rp "Description: " description
+
+      slug=$(
+        printf "%s" "$description" \
+          | tr '[:upper:]' '[:lower:]' \
+          | sed -E 's/^[[:space:]]+|[[:space:]]+$//g' \
+          | sed -E 's/[[:space:]]+/-/g' \
+          | sed -E 's/[^a-z0-9_-]//g'
+      )
+
+      branch="$category/$project-$number/$slug"
+
+      git checkout -b "$branch"
+    '';
   };
 
   home.packages = with pkgs; [
