@@ -7,7 +7,7 @@ let
   emacs-overlay = import (
     builtins.fetchTarball {
       url = "https://github.com/nix-community/emacs-overlay/archive/${emacsOverlayRev}.tar.gz";
-      sha256 = "sha256:078cxqn4zcdhq2ysdb5wicnqacy1ky48yz7r7b92cgzck3qk4xdh";
+      sha256 = "sha256:0kr13ihwd714478aqxz8scywzpcfnrc7mgxr6b46xdxnvajyki52";
     }
   );
 

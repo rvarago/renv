@@ -827,8 +827,8 @@ run all tests."
   :defer t
   :after flycheck
   :init (add-hook 'sql-mode-local-vars-hook #'lsp!)
-  :hook
-  (sql-mode . (lambda () (setq flycheck-local-checkers '((lsp . ((next-checkers . (sql-sqllint))))))))
+  ;; :hook
+  ;; (sql-mode . (lambda () (setq flycheck-local-checkers '((lsp . ((next-checkers . (sql-sqllint))))))))
   :config
   ;; Fixes default regexp with mysql/mariadb.
   (sql-set-product-feature 'mysql :prompt-regexp "^\\(MariaDB\\|MySQL\\) \\[[_a-zA-Z]*\\]> ")

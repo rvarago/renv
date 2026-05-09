@@ -7,6 +7,9 @@
   programs.neovim = {
     enable = true;
 
+    withPython3 = true;
+    withRuby = true;
+
     viAlias = true;
     vimAlias = true;
 
@@ -15,7 +18,7 @@
     '';
 
     plugins = with pkgs.vimPlugins; [
-      ctrlp
+      ctrlp-vim
       editorconfig-vim
       gruvbox
       nerdtree

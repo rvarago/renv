@@ -52,7 +52,7 @@ in
     golangci-lint
     gomodifytags
     gopkgs
-    gopls
+    # gopls # /bin/modernize conflicts with gotools
     gore
     gotests
     gotools
@@ -91,9 +91,9 @@ in
 
     # JS/TS.
     nodejs
-    nodePackages.eslint
-    nodePackages.prettier
-    nodePackages.typescript
+    eslint
+    prettier
+    typescript
     tsx
     yarn
     deno
@@ -108,7 +108,7 @@ in
     # dotnetCorePackages.sdk_6_0
 
     # # Nix.
-    nixfmt-rfc-style
+    nixfmt
     # nixfmt-classic
     nixd
 
@@ -159,7 +159,7 @@ in
     # SQL.
     sqls
     sqlfluff
-    sqlint
+    # sqlint # FIXME: Incompatible with latest nixpkgs upstream.
 
     # TLA+
     # tlaps
